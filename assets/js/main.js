@@ -1,331 +1,195 @@
-$(document).ready(function () {
-    headerFixed();
-    tabsInit();
-    dynamicAppendInit();
+document.addEventListener("DOMContentLoaded", function () {
+    // headerFixed();
 
-    // MODAL ***************************
-    $("[data-modal]").on("click", function () {
-        let targetModal = $(`.${$(this).attr("data-modal")}`);
-        targetModal.addClass("active");
-
-        scrollNone();
-    });
-
-    $(".modal-close").on("click", function () {
-        $(this).closest(".modal").removeClass("active");
-
-        scrollNone();
-    });
-
-    // TOAST ****************************
-    $(".toast-trigger").on("click", function () {
-        toastMessage("Toast Message", "default");
-    });
-
-    // DATEPICKER ************************
-    $(".single-datepicker input").datepicker({
-        dateFormat: "dd/mm/yy",
-        onSelect: (date, inst) => {
-            console.log("Single date Selected:", date);
-        }
-    });
-
-    $('.range-datepicker input').daterangepicker({
-        autoApply: true,
-        autoUpdateInput: false,
-        parentEl: ".range-datepicker",
-    });
-
-    $('.range-datepicker input').on('apply.daterangepicker', function(ev, picker) {
-        let startDate = picker.startDate.format('DD/MM/YYYY');
-        let endDate = picker.endDate.format('DD/MM/YYYY');
-        
-        $(this).val(startDate + ' - ' + endDate);
-    });
-
-    // SWITCHER *************************
-    $(".switcher__item").on("click", function () {
-        if (!$(this).closest(".switcher").hasClass("switcher_multiple")) {
-            $(this).closest(".switcher").find(".switcher__item").removeClass("active");
-            $(this).addClass("active");
-        } else {
-            $(this).toggleClass("active");
-        }
-    });
-
-    // TOGGLER *************************
-    $(".toggler-trigger").on("click", function() {
-        const toggler =  $(this).closest(".toggler");
-        toggler.toggleClass("active");
-
-        scrollNone();
-    });
-    $(".toggler-close").on("click", function() {
-        $(this).closest(".toggler").removeClass("active");
-
-        scrollNone();
-    });
-
-    // ACCORDION ************************
-    $(".accordion__header").on("click", function (e) {
-        let accordion = $(this).closest(".accordion");
-        let thisItem = $(this).closest(".accordion__item");
-        let openItem = accordion.find(".accordion__item.open");
-        let thisBody = thisItem.find(".accordion__body");
-        let openBody = openItem.find(".accordion__body");
-
-        if (thisItem.hasClass("open")) {
-            thisItem.removeClass("open");
-            thisBody.slideUp(300);
-        } else {
-            openItem.removeClass("open");
-            openBody.slideUp(300);
-            thisItem.addClass("open");
-            thisBody.slideDown(300);
-        }
-    });
-
-    // POPOVER **************************
-    if ($(".popover").length) {
-        if ($(window).width() <= 1024) {
-            $(".popover").each(function () {
-                popoverSlideInit($(this));
-            });
-        }
+    const burgerElement = document.querySelector(".burger");
+    const headerMenuElement = document.querySelector(".header-menu");
+    const headerElement = document.querySelector(".header");
+    if (burgerElement) {
+        burgerElement.addEventListener("click", function () {
+            burgerElement.classList.toggle("active");
+            headerMenuElement.classList.toggle("active");
+            headerElement.classList.toggle("active");
+        });
     }
 
-    $(".popover-trigger").on("click", function () {
-        if ($(this).closest(".popover-container").hasClass("active")) {
-            $(this).closest(".popover-container").removeClass("active");
-        } else {
-            $(".popover-container").removeClass("active");
-            $(this).closest(".popover-container").addClass("active");
-        }
+    // MODAL ***************************
+    const dataModalElements = document.querySelectorAll("[data-modal]");
+    if (dataModalElements.length) {
+        dataModalElements.forEach((dataModal) => {
+            dataModal.addEventListener("click", function () {
+                let targetModal = document.querySelector(`.${dataModal.getAttribute("data-modal")}`);
+                targetModal.classList.add("active");
 
-        if ($(window).width() < 1024) {
-            scrollNone();
-        }
-    });
+                scrollNone();
+            });
+        });
+    }
 
-    // FORM ITEMS *********************
-    $(".form-field__input").on("keyup", function () {
-        let val = $(this).val().trim();
 
-        if (val.length) {
-            $(this).closest(".form-field").addClass("filled");
-        } else {
-            $(this).closest(".form-field").removeClass("filled");
-        }
-    });
+    const modalCloseElements = document.querySelectorAll(".modal-close");
+    if (modalCloseElements.length) {
+        modalCloseElements.forEach((modalClose) => {
+            modalClose.addEventListener("click", function () {
+                modalClose.closest(".modal").classList.remove("active");
 
-    $(".form-field__input").on("focus", function () {
-        $(this).closest(".form-field").addClass("focused");
-    });
-    $(".form-field__input").on("focusout", function () {
-        $(this).closest(".form-field").removeClass("focused");
-    });
+                scrollNone();
+            });
+        });
+    }
 
-    $("select").on("change", function () {
-        console.log($(this).val());
-    });
+    // TOGGLER *************************
+    const togglerTriggerElements = document.querySelectorAll(".toggler-trigger");
+    if (togglerTriggerElements.length) {
+        togglerTriggerElements.forEach((togglerTriggerElement) => {
+            togglerTriggerElement.addEventListener("click", function () {
+                const toggler = togglerTriggerElement.closest(".toggler");
+                toggler.classList.toggle("active");
 
-    $(".append-select").on("click", function() {
-        if(!$(this).parent().find(".custom-select").length) {
-            $(this).parent().append(`
-                <div class="custom-select dynamic-select">
-                    <div class="combo-box multiple searchable" data-combo-name="dynamicSelect[]">
-                        <div class="combo-box-selected">
-                            <div class="combo-box-selected-wrap">
-                                <span class="combo-box-placeholder">Dynamic appended Select Placeholder</span>
-                            </div>
-                        </div>
-                        <div class="combo-box-dropdown">
-                            <div class="combo-box-options">
-                                <div class="combo-option selected" data-option-value="1">Option 1</div>
-                                <div class="combo-option" data-option-value="2">Option 2</div>
-                                <div class="combo-option" data-option-value="3">Option 3</div>
-                                <div class="combo-option" data-option-value="4">Option 4</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-            `);
-    
-            _initComboBox($(".dynamic-select .combo-box").get(0));
-        }
-    });
+                scrollNone();
+            });
+        });
+    }
 
-    const customSelect = new CustomSelect();
+    const togglerCloseElements = document.querySelectorAll(".toggler-close");
+    if (togglerCloseElements.length) {
+        togglerCloseElements.forEach((togglerClose) => {
+            togglerClose.on("click", function () {
+                togglerClose.closest(".toggler").classList.remove("active");
 
-    $(".append-options").on("click", function() {
-        const options = [
-            {
-                value: 5,
-                name: 'Option 5',
-                attributes: {
-                    test: 'test attr 5',
-                }
-            },
-            {
-                value: 6,
-                name: 'Option 6',
-                attributes: {
-                    test: 'test attr 6',
-                    hello: 'world',
-                }
-            },
-        ]
-        _addDynamicOptions($(".ajax-select .combo-box").get(0), options);
-        $(this).remove();
-    });
-
-    $(".custom-selects-form").on("submit", function(e) {
-        e.preventDefault();
-        let data = $(this).serialize();
-        data = data.split("&");
-
-        console.log(data);
-    });
+                scrollNone();
+            });
+        });
+    }
 
     // Form Validation ***************************
-    $(".with-validation").on("submit", function (e) {
-        let isValid = true;
-        let email = $(this).find(".email-validation");
-        let errorHtml = `<div class="form-field__message error">Wrong email, please set correct email address</div>`;
+    const withValidationForms = document.querySelectorAll(".with-validation");
+    if (withValidationForms.length) {
+        withValidationForms.forEach((withValidationForm) => {
+            withValidationForm.addEventListener("submit", function (e) {
+                let isValid = true;
+                let emailElements = withValidationForm.querySelectorAll(".email-validation");
+                let errorHtml = `<div class="form-field__message error">Wrong email, please set correct email address</div>`;
 
-        $(this).find(".form-field__message.error").remove();
-        $(this).find(".form-field.invalid").removeClass("invalid");
-
-        if (email.length) {
-            if (!isEmailValid(email.val())) {
-                $(".email-validation").closest(".form-field").addClass("invalid").append(errorHtml);
-                isValid = false;
-            }
-        }
-
-        if (!isValid) {
-            e.preventDefault();
-        }
-    });
-
-    $(".input-number").on("keyup", function(e) {
-        let val = $(this).val();
-        let onlyNum = getOnlyNumbers(val);
-
-        if (onlyNum) {
-            $(this).val(onlyNum)
-        } else {
-            $(this).val("");
-        }
-
-        // Separator
-        if($(this).attr("data-input-separator") !== undefined) {
-            let separator = $(this).attr("data-input-separator");
-            let valWithSeparator = numberWithSeparator($(this).val(), separator);
-
-            $(this).val(valWithSeparator);
-        }
-
-        // Phone Formatter
-        if($(this).hasClass("formatted-phone")) {
-            let formattedPhoneNumber = formatPhoneNumber($(this).val());
-            
-            if(formattedPhoneNumber) {
-                $(this).val(formattedPhoneNumber);
-            }
-        }
-    });
-
-    // File Upload *******************************
-    let uploadedFiles = [];
-    $(".file-upload-input").on("change", function () {
-        const input = this;
-        let files = this.files;
-        const mainBlock = $(input).closest(".file-upload");
-        const previewBlock = mainBlock.find(".file-upload-preview");
-
-        
-        mainBlock.removeClass("preview-mode");
-        uploadedFiles = [];
-
-        if(previewBlock.length) {
-            previewBlock.html("");
-        }
-
-        if (files.length) {
-            mainBlock.addClass("preview-mode");
-            
-            if(mainBlock.hasClass("avatar-upload")) {
-                let { name, size, type } = files[0];
-                uploadedFiles = [...uploadedFiles, files[0]];
-                let reader = new FileReader();
-
-                reader.onload = function () {
-                    let img = document.createElement('img');
-                    img.src = reader.result;
-    
-                    mainBlock.find(".avatar-upload__body img").remove();
-                    mainBlock.find(".avatar-upload__body").prepend(img);
+                // clear All error messages
+                const errorMessages = withValidationForm.querySelectorAll(".form-field__message.error");
+                if (errorMessages.length) {
+                    errorMessages.forEach((errorMessage) => {
+                        errorMessage.remove();
+                    });
                 }
-                reader.readAsDataURL(files[0]);
-
-                console.log("UPLOADED DOCUMENTS LIST ----------- ", uploadedFiles);
-            }
-
-            if(mainBlock.hasClass("doc-upload")) {
-                for(let i = 0; i < files.length; i++) {
-                    let { name, size, type } = files[i];
-                    // add item to list
-                    uploadedFiles = [...uploadedFiles, files[i]];
-
-                    let previewItemHtml = `
-                        <div class="file-upload-item doc-upload-item">
-                            <span class="file-upload-item__name doc-upload-item__name">${name}</span>
-                            <div class="file-upload-item__remove doc-upload-item__remove">x</div>
-                        </div>
-                    `
-                    previewBlock.append(previewItemHtml);
+                // clear All invalid classes
+                const invalidFields = withValidationForm.querySelectorAll(".form-field.invalid");
+                if (invalidFields.length) {
+                    invalidFields.forEach((invalidField) => {
+                        invalidField.classList.remove("invalid");
+                    });
                 }
 
-                console.log("UPLOADED DOCUMENTS LIST ----------- ", uploadedFiles);
-            }
-        }
-    });
+                if (emailElements.length) {
+                    emailElements.forEach((emailElement) => {
+                        if (!isEmailValid(emailElement.value)) {
+                            emailElement.closest(".form-field").classList.add("invalid");
+                            emailElement.closest(".form-field").insertAdjacentHTML("beforeend", errorHtml);
+                            isValid = false;
+                        }
+                    });
+                }
 
-    $(".file-upload").on("click", ".file-upload-item__remove", function() {
-        let itemBlock = $(this).closest(".file-upload-item");
-        let itemName = itemBlock.find(".file-upload-item__name").text();
+                if (!isValid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    }
 
-        if(uploadedFiles.length) {
-            // remove item from list
-            uploadedFiles = [...uploadedFiles.filter(file => {
-                return file.name !== itemName
-            })];
+    const counterBtnElements = document.querySelectorAll(".product-counter__btn");
+    if (counterBtnElements.length) {
+        counterBtnElements.forEach((counterBtn) => {
+            counterBtn.addEventListener("click", function (e) {
+                e.preventDefault();
 
-            if(!uploadedFiles.length) {
-                mainBlock.removeClass("preview-mode");
-            }
+                isIncrement = counterBtn.classList.contains("product-counter__btn_increment");
+                const counterInput = counterBtn.closest(".product-counter").querySelector(".product-counter__value input");
+                const step = +counterInput.getAttribute("step");
+                const min = +counterInput.getAttribute("min");
+                const counterInputVal = +counterInput.value;
+                const counterContainer = counterInput.closest(".product-counter");
 
-            console.log("UPLOADED DOCUMENTS LIST ----------- ", uploadedFiles);
-        }
+                if (isIncrement) {
+                    const newSize = parseFloat((counterInputVal + step).toFixed(1));
+                    counterContainer.classList.add("filled");
 
-        itemBlock.remove();
-    });
+                    counterInput.value = newSize;
+                } else {
+                    const newSize = parseFloat((counterInputVal - step).toFixed(1));
+
+                    if (newSize >= min) {
+                        counterInput.value = newSize;
+                    }
+
+                    if(newSize <= min) {
+                        counterContainer.classList.remove("filled");
+                    }
+                }
+            });
+        });
+    }
+
+    const counterInputElements = document.querySelectorAll(".product-counter__value input");
+    if (counterInputElements.length) {
+        counterInputElements.forEach((counterInput) => {
+            counterInput.addEventListener("change", function () {
+                const thisVal = +counterInput.value;
+                const min = +counterInput.getAttribute('min');
+                const counterContainer = counterInput.closest(".product-counter");
+
+                if (thisVal <= min) {
+                    counterContainer.classList.remove("filled");
+                    counterInput.value = min;
+                } else {
+                    counterContainer.classList.add("filled");
+                    let val = thisVal.toFixed(1);
+
+                    if (min % 1 === 0) {
+                        val = Math.round(thisVal.toFixed(1));
+                    }
+
+                    counterInput.value = val;
+                }
+            });
+        });
+    }
 
     // REMOVE ACTIVE CLASSES *******************************
-    $(document).on('click', function (e) {
-        // if (!$(e.target).closest(".lang-switcher, [data-modal], .modal__wrapper, .toggler_global").length) {
-        if (!$(e.target).closest("[data-modal], .modal__wrapper, .popover-trigger, .popover, .toggler_global").length) {
-            // $(".lang-switcher").removeClass("active");
-            $(".modal").removeClass("active");
-            $(".popover-container").removeClass("active");
-            $(".toggler_global").removeClass("active");
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest(".lang-switcher")) {
+            const langSwitcher = document.querySelector(".lang-switcher");
+            if (langSwitcher) {
+                langSwitcher.classList.remove("active");
 
-            scrollNone();
+                scrollNone();
+            }
         }
+        if (!e.target.closest(".modal__wrapper")) {
+            const activeModalElements = document.querySelectorAll(".modal.active");
+            if (activeModalElements.length) {
+                activeModalElements.forEach((activeModalElement) => {
+                    activeModalElement.classList.remove("active");
+                });
 
-        if ($(e.target).closest(".toast-close").length) {
-            removeToast($(e.target));
+                scrollNone();
+            }
+        }
+        if (!e.target.closest(".toggler_global")) {
+            const activeTogglerElements = document.querySelectorAll(".toggler_global.active");
+
+            if (activeTogglerElements.length) {
+                activeTogglerElements.forEach((activeTogglerElement) => {
+                    activeTogglerElement.classList.remove("active");
+                });
+
+                scrollNone();
+            }
         }
 
         e.stopPropagation();
@@ -333,6 +197,6 @@ $(document).ready(function () {
 });
 
 // Scroll
-$(window).scroll(function () {
-    headerFixed();
-});
+// $(window).scroll(function () {
+//     headerFixed();
+// });

@@ -4,16 +4,63 @@
 @import "core/_icons";
 @import "components/_button";
 
-.sticky-element {   
-    position: fixed;
-    top: 0;
-    z-index: z(sticky-element);
-}
 
-.aspect-ratio {
-    img {
-        width: 15%;
-        aspect-ratio: 3/2;
-        object-fit: contain;
+
+.badge {
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+    height: rem(25);
+    line-height: rem(25);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    &:after{
+        content: '';
+        position: absolute;
+        right: rem(-13);
+        top: 0;
+        bottom: 0;
+        width: rem(20);
+        background-color: inherit;
+        z-index: -1;
+        -webkit-transform: skew(-27deg);
+        -moz-transform: skew(-27deg);
+        transform: skew(-27deg);
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        left: rem(-13);
+        top: 0;
+        bottom: 0;
+        width: rem(20);
+        background-color: inherit;
+        z-index: -1;
+        -webkit-transform: skew(-27deg);
+        -moz-transform: skew(-27deg);
+        transform: skew(-27deg);
+    }
+
+    &_primary {
+        font-size: rem(15);
+        background-color: $color-primary;
+        margin-left: rem(12 + 13);
+        margin-right: rem(12 + 13);
+    }
+
+    &_main {
+        font-size: rem(13);
+        background-color: $color-main;
+        margin-left: rem(16 + 13);
+        margin-right: rem(16 + 13);
+    }
+
+    &_gradient {
+        font-size: rem(13);
+        margin-left: rem(13 + 13);
+        margin-right: rem(13 + 13);
+        background: linear-gradient(127.81deg, #E83906 16.48%, #FBB03B 63.48%, #E83906 83.52%);
     }
 }

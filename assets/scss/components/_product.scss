@@ -1,0 +1,193 @@
+.product {
+    box-shadow: map-get($shadows, 'sm');
+    background-color: #fff;
+    border-radius: rem(10);
+
+    &__wrap {
+        padding: rem(20);
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+    }
+
+    &__header {
+        @include flex(0, 0, auto);
+    }
+
+    &__top {
+        @extend %flex;
+        @extend %align-between;
+        font-size: rem(15);
+        margin-bottom: rem(10);
+    }
+
+    &__code {
+        padding-right: rem(8);
+    }
+
+    &__brand {
+        font-weight: bold;
+        padding-left: rem(8);
+    }
+
+    &__preview {
+        margin-bottom: rem(17);
+        position: relative;
+        display: block;
+    }
+
+    &__img {
+        text-align: center;
+
+        img {
+            max-width: rem(200);
+        }
+    }
+
+    &__badges {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @extend %flex;
+        @extend %align-bottom;
+        @include flex-flow(column, nowrap);
+    }
+
+    &__title {
+        @include font(500, 13, 1, inherit, 0);
+        margin-bottom: rem(10);
+    }
+
+    &__body {
+        @include flex(1, 1, auto);
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+    }
+
+    &__info {
+        margin-bottom: rem(12);
+    }
+
+    &__counter {
+        margin-top: auto;
+    }
+}
+
+.product-info {
+    &__row {
+        @extend %flex;
+        font-size: rem(15);
+        line-height: rem(21);
+        margin-bottom: rem(5);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__price {
+        @include flex(0, 0, 50%);
+        max-width: 50%;
+
+        &_sale {
+            color: $color-primary;
+            text-decoration: line-through;
+        }
+
+        &_primary {
+            font-weight: bold;
+            font-size: rem(16);
+        }
+    }
+
+    &__label {
+        @include flex(0, 0, 50%);
+        max-width: 50%;
+    }
+}
+
+.product-counter {
+    @extend %flex;
+    border: rem(2) solid map-get($color-scheme, 'main-03');
+    border-radius: rem(9);
+    @include transition(all,0.3s,ease);
+
+    &_sm {
+        color: map-get($color-scheme, 'main-03');
+    }
+
+    &__decrement {
+        @include flex(0, 0, auto);
+    }
+
+    &__btn {
+        width: rem(60);
+        @include font(300, 50, 1, inherit, 0);
+        @extend %user-cursor;
+        height: rem(50);
+        text-align: center;
+        @extend %flex;
+        @extend %align-middle;
+        @extend %align-center;
+        position: relative;
+
+        &::after {
+            content: "";
+            @include center-absolute(vertical);
+            width: rem(2);
+            height: rem(20);
+            background-color: map-get($color-scheme, 'main-03');
+        }
+
+        span {
+            @include center-absolute(both);
+        }
+
+        &_decrement {
+            &::after {
+                right: 0;
+            }
+
+            span {
+                @include translate(-50%, -55%);
+            }
+        }
+
+        &_increment {
+            &::after {
+                left: 0;
+            }
+        }
+    }
+
+    &__value {
+        @include flex(1, 1, auto);
+        
+        input {
+            @include font(normal, 30, 1, inherit, 0);
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__increment {
+        @include flex(0, 0, auto);
+    }
+
+    &.filled {
+        border-color: $color-main;
+        background-color: $color-main;
+
+        .product-counter {
+            &__btn {
+                &::after {
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+        
+        &.product-counter_sm {
+            color: #fff;
+        }
+    }
+}
