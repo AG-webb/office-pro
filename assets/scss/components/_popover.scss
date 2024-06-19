@@ -1,0 +1,101 @@
+@mixin popover-container-media {
+    &.active {
+        .popover-wrap {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: initial;
+        }
+
+        .popover {
+            @include translate(0, 0);
+        }
+    }
+}
+
+@mixin popover-wrap-media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: z(header-dropdown);
+    transform: none;
+    display: flex;
+    display: -ms-flexbox;
+    @include align-items(flex-end);
+    @include transition(all,0.3s,ease);
+    overflow: auto;
+    background: transparent;
+    max-height: 100vh;
+    padding-top: rem(64);
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    &.dragging {
+        overflow: hidden;
+
+        .popover {
+            transition: initial;
+        }
+    }
+}
+
+@mixin popover-media {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: rem(16) rem(16) 0 0;
+    padding: rem(30) rem(16) rem(16) rem(16);
+    @include translate(0, 100%);
+    @include transition(all,0.3s,ease);
+    margin-top: auto;
+    margin-bottom: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: inherit;
+        pointer-events: none;
+        height: var(--negative-offset);
+    }
+
+    &::after {
+        content: "";
+        @include center-absolute(horizontal);
+        top: rem(16);
+        width: rem(77);
+        height: rem(4);
+        background-color: rgba(138, 77, 4, 0.1);
+        border-radius: rem(16);
+    }
+}
+
+@media (max-width: $media-md) {
+    .popover-container {
+        @include popover-container-media();
+
+        .popover-wrap {
+            @include popover-wrap-media();
+        }
+
+        .popover {
+            @include popover-media();
+        }
+    }
+}

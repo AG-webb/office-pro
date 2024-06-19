@@ -1,0 +1,63 @@
+/*colors*/
+$color-scheme: (
+    'main': #364063,
+    'main-dark': #687289,
+    'main-light': #A3A9B5,
+    'main-lighter': #CED2D8,
+    'primary': #E83906,
+    'primary-dark': #ED1C24,
+    'secondary': #FF6839,
+    'secondary-light': #FBB03B,
+    'neutral': #dddddd,
+    'error': #f3131a,
+    'success': #198754,
+    'white': #ffffff,
+    'black': #000000,
+);
+
+$shadows: (
+    'xs': 3px 3px 20px rgba(54, 64, 99, 0.15),
+    'sm': 3px 3px 40px rgba(54, 64, 99, 0.2),
+    'md': 9px 11px 30px rgba(0, 0, 0, 0.15),
+);
+ 
+$color-main: map-get($color-scheme, 'main');
+$color-primary: map-get($color-scheme, 'primary');
+$color-secondary: map-get($color-scheme, 'secondary');
+
+// Z-index Order (From Hight To Low) starts with 101
+$z-indexes: (
+    'toast',
+    'header-dropdown',
+    'modal',
+    'header',
+    'sticky-element',
+    'dropdown',
+);
+
+/* font */
+$defaultHtmlFont: "Tahoma", sans-serif; 
+$fontPrimary: 'Montserrat';
+$baseFontFamily: $fontPrimary;
+$baseFontSize: 16;
+
+/*grid dimensions*/
+$mediaXxlLarge: 1366px;
+$mediaXlLarge: 1280px;
+$mediaLarge: 1024px;
+$mediaMedium: 768px;
+
+/* grid  */
+$columnsSize: 30; //count of columns
+$columnSpace: rem(10);
+$columnSpaceSm: rem(20);
+
+/*screenSizes*/
+$media-xxl: 1439px;
+$media-xl: 1365px;
+$media-lg: 1279px;
+$media-md: 1023px;
+$media-sm: 767px;
+$media-xs: 450px;
+
+

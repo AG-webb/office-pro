@@ -1,0 +1,69 @@
+.skeleton {
+    position: relative;
+
+    &__element {
+        background-color: #e9e9e9;
+        width: 100%;
+        margin-bottom: rem(24);
+        // animation: shimmer 2s ease-in infinite;
+
+        &_avatar {
+            margin-left: rem(24);
+            width: rem(64);
+            height: rem(64);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        &_image {
+            width: rem(450);
+            height: rem(450);
+            display: inline-block;
+        }
+
+        &_title {
+            width: 100%;
+            height: rem(24);
+            border-radius: rem(30);
+        }
+
+        &_text {
+            width: 100%;
+            height: rem(15);
+            border-radius: rem(30);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(to right, transparent 0%, #ffffff 20%, transparent 40%, transparent 100%);
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+        @extend %not-selectable;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}

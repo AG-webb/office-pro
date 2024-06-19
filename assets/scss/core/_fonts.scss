@@ -1,0 +1,35 @@
+@import "../utils/variables";
+
+$fonts:  (
+//  fontName    fontType   fontWeight  fontStyle
+    $fontPrimary 'BlackItalic' 900 italic,
+    $fontPrimary 'Black' 900 normal,
+    $fontPrimary 'ExtraBoldItalic' 800 italic,
+    $fontPrimary 'ExtraBold' 800 normal,
+    $fontPrimary 'BoldItalic' bold italic,
+    $fontPrimary 'Bold' bold normal,
+    $fontPrimary 'SemiBoldItalic' 600 italic,
+    $fontPrimary 'SemiBold' 600 normal,
+    $fontPrimary 'MediumItalic' 500 italic,
+    $fontPrimary 'Medium' 500 normal,
+    $fontPrimary 'Italic' normal italic,
+    $fontPrimary 'Regular' normal normal,
+    $fontPrimary 'LightItalic' 300 italic,
+    $fontPrimary 'Light' 300 normal,
+    $fontPrimary 'ExtraLightItalic' 200 italic,
+    $fontPrimary 'ExtraLight' 200 normal,
+    $fontPrimary 'ThinItalic' 100 italic,
+    $fontPrimary 'Thin' 100 normal,
+);
+
+@each $type in $fonts {
+    @font-face {
+        font-family: '#{nth($type, 1)}';
+        src: local('#{nth($type, 1)} #{nth($type, 2)}'), local('#{nth($type, 1)}-#{nth($type, 2)}'),
+        url('../fonts/#{nth($type, 1)}-#{nth($type, 2)}.woff2') format('woff2'),
+        url('../fonts/#{nth($type, 1)}-#{nth($type, 2)}.woff') format('woff');
+        font-weight: #{nth($type, 3)};
+        font-style: #{nth($type, 4)};
+        font-display: swap;
+    }
+}

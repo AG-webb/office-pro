@@ -1,0 +1,79 @@
+.toast-messages {
+    position: fixed;
+    bottom: rem(25);
+    left: 50%;
+    z-index: z(toast);
+}
+
+.toast-message {
+    background: #000;
+    color: #fff;
+    border-radius: rem(100);
+    padding: rem(19) rem(28);
+    @extend %flex;
+    @extend %align-middle;
+    @extend %align-center;
+    @include transform(translate(-50%, 0));
+    max-width: rem(600);
+    @extend %primary-transition;
+    animation: showToast .5s;
+    margin-top: rem(24);
+
+    &_hidden {
+        bottom: 0;
+        @extend %hidden;
+        @include transform(translate(-50%, 100%));
+    }
+
+    &-icon {
+        margin-right: rem(8);
+        flex: 0 0 auto;
+
+        img {
+            width: rem(22);
+        }
+    }
+
+    &__close {
+        margin-left: rem(6);
+        @extend %user-cursor;
+
+        img {
+            max-width: rem(16);
+        }
+    }
+    
+    span {
+        color: #fff;
+        font-size: rem(18);
+        @include font-media($media-sm, rem(16), 0);
+        line-height: 120%;
+        color: inherit;
+    }
+}
+
+@media (max-width: $media-sm) {
+    .toast-message {
+        padding: rem(16) rem(16);
+        width: calc(100% - rem(32));
+    
+        &-icon {
+            margin-right: rem(6);
+    
+            img {
+                width: rem(18);
+            }
+        }
+    }
+}
+
+@keyframes showToast {
+    0% {
+        bottom: 0;
+        @include transform(translate(-50%, 100%));
+    }
+    100% {
+        bottom: 25px;
+        @include transform(translate(-50%, 0));
+    }
+}

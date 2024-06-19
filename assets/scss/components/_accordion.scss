@@ -1,0 +1,47 @@
+.accordion {
+
+    &__item {
+        margin-top: rem(24);
+        box-shadow: map-get($shadows, 'md');
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &.open {
+            .accordion {
+                &__arrow {
+                    @include rotate(180);
+                }
+            }
+        }
+    }
+
+    &__header {
+        padding: rem(24) rem(56) rem(24) rem(24);
+        position: relative;
+        @extend %user-cursor;
+    }
+
+    &__title {
+        font-size: rem(24);
+        font-weight: 600;
+    }
+
+    &__arrow {
+        position: absolute;
+        right: rem(16);
+        top: rem(30);
+        @extend %flex;
+        @extend %align-middle;
+        @extend %primary-transition;
+
+        .icon {
+            font-size: rem(24);
+        }
+    }
+
+    &__body {
+        padding: 0 rem(24) rem(24);
+    }
+}

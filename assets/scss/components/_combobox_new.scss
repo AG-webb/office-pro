@@ -1,0 +1,212 @@
+.combo-box {
+    position: relative;
+    display: block;
+    color: #fff;
+    @include font(600, 18, 1, #000, 0);
+
+    &.searchable {
+        .combo-box-selected {
+            &.active {
+                .combo-box-placeholder {
+                    display: none;
+                }
+            }
+        }
+        
+        &:not(.multiple):not(.tag-mode) {
+            .combo-box-selected.active {
+                .combo-box-selected-wrap {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    &.tag-mode {
+        .combo-box-selected {
+            // cursor: initial;
+            &-wrap {
+                padding-top: rem(8);
+                padding-bottom: rem(7);
+                height: initial;
+                min-height: rem(56);
+            }
+        }
+    }
+}
+  
+.combo-box-placeholder {
+    color: map-get($color-scheme, 'neutral');
+}
+
+.combo-box-selected {
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: rem(30);
+    border: rem(1) solid #000;
+    background: #fff;
+    @extend %flex;
+    @extend %align-middle;
+    @include flex-flow(row, wrap);
+    padding: 0 rem(50) 0 rem(24);
+    
+    &-wrap {
+        height: rem(56);
+        @extend %inline-flex;
+        @extend %align-middle;
+    }
+
+    &:after {
+        @include font-icon("\e904");
+        position: absolute;
+        font-size: rem(20);
+        cursor: pointer;
+        display: inline-block;
+        top: rem(17);
+        margin-left: rem(4);
+        right: rem(24);
+        @extend %primary-transition;
+    }
+
+    & > img {
+        display: inline-block;
+        // vertical-align: -4px;
+        margin-right: 5px;
+    }
+
+    &.active {
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.combo-box-tags {
+    @extend %flex;
+    @extend %align-top;
+    @include flex-flow(row, wrap);
+    margin: rem(-10) 0 0 rem(-10);
+}
+
+.combo-box-tag {
+    cursor: initial;
+    @extend %flex;
+    margin: rem(10) 0 0 rem(10);
+    line-height: initial;
+    background-color: #000;
+    color: #fff;
+    padding: rem(10);
+    border-radius: rem(5);
+    font-size: rem(16);
+
+    &__remove {
+        margin-left: rem(8);
+        max-width: rem(16);
+        @extend %user-cursor;
+        @extend %flex;
+        @extend %align-middle;
+    }
+}
+  
+.combo-box-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    border-bottom-right-radius: rem(5);
+    border-bottom-left-radius: rem(5);
+    overflow: hidden;
+    background: #fff;
+    z-index: z(dropdown);
+    box-shadow: map-get($shadows, 'sm');
+    transform: translateY(rem(10));
+    @extend %hidden;
+    @extend %primary-transition;
+
+    &::-webkit-scrollbar {
+        width: rem(7);
+
+        &-thumb {
+            background-color: map-get($color-scheme, 'neutral');
+        }
+    }
+
+    &.opened {
+        transform: translateY(0);
+        @extend %show;
+    }
+}
+
+.combo-box-search {
+    padding: rem(10) rem(24) rem(10) rem(3);
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+}
+
+.combo-box-options {
+    max-height: rem(200);
+    overflow: auto;
+    padding: rem(16) 0;
+
+    &::-webkit-scrollbar {
+        width: rem(7);
+
+        &-thumb {
+            background-color: map-get($color-scheme, 'neutral');
+        }
+    }
+}
+
+.combo-option {
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: rem(20);
+    padding: rem(10) rem(24);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000;
+    z-index: 1;
+    cursor: pointer;
+
+    & > img {
+        display: inline-block;
+        // vertical-align: -4px;
+        margin-right: rem(5);
+    }
+
+    &.selected {
+        background: #000;
+        color: #fff;
+    }
+
+    &:focus, &_focused {
+        background: #cfcfcf;
+        color: #fff;
+    }
+
+    &_hidden {
+        display: none;
+    }
+}
+
+.combo-box-message {
+    padding: rem(10) rem(24);
+}
+
+.disabled {
+    background-color:#fff;
+    color: #888;
+    pointer-events: none;
+}
+
+.disabled:hover {
+    background-color:#fff !important;
+    color: #888 !important;
+}

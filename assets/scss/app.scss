@@ -1,0 +1,19 @@
+// sass --watch --style=compressed assets/scss:assets/css
+// sass --no-source-map --watch --style=compressed assets/scss:assets/css
+@import "utils/_module";
+@import "core/_icons";
+@import "components/_button";
+
+.sticky-element {   
+    position: fixed;
+    top: 0;
+    z-index: z(sticky-element);
+}
+
+.aspect-ratio {
+    img {
+        width: 15%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+}

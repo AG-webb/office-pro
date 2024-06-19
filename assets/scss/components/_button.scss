@@ -1,0 +1,85 @@
+.btn {
+    position: relative;
+    @extend %inline-flex;
+    @extend %align-middle;
+    @extend %align-center;
+    @extend %user-cursor;
+    @extend %primary-transition;
+    max-width: 100%;
+
+    & > span {
+        @include font(600, 18, 120%, inherit, 0);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    & > img,& > svg, & > .icon {
+        &:last-child {
+            margin-left: rem(10);
+        }
+
+        &:first-child {
+            margin-right: rem(10);
+        }
+    }
+
+
+    // types ******************************
+    &_main {
+        border: rem(1) solid $color-main;
+        background-color: transparent;
+        color: $color-main;
+
+        &:hover {
+            background-color: $color-main;
+            color: #fff;
+
+            & > img {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+    &_test {
+        border: rem(1) solid #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+
+    // sizes ***************************
+    &_sm {
+        height: rem(32);
+        padding-left: rem(12);
+        padding-right: rem(12);
+
+        & > span {
+            font-size: rem(16);
+        }
+    }
+
+    &_md {
+        height: rem(48);
+        padding-left: rem(16);
+        padding-right: rem(16);
+    }
+
+    &_lg {
+        height: rem(56);
+        padding-left: rem(20);
+        padding-right: rem(20);
+    }
+
+    &_xl {
+        height: rem(64);
+        padding-left: rem(24);
+        padding-right: rem(24);
+
+        & > span {
+            font-size: rem(20);
+        }
+    }
+}

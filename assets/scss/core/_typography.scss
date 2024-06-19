@@ -1,0 +1,55 @@
+$textSizes: (12, 14, 16, 18, 20, 22, 24, 28, 32, 34, 36);
+
+.h1-font {
+    @include font(normal, 60 , 1, inherit, uppercase);
+    @include font-media($media-lg, rem(36), 0);
+    @include font-media($media-sm, rem(26), 0);
+}
+
+.h2-font {
+    @include font(normal, 50, 1, inherit, uppercase);
+    @include font-media($media-lg, rem(30), 0);
+    @include font-media($media-sm, rem(22), 0);
+}
+
+.h3-font { 
+    @include font(bold, 30, 1, inherit, uppercase);
+    @include font-media($media-lg, rem(24), 0);
+    @include font-media($media-sm, rem(16), 0);
+}
+
+.font {
+    @each $size in $textSizes {
+        &-#{$size} {
+            font-size: rem($size);
+        }
+    }
+}
+
+@media (max-width: $media-md) {
+    .font-md {
+        @each $size in $textSizes {
+            &-#{$size} {
+                font-size: rem($size);
+            }
+        }
+    }   
+}
+@media (max-width: $media-sm) {
+    .font-sm {
+        @each $size in $textSizes {
+            &-#{$size} {
+                font-size: rem($size);
+            }
+        }
+    }   
+}
+@media (max-width: $media-xs) {
+    .font-xs {
+        @each $size in $textSizes {
+            &-#{$size} {
+                font-size: rem($size);
+            }
+        }
+    }   
+}

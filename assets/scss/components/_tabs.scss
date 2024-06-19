@@ -1,0 +1,44 @@
+.tabs {
+    &__control {
+        padding-bottom: rem(15);
+    }
+
+    &__content {
+        position: relative;
+    
+        .tab-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend %hidden;
+            @extend %primary-transition;
+    
+            &:not(.active) {
+                .tab-content.active {
+                    position: absolute;
+                    @extend %hidden;
+                    overflow: hidden;
+                }
+            }
+    
+            &.active {
+                position: static;
+                @extend %show;
+                overflow: visible;
+
+                .tab-content.active {
+                    position: static;
+                    @extend %show;
+                    overflow: visible;
+                }
+            }
+        }
+    }
+}
+
+.tab {
+    &.active {
+        background-color: #000;
+        color: #fff;
+    }
+}
