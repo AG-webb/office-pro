@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // headerFixed();
+    headerFixed();
 
     const burgerElement = document.querySelector(".burger");
-    const headerMenuElement = document.querySelector(".header-menu");
     const headerElement = document.querySelector(".header");
     if (burgerElement) {
         burgerElement.addEventListener("click", function () {
             burgerElement.classList.toggle("active");
-            headerMenuElement.classList.toggle("active");
             headerElement.classList.toggle("active");
         });
     }
@@ -45,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const toggler = togglerTriggerElement.closest(".toggler");
                 toggler.classList.toggle("active");
 
+                if(togglerTriggerElement.getAttribute("id") === "theme-switcher") {
+                    document.body.classList.toggle("dark-theme");
+                }
+
                 scrollNone();
             });
         });
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const togglerCloseElements = document.querySelectorAll(".toggler-close");
     if (togglerCloseElements.length) {
         togglerCloseElements.forEach((togglerClose) => {
-            togglerClose.on("click", function () {
+            togglerClose.addEventListener("click", function () {
                 togglerClose.closest(".toggler").classList.remove("active");
 
                 scrollNone();
@@ -160,6 +162,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const copyToClipboardElements = document.querySelectorAll("[data-copy]");
+    if(copyToClipboardElements.length) {
+        copyToClipboardElements.forEach((copyToClipboardElement) => {
+            copyToClipboardElement.addEventListener("click", function() {
+                let copyText = copyToClipboardElement.getAttribute("data-copy");
+
+                navigator.clipboard.writeText(copyText);
+            });
+        });
+    }
+
     // REMOVE ACTIVE CLASSES *******************************
     document.addEventListener('click', function (e) {
         if (!e.target.closest(".lang-switcher")) {
@@ -197,6 +210,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Scroll
-// $(window).scroll(function () {
-//     headerFixed();
-// });
+document.addEventListener("scroll", function() {
+    headerFixed();
+});

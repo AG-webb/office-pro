@@ -106,6 +106,10 @@
     }
 }
 
+.fit {
+    width: 100%;
+}
+
 // Shadows
 .shadow {
     @each $name, $shadow in $shadows {

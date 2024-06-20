@@ -60,29 +60,30 @@ $gridBreakpoints: (
 @media print, screen and (min-width: 768px) {
     .row {
         // (100% - (size * 2) - ($columnSpace * 2))
-        max-width: calc(100% - #{rem(96)});
-    }
-}
-
-@media print, screen and (min-width: 1024px) {
-    .row {
-        max-width: calc(100% - #{rem(140)});
+        max-width: calc(100% - #{rem(20)});
 
         .row {
             margin-right: -$columnSpace;
             margin-left: -$columnSpace;
         }
-    }
-
-    .column, .columns {
-        padding-right: $columnSpace;
-        padding-left: $columnSpace;
+        
+        .column, .columns {
+            padding-right: $columnSpace;
+            padding-left: $columnSpace;
+        }
     }
 }
 
-@media print, screen and (min-width: 1440px) {
+@media print, screen and (min-width: 1024px) {
     .row {
-        max-width: calc(100% - #{rem(300)});
+        // max-width: calc(100% - #{rem(140)});
+    }
+}
+
+@media print, screen and (min-width: 1400px) {
+    .row {
+        // max-width: calc(100% - #{rem(300)});
+        max-width: rem(1380);
     }
 }
 

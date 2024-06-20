@@ -31,10 +31,11 @@
 
     &__input {
         width: 100%;
-        box-shadow: map-get($shadows, 'sm');
         border-radius: rem(4);
         font-weight: 600;
-        color: inherit
+        font-family: $fontPrimary;
+        color: inherit;
+        border-radius: rem(50);
     }
 
     &__message {
@@ -76,9 +77,10 @@
             }
 
             &__input {
-                height: rem(32);
-                padding: 0 rem(12);
-                font-size: rem(12);
+                height: rem(40);
+                padding: 0 rem(20);
+                font-size: rem(16);
+                font-weight: 500;
             }
         }
     }
@@ -108,9 +110,9 @@
             }
 
             &__input {
-                height: rem(48);
-                padding: 0 rem(16);
-                border-radius: rem(8);
+                height: rem(45);
+                padding: 0 rem(20);
+                font-size: rem(16);
             }
         }
     }
@@ -163,10 +165,17 @@
     }
 
     // TYPES ********************************
-    &_round {
+    &_main {
         .form-field {
             &__input {
-                border-radius: rem(50);
+                background-color: #fff;
+                color: $color-main;
+
+                @include input-placeholder {
+                    color: map-get($color-scheme, 'main-05');
+                    font-weight: 500;
+                    font-family: $fontPrimary;
+                }
             }
         }
 
@@ -183,55 +192,57 @@
         }
     }
 
-    &_underline {
-        padding-top: rem(18);
-
+    &_default {
         .form-field {
-            &__label {
-                position: absolute;
-                @extend %primary-transition;
-                margin-bottom: 0;
-                top: rem(15 + 18);
-                left: rem(16);
-            }
-            
             &__input {
-                box-shadow: none;
-                border-bottom: rem(1) solid #000;
-                border-radius: 0;
+                background-color: #fff;
+                color: $color-main;
+                border: rem(1) solid $color-main;
+
+                @include input-placeholder {
+                    color: map-get($color-scheme, 'main-05');
+                    font-family: $fontPrimary;
+                }
             }
         }
 
-        &.focused, &.filled {
+        &.invalid {
             .form-field {
-                &__label {
-                    top: 0;
-                    left: 0;
+                &__target {
+                    color: map-get($color-scheme, 'error');
+                }
+
+                &__input {
+                    border: rem(1) solid map-get($color-scheme, 'error');
                 }
             }
         }
     }
+}
 
-    &_legend {
-        background-color: #fff;
 
-        .form-field {
-            &__label {
-                position: absolute;
-                margin-bottom: 0;
-                top: 0;
-                left: rem(8);
-                padding: 0 rem(8);
-                background-color: inherit;
-                font-size: rem(12);
-                @include translate(0, -50%);
-                z-index: 1;
-            }
-            
-            &__input {
-                box-shadow: none;
-                border: rem(1) solid #000;
+@media (max-width: $media-md) {
+    .form-field {
+        &_sm {
+            .form-field {
+                &__input {
+                    height: rem(36);
+                    padding: 0 rem(16);
+                    font-size: rem(15);
+                }
             }
         }
-    }
+    }   
+}
+
+@media (max-width: $media-sm) {
+    .form-field {
+        &_sm {
+            .form-field {
+                &__input {
+                    height: rem(32);
+                }
+            }
+        }
+    }   
 }

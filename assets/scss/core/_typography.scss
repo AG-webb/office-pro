@@ -1,4 +1,4 @@
-$textSizes: (12, 14, 16, 18, 20, 22, 24, 28, 32, 34, 36);
+$textSizes: (12, 14, 15, 16, 18, 20, 22, 24, 28, 32, 34, 36);
 
 .h1-font {
     @include font(normal, 60 , 1, inherit, uppercase);

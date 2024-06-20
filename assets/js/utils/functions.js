@@ -21,15 +21,17 @@ function getOnlyNumbers(str) {
     return str.replace(/[^\d]/g, '');
 }
 
-// function headerFixed() {
-//     let st = $(this).scrollTop();
+function headerFixed() {
+    const scrollTop = document.documentElement.scrollTop;
+    const headerWrapperElement = document.querySelector(".header__wrapper");
+    const headerHeight = headerWrapperElement.closest(".header").offsetHeight;
 
-//     if (st <= 5) {
-//         $(".header__wrapper").removeClass("fixed");
-//     } else {
-//         $(".header__wrapper").addClass("fixed");
-//     }
-// }
+    if (scrollTop <= headerHeight) {
+        headerWrapperElement.classList.remove("fixed");
+    } else {
+        headerWrapperElement.classList.add("fixed");
+    }
+}
 
 function getDocumentVisibleWidth() {
     return Math.max(
@@ -42,11 +44,11 @@ function getDocumentVisibleWidth() {
 function scrollNone() {
     const body = document.querySelector("body");
     const modals = document.querySelectorAll(".modal");
-    const header = document.querySelector(".header");
-    let lockBody = false;
+    const contactBadge = document.querySelector(".contact-badge");
+    let lockBody = contactBadge.classList.contains("active") && window.innerWidth < 768;
 
     modals.forEach((modal) => {
-        if(modal.classList.contains("active") || header.classList.contains("active")) {
+        if(modal.classList.contains("active")) {
             lockBody = true;
         }
     });

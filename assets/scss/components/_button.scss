@@ -6,9 +6,9 @@
     @extend %user-cursor;
     @extend %primary-transition;
     max-width: 100%;
+    border-radius: rem(100);
 
     & > span {
-        @include font(600, 18, 120%, inherit, 0);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -27,59 +27,33 @@
 
     // types ******************************
     &_main {
-        border: rem(1) solid $color-main;
-        background-color: transparent;
-        color: $color-main;
-
-        &:hover {
-            background-color: $color-main;
-            color: #fff;
-
-            & > img {
-                filter: brightness(0) invert(1);
-            }
-        }
+        border: rem(1) solid var(--themeMainColor);
+        background-color: var(--themeMainColor);
+        color: var(--themeSecondaryColor);
     }
 
-    &_test {
-        border: rem(1) solid #000;
-
-        &:hover {
-            background-color: #000;
-            color: #fff;
-        }
+    &_primary {
+        border: rem(1) solid $color-primary;
+        background-color: $color-primary;
+        color: #fff;
     }
 
     // sizes ***************************
-    &_sm {
-        height: rem(32);
+    &_xs {
+        height: rem(30);
         padding-left: rem(12);
         padding-right: rem(12);
+    }
 
-        & > span {
-            font-size: rem(16);
-        }
+    &_sm {
+        height: rem(35);
+        padding-left: rem(12);
+        padding-right: rem(12);
     }
 
     &_md {
-        height: rem(48);
+        height: rem(45);
         padding-left: rem(16);
         padding-right: rem(16);
-    }
-
-    &_lg {
-        height: rem(56);
-        padding-left: rem(20);
-        padding-right: rem(20);
-    }
-
-    &_xl {
-        height: rem(64);
-        padding-left: rem(24);
-        padding-right: rem(24);
-
-        & > span {
-            font-size: rem(20);
-        }
     }
 }
