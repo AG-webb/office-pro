@@ -504,4 +504,9 @@
         </div>
     </div>
 </header>
+<div class="catalog">
+    
+</div>
+
+
 <div class="main-overlay"></div>
