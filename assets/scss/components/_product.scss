@@ -2,6 +2,7 @@
     box-shadow: map-get($shadows, 'sm');
     background-color: #fff;
     border-radius: rem(10);
+    color: $color-main;
 
     &__wrap {
         padding: rem(20);
@@ -26,7 +27,6 @@
 
     &__brand {
         font-weight: bold;
-        padding-left: rem(8);
     }
 
     &__preview {
@@ -40,6 +40,12 @@
 
         img {
             width: rem(200);
+        }
+
+        &_sm {
+            img {
+                width: rem(110);
+            }
         }
     }
 
@@ -55,6 +61,10 @@
     &__title {
         @include font(500, 13, 1, inherit, 0);
         margin-bottom: rem(10);
+
+        span {
+            @include max-lines(3);
+        }
     }
 
     &__body {
@@ -69,6 +79,120 @@
 
     &__counter {
         margin-top: auto;
+    }
+
+    &__btn {
+        text-align: center;
+
+        .btn {
+            max-width: 100%;
+            padding-left: rem(25);
+            padding-right: rem(25);
+        }
+    }
+
+    &_suggest {
+        .product {
+            &__wrap {
+                padding: rem(12) rem(16) rem(20);
+            }
+
+            &__top {
+                font-size: rem(12);
+            }
+
+            &__img {
+                img {
+                    width: rem(110);
+                }
+            }
+
+            &__title {
+                font-size: rem(11);
+                line-height: rem(14);
+            }
+        }
+    }
+}
+
+.chart-product {
+    box-shadow: 1.69307px 1.69307px 22.5743px rgba(54, 64, 99, 0.2);
+    background-color: #fff;
+    color: $color-main;
+    border-radius: rem(10);
+
+    &__wrap {
+        padding: rem(12);
+    }
+
+    &__header {
+        @extend %flex;
+        position: relative;
+        margin-bottom: rem(9);
+        font-size: rem(13);
+    }
+
+    &__code {
+        width: rem(90);
+        padding-right: rem(8);
+    }
+
+    &__brand {
+        padding-right: rem(32);
+    }
+
+    &__remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @extend %user-cursor;
+        z-index: 1;
+
+        .icon {
+            font-size: rem(24);
+        }
+    }
+
+    &__preview {
+        @include flex(0, 0, rem(80));
+    }
+
+    &__content {
+        @extend %flex;
+    }
+
+    &__img {
+        img {
+            width: rem(80);
+        }
+    }
+
+    &__title {
+        @include font(500, 13, 1, inherit, 0);
+        margin-bottom: rem(10);
+
+        span {
+            @include max-lines(2);
+        }
+    }
+
+    &__body {
+        padding-left: rem(10);
+    }
+
+    &__counter {
+        max-width: rem(110);
+    }
+
+    &__info {
+        margin-bottom: 0;
+        margin-left: rem(10);
+        @include flex(1, 1, auto);
+    }
+
+    &__footer {
+        @extend %flex;
+        @extend %align-middle;
     }
 }
 
@@ -103,27 +227,42 @@
         @include flex(0, 0, 50%);
         max-width: 50%;
     }
+
+    &_xs {
+        .product-info {
+            &__row {
+                font-size: rem(12);
+                margin-bottom: 0;
+        
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__price {
+                &_primary {
+                    font-size: rem(13);
+                }
+            }
+        
+            &__label {
+                text-align: right;
+            }
+        }
+    }
 }
 
 .product-counter {
     @extend %flex;
-    border: rem(2) solid map-get($color-scheme, 'main-03');
-    border-radius: rem(9);
     @include transition(all,0.3s,ease);
-
-    &_sm {
-        color: map-get($color-scheme, 'main-03');
-    }
+    color: map-get($color-scheme, 'main-03');
 
     &__decrement {
         @include flex(0, 0, auto);
     }
 
     &__btn {
-        width: rem(60);
-        @include font(300, 50, 1, inherit, 0);
         @extend %user-cursor;
-        height: rem(50);
         text-align: center;
         @extend %flex;
         @extend %align-middle;
@@ -133,8 +272,6 @@
         &::after {
             content: "";
             @include center-absolute(vertical);
-            width: rem(2);
-            height: rem(20);
             background-color: map-get($color-scheme, 'main-03');
         }
 
@@ -177,6 +314,7 @@
     &.filled {
         border-color: $color-main;
         background-color: $color-main;
+        color: #fff;
 
         .product-counter {
             &__btn {
@@ -185,9 +323,173 @@
                 }
             }
         }
-        
-        &.product-counter_sm {
-            color: #fff;
+    }
+
+    &_sm {
+        border: rem(2) solid map-get($color-scheme, 'main-03');
+        border-radius: rem(9);
+
+        .product-counter {
+            &__btn {
+                width: rem(60);
+                height: rem(50);
+                @include font(300, 50, 1, inherit, 0);
+                
+                &::after {
+                    width: rem(2);
+                    height: rem(20);
+                    background-color: map-get($color-scheme, 'main-03');
+                }
+            }
+        }
+    }
+
+    &_xs {
+        border: rem(1) solid map-get($color-scheme, 'main-03');
+        border-radius: rem(5);
+
+        .product-counter {
+            &__btn {
+                width: rem(30);
+                height: rem(33);
+                @include font(300, 33, 1, inherit, 0);
+                
+                &::after {
+                    width: rem(2);
+                    height: rem(16);
+                    background-color: map-get($color-scheme, 'main-03');
+                }
+            }
+
+            &__value {
+                input {
+                    @include font(normal, 20, 1, inherit, 0);
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $media-sm) {
+    .product {
+        &__btn {
+            .btn {
+                padding-left: rem(16);
+                padding-right: rem(16);
+            }
+        }
+
+        &_suggest {
+            .product {
+                &__wrap {
+                    padding: rem(10);
+                }
+    
+                &__top {
+                    font-size: rem(10);
+                }
+    
+                &__img {
+                    img {
+                        width: rem(100);
+                    }
+                }
+    
+                &__title {
+                    font-size: rem(10);
+                    line-height: rem(12);
+                }
+            }
+        }
+    }
+
+    .chart-product {
+        &__wrap {
+            padding: rem(10);
+            position: relative;
+        }
+
+        &__header {
+            padding-left: rem(80);
+        }
+    
+        &__code {
+            width: initial;
+            padding-right: rem(6);
+        }
+    
+        &__brand {
+            padding-right: rem(32);
+        }
+    
+        &__remove {
+            top: rem(-4);
+            right: rem(-4);
+        }
+    
+        &__preview {
+            @include flex(0, 0, rem(70));
+        }
+
+        &__img {
+            position: absolute;
+            top: rem(10);
+            left: rem(10);
+        }
+
+        &__title {
+            min-height: rem(40);
+        }
+    
+        &__img {
+            img {
+                width: rem(70);
+            }
+        }
+
+        &__info {
+            .product-info {
+                &__row {
+                    font-size: rem(13);
+                    @include flex-flow(column, nowrap);
+                    @include align-items(flex-end);
+                }
+
+                &__price {
+                    @include flex(0, 0, 100%);
+                    max-width: 100%;
+
+                    &_primary {
+                        font-size: rem(13);
+                    }
+                }
+
+                &__label {
+                    @include flex(0, 0, 100%);
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &__footer {
+            margin-left: rem(-80);
+        }
+    }
+
+    .product-info {
+        &_xs {
+            .product-info {
+                &__row {
+                    font-size: rem(10);
+                }
+    
+                &__price {
+                    &_primary {
+                        font-size: rem(11);
+                    }
+                }
+            }
         }
     }
 }

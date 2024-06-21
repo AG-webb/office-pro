@@ -1,0 +1,225 @@
+.dark-theme {
+    .chart-dropdown {
+        &__wrap {
+            background-color: $color-main;
+        }
+    }
+}
+
+.chart-dropdown {
+    padding-top: rem(24);
+
+    &.header__dropdown {
+        transform: none;
+        left: initial;
+        right: rem(-24);
+    }
+
+    &__wrap {
+        background: #F8F8F8;
+        box-shadow: map-get($shadows, 'md');
+        border-radius: rem(10);
+        position: relative;
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+        width: rem(480);
+        max-width: 97vw;
+        max-height: calc(100vh - rem(116));
+        color: var(--themeMainColor);
+        text-align: left;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: rem(-8);
+            right: rem(41);
+            width: rem(30);
+            height: rem(30);
+            @include rotate(-45);
+            background-color: var(--themeSecondaryColor);
+        }
+    }
+
+    &__header {
+        @include flex(0, 0, auto);
+        background-color: var(--themeSecondaryColor);
+        box-shadow: map-get($shadows, 'md');
+        position: relative;
+        border-radius: rem(10) rem(10) 0 0;
+        padding: rem(20) rem(30) 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: rem(18);
+        right: rem(18);
+        font-size: rem(20);
+        color: var(--themeMainColor);
+        opacity: 0.3;
+        @extend %user-cursor;
+    }
+
+    &__total {
+        @extend %flex;
+        @include flex-flow(row, nowrap);
+        font-size: rem(20);
+        margin-bottom: rem(8);
+
+        &-price {
+            font-weight: bold;
+        }
+
+        &-items {
+            margin-left: rem(6);
+        }
+    }
+
+    &__desc {
+        font-size: rem(13);
+        margin-bottom: rem(5);
+        text-transform: uppercase;
+    }
+
+    &__badges {
+        @extend %flex;
+        @extend %align-right;
+
+        .badge {
+            margin-right: rem(-1);
+        }
+    }
+
+    &__body {
+        @include flex(1, 1, auto);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: rem(16);
+        position: relative;
+
+        &::-webkit-scrollbar {
+            width: rem(3);
+            background-color: rgba(54, 64, 99, 0.1);
+
+            &-thumb {
+                background-color: rgba(54, 64, 99, 0.5);
+            }
+        }
+    }
+
+    &__products {
+        margin-bottom: rem(48);
+
+        .chart-product {
+            margin-bottom: rem(10);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__footer {
+        @include flex(0, 0, auto);
+        background-color: var(--themeSecondaryColor);
+        box-shadow: map-get($shadows, 'md');
+        border-radius: 0 0 rem(10) rem(10);
+        @extend %flex;
+        @extend %align-between;
+        padding: rem(30);
+
+        .btn {
+            @include flex(0, 0, calc(50% - rem(10)));
+            max-width: calc(50% - rem(10));
+            text-align: center;
+        }
+    }
+}
+ 
+.chart-suggestions {
+
+    &__title {
+        margin-bottom: rem(16);
+    }
+
+    &__items {
+        @extend %flex;
+        margin: 0 rem(-6);
+    }
+
+    &__item {
+        @include flex(0, 0, 50%);
+        padding: 0 rem(6);
+    }
+}
+
+
+@media (max-width: $media-sm) {
+    .chart-dropdown {    
+        &.header__dropdown {
+            right: rem(-16);
+        }
+    
+        &__wrap {
+            border-radius: rem(6);
+            max-height: calc(100vh - rem(120));
+    
+            &::after {
+                top: rem(-4);
+                right: rem(20);
+                width: rem(16);
+                height: rem(16);
+            }
+        }
+    
+        &__header {
+            border-radius: rem(6) rem(6) 0 0;
+            padding: rem(15) rem(20) 0;
+        }
+    
+        &__close {
+            top: rem(10);
+            right: rem(10);
+            font-size: rem(12);
+        }
+    
+        &__total {
+            font-size: rem(14);
+        }
+    
+        &__desc {
+            font-size: rem(10);
+        }
+    
+        &__body {
+            padding: rem(12) rem(4);
+        }
+    
+        &__products {
+            margin-bottom: rem(20);
+        }
+    
+        &__footer {
+            border-radius: 0 0 rem(6) rem(6);
+            padding: rem(12);
+    
+            .btn {
+                @include flex(0, 0, calc(50% - rem(4)));
+                max-width: calc(50% - rem(4));
+            }
+        }
+    }
+     
+    .chart-suggestions {
+        &__title {
+            margin-bottom: rem(11);
+        }
+    
+        &__items {
+            margin: 0 rem(-2.5);
+        }
+    
+        &__item {
+            padding: 0 rem(2.5);
+        }
+    }   
+}

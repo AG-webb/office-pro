@@ -8,11 +8,11 @@
     max-width: 100%;
     border-radius: rem(100);
 
-    & > span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    // & > span {
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    // }
 
     & > img,& > svg, & > .icon {
         &:last-child {
@@ -30,6 +30,18 @@
         border: rem(1) solid var(--themeMainColor);
         background-color: var(--themeMainColor);
         color: var(--themeSecondaryColor);
+
+        &-border {
+            border: rem(1) solid var(--themeMainColor);
+            background-color: var(--themeSecondaryColor);
+            color: var(--themeMainColor);
+        }
+
+        &.ignore-theme {
+            border: rem(1) solid $color-main;
+            background-color: $color-main;
+            color: #fff;
+        }
     }
 
     &_primary {
@@ -55,5 +67,9 @@
         height: rem(45);
         padding-left: rem(16);
         padding-right: rem(16);
+
+        @media (max-width: $media-sm) {
+            height: rem(37);
+        }
     }
 }

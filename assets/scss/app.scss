@@ -4,6 +4,7 @@
 @import "core/_icons";
 @import "components/_button";
 @import "components/_form-items";
+@import "components/_chart-dropdown";
 
 
 .badge {
@@ -25,9 +26,9 @@
         width: rem(20);
         background-color: inherit;
         z-index: -1;
-        -webkit-transform: skew(-27deg);
-        -moz-transform: skew(-27deg);
-        transform: skew(-27deg);
+        -webkit-transform: skew(-24deg);
+        -moz-transform: skew(-24deg);
+        transform: skew(-24deg);
     }
     &:before{
         content: '';
@@ -38,9 +39,9 @@
         width: rem(20);
         background-color: inherit;
         z-index: -1;
-        -webkit-transform: skew(-27deg);
-        -moz-transform: skew(-27deg);
-        transform: skew(-27deg);
+        -webkit-transform: skew(-24deg);
+        -moz-transform: skew(-24deg);
+        transform: skew(-24deg);
     }
 
     &_primary {
@@ -55,6 +56,11 @@
         background-color: $color-main;
         margin-left: rem(16 + 13);
         margin-right: rem(16 + 13);
+
+        &.theme-mode {
+            background-color: var(--themeMainColor);
+            color: var(--themeSecondaryColor);
+        }
     }
 
     &_gradient {

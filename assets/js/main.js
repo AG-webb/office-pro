@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const mainOverlayElement = document.querySelector(".main-overlay");
+
     headerFixed();
 
     const burgerElement = document.querySelector(".burger");
@@ -42,9 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
             togglerTriggerElement.addEventListener("click", function () {
                 const toggler = togglerTriggerElement.closest(".toggler");
                 toggler.classList.toggle("active");
-
+                
                 if(togglerTriggerElement.getAttribute("id") === "theme-switcher") {
                     document.body.classList.toggle("dark-theme");
+                }
+                if(togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge") {
+                    mainOverlayElement.classList.toggle("active");
                 }
 
                 scrollNone();
@@ -57,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
         togglerCloseElements.forEach((togglerClose) => {
             togglerClose.addEventListener("click", function () {
                 togglerClose.closest(".toggler").classList.remove("active");
+
+                if(togglerClose.closest("#chart-badge")) {
+                    mainOverlayElement.classList.remove("active");
+                }
 
                 scrollNone();
             });
@@ -203,6 +212,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 scrollNone();
             }
+        }
+
+        if(!e.target.closest("#chart-badge")) {
+            mainOverlayElement.classList.remove("active");
         }
 
         e.stopPropagation();

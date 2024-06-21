@@ -5,7 +5,7 @@
 <div>
     <div class="row sm-cols-2 md-cols-3 lg-cols-5">
         <div class="column">
-            <article class="product">
+            <article class="product main-product">
                 <div class="product__wrap">
                     <div class="product__header">
                         <div class="product__top">

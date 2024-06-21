@@ -45,7 +45,8 @@ function scrollNone() {
     const body = document.querySelector("body");
     const modals = document.querySelectorAll(".modal");
     const contactBadge = document.querySelector(".contact-badge");
-    let lockBody = contactBadge.classList.contains("active") && window.innerWidth < 768;
+    const cartBadge = document.querySelector("#chart-badge");
+    let lockBody = (contactBadge.classList.contains("active") && window.innerWidth < 768) || cartBadge.classList.contains("active");
 
     modals.forEach((modal) => {
         if(modal.classList.contains("active")) {

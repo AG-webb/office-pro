@@ -1,5 +1,7 @@
 .header {
     max-width: 100%;
+    position: relative;
+    z-index: z(header);
 
     &__top {
         @extend %flex;
@@ -43,6 +45,7 @@
         @extend %flex;
         @extend %align-middle;
         @include transition(all,0.3s,ease);
+        z-index: z(header);
         
         &.fixed {
             position: sticky;
@@ -123,6 +126,26 @@
         @include transition(all,0.3s,ease);
         @include center-absolute(horizontal);
         z-index: z(dropdown);
+    }
+}
+
+.main-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z(main-overlay);
+    background-color: var(--themeMainColor);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+
+    &.active {
+        
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 0.5;
     }
 }
 
@@ -255,8 +278,30 @@
         margin-bottom: rem(7);
     }
 
+    &__name {
+        margin-bottom: rem(16);
+    }
+
     &__link {
         opacity: 0.5;
+        
+        a {
+            @extend %flex;
+            @extend %align-middle;
+
+            &#sign-out {
+                margin-left: rem(19);
+            }
+        }
+
+        .icon {
+            margin-right: rem(8);
+            font-size: rem(13);
+        }
+
+        &+& {
+            margin-top: rem(16);
+        }
     }
 }
 
@@ -566,7 +611,7 @@
             margin-left: 0;
             @include flex(0, 0, 100%);
             @include order(3);
-            margin-top: rem(10);
+            margin-top: rem(16);
         }
     
         &__badges {

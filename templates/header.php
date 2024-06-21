@@ -99,7 +99,7 @@
                                 <div class="contact-call__number">010 66 20 52</div>
                                 <div class="contact-call__copy" data-copy="010662052">
                                     <i class="icon icon-copy"></i>
-                                </div> 
+                                </div>
                             </div>
                             <div class="contact-call">
                                 <div class="contact-call__icon">
@@ -184,6 +184,7 @@
                     <!-- <div class="user-badge">BA</div> -->
                 </div>
                 <div class="user-dropdown header__dropdown">
+                    <!-- No Auth -->
                     <div class="user-dropdown__wrap">
                         <div class="user-dropdown__btn">
                             <a href="?p=sign-in" class="btn btn_primary btn_xs">
@@ -194,18 +195,313 @@
                             <span class="font-12 font-semibold">Новый пользователь?</span>
                         </div>
                         <div class="user-dropdown__link">
-                            <a href="?p=sign-up" class="font-15 font-bold">Регистрация</a>
+                            <a href="?p=sign-up" class="font-15 font-bold align-center">Регистрация</a>
                         </div>
                     </div>
+                    <!-- -------------- -->
+
+                    <!-- Auth -->
+                    <!-- <div class="user-dropdown__wrap">
+                        <div class="user-dropdown__name">
+                            <span class="font-13 font-semibold">Виген Адибекян</span>
+                        </div>
+                        <div class="user-dropdown__link">
+                            <a href="?p=dashboard" class="font-15 font-bold">
+                                <i class="icon icon-user-stroke"></i>
+                                Мой кабинет 
+                            </a>
+                        </div>
+                        <div class="user-dropdown__link">
+                            <a id="sign-out" href="#" class="font-15 font-bold">Выход</a>
+                        </div>
+                    </div> -->
+                    <!-- -------------- -->
                 </div>
             </div>
-            <div class="header__badge">
-                <div class="header__badge-icon">
+            <div class="header__badge toggler toggler_global" id="chart-badge">
+                <div class="header__badge-icon toggler-trigger">
                     <div class="header__badge-count">12</div>
                     <i class="icon icon-chart"></i>
                 </div>
                 <div class="header__badge-price">12.000.000</div>
+                <div class="chart-dropdown header__dropdown">
+                    <div class="chart-dropdown__wrap">
+                        <div class="chart-dropdown__header">
+                            <div class="chart-dropdown__close toggler-close">
+                                <i class="icon icon-close"></i>
+                            </div>
+                            <div class="chart-dropdown__total">
+                                <div class="chart-dropdown__total-price">
+                                    Итого:
+                                    <span class="chart-summary">3880,07</span> ֏
+                                </div>
+                                <div class="chart-dropdown__total-items">
+                                    (<span class="chart-items">60</span> предметов)
+                                </div>
+                            </div>
+                            <div class="chart-dropdown__desc">доставка БЕСПЛАТНО</div>
+                            <div class="chart-dropdown__badges">
+                                <div class="badge badge_primary">
+                                    <span id="chart-dropdown-percent" >-17.3%</span>
+                                </div>
+                                <div class="badge badge_main theme-mode">
+                                    <span id="chart-dropdown-sale" >Скидка 40 150 ֏</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-dropdown__body">
+                            <div class="chart-dropdown__body-wrap">
+                                <div class="chart-dropdown__products">
+                                    <div class="chart-product">
+                                        <div class="chart-product__wrap">
+                                            <div class="chart-product__header">
+                                                <div class="chart-product__code">7-777777</div>
+                                                <div class="chart-product__brand">Royal touch</div>
+                                                <div class="chart-product__remove">
+                                                    <i class="icon icon-trash"></i>
+                                                </div>
+                                            </div>
+                                            <div class="chart-product__content">
+                                                <a href="?p=product" class="chart-product__preview">
+                                                    <div class="chart-product__img">
+                                                        <img width="200" height="200" src="assets/img/draft/product.jpg" alt="product">
+                                                    </div>
+                                                </a>
+                                                <div class="chart-product__body">
+                                                    <div class="chart-product__title">
+                                                        <span>
+                                                            Бумага А4, 80 гр, класса C, для лазерных
+                                                            принтеров, 500 листов белая. Класса
+                                                            Бумага А4, 80 гр, класса C, для лазерных
+                                                            принтеров, 500 листов белая. Класса
+                                                        </span>
+                                                    </div>
+                                                    <div class="chart-product__footer">
+                                                        <div class="chart-product__counter">
+                                                            <div class="product-counter product-counter_xs filled">
+                                                                <div class="product-counter__decrement">
+                                                                    <div class="product-counter__btn product-counter__btn_decrement">
+                                                                        <span>-</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-counter__value">
+                                                                    <input type="number" name="product_counts[]" value="8" step="1" min="0">
+                                                                </div>
+                                                                <div class="product-counter__increment">
+                                                                    <div class="product-counter__btn product-counter__btn_increment">
+                                                                        <span>+</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chart-product__info product-info">
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__label">
+                                                                    <span>220 000 ֏/шт.</span>
+                                                                </div>
+                                                                <div class="product-info__price product-info__price_primary">
+                                                                    <span>440 000 ֏</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-product">
+                                        <div class="chart-product__wrap">
+                                            <div class="chart-product__header">
+                                                <div class="chart-product__code">7-777777</div>
+                                                <div class="chart-product__brand">Royal touch</div>
+                                                <div class="chart-product__remove">
+                                                    <i class="icon icon-trash"></i>
+                                                </div>
+                                            </div>
+                                            <div class="chart-product__content">
+                                                <a href="?p=product" class="chart-product__preview">
+                                                    <div class="chart-product__img">
+                                                        <img width="200" height="200" src="assets/img/draft/product.jpg" alt="product">
+                                                    </div>
+                                                </a>
+                                                <div class="chart-product__body">
+                                                    <div class="chart-product__title">
+                                                        <span>
+                                                            Бумага А4, 80 гр, класса C, для лазерных
+                                                            принтеров, 500 листов белая. Класса
+                                                            Бумага А4, 80 гр, класса C, для лазерных
+                                                            принтеров, 500 листов белая. Класса
+                                                        </span>
+                                                    </div>
+                                                    <div class="chart-product__footer">
+                                                        <div class="chart-product__counter">
+                                                            <div class="product-counter product-counter_xs filled">
+                                                                <div class="product-counter__decrement">
+                                                                    <div class="product-counter__btn product-counter__btn_decrement">
+                                                                        <span>-</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-counter__value">
+                                                                    <input type="number" name="product_counts[]" value="8" step="1" min="0">
+                                                                </div>
+                                                                <div class="product-counter__increment">
+                                                                    <div class="product-counter__btn product-counter__btn_increment">
+                                                                        <span>+</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chart-product__info product-info">
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__label">
+                                                                    <span>220 000 ֏/шт.</span>
+                                                                </div>
+                                                                <div class="product-info__price product-info__price_primary">
+                                                                    <span>440 000 ֏</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-dropdown__suggestion chart-suggestions">
+                                    <div class="chart-suggestions__title font-15 font-medium font-sm-13">С этими товарами также покупают</div>
+                                    <div class="chart-suggestions__items">
+                                        <div class="chart-suggestions__item">
+                                            <article class="product product_suggest">
+                                                <div class="product__wrap">
+                                                    <div class="product__header">
+                                                        <div class="product__top">
+                                                            <div class="product__code">3-1</div>
+                                                            <div class="product__brand">Royal touch</div>
+                                                        </div>
+                                                        <a href="?p=product" class="product__preview">
+                                                            <div class="product__img product__img_sm">
+                                                                <img width="200" height="200" src="assets/img/draft/product.jpg" alt="product">
+                                                            </div>
+                                                        </a>
+                                                        <div class="product__title">
+                                                            <span>
+                                                                Бумага А4, 80 гр, класса C, для лазерных
+                                                                принтеров, 500 листов белая. Класса
+                                                                Бумага А4, 80 гр, класса C, для лазерных
+                                                                принтеров, 500 листов белая. Класса
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__body">
+                                                        <div class="product__info product-info product-info_xs">
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price product-info__price_primary">
+                                                                    <span>1 200 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>1 шт.</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price">
+                                                                    <span>1 000 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>12 шт</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price">
+                                                                    <span>900 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>60 шт</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__btn">
+                                                            <div class="btn btn_sm btn_main ignore-theme">
+                                                                <span class="font-15 font-sm-13">Ավելացնել</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="chart-suggestions__item">
+                                            <article class="product product_suggest">
+                                                <div class="product__wrap">
+                                                    <div class="product__header">
+                                                        <div class="product__top">
+                                                            <div class="product__code">3-1</div>
+                                                            <div class="product__brand">Royal touch</div>
+                                                        </div>
+                                                        <a href="?p=product" class="product__preview">
+                                                            <div class="product__img product__img_sm">
+                                                                <img width="200" height="200" src="assets/img/draft/product.jpg" alt="product">
+                                                            </div>
+                                                        </a>
+                                                        <div class="product__title">
+                                                            <span>
+                                                                Бумага А4, 80 гр, класса C, для лазерных
+                                                                принтеров, 500 листов белая. Класса
+                                                                Бумага А4, 80 гр, класса C, для лазерных
+                                                                принтеров, 500 листов белая. Класса
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__body">
+                                                        <div class="product__info product-info product-info_xs">
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price product-info__price_primary">
+                                                                    <span>1 200 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>1 шт.</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price">
+                                                                    <span>1 000 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>12 шт</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-info__row">
+                                                                <div class="product-info__price">
+                                                                    <span>900 ֏</span>
+                                                                </div>
+                                                                <div class="product-info__label">
+                                                                    <span>60 шт</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__btn">
+                                                            <div class="btn btn_sm btn_main ignore-theme">
+                                                                <span class="font-15 font-sm-13">Ավելացնել</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-dropdown__footer">
+                            <a href="?p=chart" class="btn btn_md btn_main-border">
+                                <span class="font-15 font-medium font-sm-13">Просмотр корзины</span>
+                            </a>
+                            <a href="?p=order" class="btn btn_md btn_main">
+                                <span class="font-15 font-medium font-sm-13">Заказать</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
+<div class="main-overlay"></div>
