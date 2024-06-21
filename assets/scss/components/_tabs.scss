@@ -1,8 +1,4 @@
 .tabs {
-    &__control {
-        padding-bottom: rem(15);
-    }
-
     &__content {
         position: relative;
     
@@ -10,6 +6,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            right: 0;
             @extend %hidden;
             @extend %primary-transition;
     
@@ -33,12 +30,5 @@
                 }
             }
         }
-    }
-}
-
-.tab {
-    &.active {
-        background-color: #000;
-        color: #fff;
     }
 }

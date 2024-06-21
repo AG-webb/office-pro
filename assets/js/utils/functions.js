@@ -21,6 +21,38 @@ function getOnlyNumbers(str) {
     return str.replace(/[^\d]/g, '');
 }
 
+function tabsInit() {
+    const tabElements = document.querySelectorAll(".tab");
+
+    if(tabElements.length) {
+        tabElements.forEach((tabElement) => {
+            tabElement.addEventListener("click", function () {
+                let contentId = tabElement.getAttribute("data-tab");
+        
+                const thisSiblingTabs = tabElement.closest(".tabs__control").querySelectorAll(".tab");
+                if(thisSiblingTabs.length) {
+                    thisSiblingTabs.forEach((thisSiblingTab) => {
+                        thisSiblingTab.classList.remove("active");
+                    });
+                }
+                tabElement.classList.add("active");
+        
+                const thisTabContents = tabElement.closest(".tabs").querySelectorAll(".tab-content");
+                if(thisTabContents.length) {
+                    thisTabContents.forEach((thisTabContent) => {
+                        thisTabContent.classList.remove("active");
+                    });
+                }
+
+                const thisContentElement = document.getElementById(contentId);
+                if(thisContentElement) {
+                    thisContentElement.classList.add("active");
+                }
+            });
+        });
+    }
+}
+
 function headerFixed() {
     const scrollTop = document.documentElement.scrollTop;
     const headerWrapperElement = document.querySelector(".header__wrapper");

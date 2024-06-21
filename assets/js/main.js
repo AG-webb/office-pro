@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+    headerFixed();
+    tabsInit();
+    
     const mainOverlayElement = document.querySelector(".main-overlay");
 
-    headerFixed();
-
-    const burgerElement = document.querySelector(".burger");
-    const headerElement = document.querySelector(".header");
-    if (burgerElement) {
-        burgerElement.addEventListener("click", function () {
-            burgerElement.classList.toggle("active");
-            headerElement.classList.toggle("active");
+    const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
+    if(catalogTabElements.length) {
+        catalogTabElements.forEach((catalogTabElement) => {
+            catalogTabElement.addEventListener("click", function(e) {
+                if(document.querySelector(".burger").classList.contains("active")) {
+                    e.preventDefault();
+                }
+            });
         });
     }
 
@@ -50,6 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if(togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge") {
                     mainOverlayElement.classList.toggle("active");
+                }
+                if(togglerTriggerElement.closest(".burger")) {
+                    document.querySelector(".catalog-menu").classList.toggle("active");
                 }
 
                 scrollNone();
