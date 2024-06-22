@@ -225,7 +225,7 @@
             overflow: initial;
             box-shadow: none;
             background-color: initial;
-            padding: rem(24) rem(16);
+            padding: rem(24) rem(12);
             max-width: 100%;
             display: flex;
             display: -ms-flexbox;
@@ -310,7 +310,7 @@
         }
     
         &__category {
-            font-size: rem(13);
+            font-size: rem(12);
             margin-bottom: 0;
             text-align: center;
         }
