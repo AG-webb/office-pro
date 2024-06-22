@@ -48,6 +48,7 @@ body {
     color: $color-main;
     background-color: var(--themeSecondaryColor);
     @include transition(background-color,0.3s,ease);
+    min-height: rem(1500);
 
     &.locked {
         overflow: hidden;

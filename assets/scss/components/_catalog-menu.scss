@@ -9,12 +9,17 @@
         position: relative;
     }
 
+    &__header {
+        display: none;
+    }
+
     &__controls {
         position: relative;
         z-index: 1;
         @extend %flex;
         padding: rem(17) rem(9);
         background-color: var(--themeSecondaryColor);
+        @include transition(background-color,0.3s,ease);
         overflow-x: auto;
     }
 
@@ -52,11 +57,20 @@
         &.tabs__content {
             position: absolute;
 
+            @media (min-width: 768px) {
+                .splide__list {
+                    display: block;
+                }
+            }
+
             .tab-content.active {
                 pointer-events: none;
             }
         }
+    }
 
+    &__category-title {
+        display: none;
     }
 
     &__categories {
@@ -169,13 +183,37 @@
         opacity: 0;
         pointer-events: none;
         padding: 0;
+        background-color: var(--themeSecondaryColor);
+        overflow: auto;
 
         &__wrap {
             overflow: auto;
         }
 
+        &__header {
+            display: block;
+            position: relative;
+            padding: rem(20);
+        }
+
+        &__title {
+            font-size: rem(20);
+            font-weight: bold;
+            padding-right: rem(32);
+            margin-bottom: rem(16);
+        }
+
         &__controls {
             display: none;
+        }
+
+        &__close {
+            position: absolute;
+            top: rem(23);
+            right: rem(23);
+            font-size: rem(20);
+            z-index: 1;
+            opacity: 0.5;
         }
 
         &__content {
@@ -185,9 +223,71 @@
             right: initial;
             max-height: initial;
             overflow: initial;
-            
+            box-shadow: none;
+            background-color: initial;
+            padding: rem(24) rem(16);
+            max-width: 100%;
+            display: flex;
+            display: -ms-flexbox;
+            @include flex-flow(column-reverse, nowrap);
+
+            .splide__pagination {
+                margin-bottom: rem(16);
+
+                button {
+                    display: inline-block;
+                    width: rem(10);
+                    height: rem(10);
+                    background-color: var(--themeMainColor);
+                    opacity: 0.5;
+                    border-radius: 50%;
+                    margin-left: rem(20);
+                    @include transition(opacity,0.3s,ease);
+
+                    &.is-active {
+                        opacity: 1;
+                    }
+                }
+
+                li:first-child {
+                    button {
+                        margin-left: 0;
+                    }
+                }
+            }
+
             &.tabs__content {
                 position: relative;
+
+                .tab-content {
+                    position: relative;
+                    top: initial;
+                    left: initial;
+                    right: initial;
+                    visibility: visible;
+                    pointer-events: auto;
+                    opacity: 1;
+
+                    &.active {
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+
+        &__category {
+            &-title {
+                display: block;
+                font-size: rem(15);
+                font-weight: bold;
+                margin-bottom: rem(20);
+                text-align: center;
+            }
+        }
+
+        &__categories {
+            .catalog-item {
+                margin: 0 rem(-16) rem(24);
             }
         }
 
@@ -195,6 +295,28 @@
             visibility: visible;
             opacity: 1;
             pointer-events: auto;
+        }
+    }
+
+    .catalog-item {
+        display: block;
+
+        &__image {
+            max-width: rem(80);
+            margin-right: 0;
+            margin-bottom: rem(10);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        &__category {
+            font-size: rem(13);
+            margin-bottom: 0;
+            text-align: center;
+        }
+    
+        &__links {
+            display: none;
         }
     }
 }

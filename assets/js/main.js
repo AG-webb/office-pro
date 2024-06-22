@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tabsInit();
     
     const mainOverlayElement = document.querySelector(".main-overlay");
+    const burgerElement = document.querySelector(".burger");
 
     const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
     if(catalogTabElements.length) {
@@ -12,6 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     e.preventDefault();
                 }
             });
+        });
+    }
+
+    const catalogCloseElement = document.querySelector(".catalog-menu__close");
+    if(catalogCloseElement) {
+        catalogCloseElement.addEventListener("click", function() {
+            catalogCloseElement.closest(".catalog-menu").classList.remove("active");
+
+            if(burgerElement) {
+                burgerElement.classList.remove("active");
+            }
+
+            scrollNone();
         });
     }
 
@@ -185,6 +199,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 navigator.clipboard.writeText(copyText);
             });
+        });
+    }
+
+    if(window.innerWidth < 768) {
+        const catalogTabContent = document.querySelectorAll(".catalog-menu__content");
+        if(catalogTabContent) {
+            let splide = new Splide('.catalog-menu__content', {
+                perPage: 1,
+                arrows: false,
+            });
+            splide.mount();
+        }
+    }
+
+    const catalogSubcategoryElements = document.querySelectorAll(".catalog-item__subcategory");
+    if(catalogSubcategoryElements.length) {
+        catalogSubcategoryElements.forEach((catalogSubcategoryElement) => {
+            const imageElement = catalogSubcategoryElement.closest(".catalog-item").querySelector(".catalog-item__image img");
+            const defaultImageSrc = imageElement.getAttribute("src");
+            const imageSrc = catalogSubcategoryElement.getAttribute("data-image");
+
+            if(imageSrc) {
+                catalogSubcategoryElement.addEventListener("mouseover", function() {
+                    imageElement.setAttribute("src", imageSrc);
+                });
+                catalogSubcategoryElement.addEventListener("mouseleave", function() {
+                    imageElement.setAttribute("src", defaultImageSrc);
+                });
+            }
         });
     }
 

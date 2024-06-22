@@ -56,9 +56,10 @@ function tabsInit() {
 function headerFixed() {
     const scrollTop = document.documentElement.scrollTop;
     const headerWrapperElement = document.querySelector(".header__wrapper");
-    const headerHeight = headerWrapperElement.closest(".header").offsetHeight;
+    const headerTopElement = document.querySelector(".header__top");
+    const headerTopHeight = headerTopElement.offsetHeight;
 
-    if (scrollTop <= headerHeight) {
+    if (scrollTop <= headerTopHeight) {
         headerWrapperElement.classList.remove("fixed");
     } else {
         headerWrapperElement.classList.add("fixed");
@@ -78,7 +79,11 @@ function scrollNone() {
     const modals = document.querySelectorAll(".modal");
     const contactBadge = document.querySelector(".contact-badge");
     const cartBadge = document.querySelector("#chart-badge");
-    let lockBody = (contactBadge.classList.contains("active") && window.innerWidth < 768) || cartBadge.classList.contains("active");
+    const catalogMenu = document.querySelector(".catalog-menu");
+    let lockBody =
+        (contactBadge.classList.contains("active") && window.innerWidth < 768)
+        || cartBadge.classList.contains("active") ||
+        (catalogMenu.classList.contains("active") && window.innerWidth < 768);
 
     modals.forEach((modal) => {
         if(modal.classList.contains("active")) {

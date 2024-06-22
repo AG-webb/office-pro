@@ -2,6 +2,7 @@
     max-width: 100%;
     position: relative;
     z-index: z(header);
+    min-height: rem(95.5);
 
     &__top {
         @extend %flex;
@@ -557,6 +558,10 @@
     
         &__badge {
             margin-left: rem(24);
+
+            &#chart-badge {
+                margin-right: rem(10);
+            }
         }
     }
     
@@ -630,6 +635,10 @@
                 .header__dropdown.contact-dropdown {
                     top: 0;
                 }
+            }
+
+            &#chart-badge {
+                margin-right: 0;
             }
         }
     

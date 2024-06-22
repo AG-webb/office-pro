@@ -507,6 +507,20 @@
 
 <div class="catalog-menu">
     <div class="catalog-menu__wrap">
+        <div class="catalog-menu__header">
+            <div class="catalog-menu__title">Каталог</div>
+            <div class="catalog-menu__close">
+                <i class="icon icon-close"></i>
+            </div>
+            <div class="catalog-menu__search">
+                <div class="form-field form-field_default form-field_sm">
+                    <div class="form-field__target">
+                        <input type="search" name="search_query" placeholder="поиск" class="form-field__input">
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-menu__pagination"></div>
+        </div>
         <div class="catalog-menu__tabs tabs">
             <div class="catalog-menu__controls tabs__control">
                 <a href="?p=stationery" class="catalog-menu__tab tab active" data-tab="stationery">
@@ -530,215 +544,1088 @@
                     <span>Чай, кофе, сахар</span>
                 </a>
             </div>
-            <div class="catalog-menu__content tabs__content">
-                <div id="stationery" class="tab-content active">
-                    <div class="catalog-menu__categories">
-                        <div class="row">
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+            <div class="catalog-menu__content tabs__content splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <div id="stationery" class="tab-content splide__slide active">
+                            <div class="catalog-menu__category-title">Канцелярские товары</div>
+                            <div class="catalog-menu__categories">
+                                <div class="row">
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-2.png">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-3.png">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-4.png">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-5.png">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-4.png">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-3.png">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory" data-image="assets/img/draft/category-2.png">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+                        </div>
+                        <div id="household" class="tab-content splide__slide">
+                            <div class="catalog-menu__category-title">Хозяйственные товары</div>
+                            <div class="catalog-menu__categories">
+                                <div class="row">
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category-2.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Файлы, папки, регистры</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+                        </div>
+                        <div id="office-furniture" class="tab-content splide__slide">
+                            <div class="catalog-menu__category-title">Офисная мебель</div>
+                            <div class="catalog-menu__categories">
+                                <div class="row">
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category-3.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Мелкоофисная продукция</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+                        </div>
+                        <div id="computer-accessories" class="tab-content splide__slide">
+                            <div class="catalog-menu__category-title">Компьютерные аксессуары</div>
+                            <div class="catalog-menu__categories">
+                                <div class="row">
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category-4.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Письменные принадлежности</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+                        </div>
+                        <div id="tea-coffee" class="tab-content splide__slide">
+                            <div class="catalog-menu__category-title">Чай, кофе, сахар</div>
+                            <div class="catalog-menu__categories">
+                                <div class="row">
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category-5.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">БКанцелярские товарые</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="column sm-30 md-15 lg-10">
-                                <div class="catalog-menu__category catalog-item">
-                                    <div class="catalog-item__image">
-                                        <img src="assets/img/draft/category.png" alt="Category">
-                                    </div>
-                                    <div class="catalog-item__body">
-                                        <div class="catalog-item__category">
-                                            <a href="#">Бумага для офиса</a>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
+                                            </div>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="catalog-item__links">
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">A4, A3 Бумага для принтеров</a>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для записей</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Лейбелы (самоклейки)</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Конверты</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Бумага для флипчарта,</a>
+                                        </div>
+                                    </div>
+                                    <div class="column sm-10 md-15 lg-10">
+                                        <div class="catalog-menu__category catalog-item">
+                                            <div class="catalog-item__image">
+                                                <img src="assets/img/draft/category.png" alt="Category">
                                             </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">термобумага, фотобумага</a>
-                                            </div>
-                                            <div class="catalog-item__subcategory">
-                                                <a href="#">Копировальная бумага</a>
+                                            <div class="catalog-item__body">
+                                                <div class="catalog-item__category">
+                                                    <a href="#">Бумага для офиса</a>
+                                                </div>
+                                                <div class="catalog-item__links">
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для записей</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Конверты</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">термобумага, фотобумага</a>
+                                                    </div>
+                                                    <div class="catalog-item__subcategory">
+                                                        <a href="#">Копировальная бумага</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -746,18 +1633,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="household" class="tab-content">
-                    2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi laboriosam perferendis minima? Nihil optio tenetur quidem quibusdam amet est corporis, voluptatum saepe laudantium harum, explicabo in sit quam delectus placeat?
-                </div>
-                <div id="office-furniture" class="tab-content">
-                    3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi laboriosam perferendis minima? Nihil optio tenetur quidem quibusdam amet est corporis, voluptatum saepe laudantium harum, explicabo in sit quam delectus placeat?
-                </div>
-                <div id="computer-accessories" class="tab-content">
-                    4. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi laboriosam perferendis minima? Nihil optio tenetur quidem quibusdam amet est corporis, voluptatum saepe laudantium harum, explicabo in sit quam delectus placeat?
-                </div>
-                <div id="tea-coffee" class="tab-content">
-                    5. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi laboriosam perferendis minima? Nihil optio tenetur quidem quibusdam amet est corporis, voluptatum saepe laudantium harum, explicabo in sit quam delectus placeat?
                 </div>
             </div>
         </div>
