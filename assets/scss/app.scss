@@ -18,27 +18,13 @@
     position: relative;
     z-index: 1;
 
-    &:after{
-        content: '';
-        position: absolute;
-        right: rem(-13);
-        top: 0;
-        bottom: 0;
-        width: rem(20);
-        background-color: inherit;
-        z-index: -1;
-        -webkit-transform: skew(-24deg);
-        -moz-transform: skew(-24deg);
-        transform: skew(-24deg);
-    }
     &:before{
         content: '';
         position: absolute;
         left: rem(-13);
+        right: rem(-13);
         top: 0;
         bottom: 0;
-        width: rem(20);
-        background-color: inherit;
         z-index: -1;
         -webkit-transform: skew(-24deg);
         -moz-transform: skew(-24deg);
@@ -47,20 +33,29 @@
 
     &_primary {
         font-size: rem(15);
-        background-color: $color-primary;
         margin-left: rem(12 + 13);
         margin-right: rem(12 + 13);
+        
+        &::before {
+            background-color: $color-primary;
+        }
     }
 
     &_main {
         font-size: rem(13);
-        background-color: $color-main;
         margin-left: rem(16 + 13);
         margin-right: rem(16 + 13);
 
         &.theme-mode {
-            background-color: var(--themeMainColor);
             color: var(--themeSecondaryColor);
+            
+            &::before {
+                background-color: var(--themeMainColor);
+            }
+        }
+
+        &::before {
+            background-color: $color-main;
         }
     }
 
@@ -68,7 +63,13 @@
         font-size: rem(13);
         margin-left: rem(13 + 13);
         margin-right: rem(13 + 13);
-        background: linear-gradient(127.81deg, #E83906 16.48%, #FBB03B 63.48%, #E83906 83.52%);
+        font-style: italic;
+        font-weight: 800;
+        text-transform: uppercase;
+        
+        &::before {
+            background: linear-gradient(127.81deg, #E83906 16.48%, #FBB03B 63.48%, #E83906 83.52%);
+        }
     }
 }
 
@@ -140,5 +141,125 @@
         img {
             width: rem(40);
         }
+    }
+}
+
+
+.main-pagination {
+    .splide__pagination {
+        button {
+            display: inline-block;
+            width: rem(14);
+            height: rem(14);
+            opacity: 0.5;
+            border-radius: 50%;
+            margin-left: rem(20);
+            @include transition(opacity,0.3s,ease);
+            @extend %user-cursor;
+    
+            &.is-active {
+                opacity: 1;
+            }
+        }
+    
+        li:first-child {
+            button {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.main-controls {
+    .splide__arrows {
+        @extend %inline-flex;
+
+        .splide__arrow {
+            @extend %user-cursor;
+            width: rem(40);
+            height: rem(40);
+            background-color: var(--themeMainColor);
+            border-radius: 50%;
+
+            &:disabled {
+                opacity: 0.6;
+            }
+
+            svg {
+                width: rem(20);
+
+                path {
+                    fill: var(--themeSecondaryColor);
+                }
+            }
+
+            &.splide__arrow--prev {
+                svg {
+                    @include rotate(-180);
+                }
+            }
+            &.splide__arrow--next {
+                margin-left: rem(24);
+            }
+        }
+    }
+}
+
+.video-player {
+    @extend %flex;
+    width: 100%;
+
+    &__wrap {
+        position: relative;
+        width: 100%;
+
+        video {
+            width: 100%;
+        }  
+    }
+
+    &__control {
+        @include center-absolute(both);
+        opacity: 0.8;
+        z-index: 1;
+        @extend %user-cursor;
+
+        img {
+            width: rem(62);
+        }
+    }
+
+    &.playing {
+        .video-player {
+            &__control {
+                display: none;
+            }
+        }
+    }
+}
+
+.product-showcase {
+    overflow: hidden;
+}
+
+.products-slider {
+    position: relative;
+
+    .splide__track {
+        padding-top: rem(32);
+        padding-bottom: rem(32);
+        margin-left: rem(-42);
+        margin-right: rem(-42);
+    }
+
+    &__slide {
+        padding: 0 rem(10);
+    }
+
+    .splide__arrows {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include translate(0, -100%);
     }
 }

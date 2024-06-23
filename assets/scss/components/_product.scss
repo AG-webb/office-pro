@@ -52,7 +52,7 @@
     &__badges {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: rem(-20);
         @extend %flex;
         @extend %align-bottom;
         @include flex-flow(column, nowrap);
@@ -233,7 +233,7 @@
             &__row {
                 font-size: rem(12);
                 margin-bottom: 0;
-        
+
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -244,7 +244,7 @@
                     font-size: rem(13);
                 }
             }
-        
+
             &__label {
                 text-align: right;
             }
@@ -254,7 +254,7 @@
 
 .product-counter {
     @extend %flex;
-    @include transition(all,0.3s,ease);
+    @include transition(all, 0.3s, ease);
     color: map-get($color-scheme, 'main-03');
 
     &__decrement {
@@ -270,7 +270,7 @@
         position: relative;
 
         &::after {
-            content: "";
+            content: '';
             @include center-absolute(vertical);
             background-color: map-get($color-scheme, 'main-03');
         }
@@ -298,7 +298,7 @@
 
     &__value {
         @include flex(1, 1, auto);
-        
+
         input {
             @include font(normal, 30, 1, inherit, 0);
             text-align: center;
@@ -334,7 +334,7 @@
                 width: rem(60);
                 height: rem(50);
                 @include font(300, 50, 1, inherit, 0);
-                
+
                 &::after {
                     width: rem(2);
                     height: rem(20);
@@ -353,7 +353,7 @@
                 width: rem(30);
                 height: rem(33);
                 @include font(300, 33, 1, inherit, 0);
-                
+
                 &::after {
                     width: rem(2);
                     height: rem(16);
@@ -370,6 +370,34 @@
     }
 }
 
+@media (max-width: $media-md) {
+    .main-product {
+        .product {
+            &__top {
+                font-size: rem(14);
+            }
+    
+            &__img {
+                img {
+                    width: rem(160);
+                }
+            }
+        }
+    }
+
+    .product-info {
+        &__row {
+            font-size: rem(14);
+            line-height: rem(18);
+        }
+    
+        &__price {
+            &_primary {
+                font-size: rem(15);
+            }
+        }
+    }
+}
 
 @media (max-width: $media-sm) {
     .product {
@@ -385,21 +413,51 @@
                 &__wrap {
                     padding: rem(10);
                 }
-    
+
                 &__top {
                     font-size: rem(10);
                 }
-    
+
                 &__img {
                     img {
                         width: rem(100);
                     }
                 }
-    
+
                 &__title {
                     font-size: rem(10);
                     line-height: rem(12);
                 }
+            }
+        }
+    }
+
+    .main-product {
+        .product {
+            &__wrap {
+                padding: rem(15);
+            }
+        
+            &__top {
+                font-size: rem(10);
+            }
+        
+            &__code {
+                padding-right: rem(8);
+            }
+        
+            &__img {
+                img {
+                    width: rem(115);
+                }
+            }
+        
+            &__badges {
+                right: 0;
+            }
+        
+            &__title {
+                font-size: rem(10);
             }
         }
     }
@@ -413,21 +471,21 @@
         &__header {
             padding-left: rem(80);
         }
-    
+
         &__code {
             width: initial;
             padding-right: rem(6);
         }
-    
+
         &__brand {
             padding-right: rem(32);
         }
-    
+
         &__remove {
             top: rem(-4);
             right: rem(-4);
         }
-    
+
         &__preview {
             @include flex(0, 0, rem(70));
         }
@@ -441,7 +499,7 @@
         &__title {
             min-height: rem(40);
         }
-    
+
         &__img {
             img {
                 width: rem(70);
@@ -478,15 +536,47 @@
     }
 
     .product-info {
+        &__row {
+            font-size: rem(12);
+            line-height: rem(16);
+        }
+    
+        &__price {
+            &_primary {
+                font-size: rem(13);
+            }
+        }
+
         &_xs {
             .product-info {
                 &__row {
                     font-size: rem(10);
                 }
-    
+
                 &__price {
                     &_primary {
                         font-size: rem(11);
+                    }
+                }
+            }
+        }
+    }
+
+    .product-counter {
+        &_sm {
+            border-radius: rem(5);
+
+            .product-counter {
+                &__btn {
+                    width: rem(36);
+                    height: rem(30);
+                    font-size: rem(30);
+                    line-height: rem(30);
+                }
+
+                &__value {
+                    input {
+                        font-size: rem(17);
                     }
                 }
             }

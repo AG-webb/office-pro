@@ -544,7 +544,7 @@
                     <span>Чай, кофе, сахар</span>
                 </a>
             </div>
-            <div class="catalog-menu__content tabs__content splide">
+            <div class="catalog-menu__content tabs__content splide main-pagination">
                 <div class="splide__track">
                     <div class="splide__list">
                         <div id="stationery" class="tab-content splide__slide active">

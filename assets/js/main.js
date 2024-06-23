@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     headerFixed();
     tabsInit();
-    
+
     const mainOverlayElement = document.querySelector(".main-overlay");
     const burgerElement = document.querySelector(".burger");
 
     const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
-    if(catalogTabElements.length) {
+    if (catalogTabElements.length) {
         catalogTabElements.forEach((catalogTabElement) => {
-            catalogTabElement.addEventListener("click", function(e) {
-                if(document.querySelector(".burger").classList.contains("active")) {
+            catalogTabElement.addEventListener("click", function (e) {
+                if (document.querySelector(".burger").classList.contains("active")) {
                     e.preventDefault();
                 }
             });
@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const catalogCloseElement = document.querySelector(".catalog-menu__close");
-    if(catalogCloseElement) {
-        catalogCloseElement.addEventListener("click", function() {
+    if (catalogCloseElement) {
+        catalogCloseElement.addEventListener("click", function () {
             catalogCloseElement.closest(".catalog-menu").classList.remove("active");
 
-            if(burgerElement) {
+            if (burgerElement) {
                 burgerElement.classList.remove("active");
             }
 
@@ -61,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
             togglerTriggerElement.addEventListener("click", function () {
                 const toggler = togglerTriggerElement.closest(".toggler");
                 toggler.classList.toggle("active");
-                
-                if(togglerTriggerElement.getAttribute("id") === "theme-switcher") {
+
+                if (togglerTriggerElement.getAttribute("id") === "theme-switcher") {
                     document.body.classList.toggle("dark-theme");
                 }
-                if(togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge") {
+                if (togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge") {
                     mainOverlayElement.classList.toggle("active");
                 }
-                if(togglerTriggerElement.closest(".burger")) {
+                if (togglerTriggerElement.closest(".burger")) {
                     document.querySelector(".catalog-menu").classList.toggle("active");
                 }
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             togglerClose.addEventListener("click", function () {
                 togglerClose.closest(".toggler").classList.remove("active");
 
-                if(togglerClose.closest("#chart-badge")) {
+                if (togglerClose.closest("#chart-badge")) {
                     mainOverlayElement.classList.remove("active");
                 }
 
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         counterInput.value = newSize;
                     }
 
-                    if(newSize <= min) {
+                    if (newSize <= min) {
                         counterContainer.classList.remove("filled");
                     }
                 }
@@ -192,9 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const copyToClipboardElements = document.querySelectorAll("[data-copy]");
-    if(copyToClipboardElements.length) {
+    if (copyToClipboardElements.length) {
         copyToClipboardElements.forEach((copyToClipboardElement) => {
-            copyToClipboardElement.addEventListener("click", function() {
+            copyToClipboardElement.addEventListener("click", function () {
                 let copyText = copyToClipboardElement.getAttribute("data-copy");
 
                 navigator.clipboard.writeText(copyText);
@@ -202,9 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if(window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
         const catalogTabContent = document.querySelectorAll(".catalog-menu__content");
-        if(catalogTabContent) {
+        if (catalogTabContent) {
             let splide = new Splide('.catalog-menu__content', {
                 perPage: 1,
                 arrows: false,
@@ -213,21 +213,84 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    const previewSliderElements = document.querySelectorAll(".preview-slider");
+    if (previewSliderElements.length) {
+        previewSliderElements.forEach((previewSliderElement) => {
+            const splideWrapper = previewSliderElement.querySelector(".splide");
+            let splide = new Splide(splideWrapper, {
+                perPage: 1,
+                arrows: false,
+            });
+            splide.mount();
+
+            splide.on('moved', function () {
+                const playingVideoElement = previewSliderElement.querySelector(".video-player.playing");
+                if (playingVideoElement) {
+                    const videoElement = playingVideoElement.querySelector("video");
+                    videoElement.pause();
+                    playingVideoElement.classList.remove("playing");
+                }
+            });
+        });
+    }
+
+    const videoPlayerElements = document.querySelectorAll(".video-player");
+    if (videoPlayerElements.length) {
+        videoPlayerElements.forEach((videoPlayerElement) => {
+            const videoElement = videoPlayerElement.querySelector("video");
+
+            videoPlayerElement.addEventListener("click", function (e) {
+                if (e.target.closest(".video-player__control")) {
+                    videoElement.play();
+                    videoPlayerElement.classList.add("playing");
+                } else if (e.target.closest(".playing")) {
+                    videoElement.pause();
+                    videoPlayerElement.classList.remove("playing");
+                }
+            });
+        });
+    }
+
     const catalogSubcategoryElements = document.querySelectorAll(".catalog-item__subcategory");
-    if(catalogSubcategoryElements.length) {
+    if (catalogSubcategoryElements.length) {
         catalogSubcategoryElements.forEach((catalogSubcategoryElement) => {
             const imageElement = catalogSubcategoryElement.closest(".catalog-item").querySelector(".catalog-item__image img");
             const defaultImageSrc = imageElement.getAttribute("src");
             const imageSrc = catalogSubcategoryElement.getAttribute("data-image");
 
-            if(imageSrc) {
-                catalogSubcategoryElement.addEventListener("mouseover", function() {
+            if (imageSrc) {
+                catalogSubcategoryElement.addEventListener("mouseover", function () {
                     imageElement.setAttribute("src", imageSrc);
                 });
-                catalogSubcategoryElement.addEventListener("mouseleave", function() {
+                catalogSubcategoryElement.addEventListener("mouseleave", function () {
                     imageElement.setAttribute("src", defaultImageSrc);
                 });
             }
+        });
+    }
+
+    const productsSliderElements = document.querySelectorAll(".products-slider");
+    if (productsSliderElements.length) {
+        productsSliderElements.forEach((productsSliderElement) => {
+            const splideWrapper = productsSliderElement.querySelector(".splide");
+            let productSlider = new Splide(splideWrapper, {
+                perPage: 5,
+                arrows: true,
+                pagination: false,
+                padding: '2rem',
+                breakpoints: {
+                    1023: {
+                        perPage: 3,
+                    },
+                    767: {
+                        perPage: 2,
+                    },
+                    400: {
+                        perPage: 1,
+                    },
+                }
+            });
+            productSlider.mount();
         });
     }
 
@@ -263,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        if(!e.target.closest("#chart-badge")) {
+        if (!e.target.closest("#chart-badge")) {
             mainOverlayElement.classList.remove("active");
         }
 
@@ -272,6 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Scroll
-document.addEventListener("scroll", function() {
+document.addEventListener("scroll", function () {
     headerFixed();
 });

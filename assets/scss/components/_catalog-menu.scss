@@ -235,24 +235,7 @@
                 margin-bottom: rem(16);
 
                 button {
-                    display: inline-block;
-                    width: rem(10);
-                    height: rem(10);
                     background-color: var(--themeMainColor);
-                    opacity: 0.5;
-                    border-radius: 50%;
-                    margin-left: rem(20);
-                    @include transition(opacity,0.3s,ease);
-
-                    &.is-active {
-                        opacity: 1;
-                    }
-                }
-
-                li:first-child {
-                    button {
-                        margin-left: 0;
-                    }
                 }
             }
 
@@ -265,12 +248,7 @@
                     left: initial;
                     right: initial;
                     visibility: visible;
-                    pointer-events: auto;
                     opacity: 1;
-
-                    &.active {
-                        pointer-events: auto;
-                    }
                 }
             }
         }
@@ -295,6 +273,16 @@
             visibility: visible;
             opacity: 1;
             pointer-events: auto;
+
+            .catalog-menu {
+                &__content {
+                    &.tabs__content {
+                        .tab-content {
+                            pointer-events: auto;
+                        }
+                    }
+                }
+            }
         }
     }
 

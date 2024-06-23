@@ -2,4 +2,43 @@
 @import "../components/_product";
 
 
+.main-sliders {
+    margin-bottom: rem(46);
+    
+    &__item {
+        .preview-slider {
+            &__slide {
+                height: rem(460);
+                position: relative;
+                @extend %flex;
+
+                & > img, video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.preview-slider {
+    position: relative;
+    border-radius: rem(20);
+    overflow: hidden;
+
+    .splide__pagination {
+        position: absolute;
+        left: rem(24);
+        bottom: rem(24);
+
+        button {
+            background-color: #fff;
+        }
+    }
+}
+
 @import "_home.media";
