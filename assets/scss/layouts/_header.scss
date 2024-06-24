@@ -597,6 +597,8 @@
 
 @media (max-width: $media-sm) {
     .header {
+        min-height: rem(148);
+
         &__wrapper {
             margin: 0;
             border-radius: 0;
