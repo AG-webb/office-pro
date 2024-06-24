@@ -16,7 +16,15 @@
 }
 
 @media(max-width: $media-md) {
-
+    .products-slider {
+        &_landscape {
+            .products-slider {
+                &__slide {
+                    padding: 0 rem(5);
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: $media-sm) {
@@ -78,6 +86,20 @@
         &__control {
             img {
                 width: rem(40);
+            }
+        }
+    }
+
+    .products-slider {
+        &__slide {
+            padding: 0 rem(5);
+            
+            .product {
+                width: rem(200);
+
+                &.landscape-product {
+                    width: rem(240);
+                }
             }
         }
     }

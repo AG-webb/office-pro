@@ -250,16 +250,29 @@
         padding-bottom: rem(32);
         margin-left: rem(-42);
         margin-right: rem(-42);
+        overflow: visible;
     }
 
     &__slide {
         padding: 0 rem(10);
+        @extend %flex;
+
+        .product {
+            width: 100%;
+        }
+        // opacity: 0;
+        // @include transition(opacity,0.3s,ease);
+
+        // &.is-visible {
+        //     opacity: 1;
+        // }
     }
 
     .splide__arrows {
         position: absolute;
         top: 0;
         right: 0;
+        z-index: 1;
         @include translate(0, -100%);
     }
 }

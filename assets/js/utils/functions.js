@@ -53,6 +53,23 @@ function tabsInit() {
     }
 }
 
+function dynamicAppendInit() {
+    const dataAppendElements = document.querySelectorAll("[data-append]");
+    if(dataAppendElements.length) {
+        dataAppendElements.forEach((dataAppendElement) => {
+            let [mediaSize, appendBlockClass] = dataAppendElement.getAttribute("data-append").split(", ");
+
+            if (window.innerWidth < mediaSize) {
+                const appendBlockElement = document.querySelector(appendBlockClass);
+                const isElementAppended = !!appendBlockElement.querySelector(dataAppendElement.getAttribute("class"));
+                if(appendBlockElement && isElementAppended) {
+                    dataAppendElement.append(appendBlockClass);
+                }
+            }
+        });
+    }
+}
+
 function headerFixed() {
     const scrollTop = document.documentElement.scrollTop;
     const headerWrapperElement = document.querySelector(".header__wrapper");

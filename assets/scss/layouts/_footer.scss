@@ -1,3 +1,167 @@
 .footer {
+    background-color: $color-main;
+    color: #fff;
+
+    &__wrapper {
+        padding: rem(15);
+        font-size: rem(14);
+    }
+
+    &__box {
+        width: 100%;
+        padding: rem(50) 0 rem(50) rem(50);
+        border: rem(1) solid rgba(255, 255, 255, 0.05);
+    }
+
+    &__logo {
+        img {
+            width: rem(160);
+            margin-bottom: rem(26);
+        }
+    }
+
+    &__logos {
+        img {
+            width: rem(142);
+        }
+    }
+
+    &__links {
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+        @extend %align-top;
+        max-width: rem(160);
+    }
+
+    &__link {
+        margin-bottom: rem(14);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a.footer__link {
+        text-decoration: underline;
+    }
+
+    &__area {
+        margin-bottom: rem(25);
+    }
+
+    &__title {
+        color: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+
+        &+.footer__links {
+            margin-top: rem(20);
+        }
+        &+.social-icons {
+            margin-top: rem(4);
+        }
+    }
+
+    &__social-icons {
+        img {
+            width: rem(40);
+        }
+    }
+
+    &__payment-img {
+        padding-top: rem(24);
+
+        img {
+            width: rem(106);
+        }
+    }
+
+    &__info-title {
+        font-weight: bold;
+        margin-bottom: rem(27);
+    }
+
+    &__info-address, &__info-phone {
+        margin-bottom: rem(16);
+    }
+
+    &__info-phone {
+        @extend %flex;
+        @extend %align-top;
+        @include flex-flow(column, nowrap);
+    }
+
+    &__copyright {
+        padding-left: rem(46);
+        margin-top: rem(-110);
+    }
+}
+
+
+@media (max-width: $media-md) {
+    .footer {
+        &__box {
+            padding: rem(32) 0 rem(32) rem(32);
+        }
+        
+        &__payment, &__info {
+            margin-top: rem(24);
+        }
     
+        &__copyright {
+            padding-left: 0;
+            margin-top: rem(24);
+        }
+    }
+}
+
+@media (max-width: $media-sm) {
+    .footer {
+        &__wrapper {
+            padding: rem(16) 0;
+            font-size: rem(15);
+        }
+    
+        &__box {
+            padding: 0;
+            border: 0;
+        }
+
+        &__logos {
+            margin-bottom: rem(16);
+        }
+
+        &__nav {
+            margin-bottom: rem(24);
+        }
+
+        &__links {
+            max-width: initial;
+        }
+    
+        &__link {
+            margin-bottom: rem(10);
+        }
+    
+        &__area {
+            margin-bottom: rem(24);
+        }
+    
+        &__title {
+            &+.footer__links {
+                margin-top: rem(16);
+            }
+        }
+    
+        &__info-title {
+            margin-bottom: rem(16);
+        }
+    
+        &__info-address, &__info-phone {
+            margin-bottom: rem(16);
+        }
+
+        &__copyright {
+            font-size: rem(10);
+        }
+    }   
 }

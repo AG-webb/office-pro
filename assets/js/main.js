@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+    
 
     const counterBtnElements = document.querySelectorAll(".product-counter__btn");
     if (counterBtnElements.length) {
@@ -278,19 +279,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 arrows: true,
                 pagination: false,
                 padding: '2rem',
+                perMove: 1,
                 breakpoints: {
                     1023: {
                         perPage: 3,
                     },
                     767: {
                         perPage: 2,
+                        autoWidth: true,
                     },
-                    400: {
-                        perPage: 1,
-                    },
+                    // 400: {
+                    //     perPage: 1,
+                    // },
                 }
             });
             productSlider.mount();
+        });
+    }
+
+    const productCardElements = document.querySelectorAll(".landscape-product");
+    if(productCardElements.length && window.innerWidth < 1024) {
+        productCardElements.forEach((productCardElement) => {
+            const gradientBadge = productCardElement.querySelector(".badge.badge_gradient");
+            const productTop = productCardElement.querySelector(".product__top");
+            const productBadges = productCardElement.querySelector(".product__badges");
+            const productBadgesLabel = productCardElement.querySelector(".product-info__label_badges");
+
+            if(gradientBadge && productTop) {
+                productTop.append(gradientBadge);
+            }
+            if(productBadges && productBadgesLabel) {
+                productBadgesLabel.append(productBadges);
+            }
         });
     }
 

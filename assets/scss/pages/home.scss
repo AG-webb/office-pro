@@ -41,4 +41,12 @@
     }
 }
 
+.product-showcase {
+    margin-bottom: rem(44);
+
+    &__title {
+        word-wrap: break-word;
+    }
+}
+
 @import "_home.media";

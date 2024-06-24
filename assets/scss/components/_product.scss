@@ -3,6 +3,7 @@
     background-color: #fff;
     border-radius: rem(10);
     color: $color-main;
+    @extend %flex;
 
     &__wrap {
         padding: rem(20);
@@ -212,6 +213,11 @@
         @include flex(0, 0, 50%);
         max-width: 50%;
 
+        &:only-child {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+        }
+
         &_sale {
             color: $color-primary;
             text-decoration: line-through;
@@ -226,6 +232,11 @@
     &__label {
         @include flex(0, 0, 50%);
         max-width: 50%;
+
+        &:only-child {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+        }
     }
 
     &_xs {
@@ -385,6 +396,127 @@
         }
     }
 
+    .landscape-product {
+        .badge {
+            height: rem(22);
+            line-height: rem(22);
+
+            &_primary {
+                margin: 0 rem(4);
+                font-size: rem(13);
+            }
+            &_main {
+                margin: 0 rem(4);
+                font-size: rem(11);
+            }
+            &_gradient {
+                font-size: rem(12);
+                margin: 0 rem(11);
+            }
+
+            &::before {
+                left: rem(-6);
+                right: rem(-6);
+            }
+        }
+
+        .product {
+            &__wrap {
+                padding: rem(12);
+            }
+
+            &__header {
+                display: flex;
+                display: -ms-flexbox;
+                @include flex-flow(row, wrap);
+                margin-bottom: rem(7);
+            }
+
+            &__top {
+                @include flex(0, 0, 100%);
+                font-size: rem(12);
+                margin-bottom: 0;
+            }
+
+            &__brand, &__code {
+                padding-bottom: rem(7);
+            }
+
+            &__preview {
+                @include flex(0, 0, rem(70));
+                max-width: rem(70);
+                margin-bottom: 0;
+                position: static;
+            }
+
+            &__title {
+                @include flex(1, 1, auto);
+                max-width: calc(100% - rem(80));
+                margin-bottom: 0;
+                font-size: rem(11);
+                line-height: rem(14);
+                margin-left: rem(10);
+                padding: rem(5) 0 rem(5) 0;
+                border-bottom: rem(1) solid map-get($color-scheme, 'main-02');
+                
+                span {
+                    @include max-lines(4);
+                }
+            }
+
+            &__badges {
+                position: relative;
+                bottom: initial;
+                right: initial;
+                margin-top: rem(-12);
+            }
+
+            &__info {
+                margin-bottom: rem(8);
+
+                .product-info {
+                    &__row {
+                        font-size: rem(12);
+                        line-height: rem(14);
+                    }
+
+                    &__label {
+                        text-align: right;
+                    }
+                
+                    &__price {
+                        &_primary {
+                            font-size: rem(13);
+                        }
+                    }
+                }
+            }
+
+            &__counter {
+                .product-counter {
+                    &__value {
+                        input {
+                            font-size: rem(20);
+                        }
+                    }
+                
+                    &_sm {
+                        .product-counter {
+                            &__btn {
+                                height: rem(40);
+                                font-size: rem(40);
+
+                                span {
+                                    line-height: rem(40);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .product-info {
         &__row {
             font-size: rem(14);
@@ -458,6 +590,60 @@
         
             &__title {
                 font-size: rem(10);
+            }
+        }
+    }
+
+    .landscape-product {
+        .badge {
+            height: rem(22);
+            line-height: rem(22);
+
+            &_primary {
+                margin: 0 rem(4);
+                font-size: rem(13);
+            }
+            &_main {
+                margin: 0 rem(4);
+                font-size: rem(11);
+            }
+            &_gradient {
+                font-size: rem(12);
+                margin: 0 rem(11);
+            }
+
+            &::before {
+                left: rem(-6);
+                right: rem(-6);
+            }
+        }
+
+        .product {
+            &__counter {
+                .product-counter {
+                    &__value {
+                        input {
+                            font-size: rem(20);
+                        }
+                    }
+                
+                    &_sm {
+                        .product-counter {
+                            &__btn {
+                                width: rem(36);
+                                height: rem(30);
+                                font-size: rem(30);
+                                line-height: rem(30);
+                            }
+            
+                            &__value {
+                                input {
+                                    font-size: rem(17);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
