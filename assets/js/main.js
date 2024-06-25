@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 perPage: 5,
                 arrows: true,
                 pagination: false,
-                padding: '2rem',
+                // padding: '2rem',
                 perMove: 1,
                 breakpoints: {
                     1023: {
