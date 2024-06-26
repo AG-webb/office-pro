@@ -5,10 +5,21 @@
 .main-sliders {
     margin-bottom: rem(46);
     
+    &__wrap {
+        @extend %flex;
+        @extend %align-between;
+        aspect-ratio: 3;
+    }
+
     &__item {
         .preview-slider {
+            height: 100%;
+
+            &__wrap, .splide__track {
+                height: 100%;
+            }
+
             &__slide {
-                height: rem(460);
                 position: relative;
                 @extend %flex;
 
@@ -21,6 +32,13 @@
                     object-fit: cover;
                 }
             }
+        }
+
+        &_sm {
+            aspect-ratio: 9 / 16;
+        }
+        &_lg {
+            aspect-ratio: 16 / 9;
         }
     }
 }

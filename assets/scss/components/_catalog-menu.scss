@@ -325,6 +325,10 @@
             .splide__pagination {
                 margin-bottom: rem(16);
 
+                li {
+                    pointer-events: none;
+                }
+
                 button {
                     background-color: var(--themeMainColor);
                 }
@@ -373,6 +377,12 @@
                 &__content {
                     &.tabs__content {
                         .tab-content {
+                            pointer-events: auto;
+                        }
+                    }
+
+                    .splide__pagination {
+                        li {
                             pointer-events: auto;
                         }
                     }

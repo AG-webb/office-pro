@@ -25,6 +25,24 @@
             }
         }
     }
+
+    .video-player {
+        &__control {
+            img {
+                width: rem(48);
+            }
+        }
+    }
+
+    .main-pagination {
+        .splide__pagination {
+            button {
+                width: rem(12);
+                height: rem(12);
+                margin-left: rem(16);
+            }
+        }
+    }
 }
 
 @media(max-width: $media-sm) {
@@ -103,8 +121,4 @@
             }
         }
     }
-}
-
-@media(max-width: $media-xs) {
-  
 }
