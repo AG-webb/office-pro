@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-    
+
 
     const counterBtnElements = document.querySelectorAll(".product-counter__btn");
     if (counterBtnElements.length) {
@@ -206,11 +206,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth < 768) {
         const catalogTabContent = document.querySelectorAll(".catalog-menu__content");
         if (catalogTabContent) {
-            let splide = new Splide('.catalog-menu__content', {
+            let catalogMenuSlider = new Splide('.catalog-menu__content', {
                 perPage: 1,
                 arrows: false,
             });
-            splide.mount();
+            catalogMenuSlider.mount();
+            catalogMenuSlider.on('move', function (index) {
+                const activeCatalogTabTitle = document.querySelector(".catalog-menu__tab.active");
+                activeCatalogTabTitle.classList.remove("active");
+
+                const currentTabTitle = document.querySelectorAll(".catalog-menu__tab")[index];
+                currentTabTitle.classList.add("active");
+            });
         }
     }
 
@@ -298,17 +305,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const productCardElements = document.querySelectorAll(".landscape-product");
-    if(productCardElements.length && window.innerWidth < 1024) {
+    if (productCardElements.length && window.innerWidth < 1024) {
         productCardElements.forEach((productCardElement) => {
             const gradientBadge = productCardElement.querySelector(".badge.badge_gradient");
             const productTop = productCardElement.querySelector(".product__top");
             const productBadges = productCardElement.querySelector(".product__badges");
             const productBadgesLabel = productCardElement.querySelector(".product-info__label_badges");
 
-            if(gradientBadge && productTop) {
+            if (gradientBadge && productTop) {
                 productTop.append(gradientBadge);
             }
-            if(productBadges && productBadgesLabel) {
+            if (productBadges && productBadgesLabel) {
                 productBadgesLabel.append(productBadges);
             }
         });

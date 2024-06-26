@@ -3,6 +3,7 @@
     position: relative;
     z-index: z(header);
     min-height: rem(95.5);
+    margin-bottom: rem(66);
 
     &__top {
         @extend %flex;
@@ -32,7 +33,7 @@
 
         &_sm {
             img {
-                width: rem(154);
+                width: rem(359);
             }
         }
     }
@@ -45,6 +46,7 @@
         color: #fff;
         @extend %flex;
         @extend %align-middle;
+        @extend %align-center;
         @include transition(all,0.3s,ease);
         z-index: z(header);
         
@@ -79,7 +81,7 @@
     &__badges {
         @extend %flex;
         @extend %align-middle;
-        margin-left: auto;
+        padding-right: rem(24);
     }
 
     &__badge {
@@ -519,6 +521,18 @@
 }
 
 
+@media (max-width: $media-3xl) {
+        .header {
+            &__logo {
+                &_sm {
+                    img {
+                        width: rem(154);
+                    }
+                }
+            }
+        }
+}
+
 @media (max-width: $media-md) {
     .header {  
         &__top {
@@ -603,15 +617,16 @@
             margin: 0;
             border-radius: 0;
             padding: rem(12) rem(20);
+            @include justify(flex-start);
             @include flex-flow(row, wrap);
         }
     
         &__burger {
             margin: 0;
-            @include flex(0, 0, rem(22));
-            max-width: rem(22);
+            @include flex(0, 0, 20%);
+            max-width: 20%;
             @include order(1);
-            margin-right: rem(16);
+            margin-right: 0;
         }
     
         &__search {
@@ -622,8 +637,11 @@
         }
     
         &__badges {
-            @include flex(0, 0, auto);
+            @include flex(1, 1, 80%);
+            max-width: 80%;
             @include order(2);
+            padding-right: 0;
+            @include justify(space-between);
         }
     
         &__badge {

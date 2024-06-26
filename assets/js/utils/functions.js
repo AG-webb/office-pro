@@ -75,11 +75,14 @@ function headerFixed() {
     const headerWrapperElement = document.querySelector(".header__wrapper");
     const headerTopElement = document.querySelector(".header__top");
     const headerTopHeight = headerTopElement.offsetHeight;
+    const catalogMenu = document.querySelector(".catalog-menu");
 
     if (scrollTop <= headerTopHeight) {
         headerWrapperElement.classList.remove("fixed");
+        catalogMenu.classList.remove("fixed");
     } else {
         headerWrapperElement.classList.add("fixed");
+        catalogMenu.classList.add("fixed");
     }
 }
 

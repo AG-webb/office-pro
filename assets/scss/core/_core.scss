@@ -41,6 +41,8 @@ html {
 :root {
     --themeMainColor: #364063;
     --themeSecondaryColor: white;
+    --themeMainColor01: rgba(54, 64, 99, 0.1);
+    --themeMainColor05: rgba(54, 64, 99, 0.5);
 }
 
 body {
@@ -56,6 +58,8 @@ body {
     &.dark-theme {
         --themeSecondaryColor: #364063;
         --themeMainColor: #fff;
+        --themeMainColor01: rgba(255, 255, 255, 0.1);
+        --themeMainColor05: rgba(255, 255, 255, 0.5);
     }
 }
 
