@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     counterContainer.classList.add("filled");
 
                     counterInput.value = newSize;
+
+                    calcProductSale(newSize, counterBtn);
                 } else {
                     const newSize = parseFloat((counterInputVal - step).toFixed(1));
 
@@ -162,9 +164,84 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (newSize <= min) {
                         counterContainer.classList.remove("filled");
                     }
+
+                    calcProductSale(newSize, counterBtn);
                 }
             });
         });
+    }
+
+    function calcProductSale(newSize, counterBtn) {
+        const counterElement = counterBtn.closest(".product-counter");
+        const productBody = counterBtn.closest(".product__body");
+        const productElement = counterBtn.closest(".product");
+        let productPreviewElement;
+        let mainPrice;
+        let productActiveSale;
+        let packageSaleElement;
+        let defaultSaleElement;
+        let boxSaleElement;
+        let packageSize;
+        let boxSize;
+        let defaultSale;
+        let packageSale;
+        let boxSale;
+
+        if(counterElement){
+            mainPrice = +counterElement.getAttribute("data-price");
+            packageSize = +counterElement.getAttribute("data-package");
+            boxSize = +counterElement.getAttribute("data-box");
+            defaultSale = +counterElement.getAttribute("data-sale");
+            packageSale = +counterElement.getAttribute("data-package-sale");
+            boxSale = +counterElement.getAttribute("data-box-sale");
+        }
+        if(productBody) {
+            defaultSaleElement = productBody.querySelector(".default-sale");
+            packageSaleElement = productBody.querySelector(".package-sale");
+            boxSaleElement = productBody.querySelector(".box-sale");
+            productActiveSale = productBody.querySelector(".product-info__row.active");
+        }
+        if(productElement) {
+            productPreviewElement = productElement.querySelector(".product__preview");
+        }
+
+        if(productActiveSale) {
+            productActiveSale.classList.remove("active");
+        }
+
+        if(boxSale && boxSaleElement && newSize >= boxSize) {
+            return boxSaleElement.classList.add("active");
+        }
+        if(packageSale && packageSaleElement && newSize >= packageSize) {
+            const totalSale = (((mainPrice * newSize) * packageSale) / 100);
+            const salesHtml = getGenerateSalesHtml(packageSale, totalSale);
+
+            console.log('====================================');
+            console.log(productPreviewElement);
+            console.log('====================================');
+            if(productPreviewElement) {
+                productPreviewElement.insertAdjacentHTML("beforeend", salesHtml);
+            }
+
+            return packageSaleElement.classList.add("active");
+        }
+
+        if(defaultSaleElement) {
+            defaultSaleElement.classList.add("active");
+        }
+    }
+
+    function getGenerateSalesHtml(sale, totalSale) {
+        return `
+            <div class="product__badges">
+                <div class="badge badge_primary">
+                    <span>-${sale}%</span>
+                </div>
+                <div class="badge badge_main">
+                    <span>Скидка ${totalSale} ֏</span>
+                </div>
+            </div>
+        `
     }
 
     const counterInputElements = document.querySelectorAll(".product-counter__value input");
@@ -287,13 +364,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 pagination: false,
                 // padding: '2rem',
                 perMove: 1,
+                drag: false,
                 breakpoints: {
+                    1149: {
+                        perPage: 4,
+                    },
                     1023: {
                         perPage: 3,
                     },
                     767: {
                         perPage: 2,
-                        autoWidth: true,
+                        drag: true,
+                        // autoWidth: true,
                     },
                     // 400: {
                     //     perPage: 1,

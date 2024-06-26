@@ -60,7 +60,7 @@
     }
 
     &__title {
-        @include font(500, 13, 1, inherit, 0);
+        @include font(500, 13, rem(16), inherit, 0);
         margin-bottom: rem(10);
 
         span {
@@ -207,6 +207,13 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        &.active {
+            .product-info__price {
+                font-weight: bold;
+                font-size: rem(16);
+            }
+        }
     }
 
     &__price {
@@ -222,16 +229,12 @@
             color: $color-primary;
             text-decoration: line-through;
         }
-
-        &_primary {
-            font-weight: bold;
-            font-size: rem(16);
-        }
     }
 
     &__label {
         @include flex(0, 0, 50%);
         max-width: 50%;
+        text-align: right;
 
         &:only-child {
             @include flex(0, 0, 100%);
@@ -334,6 +337,16 @@
                 }
             }
         }
+
+        &:hover {
+            border-color: $color-main;
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        border-color: $color-main;
+        color: $color-main;
     }
 
     &_sm {

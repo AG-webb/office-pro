@@ -734,12 +734,22 @@
         padding-top: 0;
         overflow: auto;
         background-color: var(--themeSecondaryColor);
+        display: flex;
+        display: -ms-flexbox;
+        @include flex-flow(column, nowrap);
+        // @include align-items(center);
         
         &__wrap {
+            @include flex(1, 0, auto);
             width: 100%;
             border-radius: 0;
             background-color: transparent;
             box-shadow: none;
+            display: flex;
+            display: -ms-flexbox;
+            @include justify(center);
+            @include align-items(center);
+            @include flex-flow(column, nowrap);
         }
     }
 
