@@ -116,6 +116,12 @@
     }
 }
 
+.product-fake-img {
+    position: fixed;
+    z-index: 99999;
+    width: 10px;
+}
+
 .chart-product {
     box-shadow: 1.69307px 1.69307px 22.5743px rgba(54, 64, 99, 0.2);
     background-color: #fff;
@@ -217,8 +223,9 @@
     }
 
     &__price {
-        @include flex(0, 0, 50%);
-        max-width: 50%;
+        @include flex(1, 1, auto);
+        // @include flex(0, 0, 50%);
+        // max-width: 50%;
 
         &:only-child {
             @include flex(0, 0, 100%);
@@ -232,8 +239,9 @@
     }
 
     &__label {
-        @include flex(0, 0, 50%);
-        max-width: 50%;
+        @include flex(1, 1, auto);
+        // @include flex(0, 0, 50%);
+        // max-width: 50%;
         text-align: right;
 
         &:only-child {
@@ -270,6 +278,8 @@
     @extend %flex;
     @include transition(all, 0.3s, ease);
     color: map-get($color-scheme, 'main-03');
+    border-color: map-get($color-scheme, 'main-03');
+    border-style: solid;
 
     &__decrement {
         @include flex(0, 0, auto);
@@ -349,8 +359,8 @@
         color: $color-main;
     }
 
-    &_sm {
-        border: rem(2) solid map-get($color-scheme, 'main-03');
+    &_sm, &_md {
+        border-width: rem(2);
         border-radius: rem(9);
 
         .product-counter {
@@ -362,14 +372,13 @@
                 &::after {
                     width: rem(2);
                     height: rem(20);
-                    background-color: map-get($color-scheme, 'main-03');
                 }
             }
         }
     }
 
     &_xs {
-        border: rem(1) solid map-get($color-scheme, 'main-03');
+        border-width: rem(1);
         border-radius: rem(5);
 
         .product-counter {
@@ -381,7 +390,6 @@
                 &::after {
                     width: rem(2);
                     height: rem(16);
-                    background-color: map-get($color-scheme, 'main-03');
                 }
             }
 
@@ -411,25 +419,25 @@
 
     .landscape-product {
         .badge {
-            height: rem(22);
-            line-height: rem(22);
+            height: rem(20);
+            line-height: rem(20);
 
             &_primary {
-                margin: 0 rem(4);
-                font-size: rem(13);
+                margin: 0 rem(9);
+                font-size: rem(11.9);
             }
             &_main {
-                margin: 0 rem(4);
-                font-size: rem(11);
+                margin: 0 rem(10);
+                font-size: rem(10.3);
             }
             &_gradient {
-                font-size: rem(12);
+                font-size: rem(10.4);
                 margin: 0 rem(11);
             }
 
             &::before {
-                left: rem(-6);
-                right: rem(-6);
+                left: rem(-9);
+                right: rem(-9);
             }
         }
 
@@ -447,28 +455,28 @@
 
             &__top {
                 @include flex(0, 0, 100%);
-                font-size: rem(12);
+                font-size: rem(9.6);
                 margin-bottom: 0;
             }
 
             &__brand, &__code {
-                padding-bottom: rem(7);
+                padding-bottom: rem(4);
             }
 
             &__preview {
-                @include flex(0, 0, rem(70));
-                max-width: rem(70);
+                @include flex(0, 0, rem(63));
+                max-width: rem(63);
                 margin-bottom: 0;
                 position: static;
             }
 
             &__title {
                 @include flex(1, 1, auto);
-                max-width: calc(100% - rem(80));
+                max-width: calc(100% - rem(71));
                 margin-bottom: 0;
-                font-size: rem(11);
-                line-height: rem(14);
-                margin-left: rem(10);
+                font-size: rem(9);
+                line-height: rem(11);
+                margin-left: rem(8);
                 padding: rem(5) 0 rem(5) 0;
                 border-bottom: rem(1) solid map-get($color-scheme, 'main-02');
                 
@@ -481,7 +489,8 @@
                 position: relative;
                 bottom: initial;
                 right: initial;
-                margin-top: rem(-12);
+                @include justify(flex-end);
+                @include flex-flow(row, nowrap);
             }
 
             &__info {
@@ -489,41 +498,51 @@
 
                 .product-info {
                     &__row {
-                        font-size: rem(12);
-                        line-height: rem(14);
-                    }
+                        font-size: rem(9.5);
+                        line-height: rem(12);
 
-                    &__label {
-                        text-align: right;
-                    }
-                
-                    &__price {
-                        &_primary {
-                            font-size: rem(13);
+                        &.active {
+                            .product-info {
+                                &__price {
+                                    font-size: rem(10.3);
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
 
-            &__counter {
-                .product-counter {
-                    &__value {
-                        input {
-                            font-size: rem(20);
-                        }
+        &.product_with-sales {
+            .product {
+                &__preview {
+                    @include flex(0, 0, rem(48));
+                    max-width: rem(48);
+                }
+
+                &__title {
+                    border-bottom: 0;
+                    padding-left: rem(16);
+                    max-width: calc(100% - rem(56));
+
+                    span {
+                        @include max-lines(3);
                     }
-                
-                    &_sm {
-                        .product-counter {
-                            &__btn {
-                                height: rem(40);
-                                font-size: rem(40);
+                }
+            }
 
-                                span {
-                                    line-height: rem(40);
-                                }
-                            }
-                        }
+            .product-info {
+                &__row {
+                    &:first-child {
+                        margin-top: rem(-10);
+                    }
+                }
+
+                &__price {
+                    &_sale {
+                        display: flex;
+                        display: -ms-flexbox;
+                        @include align-items(center);
                     }
                 }
             }
@@ -534,11 +553,37 @@
         &__row {
             font-size: rem(14);
             line-height: rem(18);
+
+            &.active {
+                .product-info {
+                    &__price {
+                        font-size: rem(15);
+                    }
+                }
+            }
         }
-    
-        &__price {
-            &_primary {
-                font-size: rem(15);
+    }
+
+    .product-counter {
+        &_md {
+            .product-counter {
+                &__btn {
+                    width: rem(59);
+                    height: rem(29);
+                    line-height: rem(29);
+                    font-size: rem(40);
+
+                    &::after {
+                        height: rem(17);
+                        opacity: 0.3;
+                    }
+                }
+
+                &__value {
+                    input {
+                        font-size: rem(16);
+                    }
+                }
             }
         }
     }
@@ -580,7 +625,7 @@
     .main-product {
         .product {
             &__wrap {
-                padding: rem(15);
+                padding: rem(10);
             }
         
             &__top {
@@ -603,58 +648,106 @@
         
             &__title {
                 font-size: rem(10);
+                line-height: rem(12);
+            }
+
+            &__info {
+                .badge_gradient {
+                    height: rem(14);
+                    line-height: rem(14);
+
+                    &::before {
+                        left: rem(-7);
+                        right: rem(-7);
+                    }
+                }
             }
         }
     }
 
     .landscape-product {
         .badge {
-            height: rem(22);
-            line-height: rem(22);
+            height: rem(25);
+            line-height: rem(25);
 
             &_primary {
-                margin: 0 rem(4);
-                font-size: rem(13);
+                margin: 0 rem(10);
+                font-size: rem(15);
             }
             &_main {
-                margin: 0 rem(4);
-                font-size: rem(11);
+                margin: 0 rem(10);
+                font-size: rem(13);
             }
             &_gradient {
-                font-size: rem(12);
-                margin: 0 rem(11);
+                font-size: rem(13);
             }
 
             &::before {
-                left: rem(-6);
-                right: rem(-6);
+                left: rem(-9);
+                right: rem(-9);
             }
         }
 
         .product {
-            &__counter {
-                .product-counter {
-                    &__value {
-                        input {
-                            font-size: rem(20);
-                        }
-                    }
-                
-                    &_sm {
-                        .product-counter {
-                            &__btn {
-                                width: rem(36);
-                                height: rem(30);
-                                font-size: rem(30);
-                                line-height: rem(30);
-                            }
-            
-                            &__value {
-                                input {
-                                    font-size: rem(17);
+            &__wrap {
+                padding: rem(12);
+            }
+
+            &__header {
+                margin-bottom: rem(7);
+            }
+
+            &__top {
+                font-size: rem(12);
+            }
+
+            &__preview {
+                @include flex(0, 0, rem(80));
+                max-width: rem(80);
+            }
+
+            &__title {
+                max-width: calc(100% - rem(88));
+                font-size: rem(11);
+                line-height: rem(14);
+                margin-left: rem(8);
+            }
+
+            &__info {
+                .product-info {
+                    &__row {
+                        font-size: rem(12);
+                        line-height: rem(16);
+
+                        &.active {
+                            .product-info {
+                                &__price {
+                                    font-size: rem(13);
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        &.product_with-sales {
+            .product {
+                &__preview {
+                    @include flex(0, 0, rem(60));
+                    max-width: rem(60);
+                }
+
+                &__title {
+                    padding-left: rem(22);
+                    max-width: calc(100% - rem(68));
+                }
+            }
+
+            .product-info {
+                &__row {
+                    &:first-child {
+                        // margin-top: rem(-10);
                     }
                 }
             }
@@ -738,11 +831,35 @@
         &__row {
             font-size: rem(12);
             line-height: rem(16);
+
+            &.active {
+                .product-info {
+                    &__price {
+                        font-size: rem(13);
+                    }
+                }
+            }
         }
-    
-        &__price {
-            &_primary {
-                font-size: rem(13);
+
+        &_sm {
+            .product-info {
+                &__row {
+                    font-size: rem(11);
+
+                    &.active {
+                        .product-info {
+                            &__price {
+                                font-size: rem(12);
+                            }
+                        }
+                    }
+                }
+
+                &__price {
+                    &_primary {
+                        font-size: rem(12);
+                    }
+                }
             }
         }
 
@@ -764,18 +881,46 @@
     .product-counter {
         &_sm {
             border-radius: rem(5);
+            border: rem(1) solid map-get($color-scheme, 'main-02');
 
             .product-counter {
                 &__btn {
-                    width: rem(36);
-                    height: rem(30);
+                    width: rem(34);
+                    height: rem(26);
                     font-size: rem(30);
                     line-height: rem(30);
+
+                    &::after {
+                        height: rem(16);
+                        width: rem(1);
+                        opacity: 0.3;
+                    }
                 }
 
                 &__value {
                     input {
                         font-size: rem(17);
+                    }
+                }
+            }
+        }
+
+        &_md {
+            .product-counter {
+                &__btn {
+                    width: rem(75);
+                    height: rem(36);
+                    line-height: rem(36);
+                    font-size: rem(50);
+
+                    &::after {
+                        height: rem(23);
+                    }
+                }
+
+                &__value {
+                    input {
+                        font-size: rem(20);
                     }
                 }
             }

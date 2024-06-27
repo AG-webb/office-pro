@@ -9,7 +9,7 @@
 @media(max-width: $media-lg) {
     .products-slider {
         .splide__arrows {
-            top: rem(-20);
+            top: rem(-29);
             @include translate(0, 0);
         }
     }
@@ -23,6 +23,10 @@
                     padding: 0 rem(5);
                 }
             }
+        }
+
+        .splide__arrows {
+            top: rem(-30);
         }
     }
 
@@ -110,15 +114,24 @@
 
     .products-slider {
         &__slide {
-            padding: 0 rem(5);
+            padding: 0 rem(3);
             
             .product {
-                width: rem(200);
+                // width: rem(200);
 
-                &.landscape-product {
-                    width: rem(240);
-                }
+                // &.landscape-product {
+                //     width: rem(240);
+                // }
             }
+        }
+
+        .splide__track {
+            margin-left: rem(-13);
+            margin-right: rem(-13);
+        }
+
+        .splide__arrows {
+            top: rem(-22);
         }
     }
 }

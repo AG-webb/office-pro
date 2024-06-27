@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     counterInput.value = newSize;
 
+                    startAddToChartAnimation(counterBtn);
                     calcProductSale(newSize, counterBtn);
                 } else {
                     const newSize = parseFloat((counterInputVal - step).toFixed(1));
@@ -171,11 +172,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function calcProductSale(newSize, counterBtn) {
-        const counterElement = counterBtn.closest(".product-counter");
-        const productBody = counterBtn.closest(".product__body");
-        const productElement = counterBtn.closest(".product");
+    const counterInputElements = document.querySelectorAll(".product-counter__value input");
+    if (counterInputElements.length) {
+        counterInputElements.forEach((counterInput) => {
+            counterInput.addEventListener("change", function () {
+                const thisVal = +counterInput.value;
+                const min = +counterInput.getAttribute('min');
+                const counterContainer = counterInput.closest(".product-counter");
+
+                startAddToChartAnimation(counterInput);
+                if (thisVal <= min) {
+                    counterContainer.classList.remove("filled");
+                    counterInput.value = min;
+
+                    calcProductSale(min, counterInput);
+                } else {
+                    counterContainer.classList.add("filled");
+                    let val = thisVal.toFixed(1);
+
+                    if (min % 1 === 0) {
+                        val = Math.round(thisVal.toFixed(1));
+                    }
+
+                    counterInput.value = val;
+                    calcProductSale(val, counterInput);
+                }
+            });
+        });
+    }
+
+    function calcProductSale(newSize, target) {
+        const productElement = target.closest(".product");
+        const counterElement = productElement.querySelector(".product-counter");
+        const productBody = productElement.querySelector(".product__body");
         let productPreviewElement;
+        let productSaleBadgesElement;
         let mainPrice;
         let productActiveSale;
         let packageSaleElement;
@@ -187,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let packageSale;
         let boxSale;
 
-        if(counterElement){
+        if (counterElement) {
             mainPrice = +counterElement.getAttribute("data-price");
             packageSize = +counterElement.getAttribute("data-package");
             boxSize = +counterElement.getAttribute("data-box");
@@ -195,78 +226,97 @@ document.addEventListener("DOMContentLoaded", function () {
             packageSale = +counterElement.getAttribute("data-package-sale");
             boxSale = +counterElement.getAttribute("data-box-sale");
         }
-        if(productBody) {
+        if (productBody) {
             defaultSaleElement = productBody.querySelector(".default-sale");
             packageSaleElement = productBody.querySelector(".package-sale");
             boxSaleElement = productBody.querySelector(".box-sale");
             productActiveSale = productBody.querySelector(".product-info__row.active");
         }
-        if(productElement) {
+        if (productElement) {
             productPreviewElement = productElement.querySelector(".product__preview");
+            productSaleBadgesElement = productElement.querySelector(".product__badges");
         }
 
-        if(productActiveSale) {
+        if (productActiveSale) {
             productActiveSale.classList.remove("active");
         }
 
-        if(boxSale && boxSaleElement && newSize >= boxSize) {
+        // 3. BOX SALES
+        if (boxSale && boxSaleElement && newSize >= boxSize) {
+            const totalSale = Math.round(((mainPrice * newSize) * boxSale) / 100);
+
+            updateSaleBadges(productSaleBadgesElement, boxSale, totalSale);
             return boxSaleElement.classList.add("active");
         }
-        if(packageSale && packageSaleElement && newSize >= packageSize) {
-            const totalSale = (((mainPrice * newSize) * packageSale) / 100);
-            const salesHtml = getGenerateSalesHtml(packageSale, totalSale);
+        // 2. PACKAGE SALES
+        if (packageSale && packageSaleElement && newSize >= packageSize) {
+            const totalSale = Math.round(((mainPrice * newSize) * packageSale) / 100);
 
-            console.log('====================================');
-            console.log(productPreviewElement);
-            console.log('====================================');
-            if(productPreviewElement) {
-                productPreviewElement.insertAdjacentHTML("beforeend", salesHtml);
-            }
+            updateSaleBadges(productSaleBadgesElement, packageSale, totalSale);
 
             return packageSaleElement.classList.add("active");
         }
 
-        if(defaultSaleElement) {
+        // 1. DEFAULT SALES
+        if (defaultSaleElement) {
             defaultSaleElement.classList.add("active");
+            hideSaleBadges(productSaleBadgesElement);
         }
     }
 
-    function getGenerateSalesHtml(sale, totalSale) {
-        return `
-            <div class="product__badges">
-                <div class="badge badge_primary">
-                    <span>-${sale}%</span>
-                </div>
-                <div class="badge badge_main">
-                    <span>Скидка ${totalSale} ֏</span>
-                </div>
-            </div>
-        `
+    function updateSaleBadges(productBadges, sale, totalSale) {
+        if (productBadges) {
+            productBadges.classList.remove("hide");
+            productBadges.closest(".product").classList.add("product_with-sales");
+            const saleElement = productBadges.querySelector(".product-sale");
+            const totalSaleElement = productBadges.querySelector(".product-total-sale");
+
+            saleElement.innerHTML = sale;
+            totalSaleElement.innerHTML = totalSale;
+        }
     }
 
-    const counterInputElements = document.querySelectorAll(".product-counter__value input");
-    if (counterInputElements.length) {
-        counterInputElements.forEach((counterInput) => {
-            counterInput.addEventListener("change", function () {
-                const thisVal = +counterInput.value;
-                const min = +counterInput.getAttribute('min');
-                const counterContainer = counterInput.closest(".product-counter");
+    function hideSaleBadges(productBadges) {
+        if (productBadges) {
+            productBadges.classList.add("hide");
+            productBadges.closest(".product").classList.remove("product_with-sales");
+        }
+    }
 
-                if (thisVal <= min) {
-                    counterContainer.classList.remove("filled");
-                    counterInput.value = min;
-                } else {
-                    counterContainer.classList.add("filled");
-                    let val = thisVal.toFixed(1);
+    function startAddToChartAnimation(target) {
+        const productElement = target.closest(".product");
+        const chartBadge = document.getElementById("chart-badge");
+        const chartBadgeOffset = offset(chartBadge);
+        let productImgElement;
 
-                    if (min % 1 === 0) {
-                        val = Math.round(thisVal.toFixed(1));
-                    }
+        if (productElement) {
+            productImgElement = productElement.querySelector(".product__img img");
+        }
 
-                    counterInput.value = val;
-                }
-            });
-        });
+        const imgOffset = offset(productImgElement)
+        const chartImg = document.createElement("img");
+        chartImg.setAttribute("class", 'product-fake-img');
+        chartImg.setAttribute("src", productImgElement.getAttribute("src"));
+        chartImg.setAttribute("width", productImgElement.offsetWidth);
+        chartImg.setAttribute("height", productImgElement.offsetHeight);
+        chartImg.style.top = imgOffset.top + "px";
+        chartImg.style.left = imgOffset.left + "px";
+        document.body.append(chartImg);
+
+        const imgMove = [
+            { top: chartImg.style.top + "px", left: chartImg.style.left + "px", width: productImgElement.offsetWidth + "px" },
+            { top: (chartBadgeOffset.top + 16) + "px", left: (chartBadgeOffset.left) + "px", width: 0 },
+        ];
+
+        const imgTiming = {
+            duration: 1000,
+            iterations: 1,
+        };
+
+        chartImg.animate(imgMove, imgTiming);
+        Promise.all(chartImg.getAnimations().map((animation) => animation.finished)).then(
+            () => chartImg.remove(),
+        );
     }
 
     const copyToClipboardElements = document.querySelectorAll("[data-copy]");
@@ -373,7 +423,48 @@ document.addEventListener("DOMContentLoaded", function () {
                         perPage: 3,
                     },
                     767: {
+                        drag: true,
+                        // autoWidth: true,
+                    },
+                    600: {
                         perPage: 2,
+                        drag: true,
+                        // autoWidth: true,
+                    },
+                    // 400: {
+                    //     perPage: 1,
+                    // },
+                }
+            });
+            productSlider.mount();
+        });
+    }
+
+    const productsSliderLandscapeElements = document.querySelectorAll(".products-slider_landscape");
+    if (productsSliderLandscapeElements.length) {
+        productsSliderLandscapeElements.forEach((productsSliderElement) => {
+            const splideWrapper = productsSliderElement.querySelector(".splide");
+            let productSlider = new Splide(splideWrapper, {
+                perPage: 5,
+                arrows: true,
+                pagination: false,
+                // padding: '2rem',
+                perMove: 1,
+                drag: false,
+                breakpoints: {
+                    1149: {
+                        perPage: 4,
+                    },
+                    1023: {
+                        perPage: 3,
+                    },
+                    767: {
+                        perPage: 2,
+                        drag: true,
+                        // autoWidth: true,
+                    },
+                    550: {
+                        perPage: 1,
                         drag: true,
                         // autoWidth: true,
                     },

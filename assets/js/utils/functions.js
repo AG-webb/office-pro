@@ -53,6 +53,13 @@ function tabsInit() {
     }
 }
 
+function offset(el) {
+    let rect = el.getBoundingClientRect(),
+    scrollLeft = window.scrollX || document.documentElement.scrollLeft,
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    return { top: rect.top, left: rect.left }
+}
+
 function dynamicAppendInit() {
     const dataAppendElements = document.querySelectorAll("[data-append]");
     if(dataAppendElements.length) {
