@@ -172,7 +172,8 @@
     
         &__wrap {
             border-radius: rem(6);
-            max-height: calc(100vh - rem(80));
+            max-width: calc(100vw - rem(30));
+            max-height: calc(100vh - rem(120));
             padding: 0 rem(7) 0 0;
     
             &::after {

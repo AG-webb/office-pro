@@ -624,6 +624,14 @@
             padding: rem(12) rem(20);
             @include justify(flex-start);
             @include flex-flow(row, wrap);
+
+            &.fixed {
+                .chart-dropdown {
+                    &__wrap {
+                        max-height: calc(100vh - rem(80));
+                    }
+                }
+            }
         }
     
         &__burger {
