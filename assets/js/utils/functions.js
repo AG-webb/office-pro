@@ -109,8 +109,8 @@ function scrollNone() {
     const catalogMenu = document.querySelector(".catalog-menu");
     let lockBody =
         (contactBadge.classList.contains("active") && window.innerWidth < 768)
-        || cartBadge.classList.contains("active") ||
-        (catalogMenu.classList.contains("active") && window.innerWidth < 768);
+        || (cartBadge.classList.contains("active") && window.innerWidth < 768)
+        || (catalogMenu.classList.contains("active") && window.innerWidth < 768);
 
     modals.forEach((modal) => {
         if(modal.classList.contains("active")) {

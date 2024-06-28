@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mainOverlayElement = document.querySelector(".main-overlay");
     const burgerElement = document.querySelector(".burger");
+    const catalogMenuElement = document.querySelector(".catalog-menu");
 
     const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
     if (catalogTabElements.length) {
@@ -42,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
     const modalCloseElements = document.querySelectorAll(".modal-close");
     if (modalCloseElements.length) {
         modalCloseElements.forEach((modalClose) => {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (togglerTriggerElement.getAttribute("id") === "theme-switcher") {
                     document.body.classList.toggle("dark-theme");
                 }
-                if (togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge") {
+                if (togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge" && window.innerWidth < 768) {
                     mainOverlayElement.classList.toggle("active");
                 }
                 if (togglerTriggerElement.closest(".burger")) {
@@ -133,6 +133,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+    // Product Part  ************************
+    const productCardElements = document.querySelectorAll(".landscape-product");
+    if (productCardElements.length && window.innerWidth < 1024) {
+        productCardElements.forEach((productCardElement) => {
+            const gradientBadge = productCardElement.querySelector(".badge.badge_gradient");
+            const productTop = productCardElement.querySelector(".product__top");
+            const productBadges = productCardElement.querySelector(".product__badges");
+            const productBadgesLabel = productCardElement.querySelector(".product-info__label_badges");
+
+            if (gradientBadge && productTop) {
+                productTop.append(gradientBadge);
+            }
+            if (productBadges && productBadgesLabel) {
+                productBadgesLabel.append(productBadges);
+            }
+        });
+    }
 
     const counterBtnElements = document.querySelectorAll(".product-counter__btn");
     if (counterBtnElements.length) {
@@ -319,6 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
+    // *******************
+
     const copyToClipboardElements = document.querySelectorAll("[data-copy]");
     if (copyToClipboardElements.length) {
         copyToClipboardElements.forEach((copyToClipboardElement) => {
@@ -477,23 +497,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const productCardElements = document.querySelectorAll(".landscape-product");
-    if (productCardElements.length && window.innerWidth < 1024) {
-        productCardElements.forEach((productCardElement) => {
-            const gradientBadge = productCardElement.querySelector(".badge.badge_gradient");
-            const productTop = productCardElement.querySelector(".product__top");
-            const productBadges = productCardElement.querySelector(".product__badges");
-            const productBadgesLabel = productCardElement.querySelector(".product-info__label_badges");
-
-            if (gradientBadge && productTop) {
-                productTop.append(gradientBadge);
-            }
-            if (productBadges && productBadgesLabel) {
-                productBadgesLabel.append(productBadges);
-            }
-        });
-    }
-
     // REMOVE ACTIVE CLASSES *******************************
     document.addEventListener('click', function (e) {
         if (!e.target.closest(".lang-switcher")) {
@@ -528,6 +531,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!e.target.closest("#chart-badge")) {
             mainOverlayElement.classList.remove("active");
+        }
+
+        if (!e.target.closest(".catalog-menu__wrap") && !e.target.closest(".burger")) {
+            catalogMenuElement.classList.remove("active");
+            burgerElement.classList.remove("active");
         }
 
         e.stopPropagation();

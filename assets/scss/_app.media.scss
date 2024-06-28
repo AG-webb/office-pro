@@ -76,6 +76,25 @@
             margin-left: rem(10);
             margin-right: rem(10);
         }
+
+        &_md {
+            height: rem(25);
+            line-height: rem(25);
+    
+            &.badge_main {
+                font-size: rem(13);
+                margin-left: rem(20);
+                margin-right: rem(20);
+    
+                &:before{
+                    left: rem(-13);
+                    right: rem(-13);
+                }
+            }
+            &.badge_primary {
+                font-size: rem(15);
+            }
+        }
     }
 
     .main-pagination {

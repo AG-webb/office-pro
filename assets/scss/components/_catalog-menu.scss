@@ -278,7 +278,7 @@
             &.active {
                 opacity: 1;
                 visibility: visible;
-                pointer-events: auto;
+                pointer-events: none;
                 position: static;
             }
         }
@@ -368,6 +368,10 @@
                             pointer-events: auto;
                         }
                     }
+                }
+
+                &__tab {
+                    pointer-events: auto;
                 }
             }
         }

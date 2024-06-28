@@ -71,6 +71,27 @@
             background: linear-gradient(127.81deg, #E83906 16.48%, #FBB03B 63.48%, #E83906 83.52%);
         }
     }
+
+    &_md {
+        height: rem(32);
+        line-height: rem(32);
+
+        &.badge_main {
+            font-size: rem(16);
+            margin-left: rem(24);
+            margin-right: rem(24);
+
+            &:before{
+                left: rem(-17);
+                right: rem(-17);
+            }
+        }
+        &.badge_primary {
+            font-size: rem(19);
+            margin-left: rem(20);
+            margin-right: rem(20);
+        }
+    }
 }
 
 .switcher {

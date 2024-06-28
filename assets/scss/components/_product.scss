@@ -175,8 +175,8 @@
     }
 
     &__title {
-        @include font(500, 13, 1, inherit, 0);
-        margin-bottom: rem(10);
+        @include font(500, 13, rem(16), inherit, 0);
+        margin-bottom: rem(11);
 
         span {
             @include max-lines(2);
@@ -384,7 +384,7 @@
         .product-counter {
             &__btn {
                 width: rem(30);
-                height: rem(33);
+                height: rem(31);
                 @include font(300, 33, 1, inherit, 0);
 
                 &::after {
@@ -818,6 +818,7 @@
                 &__label {
                     @include flex(0, 0, 100%);
                     max-width: 100%;
+                    margin-bottom: rem(6);
                 }
             }
         }

@@ -10,6 +10,9 @@
         @extend %align-between;
         @extend %align-middle;
         padding: rem(3) rem(20);
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__logo {
@@ -115,7 +118,8 @@
             @include font(600, 12, 1, #fff, 0);;
         }
 
-        &.active {
+        &:hover, &.active {
+        // &:hover {
             .header__dropdown {
                 @extend %show;
                 top: 100%;
@@ -652,9 +656,23 @@
                 margin-left: 0;
             }
 
+            &:hover {
+                .header__dropdown {
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+            }
             &.active {
-                .header__dropdown.contact-dropdown {
-                    top: 0;
+                .header__dropdown {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    top: 100%;
+
+                    &.contact-dropdown {
+                        top: 0;
+                    }
                 }
             }
 
@@ -737,6 +755,7 @@
         display: flex;
         display: -ms-flexbox;
         @include flex-flow(column, nowrap);
+        z-index: z(modal);
         // @include align-items(center);
         
         &__wrap {
