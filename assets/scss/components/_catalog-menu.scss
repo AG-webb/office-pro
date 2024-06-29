@@ -95,6 +95,14 @@
         }
     }
 
+    &__banner {
+        width: 100%;
+        height: rem(110);
+        border-radius: rem(10);
+        overflow: hidden;
+        background-color: var(--themeMainColor05);
+    }
+
     &.active {
         .catalog-menu {
             &__content {
@@ -348,6 +356,11 @@
             .catalog-item {
                 margin: 0 rem(-16) rem(24);
             }
+        }
+
+        &__banner {
+            width: calc(100% + rem(32));
+            margin: 0 rem(-16);
         }
 
         &.active {
