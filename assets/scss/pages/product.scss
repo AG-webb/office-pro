@@ -1,0 +1,160 @@
+@import "../utils/_module";
+
+.product-inner {
+    margin-bottom: rem(64);
+    padding-top: rem(54);
+    
+    &__breadcrumb {
+        margin-bottom: rem(24);
+    }
+
+    &__wrap {
+        @extend %flex;
+    }
+
+    &__slider {
+        @include flex(0, 0, rem(505));
+    }
+
+    &__body {
+        @include flex(1, 1, auto);
+    }
+
+    &__action {
+        @include flex(0, 0, rem(300));
+    }
+}
+
+.product-slider {
+    @extend %flex;
+
+    &__thumbs {
+        @include flex(0, 0, rem(70));
+        margin-right: rem(30);
+    }
+
+    &__main {
+        @include flex(1, 1, auto);
+    }
+}
+
+.product-thumbs {
+    position: relative;
+    
+    .splide{
+        padding: rem(40) 0;
+    }
+
+    &__slide {
+        padding: rem(5) 0;
+
+        &.is-active {
+            .product-thumb {
+                &__wrap {
+                    border-color: #000;
+                    border-width: rem(2);
+                }
+            }
+        }
+    }
+
+    &__item {
+        .product-thumb {
+            &__wrap {
+                border: rem(1) solid #FF00C7;
+            }
+        }
+    }
+
+    .splide__arrow {
+        @include center-absolute(horizontal);
+        @extend %user-cursor;
+
+        &--prev {
+            top: 0;
+
+            svg {
+                @include rotate(-90);
+            }
+        }
+        &--next {
+            bottom: 0;
+
+            svg {
+                @include rotate(90);
+            }
+        }
+    }
+}
+
+.product-images {
+
+    &__slide {
+
+    }
+    .splide__arrow {
+        @include center-absolute(vertical);
+        @extend %user-cursor;
+        z-index: 1;
+
+        &--prev {
+            left: 0;
+            
+            svg {
+                @include rotate(-180);
+            }
+        }
+        &--next {
+            right: 0;
+        }
+    }
+}
+
+.product-variants {
+    &__list {
+        @extend %flex;
+        @include flex-flow(row, wrap);
+        max-width: rem(390);
+        margin-top: rem(-10);
+        margin-left: rem(-10);
+
+        .product-thumb {
+            margin-top: rem(10);
+            margin-left: rem(10);
+
+            &.active {
+                .product-thumb {
+                    &__wrap {
+                        border: rem(2) solid #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-thumb {
+    position: relative;
+    @extend %user-cursor;
+    
+    &__wrap {
+        border-radius: rem(5);
+        overflow: hidden;
+    }
+
+    &__count {
+        position: absolute;
+        top: rem(-4);
+        right: rem(-4);
+        background-color: map-get($color-scheme, 'primary');
+        color: #fff;
+        min-width: rem(25);
+        text-align: center;
+        font-size: rem(12);
+        font-weight: 600;
+        line-height: rem(25);
+        padding: 0 rem(7);
+        border-radius: rem(20);
+        z-index: 1;
+    }
+}

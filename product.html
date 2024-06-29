@@ -31,7 +31,7 @@
     <!-- First Needed styles -->
     <link rel="preload" as="style" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top.css">
-    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="assets/css/pages/product.css">
 
     <!-- Header -->
     <header class="header">
@@ -352,7 +352,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="chart-product__content">
-                                                    <a href="product.html" class="chart-product__preview">
+                                                    <a href="?p=product" class="chart-product__preview">
                                                         <div class="chart-product__img">
                                                             <img width="200" height="200"
                                                                 src="assets/img/draft/product.jpg" alt="product">
@@ -393,8 +393,7 @@
                                                                     <div class="product-info__label">
                                                                         <span>220 000 ֏/шт.</span>
                                                                     </div>
-                                                                    <div
-                                                                        class="product-info__price font-bold">
+                                                                    <div class="product-info__price font-bold">
                                                                         <span>440 000 ֏</span>
                                                                     </div>
                                                                 </div>
@@ -414,7 +413,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="chart-product__content">
-                                                    <a href="product.html" class="chart-product__preview">
+                                                    <a href="?p=product" class="chart-product__preview">
                                                         <div class="chart-product__img">
                                                             <img width="200" height="200"
                                                                 src="assets/img/draft/product.jpg" alt="product">
@@ -455,8 +454,7 @@
                                                                     <div class="product-info__label">
                                                                         <span>220 000 ֏/шт.</span>
                                                                     </div>
-                                                                    <div
-                                                                        class="product-info__price font-bold">
+                                                                    <div class="product-info__price font-bold">
                                                                         <span>440 000 ֏</span>
                                                                     </div>
                                                                 </div>
@@ -479,7 +477,7 @@
                                                                 <div class="product__code">3-1</div>
                                                                 <div class="product__brand">Royal touch</div>
                                                             </div>
-                                                            <a href="product.html" class="product__preview">
+                                                            <a href="?p=product" class="product__preview">
                                                                 <div class="product__img product__img_sm">
                                                                     <img width="200" height="200"
                                                                         src="assets/img/draft/product.jpg"
@@ -540,7 +538,7 @@
                                                                 <div class="product__code">3-1</div>
                                                                 <div class="product__brand">Royal touch</div>
                                                             </div>
-                                                            <a href="product.html" class="product__preview">
+                                                            <a href="?p=product" class="product__preview">
                                                                 <div class="product__img product__img_sm">
                                                                     <img width="200" height="200"
                                                                         src="assets/img/draft/product.jpg"
@@ -2029,1655 +2027,350 @@
     <div class="main-overlay"></div>
 
     <main>
-        <div class="main-sliders">
+        <div class="product-inner">
             <div class="row">
                 <div class="column sm-30">
-                    <div class="main-sliders__wrap">
-                        <div class="main-sliders__item main-sliders__item_sm">
-                            <div class="preview-slider main-pagination">
-                                <div class="splide preview-slider__wrap">
-                                    <div class="splide__track">
-                                        <div class="splide__list">
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="258" height="460" src="assets/img/draft/poster.png" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="258" height="460" src="assets/img/draft/poster.png" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <div class="video-player">
-                                                    <div class="video-player__wrap">
-                                                        <video playsinline poster="assets/img/draft/poster.png">
-                                                            <source src="assets/video/preview.mp4" type="video/mp4">
-                                                        </video>
+                    <div class="product-inner__breadcrumb breadcrumb">
+                        <div class="breadcrumb__wrap">
+                            <a href='index.html' class="breadcrumb__link breadcrumb__link_btn">
+                                <span>← Back</span>
+                            </a>
+                            <a href='#' class="breadcrumb__link">
+                                <span>Home</span>
+                            </a>
+                            <a href='#' class="breadcrumb__link">
+                                <span>Paper</span>
+                            </a>
+                            <a href='#' class="breadcrumb__link">
+                                <span>Copy & Printer</span>
+                            </a>
+                            <div class="breadcrumb__link">
+                                <spasn>Paper</spasn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column sm-30">
+                    <div class="product-inner__wrap">
+                        <div class="product-inner__slider">
+                            <div class="product-slider">
+                                <div class="product-slider__thumbs">
+                                    <div class="product-thumbs">
+                                        <div class="splide">
+                                            <div class="splide__track">
+                                                <div class="splide__list">
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-1.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="video-player__control">
-                                                        <img width="62" height="70" src="assets/img/icons/play.svg" alt="play">
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-2.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-3.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-4.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-5.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-3.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="splide__slide product-thumbs__slide">
+                                                        <div class="product-thumbs__item product-thumb">
+                                                            <div class="product-thumb__wrap">
+                                                                <img width='70' height='70'
+                                                                    src="assets/img/draft/product-inner-2.png"
+                                                                    alt="product">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="main-sliders__item main-sliders__item_sm">
-                            <div class="preview-slider main-pagination">
-                                <div class="splide preview-slider__wrap">
-                                    <div class="splide__track">
-                                        <div class="splide__list">
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="258" height="460" src="assets/img/draft/poster.png" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="258" height="460" src="assets/img/draft/poster.png" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <div class="video-player">
-                                                    <div class="video-player__wrap">
-                                                        <video playsinline poster="assets/img/draft/poster.png">
-                                                            <source src="assets/video/preview.mp4" type="video/mp4">
-                                                        </video>
+                                <div class="product-slider__main">
+                                    <div class="product-images">
+                                        <div class="splide">
+                                            <div class="splide__track">
+                                                <div class="splide__list">
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-1.png" alt="product">
                                                     </div>
-                                                    <div class="video-player__control">
-                                                        <img width="62" height="70" src="assets/img/icons/play.svg" alt="play">
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-2.png" alt="product">
+                                                    </div>
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-3.png" alt="product">
+                                                    </div>
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-4.png" alt="product">
+                                                    </div>
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-5.png" alt="product">
+                                                    </div>
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-3.png" alt="product">
+                                                    </div>
+                                                    <div class="splide__slide product-images__slide">
+                                                        <img width='405' height='405'
+                                                            src="assets/img/draft/product-inner-2.png" alt="product">
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-images__action">
+                                            <div class="product-images__btns">
+                                                <div class="product-images__btn product-images__btn_fav">
+                                                    <i class="icon icon-heart-stroke"></i>
+                                                    <i class="icon icon-heart"></i>
+                                                </div>
+                                                <div class="product-images__btn product-images__btn_share">
+                                                    <i class="icon icon-share"></i>
+                                                </div>
+                                                <div class="product-images__share share-panel">
+                                                    <div class="share-panel__wrap">
+                                                        <div class="share-panel__item">
+                                                            <i class="icon icon-message"></i>
+                                                        </div>
+                                                        <div class="share-panel__item">
+                                                            <img width='30' height='30' src="assets/img/whatsapp.svg"
+                                                                alt="Whatsapp">
+                                                        </div>
+                                                        <div class="share-panel__item">
+                                                            <img width='30' height='30' src="assets/img/viber.svg"
+                                                                alt="Viber">
+                                                        </div>
+                                                        <div class="share-panel__item">
+                                                            <img width='30' height='30' src="assets/img/telegram.svg"
+                                                                alt="Telegram">
+                                                        </div>
+                                                        <div class="share-panel__item">
+                                                            <img width='30' height='30' src="assets/img/facebook.svg"
+                                                                alt="Facebook">
+                                                        </div>
+                                                        <div class="share-panel__item">
+                                                            <img width='30' height='30' src="assets/img/instagram.svg"
+                                                                alt="Instagram">
+                                                        </div>
+                                                        <div class="share-panel__item" data-copy="010662052">
+                                                            <i class="icon icon-copy"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-images__badge">
+                                            <div class="badge badge_gradient">
+                                                <span>new</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="main-sliders__item main-sliders__item_lg">
-                            <div class="preview-slider main-pagination">
-                                <div class="splide preview-slider__wrap">
-                                    <div class="splide__track">
-                                        <div class="splide__list">
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="815" height="460" src="assets/img/draft/poster-lg.jpg" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <img width="815" height="460" src="assets/img/draft/poster-lg.jpg" alt="poster">
-                                            </div>
-                                            <div class="splide__slide preview-slider__slide">
-                                                <div class="video-player">
-                                                    <div class="video-player__wrap">
-                                                        <video playsinline poster="assets/img/draft/poster-lg.jpg">
-                                                            <source src="assets/video/preview.mp4" type="video/mp4">
-                                                        </video>
-                                                    </div>
-                                                    <div class="video-player__control">
-                                                        <img width="62" height="70" src="assets/img/icons/play.svg" alt="play">
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <div class="product-inner__body">
+                            <div class='product-inner__title'>
+                                Чай Ahmad Tea "Классический", черный, 100 пакетиков по 2г
+                            </div>
+                            <div class="product-inner__variants product-variants">
+                                <div class="product-variants__title">
+                                    Вариант: <span>Среднего размера М</span>
+                                </div>
+                                <div class='product-variants__list'>
+                                    <div class="product-thumb active">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                            alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="product-thumb">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                                alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="product-thumb">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                                alt="product">
+                                        </div>
+
+                                        <div class='product-thumb__count'>800</div>
+                                    </div>
+                                    <div class="product-thumb">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                                alt="product">
+                                        </div>
+                                        <div class='product-thumb__count'>2</div>
+                                    </div>
+                                    <div class="product-thumb">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                                alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="product-thumb">
+                                        <div class="product-thumb__wrap">
+                                            <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
+                                                alt="product">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-inner__feature product-feature">
+                                <div class="product-feature__title">
+                                    Характеристики товара:
+                                </div>
+                                <div class="product-feature__list">
+                                    <div class="product-feature__box">
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-feature__box">
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
+                                        </div>
+                                        <div class="product-feature__row">
+                                            <div class="product-feature__label">Код aaaaaaaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-showcase">
-            <div class="row">
-                <div class="column sm-20">
-                    <h2 class="product-showcase__title h2-font color-primary">Акции</h2>
-                </div>
-                <div class="column sm-30">
-                    <div class="products-slider main-controls">
-                        <div class="splide products-slider__wrap">
-                            <div class="splide__track">
-                                <div class="splide__list">
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__price product-info__price_sale">
-                                                                <span>1 400 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <div class="badge badge_gradient">
-                                                                    <span>new</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 500 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 100 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>15 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>950 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>45 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1500' data-package="15" data-box="45" data-sale="14" data-package-sale="19" data-box-sale="30">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                        <div class="product-inner__action">
+                            <div class="counter-block">
+                                <div class="counter-block__sales">
+                                    <div class="sale-badges">
+                                        <div class="badge badge_md badge_primary">
+                                            <span>-<span class='product-sale'>17</span>%</span>
+                                        </div>
+                                        <div class="badge badge_md badge_main">
+                                            <span>Скидка <span class='product-total-sale'>40 000</span> ֏</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-showcase">
-            <div class="row">
-                <div class="column sm-20">
-                    <h2 class="product-showcase__title h2-font color-primary">Новинки</h2>
-                </div>
-                <div class="column sm-30">
-                    <div class="products-slider products-slider_landscape main-controls">
-                        <div class="splide products-slider__wrap">
-                            <div class="splide__track">
-                                <div class="splide__list">
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__label product-info__label_badges">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                                <div class="counter-block__info product-info">
+                                    <div class="product-info__row default-sale active">
+                                        <div class="product-info__price">
+                                            <span>1 500 ֏</span>
+                                        </div>
+                                        <div class="product-info__label">
+                                            <span>1 шт.</span>
+                                        </div>
                                     </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__label product-info__label_badges">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                                    <div class="product-info__row package-sale">
+                                        <div class="product-info__price">
+                                            <span>1 100 ֏</span>
+                                        </div>
+                                        <div class="product-info__label">
+                                            <span>15 шт (упак)</span>
+                                        </div>
                                     </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__label product-info__label_badges">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__price product-info__price_sale">
-                                                                <span>1 400 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label product-info__label_badges">
-                                                                <div class="badge badge_gradient">
-                                                                    <span>new</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__label product-info__label_badges">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product landscape-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса
-                                                            принтеров, 500 листов белая. Класса
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__label product-info__label_badges">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price product-info__price_primary">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_md" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                                    <div class="product-info__row box-sale">
+                                        <div class="product-info__price">
+                                            <span>950 ֏</span>
+                                        </div>
+                                        <div class="product-info__label">
+                                            <span>45 шт (ящик)</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-showcase">
-            <div class="row">
-                <div class="column sm-20">
-                    <h2 class="product-showcase__title h2-font color-primary">Недавно просмотренные</h2>
-                </div>
-                <div class="column sm-30">
-                    <div class="products-slider main-controls">
-                        <div class="splide products-slider__wrap">
-                            <div class="splide__track">
-                                <div class="splide__list">
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <div class="counter-block__action">
+                                    <div class="product-counter product-counter_sm" data-price='1500' data-package="15" data-box="45" data-sale="14" data-package-sale="19" data-box-sale="30">
+                                        <div class="product-counter__decrement">
+                                            <div
+                                                class="product-counter__btn product-counter__btn_decrement">
+                                                <span>-</span>
                                             </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        </div>
+                                        <div class="product-counter__value">
+                                            <input type="number" name="product_counts[]" value="0"
+                                                step="1" min="0">
+                                        </div>
+                                        <div class="product-counter__increment">
+                                            <div
+                                                class="product-counter__btn product-counter__btn_increment">
+                                                <span>+</span>
                                             </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row">
-                                                            <div class="product-info__price product-info__price_sale">
-                                                                <span>1 400 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <div class="badge badge_gradient">
-                                                                    <span>new</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 500 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 100 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>15 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>950 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>45 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1500' data-package="15" data-box="45" data-sale="14" data-package-sale="19" data-box-sale="30">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="splide__slide products-slider__slide">
-                                        <article class="product main-product">
-                                            <div class="product__wrap">
-                                                <div class="product__header">
-                                                    <div class="product__top">
-                                                        <div class="product__code">3-1</div>
-                                                        <div class="product__brand">Royal touch</div>
-                                                    </div>
-                                                    <a href="product.html" class="product__preview">
-                                                        <div class="product__img">
-                                                            <img width="200" height="200"
-                                                                src="assets/img/draft/product.jpg" alt="product">
-                                                        </div>
-                                                        <div class="product__badges hide">
-                                                            <div class="badge badge_primary">
-                                                                <span>-<span class='product-sale'></span>%</span>
-                                                            </div>
-                                                            <div class="badge badge_main">
-                                                                <span>Скидка <span class='product-total-sale'></span> ֏</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="product__title">
-                                                        <span>
-                                                            Бумага А4, 80 гр, класса C, для лазерных
-                                                            принтеров, 500 листов белая. Класса C...
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="product__body">
-                                                    <div class="product__info product-info product-info_sm">
-                                                        <div class="product-info__row default-sale active">
-                                                            <div
-                                                                class="product-info__price">
-                                                                <span>1 200 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>1 шт.</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row package-sale">
-                                                            <div class="product-info__price">
-                                                                <span>1 000 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>12 шт (упак)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info__row box-sale">
-                                                            <div class="product-info__price">
-                                                                <span>900 ֏</span>
-                                                            </div>
-                                                            <div class="product-info__label">
-                                                                <span>60 шт (ящик)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__counter">
-                                                        <div class="product-counter product-counter_sm" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
-                                                            <div class="product-counter__decrement">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_decrement">
-                                                                    <span>-</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-counter__value">
-                                                                <input type="number" name="product_counts[]" value="0"
-                                                                    step="1" min="0">
-                                                            </div>
-                                                            <div class="product-counter__increment">
-                                                                <div
-                                                                    class="product-counter__btn product-counter__btn_increment">
-                                                                    <span>+</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

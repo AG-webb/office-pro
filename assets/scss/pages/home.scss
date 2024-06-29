@@ -1,5 +1,4 @@
 @import "../utils/_module";
-@import "../components/_product";
 
 
 .main-sliders {
@@ -69,4 +68,49 @@
     }
 }
 
-@import "_home.media";
+
+
+@media(max-width: $media-md) {  
+    .preview-slider {
+        border-radius: rem(14);
+        
+        .splide__pagination {
+            left: rem(16);
+            bottom: rem(16);
+        }
+    }
+}
+
+@media(max-width: $media-sm) {
+    .main-sliders {
+        padding-top: rem(24);
+
+        &__wrap {
+            flex-wrap: wrap;
+            aspect-ratio: auto;
+        }
+
+        &__item {
+            &_sm {
+                aspect-ratio: 9 / 16;
+                width: calc(50% - rem(8));
+            }
+            &_lg {
+                aspect-ratio: 16 / 9;
+                margin-top: rem(16);
+                width: 100%;
+            }
+        }
+    }
+    
+    .preview-slider.main-pagination {
+        .splide__pagination {
+            left: rem(12);
+            bottom: rem(12);
+
+            button {
+                margin-left: rem(10);
+            }
+        }
+    }
+}

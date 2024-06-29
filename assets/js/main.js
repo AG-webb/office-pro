@@ -376,6 +376,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const productThumbsSliderElement = document.querySelector(".product-thumbs");
+    const productMainSliderElement = document.querySelector(".product-images");
+    if (productThumbsSliderElement && productMainSliderElement) {
+        const thumbsSplideWrapper = productThumbsSliderElement.querySelector(".splide");
+        let thumbsSlider = new Splide(thumbsSplideWrapper, {
+            direction: 'ttb',
+            perPage: 5,
+            perMove: 1,
+            type: 'loop',
+            height: '24.6875rem',
+        });
+        thumbsSlider.mount();
+
+        const mainSplideWrapper = productMainSliderElement.querySelector(".splide");
+        let mainSlider = new Splide(mainSplideWrapper, {
+            perPage: 1,
+            type: 'loop',
+        });
+        mainSlider.mount();
+    
+        mainSlider.on('move', function (index) {
+            thumbsSlider.go(index);
+        });
+
+        thumbsSlider.on('move', function (index) {
+            mainSlider.go(index);
+        });
+        thumbsSlider.on('click', function ({ index }) {
+            mainSlider.go(index);
+        });
+    }
+
     const videoPlayerElements = document.querySelectorAll(".video-player");
     if (videoPlayerElements.length) {
         videoPlayerElements.forEach((videoPlayerElement) => {

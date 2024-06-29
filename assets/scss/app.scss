@@ -3,6 +3,7 @@
 @import "utils/_module";
 @import "core/_icons";
 @import "components/_button";
+@import "components/_product";
 @import "components/_form-items";
 @import "components/_chart-dropdown";
 @import "components/_tabs";
@@ -295,5 +296,50 @@
         right: 0;
         z-index: 1;
         @include translate(0, -100%);
+    }
+}
+
+.breadcrumb {
+    @include font(normal, 16, rem(20), inherit, 0);
+    color: var(--themeMainColor);
+    
+    &__wrap {
+        @extend %flex;
+        @include flex-flow(row, wrap);
+        margin: rem(-16) 0 0 rem(-28);
+    }
+
+    &__link {
+        margin-left: rem(28);
+        margin-top: rem(16);
+        display: block;
+        position: relative;
+
+        &::before {
+            content: "/";
+            position: absolute;
+            right: rem(-15);
+            @extend %not-selectable;
+        }
+
+        &_btn {
+            font-weight: bold;
+
+            &+.breadcrumb__link {
+                margin-left: rem(38);
+            }
+
+            &::before {
+                content: "|";
+                right: rem(-20);
+                font-weight: normal;
+            }
+        }
+
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
     }
 }
