@@ -221,65 +221,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function calcProductSale(newSize, target) {
         const productElement = target.closest(".product");
-        const counterElement = productElement.querySelector(".product-counter");
-        const productBody = productElement.querySelector(".product__body");
-        let productPreviewElement;
-        let productSaleBadgesElement;
-        let mainPrice;
-        let productActiveSale;
-        let packageSaleElement;
-        let defaultSaleElement;
-        let boxSaleElement;
-        let packageSize;
-        let boxSize;
-        let defaultSale;
-        let packageSale;
-        let boxSale;
-
-        if (counterElement) {
-            mainPrice = +counterElement.getAttribute("data-price");
-            packageSize = +counterElement.getAttribute("data-package");
-            boxSize = +counterElement.getAttribute("data-box");
-            defaultSale = +counterElement.getAttribute("data-sale");
-            packageSale = +counterElement.getAttribute("data-package-sale");
-            boxSale = +counterElement.getAttribute("data-box-sale");
-        }
-        if (productBody) {
-            defaultSaleElement = productBody.querySelector(".default-sale");
-            packageSaleElement = productBody.querySelector(".package-sale");
-            boxSaleElement = productBody.querySelector(".box-sale");
-            productActiveSale = productBody.querySelector(".product-info__row.active");
-        }
-        if (productElement) {
-            productPreviewElement = productElement.querySelector(".product__preview");
-            productSaleBadgesElement = productElement.querySelector(".product__badges");
-        }
-
-        if (productActiveSale) {
-            productActiveSale.classList.remove("active");
-        }
-
-        // 3. BOX SALES
-        if (boxSale && boxSaleElement && newSize >= boxSize) {
-            const totalSale = Math.round(((mainPrice * newSize) * boxSale) / 100);
-
-            updateSaleBadges(productSaleBadgesElement, boxSale, totalSale);
-            return boxSaleElement.classList.add("active");
-        }
-        // 2. PACKAGE SALES
-        if (packageSale && packageSaleElement && newSize >= packageSize) {
-            const totalSale = Math.round(((mainPrice * newSize) * packageSale) / 100);
-
-            updateSaleBadges(productSaleBadgesElement, packageSale, totalSale);
-
-            return packageSaleElement.classList.add("active");
+        
+        if(productElement) {
+            const counterElement = productElement.querySelector(".product-counter");
+            const productBody = productElement.querySelector(".product__body");
+            const productPreviewElement = productElement.querySelector(".product__preview");
+            const productSaleBadgesElement = productElement.querySelector(".product__badges");
+            const mainPrice = +counterElement.getAttribute("data-price");
+            const productActiveSale = productBody.querySelector(".product-info__row.active");
+            const packageSaleElement = productBody.querySelector(".package-sale");
+            const defaultSaleElement = productBody.querySelector(".default-sale");
+            const boxSaleElement = productBody.querySelector(".box-sale");
+            const packageSize = +counterElement.getAttribute("data-package");
+            const boxSize = +counterElement.getAttribute("data-box");
+            const defaultSale = +counterElement.getAttribute("data-sale");
+            const packageSale = +counterElement.getAttribute("data-package-sale");
+            const boxSale = +counterElement.getAttribute("data-box-sale");
+    
+            if (productActiveSale) {
+                productActiveSale.classList.remove("active");
+            }
+    
+            // 3. BOX SALES
+            if (boxSale && boxSaleElement && newSize >= boxSize) {
+                const totalSale = Math.round(((mainPrice * newSize) * boxSale) / 100);
+    
+                updateSaleBadges(productSaleBadgesElement, boxSale, totalSale);
+                return boxSaleElement.classList.add("active");
+            }
+            // 2. PACKAGE SALES
+            if (packageSale && packageSaleElement && newSize >= packageSize) {
+                const totalSale = Math.round(((mainPrice * newSize) * packageSale) / 100);
+    
+                updateSaleBadges(productSaleBadgesElement, packageSale, totalSale);
+    
+                return packageSaleElement.classList.add("active");
+            }
+    
+            // 1. DEFAULT SALES
+            if (defaultSaleElement) {
+                defaultSaleElement.classList.add("active");
+                hideSaleBadges(productSaleBadgesElement);
+            }
         }
 
-        // 1. DEFAULT SALES
-        if (defaultSaleElement) {
-            defaultSaleElement.classList.add("active");
-            hideSaleBadges(productSaleBadgesElement);
-        }
     }
 
     function updateSaleBadges(productBadges, sale, totalSale) {
@@ -311,30 +296,32 @@ document.addEventListener("DOMContentLoaded", function () {
             productImgElement = productElement.querySelector(".product__img img");
         }
 
-        const imgOffset = offset(productImgElement)
-        const chartImg = document.createElement("img");
-        chartImg.setAttribute("class", 'product-fake-img');
-        chartImg.setAttribute("src", productImgElement.getAttribute("src"));
-        chartImg.setAttribute("width", productImgElement.offsetWidth);
-        chartImg.setAttribute("height", productImgElement.offsetHeight);
-        chartImg.style.top = imgOffset.top + "px";
-        chartImg.style.left = imgOffset.left + "px";
-        document.body.append(chartImg);
-
-        const imgMove = [
-            { top: chartImg.style.top + "px", left: chartImg.style.left + "px", width: productImgElement.offsetWidth + "px" },
-            { top: (chartBadgeOffset.top + 16) + "px", left: (chartBadgeOffset.left) + "px", width: 0 },
-        ];
-
-        const imgTiming = {
-            duration: 1000,
-            iterations: 1,
-        };
-
-        chartImg.animate(imgMove, imgTiming);
-        Promise.all(chartImg.getAnimations().map((animation) => animation.finished)).then(
-            () => chartImg.remove(),
-        );
+        if(productImgElement) {
+            const imgOffset = offset(productImgElement)
+            const chartImg = document.createElement("img");
+            chartImg.setAttribute("class", 'product-fake-img');
+            chartImg.setAttribute("src", productImgElement.getAttribute("src"));
+            chartImg.setAttribute("width", productImgElement.offsetWidth);
+            chartImg.setAttribute("height", productImgElement.offsetHeight);
+            chartImg.style.top = imgOffset.top + "px";
+            chartImg.style.left = imgOffset.left + "px";
+            document.body.append(chartImg);
+    
+            const imgMove = [
+                { top: chartImg.style.top, left: chartImg.style.left, width: productImgElement.offsetWidth + "px" },
+                { top: (chartBadgeOffset.top + 16) + "px", left: (chartBadgeOffset.left) + "px", width: 0 },
+            ];
+    
+            const imgTiming = {
+                duration: 1000,
+                iterations: 1,
+            };
+    
+            chartImg.animate(imgMove, imgTiming);
+            Promise.all(chartImg.getAnimations().map((animation) => animation.finished)).then(
+                () => chartImg.remove(),
+            );
+        }
     }
 
     // *******************

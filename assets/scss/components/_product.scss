@@ -76,9 +76,6 @@
 
     &__info {
         margin-bottom: rem(12);
-    }
-
-    &__counter {
         margin-top: auto;
     }
 
@@ -176,7 +173,7 @@
 
     &__title {
         @include font(500, 13, rem(16), inherit, 0);
-        margin-bottom: rem(11);
+        margin-bottom: rem(14);
 
         span {
             @include max-lines(2);

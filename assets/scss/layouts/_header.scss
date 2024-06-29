@@ -122,7 +122,6 @@
         // &:hover {
             .header__dropdown {
                 @extend %show;
-                top: 100%;
             }
         }
     }
@@ -133,6 +132,22 @@
         @include transition(all,0.3s,ease);
         @include center-absolute(horizontal);
         z-index: z(dropdown);
+        padding-top: rem(19);
+        top: 100%;
+
+        &-wrap {
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: rem(-8);
+                width: rem(30);
+                height: rem(30);
+                @include transform(translate(-50%, 0) rotate(-45deg));
+                background-color: var(--themeSecondaryColor);
+            }
+        }
+
     }
 }
 
@@ -156,16 +171,12 @@
     }
 }
 
-.contact-dropdown {
-    top: 50%;
-    padding-top: rem(10);
-    
+.contact-dropdown {    
     &__wrap {
+        position: relative;
         background-color: var(--themeSecondaryColor);
         border-radius: rem(20);
-        overflow: hidden;
         padding: rem(56) rem(40) rem(32);
-        position: relative;
         color: var(--themeMainColor);
         box-shadow: map-get($shadows, 'sm');
         width: rem(320);
@@ -244,9 +255,6 @@
 }
 
 .user-dropdown {
-    padding-top: rem(25);
-    top: 50%;
-
     &__wrap {
         position: relative;
         padding: rem(24) rem(24) rem(20);
@@ -255,22 +263,12 @@
         border-radius: rem(10);
         width: rem(190);
         color: var(--themeMainColor);
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: rem(-12);
-            left: 50%;
-            width: rem(30);
-            height: rem(30);
-            background-color: var(--themeSecondaryColor);
-            @include transform(translate(-50%, 0) rotate(-45deg));
-            @extend %not-selectable;
-        }
     }
 
     &__btn {
         margin-bottom: rem(12);
+        position: relative;
+        z-index: 1;
 
         .btn {
             min-width: rem(90);
@@ -457,7 +455,7 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: z(dropdown);
+        z-index: z(header-dropdown);
         
         &-body {
             position: relative;
