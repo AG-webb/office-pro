@@ -83,7 +83,7 @@
         margin-right: rem(-10);
 
         .badge.badge_md.badge_primary {
-            margin-right: rem(8);
+            margin-right: rem(2);
         }
     }
 
@@ -197,12 +197,6 @@
         &__desc {
             font-size: rem(10);
             margin-bottom: rem(11);
-        }
-
-        &__badges {    
-            .badge.badge_md.badge_primary {
-                margin-right: rem(5);
-            }
         }
     
         &__body {

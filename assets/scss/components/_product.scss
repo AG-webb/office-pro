@@ -53,7 +53,7 @@
     &__badges {
         position: absolute;
         bottom: 0;
-        right: rem(-20);
+        right: rem(4);
         @extend %flex;
         @extend %align-bottom;
         @include flex-flow(column, nowrap);
@@ -420,21 +420,17 @@
             line-height: rem(20);
 
             &_primary {
-                margin: 0 rem(9);
+                padding: 0 rem(9);
                 font-size: rem(11.9);
+                margin-right: rem(1);
             }
             &_main {
-                margin: 0 rem(10);
+                padding: 0 rem(10);
                 font-size: rem(10.3);
             }
             &_gradient {
                 font-size: rem(10.4);
-                margin: 0 rem(11);
-            }
-
-            &::before {
-                left: rem(-9);
-                right: rem(-9);
+                padding: 0 rem(11);
             }
         }
 
@@ -492,6 +488,7 @@
 
             &__info {
                 margin-bottom: rem(8);
+                margin-top: initial;
 
                 .product-info {
                     &__row {
@@ -507,6 +504,10 @@
                         }
                     }
                 }
+            }
+
+            &__counter {
+                margin-top: auto;
             }
         }
 
@@ -652,11 +653,6 @@
                 .badge_gradient {
                     height: rem(14);
                     line-height: rem(14);
-
-                    &::before {
-                        left: rem(-7);
-                        right: rem(-7);
-                    }
                 }
             }
         }
@@ -668,20 +664,15 @@
             line-height: rem(25);
 
             &_primary {
-                margin: 0 rem(10);
+                padding: 0 rem(10);
                 font-size: rem(15);
             }
             &_main {
-                margin: 0 rem(10);
+                padding: 0 rem(10);
                 font-size: rem(13);
             }
             &_gradient {
                 font-size: rem(13);
-            }
-
-            &::before {
-                left: rem(-9);
-                right: rem(-9);
             }
         }
 

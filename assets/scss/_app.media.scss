@@ -54,27 +54,22 @@
         height: rem(20);
         line-height: rem(20);
     
-        &:before{
-            left: rem(-10);
-            right: rem(-10);
-        }
-    
         &_primary {
             font-size: rem(12);
-            margin-left: rem(10);
-            margin-right: rem(10);
+            padding-left: rem(10);
+            padding-right: rem(10);
         }
     
         &_main {
             font-size: rem(10);
-            margin-left: rem(10);
-            margin-right: rem(10);
+            padding-left: rem(10);
+            padding-right: rem(10);
         }
     
         &_gradient {
             font-size: rem(8);
-            margin-left: rem(10);
-            margin-right: rem(10);
+            padding-left: rem(10);
+            padding-right: rem(10);
         }
 
         &_md {
@@ -83,13 +78,8 @@
     
             &.badge_main {
                 font-size: rem(13);
-                margin-left: rem(20);
-                margin-right: rem(20);
-    
-                &:before{
-                    left: rem(-13);
-                    right: rem(-13);
-                }
+                padding-left: rem(20);
+                padding-right: rem(20);
             }
             &.badge_primary {
                 font-size: rem(15);
