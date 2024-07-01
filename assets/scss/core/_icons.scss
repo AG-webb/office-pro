@@ -27,6 +27,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-down:before {
+    content: '\e916';
+}
+.icon-chevron-left:before {
+    content: '\e917';
+}
+.icon-chevron-right:before {
+    content: '\e918';
+}
+.icon-chevron-up:before {
+    content: '\e919';
+}
 .icon-chart:before {
     content: '\e900';
 }
@@ -42,10 +54,10 @@
 .icon-copy:before {
     content: '\e904';
 }
-.icon-heart:before {
+.icon-heart-stroke:before {
     content: '\e905';
 }
-.icon-heart-stroke:before {
+.icon-heart:before {
     content: '\e906';
 }
 .icon-hidden:before {
@@ -75,16 +87,16 @@
 .icon-shelves:before {
     content: '\e90f';
 }
-.icon-trash:before {
+.icon-trash-filled:before {
     content: '\e910';
 }
-.icon-trash-filled:before {
+.icon-trash:before {
     content: '\e911';
 }
-.icon-user:before {
+.icon-user-stroke:before {
     content: '\e912';
 }
-.icon-user-stroke:before {
+.icon-user:before {
     content: '\e913';
 }
 .icon-visible:before {

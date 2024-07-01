@@ -47,6 +47,25 @@
     &__main {
         @include flex(1, 1, auto);
     }
+
+    .splide__arrow {
+        background: var(--themeSecondaryColor);
+        // opacity: 0.5;
+        box-shadow: map-get($shadows, 'xs');
+        color: var(--themeMainColor05);
+        border-radius: 50%;
+        width: rem(50);
+        height: rem(50);
+        @extend %flex;
+        @extend %align-middle;
+        @extend %align-center;
+
+        svg {
+            path {
+                fill: var(--themeMainColor05);
+            }
+        }
+    }
 }
 
 .product-thumbs {
@@ -135,6 +154,7 @@
 
     &__btns {
         position: relative;
+        padding-bottom: rem(12);
 
         .share-panel {
             @include center-absolute(horizontal);
@@ -158,10 +178,12 @@
             position: relative;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: rem(20);
 
             .icon {
                 @include center-absolute(both);
                 @include transition(all,0.3s,ease);
+                font-size: rem(30);
 
                 &-heart {
                     @extend %hidden;
@@ -185,7 +207,7 @@
 
         &_share {
             color: var(--themeMainColor05);
-            font-size: rem(64);
+            font-size: rem(30);
         }
     }
 
@@ -205,14 +227,29 @@
     @extend %flex;
     @extend %align-middle;
     @include flex-flow(column, nowrap);
+    width: rem(50);
 
     &__item {
         margin-bottom: rem(7);
         text-align: center;
         @extend %user-cursor;
 
+        img {
+            width: rem(30);
+        }
+
+        &:first-child {
+            .icon {
+                font-size: rem(17);
+            }
+        }
+
         &:last-child {
             margin-bottom: 0;
+
+            .icon {
+                font-size: rem(18);
+            }
         }
     }
 }
@@ -321,9 +358,44 @@
     padding: rem(30);
 
     &__sales {
+        margin-bottom: rem(25);
+
+        .sale-badges {
+            @extend %flex;
+            @extend %align-bottom;
+            @include flex-flow(column, nowrap);
+            position: relative;
+
+            &__old {
+                color: map-get($color-scheme, 'primary');
+                text-decoration: line-through;
+                font-size: rem(15);
+                line-height: rem(18);
+                position: absolute;
+                top: rem(10);
+                left: 0;
+                max-width: 50%;
+            }
+
+            .badge_main {
+                width: 111%;
+                text-align: center;
+            }
+        }
     }
 
     &__info {
+        margin-bottom: rem(36);
+
+        .product-info {
+            &__row {
+                &.active {
+                    .product-info__price {
+                        font-size: rem(20);
+                    }
+                }
+            }
+        }
     }
 
     &__action {
