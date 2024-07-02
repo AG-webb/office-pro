@@ -355,3 +355,27 @@
         }
     }
 }
+
+.title-lined {
+    position: relative;
+    text-align: center;
+
+    &::before {
+        content: "";
+        @include center-absolute(vertical);
+        left: 0;
+        right: 0;
+        height: rem(2);
+        background-color: var(--themeMainColor02);
+    }
+
+    span {
+        position: relative;
+        display: inline-block;
+        padding: 0 rem(12);
+        line-height: rem(18);
+        font-size: rem(15);
+        background-color: var(--themeSecondaryColor);
+        max-width: 60%;
+    }
+}

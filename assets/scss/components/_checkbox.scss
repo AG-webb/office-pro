@@ -3,7 +3,6 @@
     display: inline-flex;
     align-items: center;
     @extend %user-cursor;
-    margin: 0 rem(16) rem(16) 0;
 
     input {
         position: absolute;
@@ -16,21 +15,28 @@
     &_checkbox {
         .custom-check {
             &__checkmark {  
-                width: rem(22);
-                height: rem(22);
-                border: rem(1) solid #000;
-                border-radius: rem(5);
-                margin-right: rem(17);
+                width: rem(18);
+                height: rem(18);
+                border: rem(1) solid currentColor;
+                border-radius: rem(2);
+                margin-right: rem(15);
                 position: relative;
-                color: #000;
+                @include flex(0, 0, auto);
         
                 &::after {
-                    @include center-absolute(both);
-                    @include font-icon("\e904");
+                    @include font-icon("✔");
                     color: inherit;
                     @extend %hidden;
-                    font-size: rem(22);
+                    text-align: center;
+                    line-height: rem(16);
+                    display: block;
+                    width: 100%;
+                    font-size: rem(15);
                 }
+            }
+
+            &__label {
+                line-height: 120%;
             }
         }
 

@@ -217,6 +217,7 @@
             .btn {
                 @include flex(0, 0, calc(50% - rem(4)));
                 max-width: calc(50% - rem(4));
+                height: rem(37);
             }
         }
     }

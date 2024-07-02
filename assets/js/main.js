@@ -72,6 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (togglerTriggerElement.closest(".burger")) {
                     document.querySelector(".catalog-menu").classList.toggle("active");
                 }
+                if(togglerTriggerElement.closest(".form-field_password")) {
+                    const formField = togglerTriggerElement.closest(".form-field_password");
+                    const formFieldInput = formField.querySelector(".form-field__input");
+
+                    if(formField.classList.contains("active")) {
+                        formFieldInput.setAttribute("type", "text");
+                    } else {
+                        formFieldInput.setAttribute("type", "password");
+                    }
+                }
 
                 scrollNone();
             });
@@ -95,12 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Form Validation ***************************
     const withValidationForms = document.querySelectorAll(".with-validation");
+
     if (withValidationForms.length) {
         withValidationForms.forEach((withValidationForm) => {
             withValidationForm.addEventListener("submit", function (e) {
                 let isValid = true;
-                let emailElements = withValidationForm.querySelectorAll(".email-validation");
-                let errorHtml = `<div class="form-field__message error">Wrong email, please set correct email address</div>`;
+                let emailValidationElements = withValidationForm.querySelectorAll("[data-email-validation]");
+                let requiredFields = withValidationForm.querySelectorAll("[data-required]");
 
                 // clear All error messages
                 const errorMessages = withValidationForm.querySelectorAll(".form-field__message.error");
@@ -117,11 +128,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 }
 
-                if (emailElements.length) {
-                    emailElements.forEach((emailElement) => {
+                // Validations
+                if(requiredFields.length) {
+                    requiredFields.forEach((requiredField) => {
+                        if(requiredField.value.trim() === '') {
+                            if(!requiredField.closest(".form-field").querySelector(".form-field__message")) {
+                                const requiredMessage = requiredField.getAttribute("data-required") || "! Обязательное поле";
+                                let requiredErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
+    
+                                requiredField.closest(".form-field").classList.add("invalid");
+                                requiredField.closest(".form-field").insertAdjacentHTML("beforeend", requiredErrorHtml);
+                            }
+
+                            isValid = false;
+                        }
+                    });
+                }
+                
+                if (emailValidationElements.length) {
+                    emailValidationElements.forEach((emailElement) => {
                         if (!isEmailValid(emailElement.value)) {
-                            emailElement.closest(".form-field").classList.add("invalid");
-                            emailElement.closest(".form-field").insertAdjacentHTML("beforeend", errorHtml);
+                            if(!emailElement.closest(".form-field").querySelector(".form-field__message")) {
+                                const requiredMessage = emailElement.getAttribute("data-email-validation") || "! Неправильный формат почты";
+                                let emailErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
+
+                                emailElement.closest(".form-field").classList.add("invalid");
+                                emailElement.closest(".form-field").insertAdjacentHTML("beforeend", emailErrorHtml);
+                            }
+
                             isValid = false;
                         }
                     });

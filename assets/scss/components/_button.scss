@@ -67,9 +67,5 @@
         height: rem(45);
         padding-left: rem(16);
         padding-right: rem(16);
-
-        @media (max-width: $media-sm) {
-            height: rem(37);
-        }
     }
 }

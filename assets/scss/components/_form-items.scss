@@ -1,6 +1,6 @@
 .form-fields {
     &__item {
-        margin-top: rem(48);
+        margin-top: rem(15);
 
         &:first-child {
             margin-top: 0;
@@ -31,17 +31,12 @@
 
     &__input {
         width: 100%;
-        border-radius: rem(4);
-        font-weight: 600;
         font-family: $fontPrimary;
         color: inherit;
         border-radius: rem(50);
     }
 
     &__message {
-        @include font(normal, 14, 1, inherit, 0);
-        margin-top: rem(6);
-
         &.error {
             color: map-get($color-scheme, 'error');
         }
@@ -111,8 +106,18 @@
 
             &__input {
                 height: rem(45);
-                padding: 0 rem(20);
-                font-size: rem(16);
+                padding: 0 rem(22);
+                font-size: rem(15);
+            }
+        }
+
+        &.invalid {
+            .form-field {
+                &__message {
+                    font-size: rem(10);
+                    line-height: rem(14);
+                    padding: 0 rem(7);
+                }
             }
         }
     }
@@ -164,6 +169,45 @@
         }
     }
 
+    &_password {
+        .form-field {
+            &__icon {
+                width: rem(30);
+                height: rem(27);
+                @extend %user-cursor;
+                pointer-events: auto;
+                opacity: 0.5;
+
+                .icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include transition(all,0.3s,ease);
+                    font-size: rem(30);
+
+                    &-visible {
+                        @extend %hidden;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            .form-field {
+                &__icon {
+                    .icon {
+                        &-hidden {
+                            @extend %hidden;
+                        }
+                        &-visible {
+                            @extend %show;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // TYPES ********************************
     &_main {
         .form-field {
@@ -195,14 +239,27 @@
     &_default {
         .form-field {
             &__input {
-                background-color: #fff;
-                color: $color-main;
-                border: rem(1) solid $color-main;
+                background-color: var(--themeSecondaryColor);
+                color: var(--themeMainColor);
+                border: rem(1) solid var(--themeMainColor05);
 
                 @include input-placeholder {
-                    color: map-get($color-scheme, 'main-05');
+                    color: var(--themeMainColor);
                     font-family: $fontPrimary;
+                    font-weight: normal;
+                    font-size: rem(15);
                 }
+            }
+
+            &__message {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                @include translate(-50%, -50%);
+                border: rem(1) solid map-get($color-scheme, 'error');
+                background-color: var(--themeSecondaryColor);
+                width: max-content;
+                max-width: 80%;
             }
         }
 

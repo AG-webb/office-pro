@@ -224,6 +224,16 @@
             &__input {
                 text-align: center;
             }
+            
+            &_default {
+                .form-field__input {
+                    border-color: var(--themeMainColor);
+
+                    @include input-placeholder {
+                        color: var(--themeMainColor05);
+                    }
+                }
+            }
         }
 
         &-title {
