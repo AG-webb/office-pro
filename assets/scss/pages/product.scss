@@ -3,6 +3,7 @@
 .product-inner {
     margin-bottom: rem(64);
     padding-top: rem(36);
+    color: var(--themeMainColor);
     
     &__breadcrumb {
         margin-bottom: rem(24);
@@ -88,7 +89,7 @@
             .product-thumb {
                 &__wrap {
                     &::after {
-                        border-color: #000;
+                        border-color: var(--themeMainColor);
                         border-width: rem(2);
                     }
                 }
@@ -292,7 +293,7 @@
             &.active {
                 .product-thumb {
                     &__wrap {
-                        border: rem(2) solid #000;
+                        border: rem(2) solid var(--themeMainColor);
                     }
                 }
             }
@@ -379,7 +380,8 @@
 }
 
 .counter-block {
-    background-color: var(--themeSecondaryColor);
+    background-color: #fff;
+    color: $color-main;
     box-shadow: 2.5px 2.5px 16.4px rgba(54, 64, 99, 0.15);
     border-radius: rem(17);
     padding: rem(30);
@@ -662,6 +664,15 @@
             img {
                 width: rem(50);
             }
+        }
+
+        &__count {
+            top: rem(-6);
+            right: rem(-6);
+            min-width: rem(22);
+            font-size: rem(11);
+            line-height: rem(22);
+            padding: 0 rem(6);
         }
     }
 
