@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     headerFixed();
     tabsInit();
+    dynamicAppendInit();
 
     const mainOverlayElement = document.querySelector(".main-overlay");
     const burgerElement = document.querySelector(".burger");
@@ -133,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
     // Product Part  ************************
     const productCardElements = document.querySelectorAll(".landscape-product");
     if (productCardElements.length && window.innerWidth < 1024) {
@@ -220,18 +220,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function calcProductSale(newSize, target) {
-        const productElement = target.closest(".product");
+        const productCounterWrap = target.closest(".with-counter");
         
-        if(productElement) {
-            const counterElement = productElement.querySelector(".product-counter");
-            const productBody = productElement.querySelector(".product__body");
-            const productPreviewElement = productElement.querySelector(".product__preview");
-            const productSaleBadgesElement = productElement.querySelector(".product__badges");
+        if(productCounterWrap) {
+            const counterElement = productCounterWrap.querySelector(".product-counter");
+            const productSaleBadgesElement = productCounterWrap.querySelector(".sale-badges");
             const mainPrice = +counterElement.getAttribute("data-price");
-            const productActiveSale = productBody.querySelector(".product-info__row.active");
-            const packageSaleElement = productBody.querySelector(".package-sale");
-            const defaultSaleElement = productBody.querySelector(".default-sale");
-            const boxSaleElement = productBody.querySelector(".box-sale");
+            const productActiveSale = productCounterWrap.querySelector(".product-info__row.active");
+            const packageSaleElement = productCounterWrap.querySelector(".package-sale");
+            const defaultSaleElement = productCounterWrap.querySelector(".default-sale");
+            const boxSaleElement = productCounterWrap.querySelector(".box-sale");
             const packageSize = +counterElement.getAttribute("data-package");
             const boxSize = +counterElement.getAttribute("data-box");
             const defaultSale = +counterElement.getAttribute("data-sale");
@@ -270,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSaleBadges(productBadges, sale, totalSale) {
         if (productBadges) {
             productBadges.classList.remove("hide");
-            productBadges.closest(".product").classList.add("product_with-sales");
+            productBadges.closest(".with-counter").classList.add("product_with-sales");
             const saleElement = productBadges.querySelector(".product-sale");
             const totalSaleElement = productBadges.querySelector(".product-total-sale");
 
@@ -282,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideSaleBadges(productBadges) {
         if (productBadges) {
             productBadges.classList.add("hide");
-            productBadges.closest(".product").classList.remove("product_with-sales");
+            productBadges.closest(".with-counter").classList.remove("product_with-sales");
         }
     }
 
@@ -384,9 +382,15 @@ document.addEventListener("DOMContentLoaded", function () {
             direction: 'ttb',
             perPage: 5,
             perMove: 1,
+            arrows: false,
             type: 'loop',
             height: '24.6875rem',
-            arrowPath: 'M12.5858 7.58579C13.3668 6.80474 14.6332 6.80474 15.4142 7.58579L26.9142 19.0858C27.6953 19.8668 27.6953 21.1332 26.9142 21.9142L15.4142 33.4142C14.6332 34.1953 13.3668 34.1953 12.5858 33.4142C11.8047 32.6332 11.8047 31.3668 12.5858 30.5858L22.6716 20.5L12.5858 10.4142C11.8047 9.63317 11.8047 8.36684 12.5858 7.58579Z'
+            arrowPath: 'M12.5858 7.58579C13.3668 6.80474 14.6332 6.80474 15.4142 7.58579L26.9142 19.0858C27.6953 19.8668 27.6953 21.1332 26.9142 21.9142L15.4142 33.4142C14.6332 34.1953 13.3668 34.1953 12.5858 33.4142C11.8047 32.6332 11.8047 31.3668 12.5858 30.5858L22.6716 20.5L12.5858 10.4142C11.8047 9.63317 11.8047 8.36684 12.5858 7.58579Z',
+            // breakpoints: {
+            //     1024: {
+            //         height: '21.875rem',
+            //     },
+            // }
         });
         thumbsSlider.mount();
 
@@ -395,13 +399,18 @@ document.addEventListener("DOMContentLoaded", function () {
             perPage: 1,
             type: 'loop',
             arrowPath: 'M12.5858 7.58579C13.3668 6.80474 14.6332 6.80474 15.4142 7.58579L26.9142 19.0858C27.6953 19.8668 27.6953 21.1332 26.9142 21.9142L15.4142 33.4142C14.6332 34.1953 13.3668 34.1953 12.5858 33.4142C11.8047 32.6332 11.8047 31.3668 12.5858 30.5858L22.6716 20.5L12.5858 10.4142C11.8047 9.63317 11.8047 8.36684 12.5858 7.58579Z',
+            breakpoints: {
+                1024: {
+                    arrows: false,
+                    pagination: true,
+                },
+            }
         });
         mainSlider.mount();
     
         mainSlider.on('move', function (index) {
             thumbsSlider.go(index);
         });
-
         thumbsSlider.on('move', function (index) {
             mainSlider.go(index);
         });

@@ -68,9 +68,11 @@ function dynamicAppendInit() {
 
             if (window.innerWidth < mediaSize) {
                 const appendBlockElement = document.querySelector(appendBlockClass);
-                const isElementAppended = !!appendBlockElement.querySelector(dataAppendElement.getAttribute("class"));
-                if(appendBlockElement && isElementAppended) {
-                    dataAppendElement.append(appendBlockClass);
+                const isElementAppended = appendBlockElement && !!appendBlockElement.querySelector(dataAppendElement.getAttribute("class"));
+
+                console.log(dataAppendElement);
+                if(appendBlockElement && !isElementAppended) {
+                    appendBlockElement.append(dataAppendElement);
                 }
             }
         });

@@ -1,11 +1,3 @@
-@media (max-width: $media-xxl) {
-
-}
-
-@media (max-width: $media-xl) {
-
-}
-
 @media(max-width: $media-lg) {
     .products-slider {
         .splide__arrows {
@@ -16,6 +8,20 @@
 }
 
 @media(max-width: $media-md) {
+    .badge {
+        &_lg {
+            height: rem(35);
+            line-height: rem(35);
+    
+            &.badge_main {
+                font-size: rem(15);
+            }
+            &.badge_primary {
+                font-size: rem(20);
+            }
+        }
+    }
+
     .products-slider {
         &_landscape {
             .products-slider {
@@ -85,6 +91,20 @@
                 font-size: rem(15);
             }
         }
+
+        &_lg {
+            height: rem(35);
+            line-height: rem(35);
+
+            &.badge_main {
+                padding-left: rem(14);
+                padding-right: rem(14);
+            }
+            &.badge_primary {
+                padding-left: rem(14);
+                padding-right: rem(14);
+            }
+        }
     }
 
     .main-pagination {
@@ -141,6 +161,53 @@
 
         .splide__arrows {
             top: rem(-22);
+        }
+    }
+
+    .breadcrumb {
+        font-size: rem(13);
+        line-height: rem(16);
+        
+        &__wrap {
+            margin: rem(-7) 0 0 rem(-10);
+        }
+    
+        &__link {
+            margin-left: rem(10);
+            margin-top: rem(7);
+    
+            &::before {
+                right: rem(-7);
+            }
+    
+            &_btn {
+    
+                &+.breadcrumb__link {
+                    margin-left: rem(20);
+                }
+    
+                &::before {
+                    right: rem(-13);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $media-xs) {
+    .badge {
+        &_lg {
+            height: rem(25);
+            line-height: rem(25);
+    
+            &.badge_main {
+                font-size: rem(13);
+                padding-left: rem(20);
+                padding-right: rem(20);
+            }
+            &.badge_primary {
+                font-size: rem(15);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 .product-inner {
     margin-bottom: rem(64);
-    padding-top: rem(54);
+    padding-top: rem(36);
     
     &__breadcrumb {
         margin-bottom: rem(24);
@@ -13,11 +13,13 @@
     }
 
     &__slider {
-        @include flex(0, 0, rem(565));
+        @include flex(0, 0, rem(547));
+        max-width: rem(547)
     }
 
     &__body {
         @include flex(1, 1, auto);
+        padding-right: rem(40);
     }
 
     &__title {
@@ -32,20 +34,24 @@
     }
 
     &__action {
-        @include flex(0, 0, rem(300));
+        @include flex(0, 0, rem(280));
+        max-width: rem(280)
     }
 }
 
 .product-slider {
     @extend %flex;
+    padding-right: rem(30);
 
     &__thumbs {
         @include flex(0, 0, rem(70));
-        margin-right: rem(30);
+        max-width: rem(70);
+        margin-right: rem(42);
     }
 
     &__main {
         @include flex(1, 1, auto);
+        padding-top: rem(24);
     }
 
     .splide__arrow {
@@ -71,9 +77,9 @@
 .product-thumbs {
     position: relative;
     
-    .splide{
-        padding: rem(40) 0;
-    }
+    // .splide{
+    //     padding: rem(40) 0;
+    // }
 
     &__slide {
         padding: rem(5) 0;
@@ -81,8 +87,10 @@
         &.is-active {
             .product-thumb {
                 &__wrap {
-                    border-color: #000;
-                    border-width: rem(2);
+                    &::after {
+                        border-color: #000;
+                        border-width: rem(2);
+                    }
                 }
             }
         }
@@ -91,39 +99,46 @@
     &__item {
         .product-thumb {
             &__wrap {
-                border: rem(1) solid #FF00C7;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border: rem(1) solid #FF00C7;
+                    border-radius: inherit;
+                    z-index: 1;
+                }
             }
         }
     }
 
-    .splide__arrow {
-        @include center-absolute(horizontal);
-        @extend %user-cursor;
+    // .splide__arrow {
+    //     @include center-absolute(horizontal);
+    //     @extend %user-cursor;
 
-        &--prev {
-            top: 0;
+    //     &--prev {
+    //         top: 0;
 
-            svg {
-                @include rotate(-90);
-            }
-        }
-        &--next {
-            bottom: 0;
+    //         svg {
+    //             @include rotate(-90);
+    //         }
+    //     }
+    //     &--next {
+    //         bottom: 0;
 
-            svg {
-                @include rotate(90);
-            }
-        }
-    }
+    //         svg {
+    //             @include rotate(90);
+    //         }
+    //     }
+    // }
 }
-
+ 
 .product-images {
     position: relative;
-    margin-right: rem(60);
-
-    &__slide {
-
-    }
 
     .splide__arrow {
         @include center-absolute(vertical);
@@ -131,25 +146,31 @@
         z-index: 1;
 
         &--prev {
-            left: 0;
+            left: rem(-12);
             
             svg {
                 @include rotate(-180);
             }
         }
         &--next {
-            right: 0;
+            right: rem(-12);
         }
     }
 
     &__slider {
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+    }
+
+    &__slide {
+        text-align: center;
     }
 
     &__action {
         position: absolute;
         right: 0;
         top: 0;
-        z-index: 1;
+        z-index: 2;
     }
 
     &__btns {
@@ -172,18 +193,21 @@
     &__btn {
         @extend %user-cursor;
 
+        .icon {
+            font-size: rem(32);
+        }
+
         &_fav {
             width: rem(24);
             height: rem(24);
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: rem(20);
+            margin-bottom: rem(15);
 
             .icon {
                 @include center-absolute(both);
                 @include transition(all,0.3s,ease);
-                font-size: rem(30);
 
                 &-heart {
                     @extend %hidden;
@@ -207,7 +231,6 @@
 
         &_share {
             color: var(--themeMainColor05);
-            font-size: rem(30);
         }
     }
 
@@ -284,6 +307,10 @@
     &__wrap {
         border-radius: rem(5);
         overflow: hidden;
+
+        img {
+            width: rem(70);
+        }
     }
 
     &__count {
@@ -336,10 +363,10 @@
     }
 
     &__label {
-        @include flex(0, 0, 45%);
-        max-width: 45%;
+        @include flex(1, 1, auto);
         font-size: rem(13);
         line-height: rem(16);
+        padding-right: rem(8);
     }
 
     &__value {
@@ -358,9 +385,8 @@
     padding: rem(30);
 
     &__sales {
-        margin-bottom: rem(25);
-
         .sale-badges {
+            margin-bottom: rem(25);
             @extend %flex;
             @extend %align-bottom;
             @include flex-flow(column, nowrap);
@@ -378,17 +404,19 @@
             }
 
             .badge_main {
-                width: 111%;
+                width: 117%;
                 text-align: center;
             }
         }
     }
 
     &__info {
-        margin-bottom: rem(36);
+        margin-bottom: rem(30);
 
         .product-info {
             &__row {
+                font-size: rem(15);
+
                 &.active {
                     .product-info__price {
                         font-size: rem(20);
@@ -397,7 +425,345 @@
             }
         }
     }
+}
 
-    &__action {
+
+@media (max-width: $media-md) {
+    .product-inner {
+        padding-top: rem(24);
+
+        &__wrap {
+            @include flex-flow(row, wrap);
+        }
+
+        &__slider {
+            @include flex(0, 0, 52.2%);
+            max-width: 52.2%;
+        }
+
+        &__body {
+            @include flex(0, 0, 47.8%);
+            max-width: 47.8%;
+            padding-right: 0;
+        }
+
+        &__title {
+            margin-bottom: rem(45);
+            font-size: rem(18);
+            line-height: rem(22);
+        }
+
+        &__feature {
+            max-width: 100%;
+        }
+
+        &__action {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+            margin-bottom: rem(30);
+
+            .counter-block {
+                max-width: rem(320);
+                margin-left: auto;
+            }
+        }
+    }
+
+    .product-slider {
+        padding-right: rem(40);
+
+        &__thumbs {
+            // @include flex(0, 0, rem(60));
+            // max-width: rem(60);
+            // margin-right: rem(24);
+            display: none;
+        }
+
+        &__main {
+            padding-top: 0;
+        }
+    }
+
+    .product-images {
+        &__slider {
+            .splide__pagination {
+                padding-top: rem(20);
+    
+                button {
+                    background-color: var(--themeMainColor);
+                }
+            }
+
+            .splide__track {
+                border: rem(1) solid #FF00C7;
+                border-radius: rem(30);
+            }
+        }
+
+        &__action {
+            top: rem(7);
+            right: rem(7);
+        }
+
+        &__btns {
+            padding-bottom: rem(12);
+        }
+
+        &__btns {
+            padding-bottom: rem(5);
+        }
+    
+        &__btn {    
+            &_fav {
+                width: rem(28);
+                height: rem(28);
+                margin-bottom: rem(12);
+            }
+
+            .icon {
+                font-size: rem(28);
+            }
+        }
+
+        &__badge {
+            bottom: rem(45);
+            right: rem(13);
+        }
+    }
+
+    .product-thumb {
+        &__wrap {
+            img {
+                width: rem(60);
+            }
+        }
+    }
+
+    .product-feature {
+        &__title {
+            margin-bottom: rem(24);
+            text-align: center;
+        }
+
+        &__value {
+            max-width: rem(320);
+        }
+    }
+}
+
+@media (max-width: $media-sm) {
+    .product-inner {
+        padding-top: rem(24);
+
+        &__slider {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+        }
+
+        &__body {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+        }
+
+        &__title {
+            margin-bottom: rem(20);
+            font-size: rem(15);
+            line-height: rem(18);
+        }
+
+        &__action {
+            .counter-block {
+                max-width: 100%;
+                margin-left: initial;
+            }
+        }
+    }
+
+    .product-slider {
+        padding-right: 0;
+    }
+
+    .product-images {
+        max-width: rem(300);
+        margin-left: auto;
+        margin-right: auto;
+
+        &__slider {
+            margin-bottom: rem(25);
+
+            .splide__track {
+                border-radius: rem(17);
+                padding-top: rem(18);
+                padding-bottom: rem(18);
+            }
+        }
+
+        &__slide {
+            img {
+                max-width: 89%;
+            }
+        }
+
+        &__btns {
+            padding-bottom: rem(16);
+
+            .share-panel {
+                left: initial;
+                transform: none;
+                right: rem(-28);
+            }
+        }
+    
+        &__btn {    
+            &_fav {
+                width: rem(24);
+                height: rem(24);
+                margin-bottom: rem(8);
+            }
+
+            .icon {
+                font-size: rem(24);
+            }
+        }
+    }
+
+    .share-panel {
+        padding: rem(10) rem(12);
+        width: rem(258);
+
+        &__wrap {
+            display: flex;
+            display: -ms-flexbox;
+            @include flex(0, 0, auto);
+        }
+    
+        &__item {
+            margin-bottom: 0;
+            margin-right: rem(7);
+            @include flex(0, 0, auto);
+            display: flex;
+            display: -ms-flexbox;
+            @include align-items(center);
+
+            &:first-child {
+                .icon {
+                    font-size: rem(24);
+                }
+            }
+    
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .product-thumb {
+        &__wrap {
+            img {
+                width: rem(50);
+            }
+        }
+    }
+
+    .product-variants {
+        &__list {
+            margin-top: rem(-6);
+            margin-left: rem(-6);
+
+            .product-thumb {
+                margin-top: rem(6);
+                margin-left: rem(6);
+            }
+        }
+    }
+
+    .product-feature {
+        &__title {
+            font-size: rem(13);
+            line-height: rem(16);
+        }
+
+        &__value {
+            font-size: rem(13);
+            line-height: rem(16);
+        }
+    }
+
+    .counter-block {
+        &__sales {
+            margin-right: rem(-8);
+
+            .sale-badges {
+                margin-bottom: rem(25);
+
+                &__old {
+                    top: 0;
+                    max-width: 30%;
+                }
+    
+                .badge_main {
+                    width: initial;
+                    min-width: rem(208);
+                    text-align: center;
+                }
+                .badge_primary {
+                    margin-top: rem(-48);
+                }
+            }
+        }
+    
+        &__info {
+            margin-bottom: rem(25);
+    
+            .product-info {
+                &__row {
+                    margin-bottom: rem(12);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $media-xs) {
+    .product-images {
+        max-width: rem(210);
+
+        &__slider {
+            .splide__track {
+                border-radius: rem(11);
+                padding-top: rem(13);
+                padding-bottom: rem(13);
+            }
+        }
+    }
+
+    .counter-block {
+        padding: rem(15);
+        
+        &__sales {
+            .sale-badges {
+                .badge_main {
+                    min-width: initial;
+                }
+                .badge_primary {
+                    margin-top: rem(-27);
+                }
+            }
+        }
+
+        &__info {    
+            .product-info {
+                &__row {
+                    font-size: rem(13);
+                    margin-bottom: rem(8);
+    
+                    &.active {
+                        .product-info__price {
+                            font-size: rem(15);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
