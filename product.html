@@ -21,18 +21,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/fav/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/fav/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-</head>
 
-<body>
     <!-- First Needed styles -->
     <link rel="preload" as="style" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/pages/product.css">
+</head>
 
+<body>
     <!-- Header -->
     <header class="header">
         <div class="header__top">
@@ -2136,32 +2136,46 @@
                                     <div class="product-images main-pagination">
                                         <div class="splide product-images__slider">
                                             <div class="splide__track">
-                                                <div class="splide__list">
-                                                    <div class="splide__slide product-images__slide">
+                                                <div class="splide__list" id="product-lightgallery">
+                                                    <div data-href="assets/img/draft/product-lg-1.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-1.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-2.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-2.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-3.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-3.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-4.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-4.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-5.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-5.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-3.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-3.png" alt="product">
                                                     </div>
-                                                    <div class="splide__slide product-images__slide">
+                                                    <div data-href="assets/img/draft/product-lg-2.png" data-pswp-width="800"
+                                                        data-pswp-height="800"
+                                                        class="splide__slide product-images__slide">
                                                         <img width='405' height='405'
                                                             src="assets/img/draft/product-inner-2.png" alt="product">
                                                     </div>
@@ -2170,11 +2184,13 @@
                                         </div>
                                         <div class="product-images__action">
                                             <div class="product-images__btns toggler toggler_global">
-                                                <div class="product-images__btn product-images__btn_fav toggler toggler-trigger">
+                                                <div
+                                                    class="product-images__btn product-images__btn_fav toggler toggler-trigger">
                                                     <i class="icon icon-heart-stroke"></i>
                                                     <i class="icon icon-heart"></i>
                                                 </div>
-                                                <div class="product-images__btn product-images__btn_share toggler-trigger">
+                                                <div
+                                                    class="product-images__btn product-images__btn_share toggler-trigger">
                                                     <i class="icon icon-share"></i>
                                                 </div>
                                                 <div class="product-images__share share-panel">
@@ -2230,7 +2246,7 @@
                                     <div class="product-thumb active">
                                         <div class="product-thumb__wrap">
                                             <img width='70' height='70' src="assets/img/draft/product-inner-1.png"
-                                            alt="product">
+                                                alt="product">
                                         </div>
                                     </div>
                                     <div class="product-thumb">
@@ -2268,7 +2284,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-inner__feature product-feature" data-append="1024, .product-inner__footer">
+                            <div class="product-inner__feature product-feature"
+                                data-append="1024, .product-inner__footer">
                                 <div class="product-feature__title">
                                     Характеристики товара:
                                 </div>
@@ -2286,27 +2303,33 @@
                                     <div class="product-feature__body">
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555 aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555 aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555 aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555 aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555 aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555
+                                                aaaa уh</div>
                                         </div>
                                         <div class="product-feature__row">
                                             <div class="product-feature__label">Код aaaaaaaaa уh</div>
-                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555aaaa уh</div>
+                                            <div class="product-feature__value">уh-77775555-55000-70000-77h777755555aaaa
+                                                уh</div>
                                         </div>
                                     </div>
                                 </div>
@@ -2352,20 +2375,19 @@
                                     </div>
                                 </div>
                                 <div class="counter-block__action">
-                                    <div class="product-counter product-counter_sm product-counter_mobile-md" data-price='1500' data-package="15" data-box="45" data-sale="14" data-package-sale="19" data-box-sale="30">
+                                    <div class="product-counter product-counter_sm product-counter_mobile-md"
+                                        data-price='1500' data-package="15" data-box="45" data-sale="14"
+                                        data-package-sale="19" data-box-sale="30">
                                         <div class="product-counter__decrement">
-                                            <div
-                                                class="product-counter__btn product-counter__btn_decrement">
+                                            <div class="product-counter__btn product-counter__btn_decrement">
                                                 <span>-</span>
                                             </div>
                                         </div>
                                         <div class="product-counter__value">
-                                            <input type="number" name="product_counts[]" value="0"
-                                                step="1" min="0">
+                                            <input type="number" name="product_counts[]" value="0" step="1" min="0">
                                         </div>
                                         <div class="product-counter__increment">
-                                            <div
-                                                class="product-counter__btn product-counter__btn_increment">
+                                            <div class="product-counter__btn product-counter__btn_increment">
                                                 <span>+</span>
                                             </div>
                                         </div>
@@ -2471,11 +2493,86 @@
 
     <!-- Rest Styles -->
     <link rel="stylesheet" href="assets/css/libs/splide-core.min.css">
+    <link rel="stylesheet" href="assets/css/libs/photoswipe.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/bottom.css">
 
     <!-- JS -->
-    <!-- <script defer src="assets/js/libs.js.php"></script> -->
+    <script defer type="module">
+        import PhotoSwipe from './assets/js/libs/photoswipe.esm.min.js';
+        const productLightgallery = document.getElementById("product-lightgallery");
+        const productImagesSlides = document.querySelectorAll(".product-images__slide");
+
+        if (productLightgallery) {
+            const options = {
+                dataSource: [],
+                counter: false,
+                padding: { top: 140, bottom: 140, left: 20, right: 20 }
+            };
+            if(productImagesSlides.length) {
+                productImagesSlides.forEach((slide, index) => {
+                    options.dataSource = [
+                        ...options.dataSource,
+                        {
+                            src: slide.getAttribute("data-href"),
+                            width: slide.getAttribute("data-pswp-width"),
+                            height: slide.getAttribute("data-pswp-height"),
+                            alt: slide.querySelector("img").getAttribute("alt"),
+                        },
+                    ];
+                });
+                productImagesSlides.forEach((slide, index) => {
+                    slide.onclick = (e) => {
+                        options.index = index;
+                        const pswp = new PhotoSwipe(options);
+                        
+                        pswp.on('uiRegister', function() {
+                            pswp.ui.registerElement({
+                                name: 'bulletsIndicator',
+                                className: 'pswp__bullets-indicator',
+                                appendTo: 'wrapper',
+                                onInit: (el, pswp) => {
+                                    const thumbs = [];
+                                    let thumb;
+                                    let thumbWrap;
+                                    let thumbImg;
+                                    let prevIndex = -1;
+                                    
+                                    for (let i = 0; i < pswp.getNumItems(); i++) {
+                                        thumb = document.createElement('div');
+                                        thumbWrap = document.createElement('div');
+                                        thumbImg = document.createElement("img");
+
+                                        thumb.className = 'product-thumb';
+                                        thumbWrap.className = 'product-thumb__wrap';
+
+                                        const currentSrc = productImagesSlides[i].querySelector("img").getAttribute("src");
+                                        thumbImg.setAttribute('src', currentSrc);
+                                        
+                                        thumbWrap.appendChild(thumbImg);
+                                        thumb.appendChild(thumbWrap);
+                                        thumb.onclick = () => pswp.goTo(i);
+                                        el.appendChild(thumb);
+                                        thumbs.push(thumb);
+                                    }
+
+                                    pswp.on('change', (a,) => {
+                                        if (prevIndex >= 0) {
+                                            thumbs[prevIndex].classList.remove('pswp__bullet--active');
+                                        }
+                                        thumbs[pswp.currIndex].classList.add('pswp__bullet--active');
+                                        prevIndex = pswp.currIndex;
+                                    });
+                                }
+                            });
+                        });
+                    
+                        pswp.init();
+                    };
+                });
+            }
+        }
+    </script>
     <script defer src="assets/js/libs/splide.min.js"></script>
     <script defer src="assets/js/utils/functions.js"></script>
     <script defer src="assets/js/main.js"></script>

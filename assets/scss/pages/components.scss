@@ -1,7 +1,5 @@
 @import "../utils/_module";
-@import "../components/_file-upload";
 @import "../components/_toast";
-// @import "../components/_combobox";
 @import "../components/_combobox_new";
 @import "../components/_modal";
 @import "../components/_form-items";
@@ -9,8 +7,6 @@
 @import "../components/_tabs";
 @import "../components/_skeleton";
 @import "../components/_checkbox";
-@import "../components/_datepicker";
-@import "../components/_popover";
 
 .components {
     padding: rem(25) 0;
