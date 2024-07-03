@@ -22,7 +22,7 @@
 
     &__body {
         @extend %flex;
-        max-width: rem(697);
+        max-width: rem(650);
         margin-left: auto;
         margin-right: auto;
 
@@ -30,16 +30,18 @@
             margin-bottom: rem(18);
         }
 
+        &-wrap {
+            margin-right: initial;
+            width: 100%;
+        }
+
         &-content {
             @extend %flex;
             @extend %align-between;
             @include flex-flow(column, nowrap);
 
-            .auth__link {
-                &:first-child {
-                    margin-top: 0;
-                    margin-bottom: rem(20);
-                }
+            .auth__subtitle {
+                margin-bottom: rem(20);
             }
         }
     }
@@ -72,33 +74,103 @@
         margin-top: rem(30);
     }
 
+    &__desc {
+        font-size: rem(15);
+        line-height: rem(18);
+        @extend %flex;
+
+        ul {
+            list-style: none;
+
+            li {
+                position: relative;
+                margin-bottom: rem(4);
+
+                &::after {
+                    content: "✔";
+                    position: absolute;
+                    top: 0;
+                    left: rem(-22);
+                    font-size: inherit;
+                    font-family: inherit;
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        font-size: rem(15);
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-bottom: rem(25);
+        font-size: rem(15);
+        line-height: rem(18);
+        text-align: center;
+    }
+
     &.sign-in {
         margin-bottom: rem(126);
     }
-}
-
-.alternate-sign {
-    @extend %flex;
-    @extend %align-between;
-
-    &__item {
-        @include flex(0, 0, calc(50% - rem(3)));
-        max-width: calc(50% - rem(3));
-        border-radius: rem(90);
-        border: rem(1) solid var(--themeMainColor05);
+    &.sign-up {
+        margin-bottom: rem(106);
+    }
+    &.forgot-pass {
+        margin-bottom: rem(170);
     }
 }
 
 @media (max-width: $media-sm) {
     .auth {
+        padding-top: rem(25);
+
         &__title {
             font-size: rem(20);
             line-height: rem(24);
             margin-bottom: rem(25);
         }
+
+        &__body {
+            max-width: 100%;
+            @include flex-flow(column-reverse, nowrap);
+
+            &-wrap {
+                margin-right: auto;
+            }
+    
+            &-content {
+                padding-top: rem(25);
+            }
+        }
+
+        &__link {
+            &.font-sm-13 {
+                font-size: rem(13);
+            }
+        }
+
+        &__desc {
+            @include justify(center);
+            padding-bottom: rem(21);
+            border-bottom: rem(2) solid var(--themeMainColor02);
+        }
+
+        &__subtitle {
+            text-align: center;
+        }
+
+        &__text {
+            max-width: rem(250);
+            margin-left: auto;
+            margin-right: auto;
+        }
     
         &.sign-in {
             margin-bottom: rem(57);
+        }
+        &.forgot-pass {
+            margin-bottom: rem(120);
         }
     } 
 }

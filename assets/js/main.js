@@ -112,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 let isValid = true;
                 let emailValidationElements = withValidationForm.querySelectorAll("[data-email-validation]");
                 let requiredFields = withValidationForm.querySelectorAll("[data-required]");
+                let newPassField = withValidationForm.querySelector("[data-new-pass]");
+                let repeatPassField = withValidationForm.querySelector("[data-repeat-pass]");
 
                 // clear All error messages
                 const errorMessages = withValidationForm.querySelectorAll(".form-field__message.error");
@@ -143,6 +145,21 @@ document.addEventListener("DOMContentLoaded", function () {
                             isValid = false;
                         }
                     });
+                }
+
+                // Validations
+                if(newPassField && repeatPassField) {
+                    if(newPassField.value !== repeatPassField.value) {
+                        if(!repeatPassField.closest(".form-field").querySelector(".form-field__message")) {
+                            const requiredMessage = repeatPassField.getAttribute("data-new-pass") || "! Пароли не совпадают";
+                            let requiredErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
+
+                            repeatPassField.closest(".form-field").classList.add("invalid");
+                            repeatPassField.closest(".form-field").insertAdjacentHTML("beforeend", requiredErrorHtml);
+                        }
+
+                        isValid = false;
+                    }
                 }
                 
                 if (emailValidationElements.length) {

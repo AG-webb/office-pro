@@ -377,5 +377,36 @@
         font-size: rem(15);
         background-color: var(--themeSecondaryColor);
         max-width: 60%;
+        @include transition(background-color,0.3s,ease);
+    }
+}
+
+.alternate-sign {
+    @extend %flex;
+    @extend %align-between;
+
+    &__item {
+        @include flex(0, 0, calc(50% - rem(3)));
+        max-width: calc(50% - rem(3));
+        
+    }
+}
+
+.sign-box {
+    border: rem(1) solid var(--themeMainColor05);
+    color: var(--themeMainColor);
+    border-radius: rem(90);
+    height: rem(42);
+    padding: 0 rem(10);
+    @extend %flex;
+    @extend %align-middle;
+
+    img {
+        @include flex(0, 0, rem(27));
+    }
+
+    &__title {
+        margin-left: rem(10);
+        font-size: rem(14);
     }
 }

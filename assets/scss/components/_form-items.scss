@@ -37,6 +37,8 @@
     }
 
     &__message {
+        @include transition(background-color,0.3s,ease);
+        
         &.error {
             color: map-get($color-scheme, 'error');
         }
@@ -172,8 +174,8 @@
     &_password {
         .form-field {
             &__icon {
-                width: rem(30);
-                height: rem(27);
+                width: rem(32);
+                height: rem(32);
                 @extend %user-cursor;
                 pointer-events: auto;
                 opacity: 0.5;
@@ -183,10 +185,13 @@
                     top: 0;
                     left: 0;
                     @include transition(all,0.3s,ease);
-                    font-size: rem(30);
+                    font-size: rem(32);
 
                     &-visible {
                         @extend %hidden;
+                    }
+                    &-hidden {
+                        margin-top: rem(3);
                     }
                 }
             }
@@ -242,6 +247,7 @@
                 background-color: var(--themeSecondaryColor);
                 color: var(--themeMainColor);
                 border: rem(1) solid var(--themeMainColor05);
+                @include transition(background-color,0.3s,ease);
 
                 @include input-placeholder {
                     color: var(--themeMainColor);
@@ -271,6 +277,10 @@
 
                 &__input {
                     border: rem(1) solid map-get($color-scheme, 'error');
+
+                    @include input-placeholder {
+                        color: map-get($color-scheme, 'error');
+                    }
                 }
             }
         }

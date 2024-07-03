@@ -2027,18 +2027,22 @@
     <div class="main-overlay"></div>
 
     <main>
-        <div class="auth sign-in">
+        <div class="auth forgot-pass">
             <div class="row">
                 <div class="column sm-30">
                     <div class="auth__wrap auth__box">
-                        <h1 class='auth__title'>Вход</h1>
+                        <h1 class='auth__title'>Введите пароль</h1>
                         <form class='auth__body with-validation'>
                             <div class="auth__body-wrap">
                                 <div class="form-fields">
                                     <div class="form-fields__item">
-                                        <div class="form-field form-field_default form-field_md">
-                                            <div class="form-field__target">
-                                                <input type="password" name="email" class="form-field__input" placeholder='E-mail*' data-email-validation="! Неправильный формат почты" data-required="! Обязательное поле">
+                                        <div class="form-field form-field_default form-field_password form-field_md toggler">
+                                            <div class="form-field__target form-field__target_suffix">
+                                                <div class="form-field__icon toggler-trigger">
+                                                    <i class="icon icon-hidden"></i>
+                                                    <i class="icon icon-visible"></i>
+                                                </div>
+                                                <input type="password" name="new_password" class="form-field__input" placeholder='новый пароль' data-new-pass="! Пароли не совпадают" data-required="! Обязательное поле">
                                             </div>
                                         </div>
                                     </div>
@@ -2049,45 +2053,17 @@
                                                     <i class="icon icon-hidden"></i>
                                                     <i class="icon icon-visible"></i>
                                                 </div>
-                                                <input type="password" name="password" class="form-field__input" placeholder='Пароль' data-required="! Обязательное поле">
+                                                <input type="password" name="repeat_password" class="form-field__input" placeholder='повторите пароль' data-repeat-pass="! Пароли не совпадают" data-required="! Обязательное поле">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='auth__action'>
-                                    <label class="custom-check custom-check_checkbox">
-                                        <input type="checkbox" value="remember_me" name="checkbox">
-                                        <span class="custom-check__checkmark"></span>
-                                        <span class="custom-check__label font-13">Запомнить меня</span>
-                                    </label>
-                                    <a href="forgotPass.html">Վերականգնել գաղտնաբառը</a>
-                                </div>
                                 <div class='auth__footer'>
                                     <div class="auth__submit">
                                         <button type='submit' class="btn btn_md btn_main fit">
-                                            <span class='font-15 font-medium'>Войти</span>
+                                            <span class='font-15 font-medium'>Сменить пароль</span>
                                         </button>
                                     </div>
-                                    <div class="title-lined">
-                                        <span>или</span>
-                                    </div>
-                                    <div class="alternate-sign">
-                                        <a href="#" target='_blank' class="alternate-sign__item">
-                                            <div class="sign-box">
-                                                <img width='27' height='27' src="assets/img/google.png" alt="Google">
-                                                <span class='sign-box__title'>Google</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" target='_blank' class="alternate-sign__item">
-                                            <div class="sign-box">
-                                                <img width='27' height='27' src="assets/img/facebook.svg" alt="Facebook">
-                                                <span class='sign-box__title'>Facebook</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="auth__link font-bold">
-                                    <a href="signUp.html">Зарегистрироваться</a>
                                 </div>
                             </div>
                         </form>
