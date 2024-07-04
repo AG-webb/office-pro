@@ -53,6 +53,12 @@
             }
         }
     }
+
+    .sitemap {
+        &__footer {
+            padding-top: rem(64);
+        }
+    }
 }
 
 @media(max-width: $media-sm) {
@@ -190,6 +196,44 @@
                     right: rem(-13);
                 }
             }
+        }
+    }
+
+    
+    .about {
+        margin-bottom: rem(64);
+
+        &__title {
+            margin-bottom: rem(24);
+        }
+    }
+
+    .sitemap {
+        margin-bottom: rem(64);
+    
+        &__title {
+            margin-bottom: rem(32);
+        }
+    
+        &__category {
+            margin-bottom: rem(20);
+    
+            &-title {
+                margin-bottom: rem(24);
+            }
+
+            .catalog-item {
+                margin-bottom: rem(24);
+            }
+        }
+
+        &__footer {
+            padding-top: rem(32);
+            @include flex-flow(column, nowrap);
+        }
+
+        &__link {
+            margin-bottom: rem(12);
         }
     }
 }

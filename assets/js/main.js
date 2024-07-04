@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainOverlayElement = document.querySelector(".main-overlay");
     const burgerElement = document.querySelector(".burger");
     const catalogMenuElement = document.querySelector(".catalog-menu");
+    const currentTheme = localStorage.getItem("theme");
+
+    if(currentTheme && currentTheme === 'dark') {
+        document.body.classList.add("dark-theme");
+        document.getElementById("theme-switcher").classList.add("active");
+    }
 
     const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
     if (catalogTabElements.length) {
@@ -65,6 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (togglerTriggerElement.getAttribute("id") === "theme-switcher") {
                     document.body.classList.toggle("dark-theme");
+                    if(currentTheme !== 'dark') {
+                        localStorage.setItem("theme", "dark");
+                    } else {
+                        localStorage.setItem("theme", "light");
+                    }
                 }
                 if (togglerTriggerElement.closest(".toggler").getAttribute("id") === "chart-badge" && window.innerWidth < 768) {
                     mainOverlayElement.classList.toggle("active");

@@ -394,7 +394,6 @@
 
 .sign-box {
     border: rem(1) solid var(--themeMainColor05);
-    color: var(--themeMainColor);
     border-radius: rem(90);
     height: rem(42);
     padding: 0 rem(10);
@@ -408,5 +407,69 @@
     &__title {
         margin-left: rem(10);
         font-size: rem(14);
+    }
+}
+
+.about {
+    margin-bottom: rem(83);
+    padding-top: rem(30);
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(40);
+    }
+
+    &__text {
+        font-size: rem(20);
+        font-weight: 500;
+        line-height: rem(24);
+        text-align: justify;
+        color: var(--themeMainColor);
+        @include font-media($media-md, rem(18), rem(22));
+        @include font-media($media-sm, rem(14), rem(20));
+    }
+}
+
+.sitemap {
+    padding-top: rem(20);
+    margin-bottom: rem(120);
+
+    &__title {
+        margin-bottom: rem(60);
+        text-align: center;
+    }
+
+    &__category {
+        margin-bottom: rem(46);
+
+        &-title {
+            text-align: center;
+            margin-bottom: rem(60);
+            
+            .h3-font {
+                text-transform: initial;
+                font-weight: 600;
+            }
+        }
+
+        .catalog-item {
+            margin-bottom: rem(56);
+        }
+    }
+
+    &__footer {
+        @extend %flex;
+        @extend %align-middle;
+        padding-top: rem(96);
+        border-top: rem(1) solid var(--themeMainColor02);
+    }
+
+    &__link {
+        flex: 1;
+        font-size: rem(30);
+        font-weight: 600;
+        text-align: center;
+        @include font-media($media-md, rem(22), 0);
+        @include font-media($media-sm, rem(18), 0);
     }
 }

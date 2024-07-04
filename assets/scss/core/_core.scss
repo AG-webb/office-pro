@@ -48,7 +48,7 @@ html {
 
 body {
     font-family: $baseFontFamily, $defaultHtmlFont;
-    color: $color-main;
+    color: var(--themeMainColor);
     background-color: var(--themeSecondaryColor);
     @include transition(background-color,0.3s,ease);
 
