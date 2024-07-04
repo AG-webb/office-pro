@@ -29,6 +29,7 @@
     <!-- First Needed styles -->
     <link rel="preload" as="style" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top.css">
+    <link rel="stylesheet" href="assets/css/pages/chart.css">
 </head>
 
 <body>
@@ -351,7 +352,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="chart-product__content">
-                                                    <a href="?p=product" class="chart-product__preview">
+                                                    <a href="product.html" class="chart-product__preview">
                                                         <div class="chart-product__img">
                                                             <img width="200" height="200"
                                                                 src="assets/img/draft/product.jpg" alt="product">
@@ -392,7 +393,8 @@
                                                                     <div class="product-info__label">
                                                                         <span>220 000 ֏/шт.</span>
                                                                     </div>
-                                                                    <div class="product-info__price font-bold">
+                                                                    <div
+                                                                        class="product-info__price font-bold">
                                                                         <span>440 000 ֏</span>
                                                                     </div>
                                                                 </div>
@@ -412,7 +414,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="chart-product__content">
-                                                    <a href="?p=product" class="chart-product__preview">
+                                                    <a href="product.html" class="chart-product__preview">
                                                         <div class="chart-product__img">
                                                             <img width="200" height="200"
                                                                 src="assets/img/draft/product.jpg" alt="product">
@@ -453,7 +455,8 @@
                                                                     <div class="product-info__label">
                                                                         <span>220 000 ֏/шт.</span>
                                                                     </div>
-                                                                    <div class="product-info__price font-bold">
+                                                                    <div
+                                                                        class="product-info__price font-bold">
                                                                         <span>440 000 ֏</span>
                                                                     </div>
                                                                 </div>
@@ -476,7 +479,7 @@
                                                                 <div class="product__code">3-1</div>
                                                                 <div class="product__brand">Royal touch</div>
                                                             </div>
-                                                            <a href="?p=product" class="product__preview">
+                                                            <a href="product.html" class="product__preview">
                                                                 <div class="product__img product__img_sm">
                                                                     <img width="200" height="200"
                                                                         src="assets/img/draft/product.jpg"
@@ -537,7 +540,7 @@
                                                                 <div class="product__code">3-1</div>
                                                                 <div class="product__brand">Royal touch</div>
                                                             </div>
-                                                            <a href="?p=product" class="product__preview">
+                                                            <a href="product.html" class="product__preview">
                                                                 <div class="product__img product__img_sm">
                                                                     <img width="200" height="200"
                                                                         src="assets/img/draft/product.jpg"
@@ -2026,549 +2029,713 @@
     <div class="main-overlay"></div>
 
     <main>
-        <div class="sitemap">
+        <div class='order-section order-section_chart'>
             <div class="row">
                 <div class="column sm-30">
-                    <h1 class="sitemap__title h1-font color-primary">Карта сайта</h1>
-                    <div class="sitemap__list">
-                        <div class="sitemap__category">
-                            <div class="sitemap__category-title">
-                                <h2 class='h3-font'>Канцелярские товары</h2>
-                            </div>
-                            <div class="sitemap__category-items">
-                                <div class="row">
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
+                    <h1 class='order-section__title'>Корзина</h1>
+                    <div class='order-section__wrap'>
+                        <ol class="order-section__tabs">
+                            <li class='order-section__tab active'>
+                                Корзина
+                            </li>
+                            <li class='order-section__tab'>
+                                Оплата
+                            </li>
+                            <li class='order-section__tab'>
+                                Заказ принят
+                            </li>
+                        </ol>
+                        <div class="order-section__body">
+                            <div class="order-section__content">
+                                <div class="chart">
+                                    <div class="chart__products">
+                                        <div class="chart-products">
+                                            <div class="chart-products__heading">
+                                                <div class="chart-products__title">Мой заказ</div>
+                                                <div class="chart-products__action">
+                                                    <div class="chart-products__action-btn">Очистить корзину</div>
+                                                    <div class="chart-products__action-btn">Печать заказа</div>
                                                 </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                            </div>
+                                            <div class="chart-products__list">
+                                                <div class="chart-products__list-wrap">
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old"></div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chart-card">
+                                                        <div class="chart-card__preview">
+                                                            <img src="assets/img/draft/product.jpg" alt="product">
+                                                        </div>
+                                                        <div class="chart-card__body">
+                                                            <div class="chart-card__top">
+                                                                <div class="chart-card__code">2015-13</div>
+                                                                <div class="chart-card__brand">Office Professional</div>
+                                                                <div class="chart-card__remove">
+                                                                    <i class="icon icon-trash"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="chart-card__title">
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                                Бумага А4, 80 гр, класса C, если три строчки тогда и будет все хорошо
+                                                            </div>
+                                                            <div class="chart-card__footer">
+                                                                <div class="chart-card__counter">
+                                                                    <div class="product-counter filled" data-price='1200' data-package="12" data-box="60" data-sale="17.3" data-package-sale="21.7" data-box-sale="25">
+                                                                        <div class="product-counter__decrement">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_decrement">
+                                                                                <span>-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-counter__value">
+                                                                            <input type="number" name="product_counts[]" value="10"
+                                                                                step="1" min="0">
+                                                                        </div>
+                                                                        <div class="product-counter__increment">
+                                                                            <div
+                                                                                class="product-counter__btn product-counter__btn_increment">
+                                                                                <span>+</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chart-card__info">
+                                                                    <div class="chart-card__old">
+                                                                        <div>1 700 ֏</div>
+                                                                    </div>
+                                                                    <div class="chart-card__quantity">
+                                                                        <div>1 450 ֏ / հատ</div>
+                                                                    </div>
+                                                                    <div class="chart-card__sale">
+                                                                        <div>
+                                                                            Скидка <span class='product-total-sale'>40 150</span> ֏ / -<span class='product-sale'>17.3</span> %
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="chart-card__total">
+                                                                        <div><span class='product-total-price'>14 050</span> ֏</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
+                                    <div class="chart__about">
+                                        <form action='#' method='post' class="summary-block">
+                                            <div class="summary-block__wrap">
+                                                <div class="summary-block__title">Всего:</div>
+                                                <div class="summary-block__items">
+                                                    <div class="summary-block__row">
+                                                        <div class="summary-block__label">Товары (60)</div>
+                                                        <div class="summary-block__value">10 000 ֏</div>
+                                                    </div>
+                                                    <div class="summary-block__row">
+                                                        <div class="summary-block__label">Доставка</div>
+                                                        <div class="summary-block__value">800 ֏</div>
+                                                    </div>
+                                                    <div class="summary-block__row">
+                                                        <div class="summary-block__label">Скидка</div>
+                                                        <div class="summary-block__value">200 ֏</div>
+                                                    </div>
                                                 </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
+                                                <div class="summary-block__code promocode-input invalid">
+                                                    <div class="promocode-input__title">Промокод</div>
+                                                    <div class="promocode-input__field">
+                                                        <input type="text" name='promocode'>
+                                                        <div class='promocode-input__btn btn'>
+                                                            <span class='font-15'>OK</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
+                                                    <div class="promocode-input__message">Промокод не действителен</div>
+                                                    <div class="promocode-input__sale">
+                                                        <div class="promocode-input__sale-label">Промоскидка</div>
+                                                        <div class="promocode-input__sale-value">5 000 ֏</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
+                                            <div class="summary-block__footer">
+                                                <div class="summary-block__total">
+                                                    <div class="summary-block__total-label">К оплате</div>
+                                                    <div class="summary-block__total-value">10 600 ֏</div>
                                                 </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
+                                                <div class="summary-block__btn">
+                                                    <div class="btn btn_main btn_md fit">
+                                                        <span class='font-15 font-medium'>Заказать</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="sitemap__category">
-                            <div class="sitemap__category-title">
-                                <h2 class='h3-font'>Другие разделы</h2>
-                            </div>
-                            <div class="sitemap__category-items">
-                                <div class="row">
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column sm-10 md-15 lg-10">
-                                        <div class="catalog-item">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/draft/category.png" alt="Category">
-                                            </div>
-                                            <div class="catalog-item__body">
-                                                <div class="catalog-item__category">
-                                                    <a href="#">Бумага для офиса</a>
-                                                </div>
-                                                <div class="catalog-item__links">
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">A4, A3 Бумага для принтеров</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">Бумага для записей</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Лейбелы (самоклейки)</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-5.png">
-                                                        <a href="#">Конверты</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-4.png">
-                                                        <a href="#">Бумага для флипчарта,</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-3.png">
-                                                        <a href="#">термобумага, фотобумага</a>
-                                                    </div>
-                                                    <div class="catalog-item__subcategory"
-                                                        data-image="assets/img/draft/category-2.png">
-                                                        <a href="#">Копировальная бумага</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sitemap__footer">
-                        <div class="sitemap__link">
-                            <a href="about.html">О нас</a>
-                        </div>
-                        <div class="sitemap__link">
-                            <a href="contacts.html">Контакты</a>
-                        </div>
-                        <div class="sitemap__link">
-                            <a href="personalArea.html">Личный кабинет</a>
-                        </div>
-                        <div class="sitemap__link">
-                            <a href="about.html">ЧАВО</a>
-                        </div>
-                        <div class="sitemap__link">
-                            <a href="sales.html">Акции</a>
                         </div>
                     </div>
                 </div>
@@ -2669,7 +2836,6 @@
     <link rel="stylesheet" href="assets/css/bottom.css">
 
     <!-- JS -->
-    <!-- <script defer src="assets/js/libs.js.php"></script> -->
     <script defer src="assets/js/libs/splide.min.js"></script>
     <script defer src="assets/js/utils/functions.js"></script>
     <script defer src="assets/js/main.js"></script>
