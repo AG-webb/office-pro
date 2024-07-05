@@ -4,12 +4,25 @@
     padding-top: rem(20);
     margin-bottom: rem(170);
 
+    &__heading {
+        @extend %flex;
+        @extend %align-center;
+    }
+
     &__title {
         margin-bottom: rem(25);
         text-align: center;
         font-size: rem(30);
         line-height: rem(37);
         font-weight: bold;
+        @include font-media($media-sm, rem(18), rem(25));
+    }
+
+    &__total {
+        font-size: rem(18);
+        line-height: rem(24);
+        font-weight: bold;
+        display: none;
     }
 
     &__tabs {
@@ -27,7 +40,7 @@
         @extend %user-cursor;
         text-align: center;
         font-size: rem(13);
-        line-height: rem(16);
+        line-height: rem(10);
         color: var(--themeMainColor05);
         font-weight: bold;
 
@@ -77,7 +90,7 @@
 }
 
 .chart-products {
-    background-color: #F8F8F8;
+    background-color: #FBFBFB;
     box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
     border-radius: rem(10);
     @include transition(background-color,0.3s,ease);
@@ -106,6 +119,7 @@
         line-height: rem(18);
         margin-left: rem(28);
         @extend %user-cursor;
+        @include font-media($media-md, rem(13), rem(16));
 
         &:first-child {
             margin-left: 0;
@@ -152,6 +166,11 @@
         @include flex(0, 0, rem(100));
         max-width: rem(100);
         margin-right: rem(10);
+        text-align: center;
+
+        img {
+            max-width: rem(100)
+        }
     }
 
     &__top {
@@ -160,6 +179,8 @@
         font-size: rem(15);
         line-height: rem(18);
         margin-bottom: rem(12);
+        @include font-media($media-md, rem(13), rem(16));
+        @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__brand {
@@ -183,6 +204,8 @@
         font-weight: 500;
         @include max-lines(1);
         margin-bottom: rem(13);
+        @include font-media($media-md, rem(13), rem(16));
+        @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__footer {
@@ -212,6 +235,7 @@
                 &__value {
                     input {
                         @include font(normal, 20, 1, inherit, 0);
+                        @include font-media($media-md, rem(15), 0);
                     }
                 }
             }
@@ -229,20 +253,32 @@
     &__old {
         text-decoration: line-through;
         color: map-get($color-scheme, 'primary');
+        min-width: rem(100);
+        @include font-media($media-md, rem(13), rem(16));
+        @include font-media($media-sm, rem(11), rem(13));
+    }
+
+    &__quantity {
+        @include font-media($media-md, rem(15), rem(18));
+        @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__sale {
         font-size: rem(15);
         text-decoration: underline;
         font-weight: bold;
-        font-size: italic;
+        font-style: italic;
         margin-left: rem(39);
+        @include font-media($media-md, rem(13), rem(16));
+        @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__total {
         font-size: rem(20);
         font-weight: bold;
         margin-left: rem(32);
+        @include font-media($media-md, rem(15), rem(20));
+        @include font-media($media-sm, rem(13), rem(16));
     }
 }
 
@@ -260,6 +296,7 @@
         font-weight: bold;
         line-height: rem(24);
         margin-bottom: rem(20);
+        @include font-media($media-md, rem(15), rem(20));
     }
 
     &__items {
@@ -274,6 +311,8 @@
         font-size: rem(18);
         line-height: rem(22);
         margin-bottom: rem(6);
+        @include font-media($media-md, rem(15), rem(20));
+        @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__value {
@@ -294,23 +333,26 @@
     &__total-label {
         font-size: rem(20);
         line-height: rem(24);
+        @include font-media($media-md, rem(15), rem(20));
     }
 
     &__total-value {
         font-size: rem(30);
         font-weight: bold;
         line-height: rem(36);
+        @include font-media($media-md, rem(20), rem(30));
     }
 }
 
 .promocode-input {
-
     &__title {
         font-weight: rem(18);
         font-weight: bold;
         font-style: italic;
         line-height: rem(22);
         margin-bottom: rem(14);
+        @include font-media($media-md, rem(15), rem(20));
+        @include font-media($media-sm, rem(13), rem(16));
     }
 
     &__field {
@@ -324,6 +366,7 @@
             width: 100%;
             color: var(--themeMainColor);
             padding: 0 rem(64) 0 rem(14);
+            @include font-media($media-sm, rem(13), rem(16));
         }
     }
 
@@ -345,6 +388,7 @@
         font-weight: bold;
         font-style: italic;
         margin-top: rem(16);
+        @include font-media($media-md, rem(12),rem(16));
     }
 
     &__sale {
@@ -372,4 +416,371 @@
             }
         }
     }
+}
+
+@media (max-width: $media-md) {
+    .chart {
+        &__about {
+            @include flex(0, 0, rem(222));
+            max-width: rem(222);
+            margin-left: rem(20);
+        }
+    }
+    
+    .chart-products {
+        &__action {
+            padding-right: rem(10);
+        }
+    
+        &__action-btn {
+            margin-left: rem(25);
+        }
+    
+        &__list {
+            padding: 0 rem(6) rem(20) 0;
+        }
+    
+        &__list-wrap {
+            max-height: rem(500);
+        }
+    }
+    
+    .chart-card {
+        padding: rem(6) rem(20) rem(10) rem(10);
+    
+        &__preview {
+            @include flex(0, 0, rem(120));
+            max-width: rem(120);
+            padding-top: rem(4);
+            margin-right: rem(30);
+        }
+    
+        &__title {
+            @include max-lines(2);
+            margin-bottom: rem(20);
+        }
+    
+        &__footer {
+            @include flex-flow(column, nowrap);
+            position: relative;
+            min-height: rem(35 + 31);
+        }
+    
+        &__counter {
+            @include flex(0, 0, auto);
+            max-width: rem(120);
+            width: rem(120);
+            position: absolute;
+            top: rem(31);
+            right: calc(100% + rem(20));
+    
+            .product-counter {
+                .product-counter {
+                    &__btn {
+                        width: rem(34);
+                    }
+                }
+            }
+        }
+    
+        &__info {
+            @include flex(1, 1, 100%);
+            @include justify(flex-start);
+            @include align-items(flex-start);
+            padding-left: 0;
+            flex-wrap: wrap;
+        }
+    
+        &__old {
+            min-width: initial;
+            @include flex(0, 0, 22%);
+            max-width: 22%;
+            @include order(1);
+        }
+    
+        &__sale {
+            @include flex(0, 0, 78%);
+            max-width: 78%;
+            margin-left: 0;
+            @include order(2);
+            text-align: right
+        }
+
+        &__quantity {
+            @include flex(0, 0, 50%);
+            max-width: 50%;
+            @include order(3);
+        }
+    
+        &__total {
+            @include flex(0, 0, 50%);
+            max-width: 50%;
+            @include order(4);
+            margin-left: 0;
+            padding-left: rem(10);
+            text-align: right;
+        }
+    }
+    
+    .summary-block {
+        &__wrap {
+            padding: rem(16) rem(16) rem(20);
+            margin-bottom: rem(24);
+        }
+    
+        &__items {
+            padding-bottom: rem(16);
+            margin-bottom: rem(16);
+        }
+    
+        &__footer {
+            padding: 0 rem(10);
+        }
+    
+        &__total {
+            padding: 0 rem(10);
+            margin-bottom: rem(24);
+        }
+
+        &__btn {
+            .btn {
+                height: rem(35);
+            }
+        }
+    }
+    
+    .promocode-input {
+        &__field {
+            input {
+                height: rem(30);
+                padding: 0 rem(32) 0 rem(12);
+            }
+        }
+    
+        &__btn {
+            right: rem(3);
+            top: rem(3);
+            height: rem(24);
+            min-width: rem(40);
+        }
+    }   
+}
+
+@media (max-width: $media-sm) {
+    .order-section {
+        margin-bottom: rem(64);
+
+        &__heading {
+            @include justify(space-between);
+        }
+    
+        &__title {
+            margin-bottom: rem(16);
+            text-align: left;
+        }
+
+        &__total {
+            display: block;
+        }
+    
+        &__tabs {
+            display: none;
+        }
+    }
+
+    .chart {
+        @include flex-flow(column, nowrap);
+        margin-left: rem(-10);
+        margin-right: rem(-10);
+
+        &__products {
+            margin-bottom: rem(10);
+        }
+
+        &__about {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+    
+    .chart-products {
+        background-color: transparent;
+        box-shadow: none;
+
+        &__heading {
+            display: none;
+        }
+    
+        &__list {
+            padding: 0;
+            margin-right: rem(-10);
+            margin-left: rem(-10);
+
+            &-wrap {
+                padding-left: rem(10);
+                padding-right: rem(10);
+            }
+        }
+    }
+    
+    .chart-card {
+        padding: rem(10);
+    
+        &__preview {
+            @include flex(0, 0, rem(90));
+            max-width: rem(90);
+            padding-top: 0;
+            margin-right: rem(7);
+
+            img {
+                max-width: rem(70)
+            }
+        }
+
+        &__brand {
+            margin-left: rem(8);
+        }
+
+        &__remove {
+            margin-right: rem(-5);
+            margin-top: 0;
+        }
+
+        &__top {
+            margin-top: rem(-5);
+            margin-bottom: rem(8);
+        }
+
+        &__title {
+            margin-bottom: rem(13);
+        }
+    
+        &__footer {
+            min-height: initial;
+        }
+    
+        &__counter {
+            max-width: rem(90);
+            width: rem(90);
+            top: rem(13);
+            right: calc(100% + rem(7));
+    
+            .product-counter {
+                .product-counter {
+                    &__btn {
+                        width: rem(25);
+                        height: rem(25);
+                    }
+                }
+            }
+        }
+
+        &__sale {
+            margin-bottom: rem(10);
+            font-weight: normal;
+        }
+    }
+    
+    .summary-block {
+        background: var(--themeSecondaryColor);
+        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        border-radius: rem(10);
+        padding: rem(20);
+        @include flex-flow(row, wrap);
+
+        &__wrap {
+            padding: 0;
+            margin-bottom: rem(5);
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        &__title {
+            margin-bottom: rem(12);
+        }
+    
+        &__items {
+            padding-bottom: rem(10);
+            margin-bottom: rem(10);
+        }
+    
+        &__footer {
+            padding: 0;
+        }
+    
+        &__total {
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        &__btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--themeSecondaryColor);
+            z-index: z(dropdown);
+            padding: rem(9) rem(30) rem(24);
+            box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+
+
+            .btn {
+                height: rem(35);
+            }
+        }
+
+        &__stages {
+            display: flex;
+            display: -ms-flexbox;
+            @include align-items(center);
+            @include justify(center);
+            margin-bottom: rem(9);
+            width: 100%;
+
+            div {
+                width: rem(34);
+                height: rem(4);
+                background-color: var(--themeMainColor02);
+                margin-left: rem(9);
+                border-radius: rem(10);
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.active {
+                    background-color: var(--themeMainColor);
+                }
+            }
+        }
+    }
+    
+    .promocode-input {
+        padding-bottom: rem(10);
+        border-bottom: rem(1) solid var(--themeMainColor02);
+
+        &__wrap {
+            display: flex;
+            display: -ms-flexbox;
+            @include align-items(center);
+        }
+
+        &__title {
+            @include flex(1, 1, auto);
+            margin-bottom: 0;
+        }
+
+        &__field {
+            @include flex(0, 0, rem(160));
+            max-width: rem(160);
+        }
+    
+        &__btn {
+            right: rem(3);
+            top: rem(3);
+            height: rem(24);
+            min-width: rem(40);
+        }
+    }      
 }

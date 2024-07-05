@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (togglerTriggerElement.getAttribute("id") === "theme-switcher") {
                     document.body.classList.toggle("dark-theme");
-                    if(currentTheme !== 'dark') {
+                    if(document.body.classList.contains("dark-theme")) {
                         localStorage.setItem("theme", "dark");
                     } else {
                         localStorage.setItem("theme", "light");

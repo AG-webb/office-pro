@@ -2032,7 +2032,10 @@
         <div class='order-section order-section_chart'>
             <div class="row">
                 <div class="column sm-30">
-                    <h1 class='order-section__title'>Корзина</h1>
+                    <div class="order-section__heading">
+                        <h1 class='order-section__title'>Корзина</h1>
+                        <div class="order-section__total"><span class='summary-value'>10 600</span> ֏</div>
+                    </div>
                     <div class='order-section__wrap'>
                         <ol class="order-section__tabs">
                             <li class='order-section__tab active'>
@@ -2707,11 +2710,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="summary-block__code promocode-input invalid">
-                                                    <div class="promocode-input__title">Промокод</div>
-                                                    <div class="promocode-input__field">
-                                                        <input type="text" name='promocode'>
-                                                        <div class='promocode-input__btn btn'>
-                                                            <span class='font-15'>OK</span>
+                                                    <div class="promocode-input__wrap">
+                                                        <div class="promocode-input__title">Промокод</div>
+                                                        <div class="promocode-input__field">
+                                                            <input type="text" name='promocode'>
+                                                            <div class='promocode-input__btn btn'>
+                                                                <span class='font-15 font-md-12'>OK</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="promocode-input__message">Промокод не действителен</div>
@@ -2724,9 +2729,14 @@
                                             <div class="summary-block__footer">
                                                 <div class="summary-block__total">
                                                     <div class="summary-block__total-label">К оплате</div>
-                                                    <div class="summary-block__total-value">10 600 ֏</div>
+                                                    <div class="summary-block__total-value"><span class='summary-value'>10 600</span> ֏</div>
                                                 </div>
                                                 <div class="summary-block__btn">
+                                                    <div class='summary-block__stages'>
+                                                        <div class='active'></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
                                                     <div class="btn btn_main btn_md fit">
                                                         <span class='font-15 font-medium'>Заказать</span>
                                                     </div>
