@@ -37,7 +37,6 @@
         min-width: rem(140);
         position: relative;
         margin-left: rem(17);
-        @extend %user-cursor;
         text-align: center;
         font-size: rem(13);
         line-height: rem(10);
@@ -418,6 +417,10 @@
     }
 }
 
+.product-showcase {
+    margin-bottom: rem(170);
+}
+
 @media (max-width: $media-md) {
     .chart {
         &__about {
@@ -782,5 +785,9 @@
             height: rem(24);
             min-width: rem(40);
         }
-    }      
+    }
+
+    .product-showcase {
+        margin-bottom: rem(64);
+    }
 }

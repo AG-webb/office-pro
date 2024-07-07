@@ -532,7 +532,7 @@
                     <span>Хозяйственные товары</span>
                 </a>
                 <a href="?p=office-furniture" class="catalog-menu__tab tab" data-tab="office-furniture">
-                    <i class="icon icon-shelves"></i>
+                    <i class="icon icon-office-furniture"></i>
                     <span>Офисная мебель</span>
                 </a>
                 <a href="?p=computer-accessories" class="catalog-menu__tab tab" data-tab="computer-accessories">

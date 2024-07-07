@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSaleBadges(productBadges, sale, totalSale) {
         if (productBadges) {
             productBadges.classList.remove("hide");
-            productBadges.closest(".with-counter").classList.add("product_with-sales");
+            productBadges.closest(".with-counter").classList.add("sales-active");
             const saleElement = productBadges.querySelector(".product-sale");
             const totalSaleElement = productBadges.querySelector(".product-total-sale");
 
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideSaleBadges(productBadges) {
         if (productBadges) {
             productBadges.classList.add("hide");
-            productBadges.closest(".with-counter").classList.remove("product_with-sales");
+            productBadges.closest(".with-counter").classList.remove("sales-active");
         }
     }
 

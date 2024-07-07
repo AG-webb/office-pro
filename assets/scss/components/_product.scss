@@ -511,7 +511,7 @@
             }
         }
 
-        &.product_with-sales {
+        &.sales-active {
             .product {
                 &__preview {
                     @include flex(0, 0, rem(48));
@@ -719,7 +719,7 @@
             }
         }
 
-        &.product_with-sales {
+        &.sales-active {
             .product {
                 &__preview {
                     @include flex(0, 0, rem(60));
