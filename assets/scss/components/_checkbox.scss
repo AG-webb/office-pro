@@ -47,24 +47,40 @@
         }
     }
 
+    &_btn {
+        width: 100%;
+
+        .custom-check {
+            &__btn {
+                background-color: var(--themeMainColor03);
+                border: 0;
+                @include transition(background-color,0.3s,ease);
+            }
+        }
+
+        input:checked ~ .custom-check__btn {
+            background-color: var(--themeMainColor);
+        }
+    }
+
     &_radio {
         .custom-check {
             &__checkmark {  
                 width: rem(18);
                 height: rem(18);
                 border-radius: 50%;
-                border: rem(1) solid #000;
-                margin-right: rem(14);
+                border: rem(1) solid var(--themeMainColor);
+                margin-right: rem(11);
                 position: relative;
         
                 &::after {
                     content: "";
                     position: absolute;
-                    top: rem(4);
-                    left: rem(4);
-                    width: rem(8);
-                    height: rem(8);
-                    background-color: #000;
+                    top: rem(3);
+                    left: rem(3);
+                    width: rem(10);
+                    height: rem(10);
+                    background-color: var(--themeMainColor);
                     border-radius: 50%;
                     @include scale(0);
                     @include transition(all,0.3s,ease);

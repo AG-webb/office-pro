@@ -93,6 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         formFieldInput.setAttribute("type", "password");
                     }
                 }
+                if(togglerTriggerElement.closest(".form-fields__edit")) {
+                    const formFields = togglerTriggerElement.closest(".form-fields");
+                    const formFieldInputs = formFields.querySelectorAll("input, textarea");
+
+                    if(formFieldInputs.length) {
+                        formFieldInputs.forEach((formFieldInput) => {
+                            if(formFields.classList.contains("active")) {
+                                formFieldInput.removeAttribute("disabled");
+                            } else {
+                                formFieldInput.setAttribute("disabled", "disabled");
+                            }
+                        });
+                    }
+                }
 
                 scrollNone();
             });
@@ -586,6 +600,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
             productSlider.mount();
+        });
+    }
+
+    const paymentTypeInputs = document.querySelectorAll(".payment-type-input");
+    const organizationFields = document.querySelectorAll(".organization-field");
+    if(paymentTypeInputs.length && organizationFields.length) {
+        paymentTypeInputs.forEach((paymentTypeInput) => {
+            paymentTypeInput.addEventListener('change', function() {
+                if(paymentTypeInput.classList.contains("organization-type")) {
+                    organizationFields.forEach((organizationField) => {
+                        organizationField.classList.remove("dn");
+                    });
+                } else {
+                    organizationFields.forEach((organizationField) => {
+                        organizationField.classList.add("dn");
+                    });
+                }
+            });
         });
     }
 

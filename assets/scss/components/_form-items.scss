@@ -5,6 +5,61 @@
         &:first-child {
             margin-top: 0;
         }
+
+        &_radio {
+            @extend %flex;
+            @extend %align-middle;
+            flex-wrap: wrap;
+
+            .custom-check {
+                margin-left: rem(16);
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__edit {
+        margin-top: rem(40);
+        @extend %user-cursor;
+
+        .btn {
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &_editable {
+        .form-fields__item {
+           pointer-events: none
+        }
+
+        &.active {
+            .form-fields {
+                &__item {
+                    pointer-events: auto;
+                }
+
+                &__edit {
+                    .btn {
+                        background-color: var(--themeMainColor);
+                        color: var(--themeSecondaryColor);
+    
+                        span {
+                            display: none;
+                            text-decoration: none;
+    
+                            &.dn {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -166,9 +221,9 @@
     &_textarea {
         .form-field {
             &__input {
-                min-height: rem(180);
-                padding: rem(24);
-                font-size: rem(18);
+                min-height: rem(100);
+                padding: rem(16) rem(20);
+                border-radius: rem(20);
             }
         }
     }

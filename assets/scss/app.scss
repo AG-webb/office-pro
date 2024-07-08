@@ -479,3 +479,106 @@
         @include font-media($media-sm, rem(18), 0);
     }
 }
+
+.order-section {
+    padding-top: rem(20);
+    margin-bottom: rem(170);
+
+    &__heading {
+        @extend %flex;
+        @extend %align-center;
+    }
+
+    &__title {
+        margin-bottom: rem(25);
+        text-align: center;
+        font-size: rem(30);
+        line-height: rem(37);
+        font-weight: bold;
+        @include font-media($media-sm, rem(18), rem(25));
+    }
+
+    &__total {
+        font-size: rem(18);
+        line-height: rem(24);
+        font-weight: bold;
+        display: none;
+    }
+
+    &__tabs {
+        @extend %flex;
+        @extend %align-center;
+        list-style-position: inside;
+        margin-bottom: rem(45);
+    }
+
+    &__tab {
+        padding: rem(8) rem(13);
+        min-width: rem(140);
+        position: relative;
+        margin-left: rem(17);
+        text-align: center;
+        font-size: rem(13);
+        line-height: rem(10);
+        color: var(--themeMainColor05);
+        font-weight: bold;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: rem(4);
+            background-color: var(--themeMainColor02);
+            border-radius: rem(10);
+        }
+
+        &.active {
+            color: var(--themeMainColor);
+
+            &::after {
+                background-color: var(--themeMainColor);
+            }
+        }
+    }
+}
+
+.spoiler-box {
+    &__control {
+        font-size: rem(40);
+        width: rem(40);
+        color: var(--themeMainColor05);
+        @include transition(color,0.3s,ease);
+        line-height: rem(40);
+        text-align: center;
+        cursor: pointer;
+
+        &::after {
+            content: "-";
+            display: block;
+        }
+
+        &:hover {
+            color: var(--themeMainColor);
+        }
+    }
+
+    &.active {
+        .spoiler-box {
+            // &__control {
+            //     &::after {
+            //         content: "+";
+            //     }    
+            // }
+
+            &__content {
+                display: block;
+            }
+        }
+    }
+}

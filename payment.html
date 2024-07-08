@@ -25,15 +25,14 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
+
     <!-- First Needed styles -->
     <link rel="preload" as="style" href="assets/css/top.css">
     <link rel="stylesheet" href="assets/css/top.css">
-    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="stylesheet" href="assets/css/pages/payment.css">
 </head>
 
 <body>
-
     <!-- Header -->
     <header class="header">
         <div class="header__top">
@@ -2007,87 +2006,203 @@
     <div class="main-overlay"></div>
 
     <main>
-        <div class="auth sign-up">
+        <div class='order-section order-section_payment'>
             <div class="row">
-                <div class="column sm-30">
-                    <div class="auth__wrap">
-                        <h1 class='auth__title'>Регистрация</h1>
-                        <form class='auth__body with-validation'>
-                            <div class="auth__body-content">
-                                <div>
-                                    <div class="auth__subtitle">
-                                        Преимущества регистрации
-                                    </div>
-                                    <div class="auth__desc">
-                                        <ul>
-                                            <li>Индивидуальные скидки</li>
-                                            <li>История заказов</li>
-                                            <li>Быстрый перезаказ</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="auth__link font-sm-13">
-                                    <span>Есть аккаунт?</span>
-                                    <a href="signIn.html" class='font-bold'>Войти</a>
-                                </div>
-                            </div>
-                            <div class="auth__body-wrap auth__box">
-                                <div class="form-fields">
-                                    <div class="form-fields__item">
-                                        <div class="form-field form-field_default form-field_md">
-                                            <div class="form-field__target">
-                                                <input type="password" name="email" class="form-field__input" placeholder='E-mail*' data-email-validation="! Неправильный формат почты" data-required="! Обязательное поле">
+                <div class="column sm-30"> 
+                    <div class="order-section__heading">
+                        <h1 class='order-section__title'>Оформить заказ</h1>
+                    </div>
+                    <div class='order-section__wrap'>
+                        <ol class="order-section__tabs">
+                            <li class='order-section__tab'>
+                                Корзина
+                            </li>
+                            <li class='order-section__tab active'>
+                                Оплата
+                            </li>
+                            <li class='order-section__tab'>
+                                Заказ принят 
+                            </li>
+                        </ol>
+                        <div class="order-section__body">
+                            <div class="order-section__content">
+                                <form action='#' method='post' class="payment">
+                                    <div class="payment__wrap">
+                                        <div class="payment__box payment-box spoiler-box spoiler-box_mobile toggler">
+                                            <div class="payment-box__heading">
+                                                <div class='payment-box__title'>Мои данные</div>
+                                                <div class="spoiler-box__control dn show-sm toggler-trigger"></div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-fields__item">
-                                        <div class="form-field form-field_default form-field_md">
-                                            <div class="form-field__target">
-                                                <input type="text" name="name" class="form-field__input" placeholder='Имя*' data-required="! Обязательное поле">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-fields__item">
-                                        <div class="form-field form-field_default form-field_password form-field_md toggler">
-                                            <div class="form-field__target form-field__target_suffix">
-                                                <div class="form-field__icon toggler-trigger">
-                                                    <i class="icon icon-hidden"></i>
-                                                    <i class="icon icon-visible"></i>
+                                            <div class="spoiler-box__content payment-box__content">
+                                                <div class="form-fields form-fields_editable toggler">
+                                                    <div class="form-fields__item">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="name" class="form-field__input" placeholder='Имя*' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="phone" class="form-field__input" placeholder='Телефон*' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="address" class="form-field__input" placeholder='Адрес*' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="email" class="form-field__input" data-email-validation="! Неправильный формат почты" placeholder='Эл. почта*' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item form-fields__item_radio">
+                                                        <label class="custom-check custom-check_radio" for="organization">
+                                                            <input class='payment-type-input organization-type' type="radio" name="payment_type" id="organization" value="1" checked disabled="disabled">
+                                                            <span class="custom-check__checkmark"></span>
+                                                            <div class="custom-check__label font-15">Организация</div>
+                                                        </label>
+                                                        <label class="custom-check custom-check_radio" for="individual">
+                                                            <input class='payment-type-input individual-type' type="radio" name="payment_type" id="individual" value="2" disabled="disabled">
+                                                            <span class="custom-check__checkmark"></span>
+                                                            <div class="custom-check__label font-15">Физ. лицо</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-fields__item organization-field">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="organization_name" class="form-field__input" placeholder='Название организации*' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item organization-field">
+                                                        <div class="form-field form-field_default form-field_md">
+                                                            <div class="form-field__target">
+                                                                <input type="text" name="code" class="form-field__input" placeholder='Налоговый код' disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__item">
+                                                        <div class="form-field form-field_default form-field_textarea form-field_md">
+                                                            <div class="form-field__target">
+                                                                <textarea name="comments" class="form-field__input" placeholder='Коммментарии к доставке' disabled="disabled"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-fields__edit">
+                                                        <div class='btn btn_md toggler-trigger fit'>
+                                                            <span class='font-15 font-sm-13'>Редактировать</span>
+                                                            <span class='font-15 font-sm-13 dn'>Сохранить</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <input type="password" name="password" class="form-field__input" placeholder='Пароль' data-required="! Обязательное поле">
+                                            </div>
+                                        </div>
+                                        <div class="payment__box payment-box spoiler-box spoiler-box_mobile toggler">
+                                            <div class="payment-box__heading">
+                                                <div class='payment-box__title'>Способ оплаты</div>
+                                                <div class="spoiler-box__control dn show-sm toggler-trigger"></div>
+                                            </div>
+                                            <div class="spoiler-box__content payment-box__content">
+                                                <div class="payment-methods">
+                                                    <div class='payment-method'>
+                                                        <label class="custom-check custom-check_btn">
+                                                            <input type="radio" value="cash" name="payment_method" checked>
+                                                            <div class="custom-check__btn btn btn_md btn_main fit">
+                                                                <span class='font-15'>Оплата наличными</span>
+                                                            </div>
+                                                        </label>
+                                                        <div class="payment-method__desc">
+                                                            <div class='info-block info-block_mobile'>
+                                                                <div class='info-block__icon'>
+                                                                    <i class="icon icon-info-round"></i>
+                                                                </div>
+                                                                <div class='info-block__text'>
+                                                                    <div>
+                                                                        Оплата наличными производится согласно кассовому чеку, сразу при доставке.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='payment-method'>
+                                                        <label class="custom-check custom-check_btn">
+                                                            <input type="radio" value="cash" name="payment_method">
+                                                            <div class="custom-check__btn btn btn_md btn_main fit">
+                                                                <span class='font-15'>Оплата картой</span>
+                                                                <img width='106' height='31' src="assets/img/cards.svg" alt="cards">
+                                                            </div>
+                                                        </label>
+                                                        <div class="payment-method__desc">
+                                                            <div class='info-block info-block_mobile'>
+                                                                <div class='info-block__icon'>
+                                                                    <i class="icon icon-info-round"></i>
+                                                                </div>
+                                                                <div class='info-block__text'>
+                                                                    <div>
+                                                                        Офис Про не сохраняет данные вашей карты. Вся сделка делается только через ваш банк.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='payment-method'>
+                                                        <label class="custom-check custom-check_btn">
+                                                            <input type="radio" value="bank_transfer" name="payment_method">
+                                                            <div class="custom-check__btn btn btn_md btn_main fit">
+                                                                <span class='font-15'>Банковский перевод</span>
+                                                            </div>
+                                                        </label>
+                                                        <div class="payment-method__desc">
+                                                            <div class='info-block info-block_mobile'>
+                                                                <div class='info-block__icon'>
+                                                                    <i class="icon icon-info-round"></i>
+                                                                </div>
+                                                                <div class='info-block__text'>
+                                                                    <div>
+                                                                        Оплата через банк должна быть осуществлена не познднее чем 7 дней после получения заказа.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="payment-box__footer">
+                                                    <div class="payment-box__footer-desc">
+                                                        Доставка осуществляется в течении следующего рабочего дня (до 6ти часов).
+                                                        <div class='info-block'>
+                                                            <div class='info-block__icon'>
+                                                                <i class="icon icon-info-round"></i>
+                                                                <div class='info-block__text'>
+                                                                    <div>
+                                                                        До 15 000 др. стоимость доставки 800 др. Доставка от 15 000 др. бесплатна.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='payment-box__submit'>
+                                                        <a href="order.html" class="btn btn_md btn_main fit">
+                                                            <span class='font-15'>Заказать</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class='auth__action'>
-                                    <!-- GOOGLE CAPTCHA GOES HERE -->
-                                </div>
-                                <div class='auth__footer'>
-                                    <div class="auth__submit">
-                                        <button type='submit' class="btn btn_md btn_main fit">
-                                            <span class='font-15 font-medium'>Зарегистрироваться</span>
-                                        </button>
-                                    </div>
-                                    <div class="title-lined">
-                                        <span>или</span>
-                                    </div>
-                                    <div class="alternate-sign">
-                                        <a href="#" target='_blank' class="alternate-sign__item">
-                                            <div class="sign-box">
-                                                <img width='27' height='27' src="assets/img/google.png" alt="Google">
-                                                <span class='sign-box__title'>Google</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" target='_blank' class="alternate-sign__item">
-                                            <div class="sign-box">
-                                                <img width='27' height='27' src="assets/img/facebook.svg" alt="Facebook">
-                                                <span class='sign-box__title'>Facebook</span>
-                                            </div>
-                                        </a>
-                                    </div>
+                                </form>
+                                <div class="payment-orders">
+
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

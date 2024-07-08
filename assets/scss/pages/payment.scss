@@ -1,0 +1,355 @@
+@import "../utils/_module";
+@import "../components/_checkbox";
+
+
+.payment {
+    &__wrap {
+        @extend %flex;
+        @extend %align-between;
+        max-width: rem(850);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__box {
+        @include flex(0, 0, calc(50% - rem(25)));
+        max-width: calc(50% - rem(25));
+        background-color: var(--themeSecondaryColor);
+        border-radius: rem(10); 
+        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        padding: rem(50) rem(60);
+    }
+}
+
+.payment-box {
+    &__heading {
+        @extend %flex;
+        @extend %align-center;
+    } 
+
+    &__title {
+        font-size: rem(20);
+        font-weight: bold;
+    }
+    
+    &__content {
+        margin-top: rem(35);
+    }
+
+    &__footer {
+        position: relative;
+        margin-top: rem(20);
+        padding-top: rem(20);
+
+        &::after {
+            content: "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
+            position: absolute;
+            font-size: rem(15);
+            top: rem(-1);
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            line-height: rem(2);
+            white-space: nowrap;
+            height: rem(3);
+        }
+
+        &-desc {
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-block {
+            @include center-absolute(vertical);
+            left: 100%;
+        }
+    }
+
+    &__submit {
+        margin-top: rem(20);
+    }
+}
+
+.payment-methods {
+    .payment-method  {
+        margin-bottom: rem(14);
+    }
+}
+
+.payment-method {
+    .btn {
+        img {
+            @include flex(0, 0, auto);
+            width: rem(106);
+        }
+    }
+
+    &__desc {
+        padding-top: rem(16);
+        font-size: rem(15);
+        line-height: rem(18);
+    }
+}
+
+.info-block {
+    &__icon {
+        @extend %user-cursor;
+        @extend %flex;
+        font-size: rem(15);
+        color: var(--themeMainColor05);
+
+        &:hover .info-block__text {
+            @extend %show;
+        }
+    }
+
+    &_mobile {
+        .info-block {
+            &__icon {
+                display: none;
+            }
+        }
+    }
+
+    &:not(.info-block_mobile) {
+        .info-block {
+            &__text {
+                position: absolute;
+                left: rem(-32);
+                bottom: 100%;
+                z-index: z(dropdown);
+                padding-bottom: rem(30);
+                @extend %hidden;
+                
+                div {
+                    border: rem(1) solid var(--themeMainColor05);
+                    border-radius: rem(2);
+                    background-color: var(--themeSecondaryColor);
+                    padding: rem(16) rem(20);
+                    width: rem(250);
+                    font-size: rem(14);
+                    color: var(--themeMainColor);
+                    cursor: initial;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 99%;
+                        left: rem(37);
+                        width: rem(27);
+                        height: rem(23);
+                        @include background('../../img/triangle.svg', center, contain, no-repeat, transparent);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.dark-theme {
+    .info-block {
+        &:not(.info-block_mobile) {
+            .info-block {
+                &__text {
+                    div {
+                        &::after {
+                            background-image: url("../../img/triangle-dark.svg");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $media-md) {
+    .payment {
+        &__box {
+            @include flex(0, 0, calc(50% - rem(10)));
+            max-width: calc(50% - rem(10));
+            padding: rem(50) rem(35);
+        }
+    }
+
+    .info-block {
+        &:not(.info-block_mobile) {
+            .info-block {
+                &__text {
+                    left: initial;
+                    right: rem(-32);
+                    
+                    div {
+                        &::after {
+                            top: 99%;
+                            left: initial;
+                            right: rem(15);
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $media-sm) {
+    .payment {
+        &__wrap {
+            @include flex-flow(column, nowrap);
+        }
+    
+        &__box {
+            flex: initial;
+            max-width: initial;
+            border-radius: 0; 
+            padding: rem(20);
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            margin-bottom: rem(15);
+        }
+    }
+    
+    .payment-box {
+        &__heading {
+            @include justify(flex-start);
+            @include align-items(center);
+            position: relative;
+
+            .spoiler-box__control {
+                position: absolute;
+                right: rem(-14);
+                top: rem(-14);
+            }
+        } 
+    
+        &__title {
+            font-size: rem(15);
+            line-height: rem(18);
+        }
+
+        &__content {
+            margin-top: rem(28);
+        }
+    
+        &__footer {
+            margin-top: rem(25);
+            padding-top: rem(25);
+
+            .info-block {
+                transform: none;
+                top: initial;
+                bottom: rem(-17);
+                left: initial;
+                right: rem(-5);
+            }
+        }
+    }
+
+    .payment-method {
+        position: relative;
+
+        &__desc {
+            padding-top: 0;
+            position: absolute;
+            top: rem(-15);
+            right: rem(-5);
+        }
+    }
+    
+    .info-block {
+        &_mobile {
+            .info-block {
+                &__icon {
+                    display: flex;
+                    display: -ms-flexbox;
+                }
+            }
+        }
+    
+        &.info-block_mobile {
+            .info-block {
+                &__icon {
+                    &:hover ~ .info-block__text {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                    }
+                }
+
+                &__text {
+                    position: absolute;
+                    right: rem(-2);
+                    bottom: 100%;
+                    z-index: z(dropdown);
+                    padding-bottom: rem(15);
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    
+                    div {
+                        border: rem(1) solid var(--themeMainColor05);
+                        border-radius: rem(2);
+                        background-color: var(--themeSecondaryColor);
+                        padding: rem(13) rem(16);
+                        width: rem(250);
+                        font-size: rem(13);
+                        color: var(--themeMainColor);
+                        cursor: initial;
+                        position: relative;
+    
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 99%;
+                            right: rem(2);
+                            width: rem(15);
+                            height: rem(13);
+                            @include background('../../img/triangle.svg', center, contain, no-repeat, transparent);
+                        }
+                    }
+    
+                }
+            }
+        }
+
+        &:not(.info-block_mobile) {
+            .info-block {
+                &__text {
+                    right: rem(-2);
+                    padding-bottom: rem(15);
+                    
+                    div {
+                        font-size: rem(13);
+                        padding: rem(13) rem(16);
+
+                        &::after {
+                            right: rem(2);
+                            width: rem(15);
+                            height: rem(13);
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+
+    .dark-theme {
+        .info-block {
+            &.info-block_mobile {
+                .info-block {
+                    &__text {
+                        div {
+                            &::after {
+                                background-image: url("../../img/triangle-dark.svg");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
