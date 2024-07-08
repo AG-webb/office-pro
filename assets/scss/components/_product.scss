@@ -731,14 +731,6 @@
                     max-width: calc(100% - rem(68));
                 }
             }
-
-            .product-info {
-                &__row {
-                    &:first-child {
-                        // margin-top: rem(-10);
-                    }
-                }
-            }
         }
     }
 
@@ -758,7 +750,7 @@
         }
 
         &__brand {
-            padding-right: rem(32);
+            padding-right: rem(20);
         }
 
         &__remove {
