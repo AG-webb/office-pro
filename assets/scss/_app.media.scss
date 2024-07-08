@@ -266,6 +266,14 @@
         &__tabs {
             display: none;
         }
+
+        &_preview {
+            .order-section {
+                &__title {
+                    padding-right: rem(90);
+                }
+            }
+        }
     }
 
     .spoiler-box {
