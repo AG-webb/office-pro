@@ -38,6 +38,10 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        &:focus-visible {
+            font-weight: bold;
+        }
     }
 
     a.footer__link {
@@ -87,6 +91,12 @@
         @extend %flex;
         @extend %align-top;
         @include flex-flow(column, nowrap);
+
+        a {
+            &:focus-visible {
+                font-weight: bold;
+            }
+        }
     }
 
     &__copyright {

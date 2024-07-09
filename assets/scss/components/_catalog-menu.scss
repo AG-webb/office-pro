@@ -95,14 +95,6 @@
         }
     }
 
-    &__banner {
-        width: 100%;
-        height: rem(110);
-        border-radius: rem(10);
-        overflow: hidden;
-        background-color: var(--themeMainColor05);
-    }
-
     &.active {
         .catalog-menu {
             &__content {
@@ -358,7 +350,7 @@
             }
         }
 
-        &__banner {
+        &__banner.page-banner {
             width: calc(100% + rem(32));
             margin: 0 rem(-16);
         }

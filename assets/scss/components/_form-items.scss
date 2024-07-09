@@ -23,12 +23,19 @@
 
     &__edit {
         margin-top: rem(40);
-        @extend %user-cursor;
 
         .btn {
+            @extend %user-cursor;
+            
             span {
                 text-decoration: underline;
             }
+        }
+
+        &-message {
+            color: map-get($color-scheme, 'primary');
+            margin-top: rem(10);
+            text-align: center;
         }
     }
 

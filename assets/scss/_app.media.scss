@@ -22,6 +22,14 @@
         }
     }
 
+    .product-showcase {        
+        &_grid {
+            .product {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
     .products-slider {
         &_landscape {
             .products-slider {
@@ -153,6 +161,29 @@
         &__control {
             img {
                 width: rem(40);
+            }
+        }
+    }
+
+    .product-showcase {        
+        &_grid {
+            margin: 0 rem(-10);
+
+            .product {
+                margin-bottom: rem(6);
+            }
+
+            .column {
+                &:nth-child(even) {
+                    .product {
+                        margin-left: rem(-17);
+                    }
+                }
+                &:nth-child(odd) {
+                    .product {
+                        margin-right: rem(-17);
+                    }
+                }
             }
         }
     }

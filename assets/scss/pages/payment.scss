@@ -399,6 +399,14 @@
     }
 
     .payment-orders {
+        &__heading {
+            .spoiler-box__control {
+                position: absolute;
+                top: rem(-10);
+                right: rem(-4);
+            }
+        }
+
         &__title {
             font-size: rem(20);
             line-height: rem(24);
@@ -605,9 +613,7 @@
             padding: 0 rem(10) rem(10);
 
             .spoiler-box__control {
-                position: absolute;
                 top: rem(-14);
-                right: rem(-4);
             }
         }
     

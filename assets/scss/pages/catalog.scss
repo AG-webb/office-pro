@@ -1,0 +1,62 @@
+@import "../utils/_module";
+
+.catalog-page {
+    padding-top: rem(13);
+    margin-bottom: rem(23);
+     
+    &__breadcrumb {
+        margin-bottom: rem(30);
+    }
+
+    &__wrap {
+        padding-bottom: rem(5);
+        border-bottom: rem(2) solid var(--themeMainColor02);
+    }
+
+    &__title {
+        text-align: center;
+        font-size: rem(50);
+        line-height: rem(61);
+        margin-bottom: rem(50);
+        font-weight: normal;
+    }
+
+    &__list {
+        @extend %flex;
+        @extend %align-center;
+        @include flex-flow(row, wrap);
+        max-width: rem(700);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: rem(50);
+    }
+
+    &__item {
+        margin-bottom: rem(20);
+        padding: 0 rem(6);
+        
+        .catalog-subcategory {
+            max-width: rem(130);
+        }
+    }
+}
+
+.catalog-subcategory {
+
+    &__img {
+        max-width: rem(92);
+        border-radius: rem(10);
+        overflow: hidden;
+        margin-bottom: rem(10);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: rem(13);
+        line-height: rem(16);
+        font-weight: bold;
+    }
+}

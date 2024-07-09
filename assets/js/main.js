@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const togglerTriggerElements = document.querySelectorAll(".toggler-trigger");
     if (togglerTriggerElements.length) {
         togglerTriggerElements.forEach((togglerTriggerElement) => {
-            togglerTriggerElement.addEventListener("click", function () {
+            togglerTriggerElement.addEventListener("click", function (e) {
                 const toggler = togglerTriggerElement.closest(".toggler");
                 toggler.classList.toggle("active");
 
@@ -120,20 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         formFieldInput.setAttribute("type", "password");
                     }
                 }
-                if(togglerTriggerElement.closest(".form-fields__edit")) {
-                    const formFields = togglerTriggerElement.closest(".form-fields");
-                    const formFieldInputs = formFields.querySelectorAll("input, textarea");
-
-                    if(formFieldInputs.length) {
-                        formFieldInputs.forEach((formFieldInput) => {
-                            if(formFields.classList.contains("active")) {
-                                formFieldInput.removeAttribute("disabled");
-                            } else {
-                                formFieldInput.setAttribute("disabled", "disabled");
-                            }
-                        });
-                    }
-                }
 
                 scrollNone();
             });
@@ -155,84 +141,57 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const formFieldEditBtn = document.querySelector(".form-fields__edit .btn");
+    if(formFieldEditBtn) {
+        formFieldEditBtn.addEventListener("click", function(e) {
+            const dataSuccessMessage = formFieldEditBtn.getAttribute("data-success");
+            const formFields = formFieldEditBtn.closest(".form-fields");
+            const formFieldInputs = formFields.querySelectorAll("input, textarea");
+
+            let isValid = true;
+
+            if(formFields.classList.contains("active")) {
+                isValid = validateFields(e, formFields);
+
+                if(isValid) {
+                    formFields.classList.remove("active");
+
+                    if(dataSuccessMessage) {
+                        const successMessage = document.createElement("div");
+                        successMessage.classList.add("form-fields__edit-message");
+                        successMessage.innerHTML = dataSuccessMessage;
+
+                        console.log(formFieldEditBtn.closest(".form-fields__edit"));
+                        formFieldEditBtn.closest(".form-fields__edit").append(successMessage);
+
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 3000);
+                    }
+                }
+            } else {
+                formFields.classList.add("active");
+            }
+            
+            
+            if(formFieldInputs.length && isValid) {
+                formFieldInputs.forEach((formFieldInput) => {
+                    if(formFields.classList.contains("active")) {
+                        formFieldInput.removeAttribute("disabled");
+                    } else {
+                        formFieldInput.setAttribute("disabled", "disabled");
+                    }
+                });
+            }
+        });
+    }
+
     // Form Validation ***************************
     const withValidationForms = document.querySelectorAll(".with-validation");
-
     if (withValidationForms.length) {
         withValidationForms.forEach((withValidationForm) => {
             withValidationForm.addEventListener("submit", function (e) {
-                let isValid = true;
-                let emailValidationElements = withValidationForm.querySelectorAll("[data-email-validation]");
-                let requiredFields = withValidationForm.querySelectorAll("[data-required]");
-                let newPassField = withValidationForm.querySelector("[data-new-pass]");
-                let repeatPassField = withValidationForm.querySelector("[data-repeat-pass]");
-
-                // clear All error messages
-                const errorMessages = withValidationForm.querySelectorAll(".form-field__message.error");
-                if (errorMessages.length) {
-                    errorMessages.forEach((errorMessage) => {
-                        errorMessage.remove();
-                    });
-                }
-                // clear All invalid classes
-                const invalidFields = withValidationForm.querySelectorAll(".form-field.invalid");
-                if (invalidFields.length) {
-                    invalidFields.forEach((invalidField) => {
-                        invalidField.classList.remove("invalid");
-                    });
-                }
-
-                // Validations
-                if(requiredFields.length) {
-                    requiredFields.forEach((requiredField) => {
-                        if(requiredField.value.trim() === '') {
-                            if(!requiredField.closest(".form-field").querySelector(".form-field__message")) {
-                                const requiredMessage = requiredField.getAttribute("data-required") || "! Обязательное поле";
-                                let requiredErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
-    
-                                requiredField.closest(".form-field").classList.add("invalid");
-                                requiredField.closest(".form-field").insertAdjacentHTML("beforeend", requiredErrorHtml);
-                            }
-
-                            isValid = false;
-                        }
-                    });
-                }
-
-                // Validations
-                if(newPassField && repeatPassField) {
-                    if(newPassField.value !== repeatPassField.value) {
-                        if(!repeatPassField.closest(".form-field").querySelector(".form-field__message")) {
-                            const requiredMessage = repeatPassField.getAttribute("data-new-pass") || "! Пароли не совпадают";
-                            let requiredErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
-
-                            repeatPassField.closest(".form-field").classList.add("invalid");
-                            repeatPassField.closest(".form-field").insertAdjacentHTML("beforeend", requiredErrorHtml);
-                        }
-
-                        isValid = false;
-                    }
-                }
-                
-                if (emailValidationElements.length) {
-                    emailValidationElements.forEach((emailElement) => {
-                        if (!isEmailValid(emailElement.value)) {
-                            if(!emailElement.closest(".form-field").querySelector(".form-field__message")) {
-                                const requiredMessage = emailElement.getAttribute("data-email-validation") || "! Неправильный формат почты";
-                                let emailErrorHtml = `<div class="form-field__message error">${requiredMessage}</div>`;
-
-                                emailElement.closest(".form-field").classList.add("invalid");
-                                emailElement.closest(".form-field").insertAdjacentHTML("beforeend", emailErrorHtml);
-                            }
-
-                            isValid = false;
-                        }
-                    });
-                }
-
-                if (!isValid) {
-                    e.preventDefault();
-                }
+                validateFields(e, withValidationForm);
             });
         });
     }
