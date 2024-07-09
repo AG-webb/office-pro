@@ -16,11 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainSearchInputElement = document.querySelector(".main-search input");
     if(mainSearchInputElement) {
         mainSearchInputElement.addEventListener("keyup", function() {
-            if(mainSearchInputElement.value.trim() !== ''){
+            if(mainSearchInputElement.value.trim() !== '') {
                 mainSearchInputElement.closest(".main-search").classList.add("filled");
             } else {
                 mainSearchInputElement.closest(".main-search").classList.remove("filled");
             }
+        });
+        mainSearchInputElement.addEventListener("focus", function() {
+            mainSearchInputElement.closest(".main-search").classList.add("active");
+        });
+        mainSearchInputElement.addEventListener("blur", function() {
+            mainSearchInputElement.closest(".main-search").classList.remove("active");
         });
     }
 
@@ -28,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if(mainSearchIcon) {
         mainSearchIcon.addEventListener("click", function(e) {
             if(mainSearchInputElement.closest(".main-search").classList.contains("filled")){
-                // e.preventDefault();
                 mainSearchInputElement.value = '';
                 mainSearchInputElement.closest(".main-search").classList.remove("filled");
             }

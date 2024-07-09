@@ -249,13 +249,14 @@
         }
     }
 
-    &.filled {
+    &.active {
         .main-search {
             &__dropdown {
                 @extend %show;
             }
         }
-
+    }
+    &.filled {
         .form-field {
             &__icon {
                 color: $color-main;
