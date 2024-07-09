@@ -3,37 +3,42 @@
 
 
 .payment {
-    margin-bottom: rem(55);
+    @extend %flex;
 
     &__wrap {
+        width: 100%;
         @extend %flex;
-        @extend %align-between;
-        max-width: rem(850);
-        margin-left: auto;
-        margin-right: auto;
     }
 
     &__box {
         @include flex(0, 0, calc(50% - rem(25)));
         max-width: calc(50% - rem(25));
+        width: 100%;
         background-color: var(--themeSecondaryColor);
         border-radius: rem(10); 
         box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
         padding: rem(50) rem(60);
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+
+        .payment-box__content {
+            @extend %flex;
+            @include flex-flow(column, nowrap);
+            @include flex(1, 1, auto);
+
+            .form-fields {
+                width: 100%;
+            }
+        }
+
+        &:only-child {
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+        }
     }
 }
 
 .payment-box {
-    &__heading {
-        @extend %flex;
-        @extend %align-center;
-    } 
-
-    &__title {
-        font-size: rem(20);
-        font-weight: bold;
-    }
-    
     &__content {
         margin-top: rem(35);
     }
@@ -367,6 +372,62 @@
     }
 }
 
+.dashboard {
+    padding-top: rem(25);
+    margin-bottom: rem(110);
+
+    &__title {
+        text-align: center;
+        font-size: rem(30);
+        font-weight: bold;
+        line-height: rem(37);
+        margin-bottom: rem(30);
+    }
+
+    &__wrap {
+        @extend %flex;
+
+        .payment {
+            @include flex(0, 0, rem(400));
+            max-width: rem(400);
+            margin-right: rem(37);
+        }
+
+        .dashboard-orders {
+            @include flex(1, 1, auto);
+        }
+    }
+}
+
+.dashboard-orders {
+    background: var(--themeSecondaryColor);
+    box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+    border-radius: rem(10);
+    padding: rem(40) rem(21) rem(15) rem(50);
+    @extend %flex;
+    @include flex-flow(column, nowrap);
+
+    &__content {
+        @include flex(1, 1, auto);
+        @extend %flex;
+        width: 100%;
+
+        .payment-orders {
+            margin-top: rem(25);
+        }
+    }
+
+    &__empty {
+        width: 100%;
+        font-size: rem(50);
+        line-height: rem(61);
+        color: var(--themeMainColor05);
+        @extend %flex;
+        @extend %align-middle;
+        @extend %align-center;
+        min-height: rem(150);
+    }
+}
 
 
 @media (max-width: $media-md) {
@@ -435,19 +496,36 @@
             padding-right: rem(16);
         }
     }
+
+    .dashboard {
+        &__wrap {
+            @include flex-flow(column, nowrap);
+
+            .payment {
+                @include flex(0, 0, 100%);
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: rem(15);
+            }
+        }
+    }
+
+    .dashboard-orders {
+        padding-left: rem(21);
+    
+        &__empty {
+            font-size: rem(30);
+            line-height: rem(37);
+        }
+    }
 }
 
 @media (max-width: $media-sm) {
     .payment {
-        margin-bottom: rem(15);
-
-        &__wrap {
-            @include flex-flow(column, nowrap);
-        }
-    
         &__box {
             flex: initial;
             max-width: initial;
+            width: initial;
             border-radius: 0; 
             padding: rem(20);
             margin-left: rem(-20);
@@ -457,27 +535,15 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            &:only-child {
+                flex: initial;
+                max-width: initial;
+            }
         }
     }
     
     .payment-box {
-        &__heading {
-            @include justify(flex-start);
-            @include align-items(center);
-            position: relative;
-
-            .spoiler-box__control {
-                position: absolute;
-                right: rem(-14);
-                top: rem(-14);
-            }
-        } 
-    
-        &__title {
-            font-size: rem(15);
-            line-height: rem(18);
-        }
-
         &__content {
             margin-top: rem(28);
         }
@@ -784,6 +850,33 @@
                     max-width: 50%;
                 }
             }
+        }
+    }
+
+    .dashboard {
+        &__wrap {
+            @include flex-flow(column, nowrap);
+
+            .payment {
+                &__box {
+                    width: calc(100% + rem(40));
+                }
+            }
+        }
+
+        &__title {
+            font-size: rem(20);
+            line-height: rem(24);
+        }
+    }
+
+    .dashboard-orders {
+        padding-left: rem(21);
+        padding: rem(20);
+    
+        &__empty {
+            font-size: rem(22);
+            line-height: rem(26);
         }
     }
 }

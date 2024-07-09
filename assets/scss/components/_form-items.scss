@@ -22,7 +22,8 @@
     }
 
     &__edit {
-        margin-top: rem(40);
+        padding-top: rem(32);
+        margin-top: auto;
 
         .btn {
             @extend %user-cursor;
@@ -35,11 +36,16 @@
         &-message {
             color: map-get($color-scheme, 'primary');
             margin-top: rem(10);
+            font-size: rem(15);
+            line-height: rem(18);
             text-align: center;
         }
     }
 
     &_editable {
+        @extend %flex;
+        @include flex-flow(column, nowrap);
+
         .form-fields__item {
            pointer-events: none
         }

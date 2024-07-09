@@ -556,6 +556,18 @@
             }
         }
     }
+
+    .payment {
+        margin-bottom: rem(55);
+
+        &__wrap {
+            @extend %flex;
+            @extend %align-between;
+            max-width: rem(850);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
 .spoiler-box {
@@ -576,6 +588,16 @@
         &:hover {
             color: var(--themeMainColor);
         }
+    }
+
+    &__title {
+        font-size: rem(20);
+        font-weight: bold;
+    }
+
+    &__heading {
+        @extend %flex;
+        @extend %align-center;
     }
 
     &.active {

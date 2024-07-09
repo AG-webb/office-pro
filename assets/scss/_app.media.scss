@@ -305,10 +305,38 @@
                 }
             }
         }
+
+        .payment {
+            margin-bottom: rem(15);
+
+            &__wrap {
+                @include flex-flow(column, nowrap);
+            }
+        }
     }
 
     .spoiler-box {
+        &__title {
+            font-size: rem(15);
+            line-height: rem(18);
+        }
+
+        &__heading {
+            @include justify(flex-start);
+            @include align-items(center);
+            position: relative;
+
+            .spoiler-box__control {
+                position: absolute;
+                right: rem(-14);
+                top: rem(-14);
+            }
+        } 
+
         &_mobile {
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+
             .spoiler-box {
                 &__content {
                     display: none;
