@@ -577,8 +577,8 @@
         }
 
         &__badge {
-            bottom: rem(45);
-            right: rem(13);
+            top: rem(16);
+            left: rem(16);
         }
     }
 
@@ -650,9 +650,7 @@
         }
 
         &__slide {
-            img {
-                max-width: 89%;
-            }
+            border-radius: rem(17);
         }
 
         &__btns {
@@ -794,6 +792,14 @@
                 padding-top: rem(13);
                 padding-bottom: rem(13);
             }
+        }
+
+        &__slide {
+            border-radius: rem(11);
+        }
+
+        &__action {
+            right: 0;
         }
     }
 

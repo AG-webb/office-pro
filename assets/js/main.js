@@ -13,6 +13,28 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("theme-switcher").classList.add("active");
     }
 
+    const mainSearchInputElement = document.querySelector(".main-search input");
+    if(mainSearchInputElement) {
+        mainSearchInputElement.addEventListener("keyup", function() {
+            if(mainSearchInputElement.value.trim() !== ''){
+                mainSearchInputElement.closest(".main-search").classList.add("filled");
+            } else {
+                mainSearchInputElement.closest(".main-search").classList.remove("filled");
+            }
+        });
+    }
+
+    const mainSearchIcon = document.querySelector(".main-search .form-field__icon");
+    if(mainSearchIcon) {
+        mainSearchIcon.addEventListener("click", function(e) {
+            if(mainSearchInputElement.closest(".main-search").classList.contains("filled")){
+                // e.preventDefault();
+                mainSearchInputElement.value = '';
+                mainSearchInputElement.closest(".main-search").classList.remove("filled");
+            }
+        });
+    }
+
     const catalogTabElements = document.querySelectorAll(".catalog-menu__tab");
     if (catalogTabElements.length) {
         catalogTabElements.forEach((catalogTabElement) => {

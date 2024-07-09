@@ -81,13 +81,6 @@
         @extend %align-middle;
         @extend %align-center;
         color: inherit;
-
-        &:not([type=submit]) {
-            @extend %not-selectable;
-        }
-        &[type=submit] {
-            @extend %user-cursor;
-        }
     }
 
     &__input {
