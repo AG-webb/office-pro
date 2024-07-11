@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         successMessage.classList.add("form-fields__edit-message");
                         successMessage.innerHTML = dataSuccessMessage;
 
-                        console.log(formFieldEditBtn.closest(".form-fields__edit"));
                         formFieldEditBtn.closest(".form-fields__edit").append(successMessage);
 
                         setTimeout(() => {
@@ -240,13 +239,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (newSize >= min) {
                         counterInput.value = newSize;
-                    }
-
-                    if (newSize <= min) {
+                        calcProductSale(newSize, counterBtn);
+                    } else {
                         counterContainer.classList.remove("filled");
                     }
-
-                    calcProductSale(newSize, counterBtn);
                 }
             });
         });
@@ -281,48 +277,102 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function calcProductSale(newSize, target) {
+    function calcProductSale(quantity, target) {
         const productCounterWrap = target.closest(".with-counter");
+        const chartProduct = target.closest(".chart-product");
         
         if(productCounterWrap) {
             const counterElement = productCounterWrap.querySelector(".product-counter");
             const productSaleBadgesElement = productCounterWrap.querySelector(".sale-badges");
-            const mainPrice = +counterElement.getAttribute("data-price");
+            let mainPrice = +counterElement.getAttribute("data-price");
+            let currentPrice = 0;
+            const oldPrice = +counterElement.getAttribute("data-old-price");
+            const packagePrice = +counterElement.getAttribute("data-package-price");
+            const boxPrice = +counterElement.getAttribute("data-box-price");
             const productActiveSale = productCounterWrap.querySelector(".product-info__row.active");
             const packageSaleElement = productCounterWrap.querySelector(".package-sale");
             const defaultSaleElement = productCounterWrap.querySelector(".default-sale");
             const boxSaleElement = productCounterWrap.querySelector(".box-sale");
             const packageSize = +counterElement.getAttribute("data-package");
             const boxSize = +counterElement.getAttribute("data-box");
-            const defaultSale = +counterElement.getAttribute("data-sale");
-            const packageSale = +counterElement.getAttribute("data-package-sale");
-            const boxSale = +counterElement.getAttribute("data-box-sale");
-    
+            const productPrice = productCounterWrap.querySelector(".product-price");
+            const productTotalPrice = productCounterWrap.querySelector(".product-total-price");
+            
             if (productActiveSale) {
                 productActiveSale.classList.remove("active");
             }
     
             // 3. BOX SALES
-            if (boxSale && boxSaleElement && newSize >= boxSize) {
-                const totalSale = Math.round(((mainPrice * newSize) * boxSale) / 100);
-    
-                updateSaleBadges(productSaleBadgesElement, boxSale, totalSale);
-                return boxSaleElement.classList.add("active");
+            if (boxSize && quantity >= boxSize) {
+                if(boxSaleElement) {
+                    boxSaleElement.classList.add("active");
+                }
+
+                if(boxPrice) {
+                    currentPrice = boxPrice;
+                }
             }
             // 2. PACKAGE SALES
-            if (packageSale && packageSaleElement && newSize >= packageSize) {
-                const totalSale = Math.round(((mainPrice * newSize) * packageSale) / 100);
-    
-                updateSaleBadges(productSaleBadgesElement, packageSale, totalSale);
-    
-                return packageSaleElement.classList.add("active");
+            if (packageSize && quantity >= packageSize && quantity < boxSize) {
+                if(packageSaleElement) {
+                    packageSaleElement.classList.add("active");
+                }
+
+                if(packagePrice) {
+                    currentPrice = packagePrice;
+                }
             }
     
             // 1. DEFAULT SALES
-            if (defaultSaleElement) {
-                defaultSaleElement.classList.add("active");
-                hideSaleBadges(productSaleBadgesElement);
+            if (currentPrice === 0) {
+                if(defaultSaleElement) {
+                    defaultSaleElement.classList.add("active");
+                }
+
+                console.log('aklsjdklasjd');
+                if(oldPrice && quantity) {
+                    currentPrice = mainPrice;
+                    mainPrice = oldPrice;
+                }
             }
+
+            if((quantity < packageSize && !oldPrice) || !quantity || currentPrice === 0) {
+                console.log("hidden");
+                hideSaleBadges(productSaleBadgesElement);
+            } else {
+                const totalSale = (mainPrice - currentPrice) * quantity;
+                const currentSale = ((mainPrice - currentPrice) / mainPrice) * 100;
+                
+                updateSaleBadges(productSaleBadgesElement, currentSale, totalSale);
+            }
+
+            if(productPrice && productTotalPrice) {
+                if(currentPrice === 0) {
+                    currentPrice = mainPrice;
+                }
+                
+                productPrice.innerHTML = currentPrice;
+                productTotalPrice.innerHTML = currentPrice * quantity;
+            }
+        }
+
+        if(chartProduct) {
+            const chartProductElements = document.querySelectorAll(".chart-product");
+            const totalPercentElement = document.getElementById("chart-total-percent");
+            const totalSaleElement = document.getElementById("chart-total-sale");
+            const chartSummaryElement = document.querySelector(".chart-summary");
+            let chartSummary = 0;
+            let totalSale = 0;
+
+            chartProductElements.forEach((chartProductElement) => {
+                const totalPrice = chartProductElement.querySelector(".product-total-price");
+
+                if(totalPrice) {
+                    chartSummary += (+totalPrice.innerHTML);
+                }
+            });
+
+            chartSummaryElement.innerHTML = chartSummary;
         }
 
     }
@@ -333,6 +383,10 @@ document.addEventListener("DOMContentLoaded", function () {
             productBadges.closest(".with-counter").classList.add("sales-active");
             const saleElement = productBadges.querySelector(".product-sale");
             const totalSaleElement = productBadges.querySelector(".product-total-sale");
+
+            if(sale % 1 !== 0) {
+                sale = sale.toFixed(2);
+            }
 
             saleElement.innerHTML = sale;
             totalSaleElement.innerHTML = totalSale;
