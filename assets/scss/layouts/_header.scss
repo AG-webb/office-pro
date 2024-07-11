@@ -410,6 +410,10 @@
             padding: 0 rem(26) 0 rem(18);
             border-radius: rem(50);
 
+            span {
+                line-height: rem(18);
+            }
+
             .icon {
                 font-size: rem(32);
                 margin-right: rem(12);
