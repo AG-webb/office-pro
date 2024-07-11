@@ -110,37 +110,21 @@
 .switcher {
     display: inline-block;
     @extend %user-cursor;
-    color: var(--themeMainColor);
-
-    &__wrap {
-        border-radius: rem(6.5);
-        border: rem(1) solid currentColor;
-        position: relative;
-    }
 
     &__dot {
-        background-color: currentColor;
-        @include center-absolute(vertical);
-        left: 8%;
-        width: rem(7);
-        height: rem(7);
-        border-radius: 50%;
-        @include transition(all,0.3s,ease);
+        @include transition(x,0.3s,ease);
     }
 
     &_sm {
-        .switcher {
-            &__wrap {
-                width: rem(25);
-                height: rem(13);
-            }
+        svg {
+            width: rem(27);
         }
     }
 
     &.active {
         .switcher {
             &__dot {
-                left: 56%;
+                x: 17;
             }
         }
     }
