@@ -653,6 +653,9 @@
 
         &__content {
             max-height: rem(500);
+            padding-right: rem(19);
+            margin-left: rem(-10);
+            width: initial;
         }
     
         &__empty {
@@ -1091,6 +1094,10 @@
 
         &__content {
             max-height: rem(370);
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            padding-left: rem(20);
+            padding-right: rem(20);
             
             .orders-list {
                 width: initial;
