@@ -240,7 +240,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (newSize >= min) {
                         counterInput.value = newSize;
                         calcProductSale(newSize, counterBtn);
-                    } else {
+                    }
+                    
+                    if(newSize <= min) {
                         counterContainer.classList.remove("filled");
                     }
                 }
