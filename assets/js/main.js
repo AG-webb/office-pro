@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Product Part  ************************
+    // Products Functional  ************************
     const productCardElements = document.querySelectorAll(".landscape-product");
     if (productCardElements.length && window.innerWidth < 1024) {
         productCardElements.forEach((productCardElement) => {
@@ -280,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function calcProductSale(quantity, target) {
         const productCounterWrap = target.closest(".with-counter");
         const chartProduct = target.closest(".chart-product");
+        const chartCard = target.closest(".chart-card");
         
         if(productCounterWrap) {
             const counterElement = productCounterWrap.querySelector(".product-counter");
@@ -329,7 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     defaultSaleElement.classList.add("active");
                 }
 
-                console.log('aklsjdklasjd');
                 if(oldPrice && quantity) {
                     currentPrice = mainPrice;
                     mainPrice = oldPrice;
@@ -337,7 +337,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if((quantity < packageSize && !oldPrice) || !quantity || currentPrice === 0) {
-                console.log("hidden");
                 hideSaleBadges(productSaleBadgesElement);
             } else {
                 const totalSale = (mainPrice - currentPrice) * quantity;
@@ -361,18 +360,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const totalPercentElement = document.getElementById("chart-total-percent");
             const totalSaleElement = document.getElementById("chart-total-sale");
             const chartSummaryElement = document.querySelector(".chart-summary");
-            let chartSummary = 0;
-            let totalSale = 0;
+            
+            updateProductsTotals(chartProductElements, chartSummaryElement);
+        }
 
-            chartProductElements.forEach((chartProductElement) => {
-                const totalPrice = chartProductElement.querySelector(".product-total-price");
-
-                if(totalPrice) {
-                    chartSummary += (+totalPrice.innerHTML);
-                }
-            });
-
-            chartSummaryElement.innerHTML = chartSummary;
+        if(chartCard) {
+            const chartCardElements = document.querySelectorAll(".chart-card");
+            const totalProductsPrice = document.getElementById("products-total-price");
+            
+            updateProductsTotals(chartCardElements, totalProductsPrice);
         }
 
     }
@@ -438,7 +434,63 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // *******************
+    function updateProductsTotals(products, summaryElement) {
+        let productsSummaryPrice = 0;
+        let summaryAmount = 0;
+        let totalProductsSale = 0;
+
+        products.forEach((product) => {
+            const productTotalPrice = product.querySelector(".product-total-price");
+            const productTotalSale = product.querySelector(".product-total-sale");
+
+            if(productTotalPrice) {
+                productsSummaryPrice += (+productTotalPrice.innerHTML);
+                summaryAmount += (+productTotalPrice.innerHTML);
+            }
+
+            if(productTotalSale && !productTotalSale.closest(".sale-badges").classList.contains("hide")) {
+                totalProductsSale += (+productTotalSale.innerHTML)
+            }
+        });
+
+        if(products[0].classList.contains("chart-card")) {
+            const deliveryPriceRow = document.getElementById("delivery-price");
+            const deliveryPrice = +deliveryPriceRow.getAttribute("data-price");
+            const paidDeliveryLimit = +deliveryPriceRow.getAttribute("data-paid-limit");
+            const summaryAmountElements = document.querySelectorAll(".summary-value");
+            const totalProductsSaleElement = document.getElementById("total-products-sale");
+            const totalProductsSaleRow = document.getElementById("total-products-sale-row");
+            const promoCodeSales = document.querySelectorAll(".promocode-sale");
+
+            if(productsSummaryPrice >= paidDeliveryLimit) {
+                deliveryPriceRow.classList.add("hide");
+            } else {
+                summaryAmount += deliveryPrice;
+                deliveryPriceRow.classList.remove("hide");
+            }
+
+            if(totalProductsSale) {
+                totalProductsSaleElement.innerHTML = totalProductsSale;
+                totalProductsSaleRow.classList.remove("hide");
+            } else {
+                totalProductsSaleRow.classList.add("hide");
+            }
+
+            if(promoCodeSales.length) {
+                promoCodeSales.forEach((promoCodeSale) => {
+                    summaryAmount -= (+promoCodeSale.innerHTML);
+                });
+            }
+
+            summaryAmountElements.forEach((summaryAmountElement) => {
+                summaryAmountElement.innerHTML = summaryAmount;
+            });
+        }
+
+        summaryElement.innerHTML = productsSummaryPrice;
+    }
+
+    // *************************************
 
     const copyToClipboardElements = document.querySelectorAll("[data-copy]");
     if (copyToClipboardElements.length) {
