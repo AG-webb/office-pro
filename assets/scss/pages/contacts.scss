@@ -1,0 +1,169 @@
+@import '../utils/_module';
+
+.contacts {
+    margin-bottom: rem(114);
+
+    &__map {
+        border-radius: rem(10);
+        overflow: hidden;
+        margin-bottom: rem(50);
+        @extend %flex;
+
+        iframe {
+            width: 100%;
+            height: rem(400);
+        }
+    }
+
+    &__wrap {
+        max-width: rem(600);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: rem(30);
+        font-weight: bold;
+        line-height: rem(37);
+        margin-bottom: rem(20);
+    }
+
+    &__desc {
+        font-size: rem(20);
+        line-height: rem(24);
+        margin-bottom: rem(70);
+    }
+
+    &__call {
+        @extend %flex;
+        @include flex-flow(row, wrap);
+        @extend %align-between;
+        gap: rem(10) 0;
+        margin-bottom: rem(50);
+
+        .contact-call {
+            max-width: 50%;
+            width: initial;
+
+            &__number {
+                margin-right: rem(30);
+            }
+        }
+    }
+
+    &__social {
+        max-width: 50%;
+        width: rem(250);
+    }
+
+    &__form {
+        padding: rem(40) rem(45) rem(50);
+        margin-bottom: rem(50);
+        @extend %flex;
+        @extend %align-between;
+        @include flex-flow(row, wrap);
+        position: relative;
+
+        &::after, &::before {
+            content: "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
+            position: absolute;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            color: inherit;
+            white-space: nowrap;
+        }
+        &::after {
+            top: 0;
+        }
+        &::before {
+            bottom: 0;
+        }
+
+        &-title {
+            margin-bottom: rem(20);
+            @include flex(0, 0, 100%);
+            max-width: 100%;
+            line-height: rem(18);
+        }
+
+        .form-field {
+            &__input {
+                text-align: center;
+            }
+            
+            &_default {
+                .form-field__input {
+                    border-color: var(--themeMainColor);
+
+                    @include input-placeholder {
+                        color: var(--themeMainColor05);
+                    }
+                }
+            }
+        }
+
+        .form-fields, .form-field__submit {
+            @include flex(0, 0, calc(50% - rem(5)));
+            max-width: calc(50% - rem(5));
+        }
+    }
+}
+
+
+@media (max-width: $media-sm) {
+    .contacts {
+        margin-bottom: rem(80);
+        padding-top: rem(24);
+        
+        &__map {
+            iframe {
+                height: rem(360);
+            }
+        }
+    
+        &__title {
+            font-size: rem(22);
+            line-height: rem(27);
+            margin-bottom: rem(16);
+        }
+    
+        &__desc {
+            font-size: rem(16);
+            line-height: rem(20);
+            margin-bottom: rem(32);
+        }
+    
+        &__call {
+            @include flex-flow(column, nowrap);
+            @include align-items(center);
+            gap: 0;
+            margin-bottom: rem(20);
+    
+            .contact-call {
+                max-width: 100%;
+                margin-bottom: rem(12);
+            }
+        }
+    
+        &__social {
+            max-width: 100%;
+            width: 100%;
+        }
+    
+        &__form {
+            padding: rem(24);
+            display: block;
+    
+            .form-field {
+                margin-bottom: rem(10);
+            }
+    
+            .form-fields, .form-field__submit {
+                @include flex(0, 0, 100%);
+                max-width: 100%;
+            }
+        }
+    }   
+}
