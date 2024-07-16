@@ -123,20 +123,16 @@ function _initComboBox(selector) {
 
 			if(e.target.closest(_selectBoxOption)) {
 				// SINGLE SELECT
-				const option = e.target;
+				const option = e.target.closest(_selectBoxOption);
 
 				if (!option.closest(_selectBox).classList.contains("multiple")) {
 					const optionSelectBox = option.closest(_selectBox);
 					const optionSelect = optionSelectBox.querySelector("select");
 
-					if (option.classList.contains("selected")) {
+					option.closest(_selectBoxDropdown).querySelectorAll(_selectBoxOption).forEach((option) => {
 						option.classList.remove("selected");
-					} else {
-						option.closest(_selectBoxDropdown).querySelectorAll(_selectBoxOption).forEach((option) => {
-							option.classList.remove("selected");
-						});
-						option.classList.add("selected");
-					}
+					});
+					option.classList.add("selected");
 	
 					optionSelectBox.setAttribute(_attrValue, option.getAttribute(_optionAttrValue));
 					optionSelect.value = option.getAttribute(_optionAttrValue);

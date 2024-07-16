@@ -1,8 +1,6 @@
 .combo-box {
     position: relative;
     display: block;
-    color: #fff;
-    @include font(600, 18, 1, #000, 0);
 
     &.searchable {
         .combo-box-selected {
@@ -27,17 +25,17 @@
         .combo-box-selected {
             // cursor: initial;
             &-wrap {
-                padding-top: rem(8);
-                padding-bottom: rem(7);
-                height: initial;
-                min-height: rem(56);
+                // padding-top: rem(8);
+                // padding-bottom: rem(7);
+                // height: initial;
+                // min-height: rem(56);
             }
         }
     }
 }
   
 .combo-box-placeholder {
-    color: map-get($color-scheme, 'neutral');
+    // color: map-get($color-scheme, 'neutral');
 }
 
 .combo-box-selected {
@@ -47,35 +45,26 @@
     width: 100%;
     overflow: hidden;
     z-index: 1;
-    border-radius: rem(30);
-    border: rem(1) solid #000;
-    background: #fff;
     @extend %flex;
     @extend %align-middle;
     @include flex-flow(row, wrap);
-    padding: 0 rem(50) 0 rem(24);
     
     &-wrap {
-        height: rem(56);
         @extend %inline-flex;
         @extend %align-middle;
     }
 
     &:after {
-        @include font-icon("\e904");
+        @include font-icon("\e902");
         position: absolute;
         font-size: rem(20);
         cursor: pointer;
         display: inline-block;
-        top: rem(17);
-        margin-left: rem(4);
-        right: rem(24);
         @extend %primary-transition;
     }
 
     & > img {
         display: inline-block;
-        // vertical-align: -4px;
         margin-right: 5px;
     }
 
@@ -121,18 +110,17 @@
     border-bottom-right-radius: rem(5);
     border-bottom-left-radius: rem(5);
     overflow: hidden;
-    background: #fff;
     z-index: z(dropdown);
-    box-shadow: map-get($shadows, 'sm');
     transform: translateY(rem(10));
     @extend %hidden;
     @extend %primary-transition;
 
     &::-webkit-scrollbar {
         width: rem(7);
+        background-color: var(--themeMainColor01);
 
         &-thumb {
-            background-color: map-get($color-scheme, 'neutral');
+            background-color: var(--themeMainColor05);
         }
     }
 
@@ -152,7 +140,7 @@
 .combo-box-options {
     max-height: rem(200);
     overflow: auto;
-    padding: rem(16) 0;
+    padding: rem(5);
 
     &::-webkit-scrollbar {
         width: rem(7);
@@ -167,28 +155,12 @@
     position: relative;
     display: block;
     width: 100%;
-    line-height: rem(20);
-    padding: rem(10) rem(24);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #000;
     z-index: 1;
     cursor: pointer;
 
     & > img {
         display: inline-block;
-        // vertical-align: -4px;
         margin-right: rem(5);
-    }
-
-    &.selected {
-        background: #000;
-        color: #fff;
-    }
-
-    &:focus, &_focused {
-        background: #cfcfcf;
-        color: #fff;
     }
 
     &_hidden {
@@ -198,15 +170,4 @@
 
 .combo-box-message {
     padding: rem(10) rem(24);
-}
-
-.disabled {
-    background-color:#fff;
-    color: #888;
-    pointer-events: none;
-}
-
-.disabled:hover {
-    background-color:#fff !important;
-    color: #888 !important;
 }

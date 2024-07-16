@@ -70,9 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
         dataModalElements.forEach((dataModal) => {
             dataModal.addEventListener("click", function () {
                 let targetModal = document.querySelector(`.${dataModal.getAttribute("data-modal")}`);
-                targetModal.classList.add("active");
+                if(targetModal) {
+                    targetModal.classList.add("active");
 
-                scrollNone();
+                    scrollNone();
+                }
+
             });
         });
     }
@@ -725,7 +728,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollNone();
             }
         }
-        if (!e.target.closest(".modal__wrapper")) {
+        if (!e.target.closest(".modal__wrapper") && !e.target.closest("[data-modal]")) {
             const activeModalElements = document.querySelectorAll(".modal.active");
             if (activeModalElements.length) {
                 activeModalElements.forEach((activeModalElement) => {

@@ -7,6 +7,9 @@
 @import "components/_form-items";
 @import "components/_chart-dropdown";
 @import "components/_tabs";
+@import "components/_modal";
+@import "components/_combobox";
+@import "components/_checkbox";
 
 
 .badge {
@@ -654,5 +657,99 @@
         font-size: rem(20);
         line-height: rem(24);
         font-weight: bold;
+    }
+}
+
+.feedback-btn {
+    position: fixed;
+    top: 60%;
+    right: 0;
+    z-index: z(sticky-element);
+    @include rotate(-90);
+    transform-origin: bottom right;
+    background-color: var(--themeSecondaryColor);
+    border: rem(1) solid var(--themeMainColor);
+    border-radius: rem(4) rem(4) 0 0;
+    padding: rem(5) rem(12);
+    @extend %user-cursor;
+}
+
+.rating-block{
+    position: relative;
+    display: inline-block;
+    height: rem(34);
+    max-height: rem(34);
+    @extend %inline-flex;
+    width: rem(34 * 5);
+
+    &__items {
+        position: absolute;
+        width: 100%;
+        height: rem(34);
+        top: 0;
+        left: 0;
+        @extend %flex;
+        flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        overflow: hidden;
+    }
+
+    &__item {
+        position: absolute;
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+        visibility: 0;
+        top: 0;
+        left: 0;
+
+        &:checked ~ .rating-block__label::before {
+            background-image: url("../img/star-filled.svg");
+        }
+    }
+
+    &__label {
+        @include flex(0, 0, 20%);
+        height: 100%;
+        @extend %user-cursor;
+
+        &::before {
+            width: 100%;
+            height: 100%;
+            display: block;
+            content: "";
+            @include transition(all, .3s, ease);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("../img/star.svg");
+        }
+
+        &:hover::before,
+        &:hover ~ .rating-block__label::before,
+        &:checked ~ .rating-block__label:hover::before {
+            background-image: url("../img/star-filled.svg");
+        }
+    }
+}
+
+.dark-theme {
+    .rating-block{
+        &__item {
+            &:checked ~ .rating-block__label::before {
+                background-image: url("../img/star-filled-white.svg");
+            }
+        }
+    
+        &__label {
+            &::before {
+                background-image: url("../img/star-white.svg");
+            }
+    
+            &:hover::before,
+            &:hover ~ .rating-block__label::before,
+            &:checked ~ .rating-block__label:hover::before {
+                background-image: url("../img/star-filled-white.svg");
+            }
+        }
     }
 }

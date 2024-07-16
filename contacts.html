@@ -2245,6 +2245,150 @@
         </div>
     </footer>
 
+    <div class="feedback-btn" data-modal="feedback-modal">
+        <span>Feedback</span>
+    </div>
+
+    <!-- *** FOR DEVELOPER: MODAL SUCESS AND ERROR CLASSES *** -->
+    <!-- <div class="modal feedback-modal modal_sm center-modal active success"> -->
+    <!-- <div class="modal feedback-modal modal_sm center-modal active error"> -->
+    <div class="modal feedback-modal modal_sm center-modal">
+        <div class="modal__wrapper">
+            <div class="modal__body">
+                <div class="modal__close modal-close">
+                    <i class="icon icon-close"></i>
+                </div>
+                <!-- Content -->
+                <div class="modal__content">
+                    <form action='#' method='post' class="feedback-modal__wrap">
+                        <div class="feedback-modal__logo">
+                            <img width='324' height='67' src="assets/img/feedback-logo.svg" alt="Office Pro">
+                        </div>
+                        <div class="feedback-modal__content">
+                            <div class="feedback-modal__title font-15">
+                                Пожалуйста выскажите ваше мнение
+                                относительно вашего опыта с Офис Про.
+                            </div>
+                            <div class="feedback-modal__field feedback-subject">
+                                <div class="form-field form-field_default form-field_square form-field_sm">
+                                    <div class="form-field__label font-15">О чем бы вы хотели оставить отзыв?</div>
+                                    <div class="form-field__target form-field__target_suffix">
+                                        <div class="custom-select">
+                                            <div class="combo-box" data-combo-name="subject">
+                                                <div class="combo-box-selected">
+                                                    <div class="combo-box-selected-wrap form-field__input">
+                                                        <span class="combo-box-placeholder">Выберите тему</span>
+                                                    </div>
+                                                </div>
+                                                <div class="combo-box-dropdown">
+                                                    <div class="combo-box-options">
+                                                        <div class="combo-option" data-option-value="shop">
+                                                            <span>Онлайн магазин</span>
+                                                        </div>
+                                                        <div class="combo-option" data-option-value="product">
+                                                            <span>Продукт</span>
+                                                        </div>
+                                                        <div class="combo-option" data-option-value="delivery">
+                                                            <span>Доставка</span>
+                                                        </div>
+                                                        <div class="combo-option" data-option-value="other">
+                                                            <span>Прочее</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feedback-modal__field feedback-rating">
+                                <div class="form-field form-field_default form-field_square form-field_sm">
+                                    <div class="form-field__label font-15">Оцените ваш общий опыт:</div>
+                                    <div class="form-field__target form-field__target_suffix">
+                                        <div class="rating-block">
+                                            <div class="rating-block__items">
+                                                <input class="rating-block__item" id="experience-5" type="radio" value="5" name="experience">
+                                                <label class="rating-block__label" for="experience-5"></label>
+        
+                                                <input class="rating-block__item" id="experience_4" type="radio" value="4" name="experience">
+                                                <label class="rating-block__label" for="experience_4"></label>
+        
+                                                <input class="rating-block__item" id="experience_3" type="radio" value="3" name="experience">
+                                                <label class="rating-block__label" for="experience_3"></label>
+        
+                                                <input class="rating-block__item" id="experience_2" type="radio" value="2" name="experience">
+                                                <label class="rating-block__label" for="experience_2"></label>
+        
+                                                <input class="rating-block__item" id="experience_1" type="radio" value="1" name="experience">
+                                                <label class="rating-block__label" for="experience_1"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feedback-modal__field feedback-message">
+                                <div class="form-field form-field_textarea form-field_default form-field_square form-field_sm">
+                                    <div class="form-field__label font-15">Поясните причину вашей оценки, и что бы вы хотели, чтоб мы улучшили?</div>
+                                    <div class="form-field__target">
+                                        <textarea name="message" class='form-field__input'></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feedback-modal__field feedback-contact">
+                                <div class="form-field form-field_default form-field_square form-field_sm">
+                                    <div class="form-field__label font-15">Если мы можем с вами связаться относительно вашего отзыва пожалуйста оставте контакты:</div>
+                                    <div class="form-field__target">
+                                        <input name="contact" type='text' placeholder='Введите телефон или эл. почту' class='form-field__input'></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feedback-modal__field feedback-contact-type">
+                                <div class="form-field form-field_default form-field_square form-field_sm">
+                                    <div class="form-field__label font-15">Можем ли мы с вами связаться относительно вашего отзыва?</div>
+                                    <div class="form-field__target">
+                                        <label class="custom-check custom-check_radio" for="contact-phone">
+                                            <input class='payment-type-input' type="radio" name="contact_type" id="contact-phone" value="phone">
+                                            <span class="custom-check__checkmark"></span>
+                                            <span class="custom-check__label font-15">Да, я предпочетаю по телефону.</span>
+                                        </label>
+                                        <label class="custom-check custom-check_radio" for="contact-email">
+                                            <input class='payment-type-input' type="radio" name="contact_type" id="contact-email" value="email">
+                                            <span class="custom-check__checkmark"></span>
+                                            <span class="custom-check__label font-15">Да, я предпочетаю по эл.почте.</span>
+                                        </label>
+                                        <label class="custom-check custom-check_radio" for="contact-none">
+                                            <input class='payment-type-input' type="radio" name="contact_type" id="contact-none" value="none">
+                                            <span class="custom-check__checkmark"></span>
+                                            <span class="custom-check__label font-15">Пожалуйста не беспокойте меня.</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='feedback-modal__submit'>
+                            <button type='submit' class='btn btn_main btn_md fit'>
+                                <span class='font-15'>Отправить</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Success Message -->
+                <div class="modal__success success-message">
+                    <div class='font-20'>
+                        Success Message
+                    </div>
+                </div>
+                <!-- Error Message -->
+                <div class="modal__error error-message">
+                    <div class='font-20'>
+                        Error Message
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Rest Styles -->
     <link rel="stylesheet" href="assets/css/libs/splide-core.min.css">
     <link rel="stylesheet" href="assets/css/app.css">

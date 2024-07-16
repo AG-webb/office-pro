@@ -79,11 +79,6 @@
 .form-field {
     position: relative;
 
-    &__label {
-        @include font(600, 14, 130%, inherit, 0);
-        margin-bottom: rem(8);
-    }
-
     &__target {
         position: relative;
     }
@@ -137,10 +132,9 @@
             }
 
             &__input {
-                height: rem(40);
-                padding: 0 rem(20);
-                font-size: rem(16);
-                font-weight: 500;
+                height: rem(33);
+                padding: 0 rem(12);
+                font-size: rem(15);
             }
         }
     }
@@ -332,6 +326,38 @@
             }
         }
 
+        .combo-box {
+            &-selected {
+                &::after {
+                    font-size: rem(9);
+                    top: rem(12);
+                    color: inherit;
+                    right: rem(11);
+                }
+            }
+
+            &-dropdown {
+                background: var(--themeSecondaryColor);
+                border: rem(1) solid var(--themeMainColor);
+                border-radius: rem(5);
+                font-size: rem(15);
+            }
+        }
+
+        .combo-option {
+            padding: rem(13);
+            border-radius: rem(5);
+
+            &.selected {
+                background-color: var(--themeMainColor01);
+                font-weight: bold;
+            }
+        
+            &:focus, &_focused {
+                background-color: var(--themeMainColor01);
+            }
+        }
+
         &.invalid {
             .form-field {
                 &__target {
@@ -345,6 +371,14 @@
                         color: map-get($color-scheme, 'error');
                     }
                 }
+            }
+        }
+    }
+
+    &_square {
+        .form-field {
+            &__input {
+                border-radius: rem(5);
             }
         }
     }
