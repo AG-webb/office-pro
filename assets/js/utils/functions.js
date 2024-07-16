@@ -13,7 +13,7 @@ function formatPhoneNumber(number) {
     return null
 }
 
-function numberWithSeparator(value, separator) {
+function numberWithSeparator(value, separator = " ") {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 }
 

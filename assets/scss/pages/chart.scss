@@ -177,37 +177,45 @@
         @include flex(1, 1, rem(150));
         padding-left: rem(35);
         @extend %flex;
-        @extend %align-between;
         @extend %align-middle;
     }
 
     &__old {
         text-decoration: line-through;
         color: map-get($color-scheme, 'primary');
-        min-width: rem(100);
+        @include flex(0, 0, 18%);
+        max-width: 18%;
         @include font-media($media-md, rem(13), rem(16));
         @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__quantity {
+        @include flex(0, 0, 22%);
+        max-width: 22%;
         @include font-media($media-md, rem(15), rem(18));
         @include font-media($media-sm, rem(11), rem(13));
     }
 
     &__sale {
+        @include flex(0, 0, 42%);
+        max-width: 42%;
         font-size: rem(15);
         text-decoration: underline;
         font-weight: bold;
         font-style: italic;
-        margin-left: rem(39);
+        padding-left: rem(16);
         @include font-media($media-md, rem(13), rem(16));
         @include font-media($media-sm, rem(11), rem(13));
+        text-align: center;
     }
 
     &__total {
+        @include flex(0, 0, 18%);
+        max-width: 18%;
+        text-align: right;
         font-size: rem(20);
         font-weight: bold;
-        margin-left: rem(32);
+        padding-left: rem(16);
         @include font-media($media-md, rem(15), rem(20));
         @include font-media($media-sm, rem(13), rem(16));
     }
@@ -436,7 +444,7 @@
         &__sale {
             @include flex(0, 0, 78%);
             max-width: 78%;
-            margin-left: 0;
+            padding-left: 0;
             @include order(2);
             text-align: right
         }
@@ -451,7 +459,7 @@
             @include flex(0, 0, 50%);
             max-width: 50%;
             @include order(4);
-            margin-left: 0;
+            padding-left: 0;
             padding-left: rem(10);
             text-align: right;
         }

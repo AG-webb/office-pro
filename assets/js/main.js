@@ -364,8 +364,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     currentPrice = mainPrice;
                 }
                 
-                productPrice.innerHTML = currentPrice;
-                productTotalPrice.innerHTML = currentPrice * quantity;
+                productPrice.innerHTML = numberWithSeparator(currentPrice);
+                productTotalPrice.innerHTML = numberWithSeparator(currentPrice * quantity);
             }
         }
 
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             saleElement.innerHTML = sale;
-            totalSaleElement.innerHTML = totalSale;
+            totalSaleElement.innerHTML = numberWithSeparator(totalSale);
         }
     }
 
@@ -458,12 +458,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const productTotalSale = product.querySelector(".product-total-sale");
 
             if(productTotalPrice) {
-                productsSummaryPrice += (+productTotalPrice.innerHTML);
-                summaryAmount += (+productTotalPrice.innerHTML);
+                productsSummaryPrice += (+productTotalPrice.innerHTML.replace(" ", ""));
+                summaryAmount += (+productTotalPrice.innerHTML.replace(" ", ""));
             }
 
             if(productTotalSale && !productTotalSale.closest(".sale-badges").classList.contains("hide")) {
-                totalProductsSale += (+productTotalSale.innerHTML)
+                totalProductsSale += (+productTotalSale.innerHTML.replace(" ", ""))
             }
         });
 
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if(totalProductsSale) {
-                totalProductsSaleElement.innerHTML = totalProductsSale;
+                totalProductsSaleElement.innerHTML = numberWithSeparator(totalProductsSale);
                 totalProductsSaleRow.classList.remove("hide");
             } else {
                 totalProductsSaleRow.classList.add("hide");
@@ -492,16 +492,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if(promoCodeSales.length) {
                 promoCodeSales.forEach((promoCodeSale) => {
-                    summaryAmount -= (+promoCodeSale.innerHTML);
+                    summaryAmount -= (+promoCodeSale.innerHTML.replace(" ", ""));
                 });
             }
 
             summaryAmountElements.forEach((summaryAmountElement) => {
-                summaryAmountElement.innerHTML = summaryAmount;
+                summaryAmountElement.innerHTML = numberWithSeparator(summaryAmount);
             });
         }
 
-        summaryElement.innerHTML = productsSummaryPrice;
+        summaryElement.innerHTML = numberWithSeparator(productsSummaryPrice);
     }
 
     // *************************************
