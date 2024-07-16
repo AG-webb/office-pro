@@ -199,6 +199,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Products Functional  ************************
+    const productFavourites = document.querySelectorAll(".product__favourite");
+    if(productFavourites.length) {
+        productFavourites.forEach((productFavourite) => {
+            productFavourite.addEventListener("click", function(e) {
+                e.preventDefault();
+            });
+        });
+    }
+
     const productCardElements = document.querySelectorAll(".landscape-product");
     if (productCardElements.length && window.innerWidth < 1024) {
         productCardElements.forEach((productCardElement) => {
