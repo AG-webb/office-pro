@@ -2,15 +2,10 @@
 
 .catalog-page {
     padding-top: rem(13);
-    margin-bottom: rem(23);
+    margin-bottom: rem(30);
      
     &__breadcrumb {
         margin-bottom: rem(30);
-    }
-
-    &__wrap {
-        padding-bottom: rem(5);
-        border-bottom: rem(2) solid var(--themeMainColor02);
     }
 
     &__title {
@@ -42,7 +37,6 @@
 }
 
 .catalog-subcategory {
-
     &__img {
         max-width: rem(92);
         border-radius: rem(10);
@@ -59,4 +53,14 @@
         line-height: rem(16);
         font-weight: bold;
     }
+}
+
+.product-showcase {
+    margin-bottom: rem(150);
+}
+
+@media (max-width: $media-sm) {
+    .product-showcase {
+        margin-bottom: rem(64);
+    }   
 }

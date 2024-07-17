@@ -7,7 +7,6 @@
 @import "components/_form-items";
 @import "components/_chart-dropdown";
 @import "components/_tabs";
-@import "components/_modal";
 @import "components/_combobox";
 @import "components/_checkbox";
 
@@ -756,6 +755,7 @@
 
 .favourites-list {
     padding-top: rem(25);
+    margin-bottom: rem(150);
     
     .product-showcase__title {
         margin-bottom: rem(24);

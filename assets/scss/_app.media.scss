@@ -172,7 +172,18 @@
 
     .product-showcase {        
         &_grid {
-            margin: 0 rem(-10);
+            overflow: hidden;
+            
+            & > .row {
+                &> .column.flex {
+                    &:nth-child(odd) {
+                        padding-left: rem(10);
+                    }
+                    &:nth-child(even) {
+                        padding-right: rem(10);
+                    }
+                }
+            }
 
             .product {
                 margin-bottom: rem(6);
@@ -377,6 +388,10 @@
             font-size: rem(15);
             line-height: rem(18);
         }
+    }
+
+    .favourites-list {
+        margin-bottom: rem(65);
     }
 }
 
