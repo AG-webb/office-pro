@@ -37,9 +37,9 @@ html {
         // font-size: 2.08333333vw;
         font-size: 15px;
     }
-    // @media (max-width: $media-sm) {
-    //     font-size: 16px;
-    // }
+    @media (max-width: $media-sm) {
+        font-size: 16px;
+    }
 }
 
 :root {
