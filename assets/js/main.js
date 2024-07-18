@@ -651,7 +651,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     1149: {
                         perPage: 4,
                     },
-                    1023: {
+                    840: {
                         perPage: 3,
                     },
                     767: {

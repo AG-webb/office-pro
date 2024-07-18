@@ -423,15 +423,13 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $media-xs) {
     .products-slider {
         &__slide {
             padding: 0 rem(3);
         }
     }
-}
-
-@media (max-width: $media-xs) {
+    
     .badge {
         &_lg {
             height: rem(25);

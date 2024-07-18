@@ -155,17 +155,15 @@
 }
 
 
-@media (max-width: $media-sm) {
+@media (max-width: $media-xs) {
     .chart-dropdown {
-        padding-top: rem(5);
-
         &.header__dropdown {
             right: rem(-16);
         }
     
         &__wrap {
             border-radius: rem(6);
-            max-width: calc(100vw - rem(30));
+            max-width: calc(100vw - rem(24));
             max-height: calc(87vh - rem(120));
             padding: 0 rem(2) 0 0;
     

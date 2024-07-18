@@ -240,6 +240,14 @@
         margin-bottom: 0;
         margin-left: rem(10);
         @include flex(1, 1, auto);
+
+        .product-info__label {
+            padding-right: rem(8);
+        }
+        .product-info__price {
+            padding-left: rem(8);
+            text-align: right;
+        }
     }
 
     &__footer {
@@ -640,9 +648,21 @@
     }
 }
 
+@media (max-width: 840px) {
+    .product {
+        &__wrap {
+            padding: rem(32);
+        }
+    }
+}
+
 @media (max-width: $media-sm) {
     .product {
         box-shadow: 3px 3px 40px rgba(54, 64, 99, .05);
+
+        &__wrap {
+            padding: rem(28);
+        }
 
         &__btn {
             .btn {
@@ -799,80 +819,6 @@
         }
     }
 
-    .chart-product {
-        &__wrap {
-            padding: rem(10);
-            position: relative;
-        }
-
-        &__header {
-            padding-left: rem(80);
-        }
-
-        &__code {
-            width: initial;
-            padding-right: rem(6);
-        }
-
-        &__brand {
-            padding-right: rem(20);
-        }
-
-        &__remove {
-            top: rem(-4);
-            right: rem(-4);
-        }
-
-        &__preview {
-            @include flex(0, 0, rem(70));
-        }
-
-        &__img {
-            position: absolute;
-            top: rem(10);
-            left: rem(10);
-        }
-
-        &__title {
-            min-height: rem(40);
-        }
-
-        &__img {
-            img {
-                width: rem(70);
-            }
-        }
-
-        &__info {
-            .product-info {
-                &__row {
-                    font-size: rem(13);
-                    @include flex-flow(column, nowrap);
-                    @include align-items(flex-end);
-                }
-
-                &__price {
-                    @include flex(0, 0, 100%);
-                    max-width: 100%;
-
-                    &_primary {
-                        font-size: rem(13);
-                    }
-                }
-
-                &__label {
-                    @include flex(0, 0, 100%);
-                    max-width: 100%;
-                    margin-bottom: rem(6);
-                }
-            }
-        }
-
-        &__footer {
-            margin-left: rem(-80);
-        }
-    }
-
     .product-info {
         &__row {
             font-size: rem(12);
@@ -973,5 +919,94 @@
                 padding: rem(10);
             }
         }
-    }   
+    }
+
+    .chart-product {
+        &__wrap {
+            padding: rem(10);
+            position: relative;
+        }
+
+        &__header {
+            padding-left: rem(80);
+        }
+
+        &__code {
+            width: initial;
+            padding-right: rem(6);
+        }
+
+        &__brand {
+            padding-right: rem(20);
+        }
+
+        &__remove {
+            top: rem(-4);
+            right: rem(-4);
+        }
+
+        &__preview {
+            @include flex(0, 0, rem(70));
+        }
+
+        &__img {
+            position: absolute;
+            top: rem(10);
+            left: rem(10);
+        }
+
+        &__title {
+            min-height: rem(40);
+        }
+
+        &__img {
+            img {
+                width: rem(70);
+            }
+        }
+
+        &__info {
+            .product-info {
+                &__row {
+                    font-size: rem(13);
+                }
+
+                &__price {
+                    &_primary {
+                        font-size: rem(13);
+                    }
+                }
+            }
+        }
+
+        &__footer {
+            margin-left: rem(-80);
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .chart-product {
+        &__info {
+            .product-info {
+                &__row {
+                    @include flex-flow(column, nowrap);
+                    @include align-items(flex-end);
+                }
+
+                &__price {
+                    padding-left: 0;
+                    @include flex(0, 0, 100%);
+                    max-width: 100%;
+                }
+
+                &__label {
+                    padding-right: 0;
+                    @include flex(0, 0, 100%);
+                    max-width: 100%;
+                    margin-bottom: rem(6);
+                }
+            }
+        }
+    }
 }
