@@ -292,15 +292,15 @@
     &__slide {
         padding: 0 rem(10);
         @extend %flex;
+        @extend %hidden;
+        @include transition(all,0.3s,ease);
 
         .product {
             width: 100%;
         }
-        opacity: 0;
-        @include transition(opacity,0.3s,ease);
 
         &.is-visible {
-            opacity: 1;
+            @extend %show;
         }
     }
 

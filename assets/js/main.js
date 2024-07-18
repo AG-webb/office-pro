@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (catalogTabElements.length) {
         catalogTabElements.forEach((catalogTabElement) => {
             catalogTabElement.addEventListener("click", function (e) {
-                if (document.querySelector(".burger").classList.contains("active")) {
+                if (document.querySelector(".burger").classList.contains("active") && window.innerWidth >= 768) {
                     e.preventDefault();
                 }
             });
