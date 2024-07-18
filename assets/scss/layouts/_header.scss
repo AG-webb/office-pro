@@ -423,6 +423,7 @@
 
     &__copy {
         margin-left: rem(10);
+        @extend %user-cursor;
     }
 }
 

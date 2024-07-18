@@ -24,7 +24,7 @@
                 @include flex(0, 0, auto);
         
                 &::after {
-                    @include font-icon("✔");
+                    content: "✔";
                     color: inherit;
                     @extend %hidden;
                     text-align: center;
