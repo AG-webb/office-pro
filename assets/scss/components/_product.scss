@@ -163,7 +163,8 @@
 .product-fake-img {
     position: fixed;
     z-index: 99999;
-    border-radius: rem(10);
+    border-radius: 5%;
+    background-color: red;
 }
 
 .chart-product {
