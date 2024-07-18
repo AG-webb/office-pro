@@ -27,15 +27,19 @@ html {
     // @media (max-width: $media-lg) {
     //     font-size: 1.3vw;
     // }
-    // @media (max-width: 1100px) {
-    //     font-size: 1.5625vw;
+    @media (max-width: 1150px) {
+        font-size: 14px;
+    }
+    // @media (max-width: $media-md) {
+    //     font-size: 2.08333333vw;
     // }
-    @media (max-width: $media-md) {
-        font-size: 2.08333333vw;
+    @media (max-width: 800px) {
+        // font-size: 2.08333333vw;
+        font-size: 15px;
     }
-    @media (max-width: $media-sm) {
-        font-size: 16px;
-    }
+    // @media (max-width: $media-sm) {
+    //     font-size: 16px;
+    // }
 }
 
 :root {

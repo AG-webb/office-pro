@@ -668,6 +668,7 @@
     transform-origin: bottom right;
     background-color: var(--themeSecondaryColor);
     border: rem(1) solid var(--themeMainColor);
+    border-bottom: 0;
     border-radius: rem(4) rem(4) 0 0;
     padding: rem(5) rem(12);
     @extend %user-cursor;

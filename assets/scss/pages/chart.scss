@@ -150,24 +150,20 @@
         .product-counter {
             border-width: rem(1);
             border-radius: rem(5);
+            height: rem(35);
 
-            .product-counter {
-                &__btn {
-                    width: rem(42);
-                    height: rem(33);
-                    @include font(300, 33, 1, inherit, 0);
+            &__btn {
+                @include font(300, 33, 1, inherit, 0);
 
-                    &::after {
-                        width: rem(2);
-                        height: rem(15);
-                    }
+                &::after {
+                    width: rem(2);
                 }
+            }
 
-                &__value {
-                    input {
-                        @include font(normal, 20, 1, inherit, 0);
-                        @include font-media($media-md, rem(15), 0);
-                    }
+            &__value {
+                input {
+                    @include font(normal, 20, 1, inherit, 0);
+                    @include font-media($media-md, rem(15), 0);
                 }
             }
         }
@@ -416,14 +412,6 @@
             position: absolute;
             top: rem(31);
             right: calc(100% + rem(20));
-    
-            .product-counter {
-                .product-counter {
-                    &__btn {
-                        width: rem(34);
-                    }
-                }
-            }
         }
     
         &__info {
@@ -514,6 +502,9 @@
         @include flex-flow(column, nowrap);
         margin-left: rem(-10);
         margin-right: rem(-10);
+        // max-width: rem(420);
+        // margin-left: auto;
+        // margin-right: auto;
 
         &__products {
             margin-bottom: rem(10);
@@ -589,12 +580,7 @@
             right: calc(100% + rem(7));
     
             .product-counter {
-                .product-counter {
-                    &__btn {
-                        width: rem(25);
-                        height: rem(25);
-                    }
-                }
+                height: rem(27);
             }
         }
 

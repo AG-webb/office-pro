@@ -1,5 +1,5 @@
 .product {
-    box-shadow: map-get($shadows, 'sm');
+    box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
     background-color: #fff;
     border-radius: rem(10);
     color: $color-main;
@@ -326,7 +326,8 @@
     border-style: solid;
 
     &__decrement {
-        @include flex(0, 0, auto);
+        @include flex(0, 0, 28%);
+        max-width: 28%
     }
 
     &__btn {
@@ -336,36 +337,36 @@
         @extend %align-middle;
         @extend %align-center;
         position: relative;
+        width: 100%;
+        height: 100%;
 
         &::after {
             content: '';
             @include center-absolute(vertical);
             background-color: map-get($color-scheme, 'main-03');
+            height: 46.666666%;
         }
 
         span {
-            @include center-absolute(both);
+            line-height: 0.74em;
         }
 
         &_decrement {
             &::after {
-                right: 0;
-            }
-
-            span {
-                @include translate(-50%, -55%);
+                right: rem(-1);
             }
         }
 
         &_increment {
             &::after {
-                left: 0;
+                left: rem(-1);
             }
         }
     }
 
     &__value {
-        @include flex(1, 1, auto);
+        @include flex(1, 1, 44%);
+        max-width: 44%;
 
         input {
             @include font(normal, 30, 1, inherit, 0);
@@ -376,7 +377,8 @@
     }
 
     &__increment {
-        @include flex(0, 0, auto);
+        @include flex(0, 0, 28%);
+        max-width: 28%
     }
 
     &.filled {
@@ -406,16 +408,14 @@
     &_sm, &_md {
         border-width: rem(2);
         border-radius: rem(9);
+        height: rem(50);
 
         .product-counter {
             &__btn {
-                width: rem(60);
-                height: rem(50);
                 @include font(300, 50, 1, inherit, 0);
 
                 &::after {
                     width: rem(2);
-                    height: rem(20);
                 }
             }
         }
@@ -424,16 +424,14 @@
     &_xs {
         border-width: rem(1);
         border-radius: rem(5);
+        height: rem(33);
 
         .product-counter {
             &__btn {
-                width: rem(30);
-                height: rem(31);
                 @include font(300, 33, 1, inherit, 0);
 
                 &::after {
                     width: rem(2);
-                    height: rem(16);
                 }
             }
 
@@ -620,22 +618,20 @@
 
     .product-counter {
         &_md {
+            height: rem(34);
+            
             .product-counter {
                 &__btn {
-                    width: rem(59);
-                    height: rem(29);
-                    line-height: rem(29);
-                    font-size: rem(40);
+                    font-size: rem(41);
 
                     &::after {
-                        height: rem(17);
                         opacity: 0.3;
                     }
                 }
 
                 &__value {
                     input {
-                        font-size: rem(16);
+                        font-size: rem(18);
                     }
                 }
             }
@@ -690,10 +686,6 @@
 
     .main-product {
         .product {
-            &__wrap {
-                padding: rem(10);
-            }
-        
             &__top {
                 font-size: rem(10);
             }
@@ -931,16 +923,13 @@
         &_sm {
             border-radius: rem(5);
             border: rem(1) solid map-get($color-scheme, 'main-02');
+            height: rem(30);
 
             .product-counter {
                 &__btn {
-                    width: rem(34);
-                    height: rem(26);
                     font-size: rem(30);
-                    line-height: rem(30);
 
                     &::after {
-                        height: rem(16);
                         width: rem(1);
                         opacity: 0.3;
                     }
@@ -955,16 +944,11 @@
         }
 
         &_md, &_mobile-md {
+            height: rem(40);
+
             .product-counter {
                 &__btn {
-                    width: rem(75);
-                    height: rem(36);
-                    line-height: rem(36);
                     font-size: rem(50);
-
-                    &::after {
-                        height: rem(23);
-                    }
                 }
 
                 &__value {
@@ -975,4 +959,14 @@
             }
         }
     }
+}
+
+@media (max-width: $media-xs) {
+    .main-product {
+        .product {
+            &__wrap {
+                padding: rem(10);
+            }
+        }
+    }   
 }

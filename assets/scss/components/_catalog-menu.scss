@@ -160,7 +160,17 @@
     }
 }
 
+@media (max-width: 1150px) {
+    .catalog-menu {
+        &__tab {
+            font-size: rem(15);
+        }
 
+        .icon {
+            font-size: rem(24);
+        }
+    }  
+}
 @media (max-width: $media-md) {
     .catalog-menu {
         top: rem(104);

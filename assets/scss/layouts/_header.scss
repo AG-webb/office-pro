@@ -118,8 +118,8 @@
             @include font(600, 12, 1, #fff, 0);;
         }
 
-        // &:hover, &.active {
-        &:hover {
+        &:hover, &.active {
+        // &:hover {
             .header__dropdown {
                 @extend %show;
             }
@@ -353,7 +353,7 @@
     &__form {
         position: relative;
         margin-bottom: rem(28);
-        padding: rem(28) rem(25);
+        padding: rem(28) rem(25) rem(30);
         margin-left: auto;
         margin-right: auto;
 
@@ -367,10 +367,10 @@
             white-space: nowrap;
         }
         &::after {
-            top: 0;
+            top: rem(-9);
         }
         &::before {
-            bottom: 0;
+            bottom: rem(-9);
         }
         
         .form-field {
@@ -696,6 +696,22 @@
                 }
             }
         }
+}
+
+@media (max-width: 1050px) {
+    .header {
+        &__search {
+            margin-left: rem(16);
+        }
+
+        &__desc {
+            margin-left: rem(18);
+
+            span {
+                font-size: rem(14);
+            }
+        }
+    }
 }
 
 @media (max-width: $media-md) {

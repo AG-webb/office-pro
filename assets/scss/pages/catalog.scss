@@ -59,7 +59,32 @@
     margin-bottom: rem(150);
 }
 
+@media (max-width: $media-md) {
+    .catalog-page {
+        &__title {
+            font-size: rem(35);
+            line-height: rem(43);
+        }
+    }  
+}
 @media (max-width: $media-sm) {
+    .catalog-page {
+        &__title {
+            font-size: rem(24);
+            line-height: rem(30);
+            margin-bottom: rem(32);
+        }
+    
+        &__item {
+            margin-bottom: rem(20);
+            padding: 0 rem(6);
+            
+            .catalog-subcategory {
+                max-width: rem(130);
+            }
+        }
+    }
+
     .product-showcase {
         margin-bottom: rem(64);
     }   

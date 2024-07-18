@@ -75,10 +75,10 @@
             white-space: nowrap;
         }
         &::after {
-            top: 0;
+            top: rem(-8);
         }
         &::before {
-            bottom: 0;
+            bottom: rem(-8);
         }
 
         &-title {
