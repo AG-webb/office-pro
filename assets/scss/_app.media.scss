@@ -139,6 +139,10 @@
                 padding-left: rem(14);
                 padding-right: rem(14);
             }
+            &.badge_gradient {
+                height: rem(25);
+                line-height: rem(25);
+            }
         }
     }
 
