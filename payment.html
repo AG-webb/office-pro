@@ -280,7 +280,7 @@
                                         <div class="form-field form-field_default form-field_md">
                                             <div class="form-field__target">
                                                 <input type="number" name="phone" class="form-field__input"
-                                                    placeholder="Ваш телефон" required>
+                                                    placeholder="Ваш телефон" required autocomplete='phone'>
                                             </div>
                                         </div>
                                     </div>
@@ -2110,39 +2110,39 @@
                                                     <div class="form-fields__item">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="text" name="name" class="form-field__input" placeholder='Имя*' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="text" name="name" class="form-field__input" placeholder='Имя*' disabled="disabled" data-required="! Обязательное поле" autocomplete='family-name'>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-fields__item">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="number" name="phone" class="form-field__input" placeholder='Телефон*' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="number" name="phone" class="form-field__input" placeholder='Телефон*' disabled="disabled" data-required="! Обязательное поле" autocomplete='phone'>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-fields__item">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="text" name="address" class="form-field__input" placeholder='Адрес*' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="text" name="address" class="form-field__input" placeholder='Адрес*' disabled="disabled" data-required="! Обязательное поле" autocomplete='street-address'>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-fields__item">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="text" name="email" class="form-field__input" data-email-validation="! Неправильный формат почты" placeholder='Эл. почта*' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="text" name="email" class="form-field__input" data-email-validation="! Неправильный формат почты" placeholder='Эл. почта*' disabled="disabled" data-required="! Обязательное поле" autocomplete='email'>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-fields__item form-fields__item_radio">
                                                         <label class="custom-check custom-check_radio" for="organization">
-                                                            <input class='payment-type-input organization-type' type="radio" name="payment_type" id="organization" value="1" checked disabled="disabled">
+                                                            <input class='payment-type-input organization-type' type="radio" name="payment_type" id="organization" value="1" checked disabled="disabled" autocomplete="off">
                                                             <span class="custom-check__checkmark"></span>
                                                             <span class="custom-check__label font-15">Организация</span>
                                                         </label>
                                                         <label class="custom-check custom-check_radio" for="individual">
-                                                            <input class='payment-type-input individual-type' type="radio" name="payment_type" id="individual" value="2" disabled="disabled">
+                                                            <input class='payment-type-input individual-type' type="radio" name="payment_type" id="individual" value="2" disabled="disabled" autocomplete="off">
                                                             <span class="custom-check__checkmark"></span>
                                                             <span class="custom-check__label font-15">Физ. лицо</span>
                                                         </label>
@@ -2150,14 +2150,14 @@
                                                     <div class="form-fields__item organization-field">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="text" name="organization_name" class="form-field__input" placeholder='Название организации*' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="text" name="organization_name" class="form-field__input" placeholder='Название организации*' disabled="disabled" data-required="! Обязательное поле" autocomplete='organization'>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-fields__item organization-field">
                                                         <div class="form-field form-field_default form-field_md">
                                                             <div class="form-field__target">
-                                                                <input type="text" name="code" class="form-field__input" placeholder='Налоговый код' disabled="disabled" data-required="! Обязательное поле">
+                                                                <input type="text" name="code" class="form-field__input" placeholder='Налоговый код' disabled="disabled" data-required="! Обязательное поле" autocomplete='postal-code'>
                                                             </div>
                                                         </div>
                                                     </div>
