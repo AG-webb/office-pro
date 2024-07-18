@@ -101,12 +101,65 @@
 
     &__copyright {
         padding-left: rem(46);
+        margin-right: rem(-16);
         margin-top: rem(-110);
     }
 }
 
 
 @media (max-width: $media-md) {
+    .footer {
+        &__box {
+            padding: rem(50) 0 rem(50) rem(5);
+        }
+
+        &__copyright {
+            padding-left: 0;
+        }
+    }
+}
+
+@media (min-width: 841px) {
+    .footer {
+        &__wrapper {
+            & > .row {
+                & > .column {
+                    &:first-child {
+                        @include order(2);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                    &:nth-child(2) {
+                        @include order(5);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                    &:nth-child(3) {
+                        @include order(3);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                    &:nth-child(4) {
+                        @include order(4);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                    &:nth-child(5) {
+                        @include order(1);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                    &:nth-child(6) {
+                        @include order(6);
+                        @include flex(0, 0, 20%);
+                        max-width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 840px) {
     .footer {
         &__wrapper {
             padding-left: rem(30);
@@ -185,17 +238,16 @@
             padding: rem(16) 0;
         }
 
-        &__nav {
-            min-width: 200%;
-            width: 200%;
-        }
-
         &__logos {
             margin-bottom: rem(16);
         }
 
         &__links {
             max-width: initial;
+        }
+
+        &__nav {
+            padding-left: rem(50);
         }
     
         &__area {
@@ -228,6 +280,12 @@
     .footer {
         &__info {
             display: none;
+        }
+
+        &__nav {
+            min-width: 200%;
+            width: 200%;
+            padding-left: 0;
         }
     }
 }

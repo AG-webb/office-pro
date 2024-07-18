@@ -226,7 +226,7 @@
 
     .products-slider {
         &__slide {
-            padding: 0 rem(3);
+            padding: 0 rem(6);
             
             .product {
                 // width: rem(200);
@@ -420,6 +420,14 @@
     .feedback-btn {
         font-size: rem(14);
         padding: rem(3) rem(8);
+    }
+}
+
+@media (max-width: 600px) {
+    .products-slider {
+        &__slide {
+            padding: 0 rem(3);
+        }
     }
 }
 

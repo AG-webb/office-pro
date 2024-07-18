@@ -81,6 +81,10 @@
     white-space: nowrap;
 }
 
+.db {
+    display: block;
+}
+
 // Colors
 .bg {
     @each $name, $color in $color-scheme {

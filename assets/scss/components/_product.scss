@@ -32,8 +32,8 @@
 
     &__favourite {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: rem(-4);
+        left: rem(-3);
         width: rem(32);
         height: rem(32);
         @include transition(all,0.3s,ease);
@@ -642,6 +642,8 @@
 
 @media (max-width: $media-sm) {
     .product {
+        box-shadow: 3px 3px 40px rgba(54, 64, 99, .05);
+
         &__btn {
             .btn {
                 padding-left: rem(16);
@@ -650,6 +652,8 @@
         }
 
         &__favourite {
+            top: rem(-3);
+            left: rem(-2);
             width: rem(24);
             height: rem(24);
             opacity: 1;
