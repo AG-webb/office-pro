@@ -286,7 +286,7 @@
         padding-bottom: rem(32);
         margin-left: rem(-10);
         margin-right: rem(-10);
-        // overflow: visible;
+        overflow: visible;
     }
 
     &__slide {
@@ -296,12 +296,12 @@
         .product {
             width: 100%;
         }
-        // opacity: 0;
-        // @include transition(opacity,0.3s,ease);
+        opacity: 0;
+        @include transition(opacity,0.3s,ease);
 
-        // &.is-visible {
-        //     opacity: 1;
-        // }
+        &.is-visible {
+            opacity: 1;
+        }
     }
 
     .splide__arrows {
