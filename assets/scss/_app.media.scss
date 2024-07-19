@@ -234,6 +234,11 @@
     }
 
     .products-slider {
+        .splide__track {
+            padding-bottom: rem(16);
+        }
+    
+
         &__slide {
             padding: 0 rem(6);
             

@@ -627,7 +627,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 perPage: 5,
                 arrows: true,
                 pagination: false,
-                // padding: '2rem',
                 perMove: 1,
                 drag: false,
                 breakpoints: {
@@ -639,16 +638,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     767: {
                         drag: true,
-                        // autoWidth: true,
                     },
                     600: {
                         perPage: 2,
                         drag: true,
-                        // autoWidth: true,
                     },
-                    // 400: {
-                    //     perPage: 1,
-                    // },
                 }
             });
             productSlider.mount();
