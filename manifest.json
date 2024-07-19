@@ -1,5 +1,11 @@
 {
- "name": "App",
+ "name": "Office Pro",
+ "short_name": "OP",
+ "description": "Պատվիրել գրենական պիտույքներ, օնլայն կամ զանգահարեք 093 66 20 82։ Առաքումն ԱՆՎՃԱՐ",
+ "display": "standalone",
+ "theme_color": "#364063",
+ "background_color": "#ffffff",
+ "start_url": "./",
  "icons": [
   {
    "src": "./assets/img/fav/android-icon-36x36.png",
