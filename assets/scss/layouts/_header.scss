@@ -198,9 +198,9 @@
 
     &__dropdown {
         @include center-absolute(horizontal);
-        top: calc(100% + rem(15));
+        top: calc(100% + rem(18));
         min-width: rem(440);
-        background: var(--themeSecondaryColor);
+        background-color: var(--themeSecondaryColor);
         box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.07);
         color: var(--themeMainColor);
         padding: rem(20) rem(8) rem(20) rem(20);
@@ -686,14 +686,7 @@
 }
 
 
-@media (max-width: 1440px) {
-    .header {
-        &__top, &__wrapper {
-            margin-left: rem(12);
-            margin-right: rem(12);
-        }
-    }
-}
+
 @media (max-width: $media-3xl) {
         .header {
             &__logo {
@@ -709,8 +702,17 @@
 @media (max-width: $media-xxl) {
     .header {
         &__top, &__wrapper {
-            margin-left: rem(14);
-            margin-right: rem(14);
+            margin-left: rem(10);
+            margin-right: rem(10);
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .header {
+        &__top, &__wrapper {
+            margin-left: rem(20);
+            margin-right: rem(20);
         }
     }
 }
@@ -750,12 +752,8 @@
             }
         }
     
-        &__wrapper {
-            padding: 0 rem(16);
-        }
-    
         &__burger {
-            margin-left: rem(6);
+            margin-left: 0;
         }
     
         &__search {
@@ -774,6 +772,12 @@
             &#chart-badge {
                 margin-right: rem(8);
             }
+        }
+    }
+
+    .main-search {
+        &__dropdown {
+            top: calc(100% + rem(13));
         }
     }
     
@@ -845,6 +849,13 @@
             }
         }
     }
+
+    .main-search {
+        &__dropdown {
+            transform: none;
+            left: 0;
+        }
+    }
 }
 
 @media (max-width: $media-sm) {
@@ -861,6 +872,11 @@
     .header {
         min-height: rem(143);
         margin-bottom: 0;
+
+        &__top {
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         &__wrapper {
             margin: 0;
@@ -971,6 +987,8 @@
 
     .main-search {
         &__dropdown {
+            left: 50%;
+            @include translate(-50%, 0);
             top: calc(100% + rem(12));
             min-width: 100vw;
             max-height: calc(100vh - rem(180));
