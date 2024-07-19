@@ -17,6 +17,19 @@
     }
 }
 
+@media (max-width: 1150px) {
+    .product-showcase {
+        &_grid {
+            .products-grid {
+                & > .column {
+                    @include flex(0, 0, 25%);
+                    max-width: 25%;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: $media-md) {
     .badge {
         &_lg {
@@ -41,14 +54,6 @@
     }
 
     .products-slider {
-        &_landscape {
-            .products-slider {
-                &__slide {
-                    padding: 0 rem(5);
-                }
-            }
-        }
-
         .splide__arrows {
             top: rem(-30);
         }
@@ -98,6 +103,19 @@
         padding: rem(4) rem(10);
     }
     
+}
+
+@media (max-width: 840px) {
+    .product-showcase {
+        &_grid {
+            .products-grid {
+                & > .column {
+                    @include flex(0, 0, 33.333333%);
+                    max-width: 33.333333%;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: $media-sm) {
@@ -194,32 +212,23 @@
         &_grid {
             overflow: hidden;
             
-            & > .row {
-                &> .column.flex {
-                    &:nth-child(odd) {
-                        padding-left: rem(10);
+            .products-grid {
+                & > .column {
+                    &:nth-child(3n + 1) {
+                        padding-right: rem(6);
                     }
-                    &:nth-child(even) {
-                        padding-right: rem(10);
+                    &:nth-child(3n + 2) {
+                        padding-left: rem(6);
+                        padding-right: rem(6);
+                    }
+                    &:nth-child(3n + 3) {
+                        padding-left: rem(6);
                     }
                 }
             }
 
             .product {
-                margin-bottom: rem(6);
-            }
-
-            .column {
-                &:nth-child(even) {
-                    .product {
-                        margin-left: rem(-17);
-                    }
-                }
-                &:nth-child(odd) {
-                    .product {
-                        margin-right: rem(-17);
-                    }
-                }
+                margin-bottom: rem(12);
             }
         }
     }
@@ -230,10 +239,6 @@
             
             .product {
                 // width: rem(200);
-
-                // &.landscape-product {
-                //     width: rem(240);
-                // }
             }
         }
 
@@ -420,6 +425,49 @@
     .feedback-btn {
         font-size: rem(14);
         padding: rem(3) rem(8);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-showcase {
+        &_grid {
+            .product {
+                margin-bottom: rem(6);
+            }
+
+            .products-grid {
+                & > .column {
+                    @include flex(0, 0, 50%);
+                    max-width: 50%;
+
+                    &:nth-child(3n + 1) {
+                        padding-right: rem(20);
+                    }
+                    &:nth-child(3n + 2) {
+                        padding-left: rem(20);
+                        padding-right: rem(20);
+                    }
+                    &:nth-child(3n + 3) {
+                        padding-left: rem(20);
+                    }
+
+                    &:nth-child(even) {
+                        padding-right: rem(10);
+
+                        .product {
+                            margin-left: rem(-17);
+                        }
+                    }
+                    &:nth-child(odd) {
+                        padding-left: rem(10);
+
+                        .product {
+                            margin-right: rem(-17);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

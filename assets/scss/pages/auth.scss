@@ -122,6 +122,14 @@
 }
 
 @media (max-width: $media-sm) {
+   .auth {
+        &__body {
+            padding-left: rem(20);
+            padding-right: rem(20);
+        }
+   } 
+}
+@media (max-width: 650px) {
     .auth {
         padding-top: rem(25);
 
@@ -133,6 +141,8 @@
 
         &__body {
             max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
             @include flex-flow(column-reverse, nowrap);
 
             &-wrap {

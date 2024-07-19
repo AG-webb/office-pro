@@ -208,23 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const productCardElements = document.querySelectorAll(".landscape-product");
-    if (productCardElements.length && window.innerWidth < 1024) {
-        productCardElements.forEach((productCardElement) => {
-            const gradientBadge = productCardElement.querySelector(".badge.badge_gradient");
-            const productTop = productCardElement.querySelector(".product__top");
-            const productBadges = productCardElement.querySelector(".product__badges");
-            const productBadgesLabel = productCardElement.querySelector(".product-info__label_badges");
-
-            if (gradientBadge && productTop) {
-                productTop.append(gradientBadge);
-            }
-            if (productBadges && productBadgesLabel) {
-                productBadgesLabel.append(productBadges);
-            }
-        });
-    }
-
     const counterBtnElements = document.querySelectorAll(".product-counter__btn");
     if (counterBtnElements.length) {
         counterBtnElements.forEach((counterBtn) => {
@@ -660,43 +643,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     600: {
                         perPage: 2,
-                        drag: true,
-                        // autoWidth: true,
-                    },
-                    // 400: {
-                    //     perPage: 1,
-                    // },
-                }
-            });
-            productSlider.mount();
-        });
-    }
-
-    const productsSliderLandscapeElements = document.querySelectorAll(".products-slider_landscape");
-    if (productsSliderLandscapeElements.length) {
-        productsSliderLandscapeElements.forEach((productsSliderElement) => {
-            const splideWrapper = productsSliderElement.querySelector(".splide");
-            let productSlider = new Splide(splideWrapper, {
-                perPage: 5,
-                arrows: true,
-                pagination: false,
-                // padding: '2rem',
-                perMove: 1,
-                drag: false,
-                breakpoints: {
-                    1149: {
-                        perPage: 4,
-                    },
-                    1023: {
-                        perPage: 3,
-                    },
-                    767: {
-                        perPage: 2,
-                        drag: true,
-                        // autoWidth: true,
-                    },
-                    550: {
-                        perPage: 1,
                         drag: true,
                         // autoWidth: true,
                     },

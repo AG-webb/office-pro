@@ -117,8 +117,8 @@
             @include font(600, 12, 1, #fff, 0);;
         }
 
-        &:hover, &.active {
-        // &:hover {
+        // &:hover, &.active {
+        &:hover {
             .header__dropdown {
                 @extend %show;
             }

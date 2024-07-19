@@ -216,7 +216,6 @@
         }
         &:nth-child(3) {
             @include flex(1, 1, auto);
-            padding-right: rem(24);
         }
         &:nth-child(4), &:nth-child(5), &:nth-child(6) {
             @include flex(0, 0, 10%);
@@ -299,6 +298,10 @@
 
     &__title {
         @include max-lines(2);
+    }
+
+    &__price, &__total {
+        white-space: nowrap;
     }
 
     &__total {
@@ -563,9 +566,41 @@
     &__text {
         font-size: rem(20);
         line-height: rem(25);
+        @include font-media(1150px, rem(17), rem(22));
     }
 }
 
+
+@media (max-width: 1150px) {
+    .dashboard {
+        &__wrap {
+            .payment {
+                margin-right: rem(20);
+            }
+        }
+    }
+
+    .dashboard-orders {
+        padding: rem(40) rem(16) rem(15) rem(16);
+
+        &__content {
+            padding-right: rem(16);
+            padding-left: rem(16);
+        }
+    }
+
+    .orders-list {
+        &__col {
+            .btn {
+                min-width: rem(140);
+            }
+
+            .spoiler-box__control {
+                right: rem(7);
+            }
+        }
+    }
+}
 
 @media (max-width: $media-md) {
     .payment {
@@ -604,37 +639,13 @@
                 right: rem(-4);
             }
         }
-
-        &__title {
-            font-size: rem(20);
-            line-height: rem(24);
-        }
-    
-        &__col {
-            &:nth-child(2) {
-                @include flex(0, 0, 14%);
-                max-width: 14%;
-            }
-            &:nth-child(3) {
-                padding-right: rem(16);
-            }
-            &:nth-child(4), &:nth-child(5), &:nth-child(6) {
-                @include flex(0, 0, 13%);
-                max-width: 13%;
-            }
-        }
-    }
-    
-    .order-card {
-        font-size: rem(13);
-        line-height: rem(16);
-    
-        &__about {
-            padding-right: rem(16);
-        }
     }
 
     .dashboard {
+        max-width: rem(800);
+        margin-left: auto;
+        margin-right: auto;
+
         &__wrap {
             @include flex-flow(column, nowrap);
 
@@ -695,6 +706,38 @@
         &__text {
             font-size: rem(16);
             line-height: rem(20);
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    .order-card {
+        font-size: rem(14);
+        line-height: rem(17);
+    
+        &__about {
+            padding-right: rem(16);
+        }
+    }
+
+    .order-cards {
+        &__title {
+            font-size: rem(20);
+            line-height: rem(24);
+        }
+    
+        &__col {
+            &:nth-child(2) {
+                @include flex(0, 0, 14%);
+                max-width: 14%;
+            }
+            &:nth-child(3) {
+                padding-right: rem(16);
+            }
+            &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+                @include flex(0, 0, 13%);
+                max-width: 13%;
+            }
         }
     }
 }
@@ -1071,6 +1114,10 @@
     }
 
     .dashboard {
+        max-width: rem(420);
+        margin-left: auto;
+        margin-right: auto;
+
         &__wrap {
             @include flex-flow(column, nowrap);
 
@@ -1092,9 +1139,11 @@
         padding: rem(20);
 
         &__content {
+            margin-top: rem(13);
             max-height: rem(370);
             margin-left: rem(-20);
             margin-right: rem(-20);
+            padding-top: rem(12);
             padding-left: rem(20);
             padding-right: rem(20);
             

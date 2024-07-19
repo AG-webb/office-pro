@@ -275,6 +275,13 @@
         .product {
             margin-bottom: rem(30);
         }
+
+        .products-grid {
+            & > .column {
+                @include flex(0, 0, 20%);
+                max-width: 20%;
+            }
+        }
     }
 }
 
