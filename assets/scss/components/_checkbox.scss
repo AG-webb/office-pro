@@ -76,13 +76,13 @@
                 &::after {
                     content: "";
                     position: absolute;
-                    top: rem(3);
-                    left: rem(3);
+                    top: 50%;
+                    left: 50%;
                     width: rem(10);
                     height: rem(10);
                     background-color: var(--themeMainColor);
                     border-radius: 50%;
-                    @include scale(0);
+                    @include transform(scale(0) translate(-50%, -50%));
                     @include transition(all,0.3s,ease);
                 }
             }
@@ -90,7 +90,7 @@
 
         input:checked ~ .custom-check__checkmark {
             &::after {
-                @include scale(1);
+                @include transform(scale(1) translate(-50%, -50%));
             }
         }
     }

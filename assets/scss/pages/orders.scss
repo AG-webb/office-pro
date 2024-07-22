@@ -72,13 +72,13 @@
     }
 
     &__submit {
-        margin-top: rem(20);
+        margin-top: rem(25);
     }
 }
 
 .payment-methods {
     .payment-method  {
-        margin-bottom: rem(14);
+        margin-bottom: rem(24);
     }
 }
 
@@ -1062,7 +1062,15 @@
     
         &__print {
             right: 0;
-            top: rem(-18);
+            top: rem(-22);
+
+            .icon {
+                margin-right: 0;
+            }
+
+            span {
+                display: none;
+            }
         }
     
         &__heading {

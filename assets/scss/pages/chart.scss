@@ -68,19 +68,15 @@
 
         &::-webkit-scrollbar {
             width: rem(3);
-            background-color: var(--themeMainColor02);
+            background-color: var(--themeMainColor01);
 
             &-thumb {
-                background-color: var(--themeMainColor05);
+                background-color: var(--themeMainColor02);
             }
         }
 
         .chart-card {
             margin-bottom: rem(10);
-
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
     }
 }
@@ -123,6 +119,12 @@
         margin-left: auto;
         margin-top: rem(-4);
         @extend %user-cursor;
+        color: var(--themeMainColor05);
+        @include transition(color,0.3s,ease);
+
+        &:hover {
+            color: var(--themeMainColor);
+        }
 
         .icon {
             font-size: rem(24);
@@ -202,7 +204,7 @@
         font-style: italic;
         @include font-media(1150px, rem(14), rem(17));
         @include font-media($media-md, rem(13), rem(16));
-        @include font-media($media-sm, rem(11), rem(13));
+        @include font-media($media-sm, rem(11), rem(8));
         text-align: center;
     }
 
@@ -491,7 +493,8 @@
         &__info {
             @include flex(1, 1, 100%);
             @include justify(flex-start);
-            @include align-items(flex-start);
+            @include align-items(flex-end);
+            padding-bottom: rem(8);
             padding-left: 0;
             flex-wrap: wrap;
         }
@@ -575,7 +578,7 @@
             @include flex(0, 0, rem(90));
             max-width: rem(90);
             padding-top: 0;
-            margin-right: rem(7);
+            margin-right: rem(10);
 
             img {
                 max-width: rem(70)
@@ -599,16 +602,28 @@
         &__title {
             margin-bottom: rem(13);
         }
+
+        &__info {
+            padding-bottom: 0;
+        }
     
         &__footer {
             min-height: rem(39);
+        }
+
+        &__old {
+            margin-bottom: rem(5);
+        }
+
+        &__quantity, &__total {
+            margin-bottom: rem(6);
         }
     
         &__counter {
             max-width: rem(90);
             width: rem(90);
             top: rem(13);
-            right: calc(100% + rem(7));
+            right: calc(100% + rem(10));
     
             .product-counter {
                 height: rem(27);
@@ -616,7 +631,7 @@
         }
 
         &__sale {
-            margin-bottom: rem(10);
+            margin-bottom: rem(5);
             font-weight: normal;
         }
     }
@@ -726,5 +741,20 @@
 
     .product-showcase {
         margin-bottom: rem(64);
+    }
+}
+
+@media (max-width: 400px) {
+    .chart-card {
+        &__sale {
+            &-text {
+                font-size: 0;
+                
+                &::before {
+                    content: "−";
+                    font-size: rem(11);
+                }
+            }
+        }
     }
 }

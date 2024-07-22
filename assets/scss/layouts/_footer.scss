@@ -241,10 +241,6 @@
         &__links {
             max-width: initial;
         }
-
-        &__nav {
-            padding-left: rem(50);
-        }
     
         &__area {
             margin-bottom: rem(24);
@@ -281,7 +277,6 @@
         &__nav {
             min-width: 200%;
             width: 200%;
-            padding-left: 0;
         }
     }
 }

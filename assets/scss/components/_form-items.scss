@@ -10,6 +10,11 @@
             @extend %flex;
             @extend %align-middle;
             flex-wrap: wrap;
+            margin-top: rem(20);
+
+            &+.form-fields__item {
+                margin-top: rem(20);
+            }
 
             .custom-check {
                 margin-left: rem(16);

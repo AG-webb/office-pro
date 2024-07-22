@@ -335,7 +335,7 @@
         }
     
         &__title {
-            margin-bottom: rem(16);
+            margin-bottom: rem(20);
             text-align: left;
         }
 
@@ -350,8 +350,16 @@
         &_preview {
             .order-section {
                 &__title {
-                    padding-right: rem(90);
+                    text-align: left;
+                    padding-right: rem(32);
                 }
+            }
+        }
+
+        &_payment {
+            .order-section__title {
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
