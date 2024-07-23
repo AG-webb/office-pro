@@ -309,6 +309,27 @@
                 margin-bottom: rem(24);
             }
 
+            &-items {
+                .column {
+                    &:nth-child(3n + 1) {
+                        .catalog-item {
+                            margin-right: rem(-16);
+                        }
+                    }
+                    &:nth-child(3n + 2) {
+                        .catalog-item {
+                            margin-left: rem(-8);
+                            margin-right: rem(-8);
+                        }
+                    }
+                    &:nth-child(3n + 3) {
+                        .catalog-item {
+                            margin-left: rem(-16);
+                        }
+                    }
+                }
+            }
+
             .catalog-item {
                 margin-bottom: rem(24);
             }

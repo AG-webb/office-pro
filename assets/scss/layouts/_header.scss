@@ -625,7 +625,7 @@
             background-color: var(--themeSecondaryColor);
             border-radius: rem(9);
             overflow: hidden;
-            box-shadow: 3px 3px 5px rgba(54, 64, 99, 0.1);
+            box-shadow: 3px 3px 5px var(--themeMainColor01);
         }
     }
 
@@ -865,6 +865,24 @@
         &__desc {
             display: none;
         }
+
+        &__badge {
+            &:hover {
+                .header__dropdown {
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+            }
+            &.active {
+                .header__dropdown {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    top: 100%;
+                }
+            }
+        }
     } 
 }
 
@@ -934,20 +952,8 @@
                 margin-left: 0;
             }
 
-            &:hover {
-                .header__dropdown {
-                    opacity: 0;
-                    visibility: hidden;
-                    pointer-events: none;
-                }
-            }
             &.active {
                 .header__dropdown {
-                    opacity: 1;
-                    visibility: visible;
-                    pointer-events: auto;
-                    top: 100%;
-
                     &.contact-dropdown {
                         top: 0;
                     }

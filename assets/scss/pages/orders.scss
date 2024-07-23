@@ -15,7 +15,7 @@
         width: 100%;
         background-color: var(--themeSecondaryColor);
         border-radius: rem(10); 
-        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        box-shadow: 3px 3px 40px var(--themeMainColor01);
         padding: rem(50) rem(60);
         @extend %flex;
         @include flex-flow(column, nowrap);
@@ -330,7 +330,7 @@
     
     &__wrap {
         background: var(--themeSecondaryColor);
-        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        box-shadow: 3px 3px 40px var(--themeMainColor01);
         border-radius: rem(10);
         padding: rem(30) rem(40);
         font-size: rem(15);
@@ -438,7 +438,7 @@
 
 .dashboard-orders {
     background: var(--themeSecondaryColor);
-    box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+    box-shadow: 3px 3px 40px var(--themeMainColor01);
     border-radius: rem(10);
     padding: rem(40) rem(21) rem(15) rem(25);
     @extend %flex;
@@ -951,7 +951,7 @@
 
         &_single {
             background: var(--themeSecondaryColor);
-            box-shadow: 1.7px 1.7px 23px rgba(54, 64, 99, 0.1);
+            box-shadow: 1.7px 1.7px 23px var(--themeMainColor01);
             margin-left: rem(-20);
             margin-right: rem(-20);
             padding: rem(20) rem(10) rem(10);
@@ -1145,6 +1145,7 @@
     .dashboard-orders {
         padding-left: rem(21);
         padding: rem(20);
+        border-radius: 0;
 
         &__content {
             margin-top: rem(13);

@@ -378,7 +378,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const totalSaleElement = productBadges.querySelector(".product-total-sale");
 
             if(sale % 1 !== 0) {
-                sale = sale.toFixed(2);
+                // sale = sale.toFixed(2);
+                sale = Math.round(sale);
             }
 
             saleElement.innerHTML = sale;

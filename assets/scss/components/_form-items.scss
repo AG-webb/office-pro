@@ -32,6 +32,7 @@
 
         .btn {
             @extend %user-cursor;
+            color: var(--themeMainColor);
             
             span {
                 text-decoration: underline;
