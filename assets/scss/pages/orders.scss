@@ -422,6 +422,7 @@
     }
 
     &__wrap {
+        position: relative;
         @extend %flex;
 
         .payment {
@@ -431,7 +432,27 @@
         }
 
         .dashboard-orders {
-            @include flex(1, 1, auto);
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: calc(100% - rem(437));
+            max-height: 100%;
+        }
+    }
+
+    &__alternate {
+        text-align: center;
+        padding-top: rem(24);
+
+        &-title {
+            margin-bottom: rem(22);
+            font-size: rem(15);
+            line-height: rem(18);
+        }
+
+        .alternate-sign {
+            margin-bottom: rem(44);
         }
     }
 }
@@ -448,7 +469,6 @@
         @include flex(1, 1, auto);
         @extend %flex;
         width: 100%;
-        max-height: rem(630);
         overflow: auto;
         padding-right: rem(24);
         padding-left: rem(25);
@@ -654,6 +674,14 @@
                 max-width: 100%;
                 margin-right: 0;
                 margin-bottom: rem(15);
+            }
+
+            .dashboard-orders {
+                position: relative;
+                top: initial;
+                right: initial;
+                width: initial;
+                max-width: initial;
             }
         }
     }
