@@ -144,6 +144,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Form Fields **************************
+
+    const formFieldInputElements = document.querySelectorAll(".form-field__input");
+    if(formFieldInputElements.length) {
+        formFieldInputElements.forEach((formFieldInputElement) => {
+            let startVal = formFieldInputElement.value;
+
+            if (startVal && startVal.trim().length) {
+                formFieldInputElement.closest(".form-field").classList.add("filled");
+            } else {
+                formFieldInputElement.closest(".form-field").classList.remove("filled");
+            }
+
+            formFieldInputElement.addEventListener("keyup", function () {
+                let val = formFieldInputElement.value.trim();
+                
+                if (val.length) {
+                    formFieldInputElement.closest(".form-field").classList.add("filled");
+                } else {
+                    formFieldInputElement.closest(".form-field").classList.remove("filled");
+                }
+            });
+        
+            formFieldInputElement.addEventListener("focus", function () {
+                formFieldInputElement.closest(".form-field").classList.add("focused");
+            });
+            formFieldInputElement.addEventListener("focusout", function () {
+                formFieldInputElement.closest(".form-field").classList.remove("focused");
+            });
+        });
+    }
+
     const formFieldEditBtn = document.querySelector(".form-fields__edit .btn");
     if(formFieldEditBtn) {
         formFieldEditBtn.addEventListener("click", function(e) {

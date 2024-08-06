@@ -112,6 +112,16 @@
         }
     }
 
+    &__label {
+        display: none;
+    }
+
+    &.filled {
+        .form-field__label {
+            display: block;
+        }
+    }
+
     // SIZES *****************
     &_sm {
         .form-field {
@@ -174,6 +184,12 @@
                 padding: 0 rem(22);
                 font-size: rem(15);
             }
+
+            &__label {
+                font-size: rem(10);
+                line-height: rem(14);
+                padding: 0 rem(7);
+            }
         }
 
         &.invalid {
@@ -209,10 +225,6 @@
                         padding-right: rem(24 + 24);
                     }
                 }
-            }
-
-            &__label {
-                font-size: rem(16);
             }
 
             &__input {
@@ -320,15 +332,20 @@
                 }
             }
 
-            &__message {
+            &__message, &__label {
                 position: absolute;
                 top: 0;
                 left: 50%;
                 @include translate(-50%, -50%);
-                border: rem(1) solid map-get($color-scheme, 'error');
+                border: rem(1) solid var(--themeMainColor05);
                 background-color: var(--themeSecondaryColor);
                 width: max-content;
                 max-width: 80%;
+                z-index: 1;
+
+                &.error {
+                    border-color: map-get($color-scheme, 'error');
+                }
             }
         }
 
