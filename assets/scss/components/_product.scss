@@ -1,5 +1,5 @@
 .product {
-    box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+    box-shadow: 3px 3px 40px var(--themeMainColor01);
     background-color: #fff;
     border-radius: rem(10);
     color: $color-main;
@@ -354,10 +354,6 @@
             @include center-absolute(vertical);
             background-color: map-get($color-scheme, 'main-03');
             height: 46.666666%;
-        }
-
-        span {
-            line-height: 0.74em;
         }
 
         &_decrement {

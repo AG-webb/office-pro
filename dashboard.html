@@ -281,6 +281,7 @@
                                 <div class="form-fields">
                                     <div class="form-fields__item">
                                         <div class="form-field form-field_default form-field_md">
+                                            <div class="form-field__label">Ваш телефон</div>
                                             <div class="form-field__target">
                                                 <input type="number" name="phone" class="form-field__input"
                                                     placeholder="Ваш телефон" required autocomplete='tel'>
@@ -384,7 +385,7 @@
                                 <div class="chart-dropdown__desc">доставка БЕСПЛАТНО</div>
                                 <div class="chart-dropdown__badges sale-badges">
                                     <div class="badge badge_primary badge_md">
-                                        <span>-<span id="chart-total-percent" class='product-sale'>17</span>%</span>
+                                        <span>−<span id="chart-total-percent" class='product-sale'>17</span>%</span>
                                     </div>
                                     <div class="badge badge_main theme-mode badge_md">
                                         <span>Скидка <span class='product-total-sale' id="chart-total-sale">48 000</span> ֏</span>
@@ -2097,6 +2098,7 @@
                                         <div class="form-fields form-fields_editable">
                                             <div class="form-fields__item">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Имя*</div>
                                                     <div class="form-field__target">
                                                         <input type="text" name="name" class="form-field__input" placeholder='Имя*' disabled="disabled" data-required="! Обязательное поле" autocomplete='family-name'>
                                                     </div>
@@ -2104,6 +2106,7 @@
                                             </div>
                                             <div class="form-fields__item">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Телефон*</div>
                                                     <div class="form-field__target">
                                                         <input type="number" name="phone" class="form-field__input" placeholder='Телефон*' disabled="disabled" data-required="! Обязательное поле" autocomplete='tel'>
                                                     </div>
@@ -2111,6 +2114,7 @@
                                             </div>
                                             <div class="form-fields__item">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Адрес*</div>
                                                     <div class="form-field__target">
                                                         <input type="text" name="address" class="form-field__input" placeholder='Адрес*' disabled="disabled" data-required="! Обязательное поле" autocomplete='street-address'>
                                                     </div>
@@ -2118,6 +2122,7 @@
                                             </div>
                                             <div class="form-fields__item">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Эл. почта*</div>
                                                     <div class="form-field__target">
                                                         <input type="text" name="email" class="form-field__input" data-email-validation="! Неправильный формат почты" placeholder='Эл. почта*' disabled="disabled" data-required="! Обязательное поле" autocomplete='email'>
                                                     </div>
@@ -2137,6 +2142,7 @@
                                             </div>
                                             <div class="form-fields__item organization-field">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Название организации*</div>
                                                     <div class="form-field__target">
                                                         <input type="text" name="organization_name" class="form-field__input" placeholder='Название организации*' disabled="disabled" data-required="! Обязательное поле" autocomplete='organization'>
                                                     </div>
@@ -2144,6 +2150,7 @@
                                             </div>
                                             <div class="form-fields__item organization-field">
                                                 <div class="form-field form-field_default form-field_md">
+                                                    <div class="form-field__label">Налоговый код*</div>
                                                     <div class="form-field__target">
                                                         <input type="text" name="code" class="form-field__input" placeholder='Налоговый код' disabled="disabled" data-required="! Обязательное поле" autocomplete='postal-code'>
                                                     </div>
@@ -2162,6 +2169,28 @@
                                                     <span class='font-15 font-sm-13 dn'>Сохранить</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                        <div class='dashboard__alternate'>
+                                            <div class='dashboard__alternate-title'>Внешние логины</div>
+                                            <div class="alternate-sign">
+                                                <a href="#" target='_blank' class="alternate-sign__item">
+                                                    <div class="sign-box">
+                                                        <img width='27' height='27' src="assets/img/google.png" alt="Google">
+                                                        <span class='sign-box__title'>Google</span>
+                                                    </div>
+                                                </a>
+                                                <a href="#" target='_blank' class="alternate-sign__item">
+                                                    <div class="sign-box">
+                                                        <img width='27' height='27' src="assets/img/facebook.svg" alt="Facebook">
+                                                        <span class='sign-box__title'>Facebook</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <label class="custom-check custom-check_checkbox">
+                                                <input type="checkbox" value="save_profile" name="checkbox">
+                                                <span class="custom-check__checkmark"></span>
+                                                <span class="custom-check__label font-13">Сохранить в профиле</span>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

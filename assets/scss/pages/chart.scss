@@ -22,7 +22,7 @@
 
 .chart-products {
     background-color: #FBFBFB;
-    box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+    box-shadow: 3px 3px 40px var(--themeMainColor01);
     border-radius: rem(10);
     @include transition(background-color,0.3s,ease);
 
@@ -84,7 +84,7 @@
 .chart-card {
     @extend %flex;
     background: #fff;
-    box-shadow: 1.7px 1.7px 23px rgba(54, 64, 99, 0.1);
+    box-shadow: 1.7px 1.7px 23px var(--themeMainColor01);
     border-radius: rem(10);
     padding: rem(10);
     color: $color-main;
@@ -119,11 +119,11 @@
         margin-left: auto;
         margin-top: rem(-4);
         @extend %user-cursor;
-        color: var(--themeMainColor05);
+        color: map-get($color-scheme, 'main-05');
         @include transition(color,0.3s,ease);
 
         &:hover {
-            color: var(--themeMainColor);
+            color: $color-main;
         }
 
         .icon {
@@ -204,7 +204,7 @@
         font-style: italic;
         @include font-media(1150px, rem(14), rem(17));
         @include font-media($media-md, rem(13), rem(16));
-        @include font-media($media-sm, rem(11), rem(8));
+        @include font-media($media-sm, rem(11), rem(13));
         text-align: center;
     }
 
@@ -224,7 +224,7 @@
 .summary-block {
     &__wrap {
         background: var(--themeSecondaryColor);
-        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        box-shadow: 3px 3px 40px var(--themeMainColor01);
         border-radius: rem(10);
         padding: rem(20) rem(30) rem(30);
         margin-bottom: rem(36);
@@ -638,7 +638,7 @@
     
     .summary-block {
         background: var(--themeSecondaryColor);
-        box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+        box-shadow: 3px 3px 40px var(--themeMainColor01);
         border-radius: rem(10);
         padding: rem(20);
         @include flex-flow(row, wrap);
@@ -676,7 +676,7 @@
             background-color: var(--themeSecondaryColor);
             z-index: z(dropdown);
             padding: rem(9) rem(30) rem(24);
-            box-shadow: 3px 3px 40px rgba(54, 64, 99, 0.1);
+            box-shadow: 3px 3px 40px var(--themeMainColor01);
             text-align: center;
             
             .btn {
@@ -746,12 +746,23 @@
 
 @media (max-width: 400px) {
     .chart-card {
+        &__old {
+            @include flex(0, 0, 30%);
+            max-width: 30%;
+            margin-bottom: rem(4);
+        }
+
         &__sale {
+            @include flex(0, 0, 70%);
+            max-width: 70%;
+            max-height: rem(13);
+
             &-text {
                 font-size: 0;
                 
                 &::before {
                     content: "−";
+                    line-height: rem(13);
                     font-size: rem(11);
                 }
             }

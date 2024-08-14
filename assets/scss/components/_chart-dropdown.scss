@@ -159,13 +159,23 @@
     }
 }
 
-
-@media (max-width: $media-xs) {
+@media (max-width: 560px) {
     .chart-dropdown {
         &.header__dropdown {
             right: rem(-16);
         }
-    
+
+        &__wrap {
+            &::after {
+                right: rem(13);
+            }
+        }
+    }
+}
+
+
+@media (max-width: $media-xs) {
+    .chart-dropdown {
         &__wrap {
             border-radius: rem(6);
             max-width: calc(100vw - rem(24));

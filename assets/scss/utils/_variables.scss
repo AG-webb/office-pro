@@ -21,8 +21,8 @@ $color-scheme: (
 
 $shadows: (
     'xs': 3px 3px 20px rgba(54, 64, 99, 0.15),
-    'sm': 3px 3px 40px rgba(54, 64, 99, 0.2),
-    'md': 9px 11px 30px rgba(0, 0, 0, 0.15),
+    'sm': 3px 3px 40px var(--themeMainColor02),
+    'md': 9px 11px 30px var(--themeBlackColor015),
 );
  
 $color-main: map-get($color-scheme, 'main');
