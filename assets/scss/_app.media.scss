@@ -103,6 +103,12 @@
         padding: rem(4) rem(10);
     }
     
+    .products {
+        &__title {
+            font-size: rem(35);
+            line-height: rem(43);
+        }
+    }
 }
 
 @media (max-width: 840px) {
@@ -459,6 +465,14 @@
     .feedback-btn {
         font-size: rem(14);
         padding: rem(3) rem(8);
+    }
+
+    .products {
+        &__title {
+            font-size: rem(24);
+            line-height: rem(30);
+            margin-bottom: rem(32);
+        }
     }
 }
 

@@ -767,3 +767,19 @@
         margin-bottom: rem(24);
     }
 }
+
+.products {
+    padding-top: rem(13);
+    margin-bottom: rem(30);
+     
+    &__breadcrumb {
+        margin-bottom: rem(30);
+    }
+
+    &__title {
+        font-size: rem(50);
+        line-height: rem(61);
+        margin-bottom: rem(50);
+        font-weight: normal;
+    }
+}
