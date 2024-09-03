@@ -343,7 +343,11 @@
 
         &__footer {
             padding-top: rem(32);
-            @include flex-flow(column, nowrap);
+            
+            &-row {
+                margin-top: 0;
+                @include flex-flow(column, nowrap);
+            }
         }
 
         &__link {

@@ -467,14 +467,23 @@
     }
 
     &__footer {
-        @extend %flex;
-        @extend %align-middle;
         padding-top: rem(96);
         border-top: rem(1) solid var(--themeMainColor02);
+        
+        &-row {
+            @extend %flex;
+            @extend %align-middle;
+            margin-top: rem(40);
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
 
     &__link {
         flex: 1;
+        padding: 0 rem(5);
         font-size: rem(30);
         font-weight: 600;
         text-align: center;
