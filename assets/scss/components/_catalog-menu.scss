@@ -33,8 +33,10 @@
         opacity: 0.5;
         padding: 0 rem(8);
 
-        .icon {
+        .icon, img {
             font-size: rem(32);
+            width: rem(32);
+            height: rem(32);
             margin-right: rem(8);
         }
 
@@ -179,7 +181,7 @@
             max-width: initial;
             font-size: rem(13);
 
-            .icon {
+            .icon, img {
                 display: none;
             }
         }
