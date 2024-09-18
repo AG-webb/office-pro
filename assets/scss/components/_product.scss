@@ -60,6 +60,8 @@
         }
 
         &.active {
+            @extend %show;
+            
             .icon-heart-stroke {
                 @extend %hidden;
             }
