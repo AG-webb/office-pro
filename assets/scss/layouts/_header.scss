@@ -454,7 +454,11 @@
     }
 
     &__title {
-        margin-bottom: rem(7);
+        margin-bottom: rem(12);
+
+        span {
+            white-space: nowrap;
+        }
     }
 
     &__name {

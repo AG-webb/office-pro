@@ -28,7 +28,9 @@
 
     &__item {
         margin-bottom: rem(20);
-        padding: 0 rem(6);
+        padding: 0 rem(15);
+        @include flex(0, 0, 20%);
+        text-align: center;
         
         .catalog-subcategory {
             max-width: rem(130);
@@ -42,6 +44,9 @@
         border-radius: rem(10);
         overflow: hidden;
         margin-bottom: rem(10);
+        background-color: #fff;
+        margin-left: auto;
+        margin-right: auto;
 
         img {
             width: 100%;
@@ -56,7 +61,7 @@
 }
 
 .product-showcase {
-    margin-bottom: rem(150);
+    margin-bottom: rem(75);
 }
 
 @media (max-width: $media-md) {
@@ -78,6 +83,7 @@
         &__item {
             margin-bottom: rem(20);
             padding: 0 rem(6);
+            flex: initial;
             
             .catalog-subcategory {
                 max-width: rem(130);

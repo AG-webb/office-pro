@@ -123,10 +123,13 @@
 
 .catalog-item {
     @extend %flex;
+    @extend %align-top;
 
     &__image {
         @include flex(0, 0, rem(100));
         margin-right: rem(32);
+        background-color: #fff;
+        border-radius: rem(10);
     }
 
     &__category {

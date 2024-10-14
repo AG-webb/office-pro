@@ -103,6 +103,7 @@
     &__title {
         @include font(500, 13, rem(16), inherit, 0);
         margin-bottom: rem(10);
+        min-height: rem(48);
 
         span {
             @include max-lines(3);
@@ -112,12 +113,13 @@
     &__body {
         @include flex(1, 1, auto);
         @extend %flex;
+        @extend %align-between;
         @include flex-flow(column, nowrap);
     }
 
     &__info {
         margin-bottom: rem(12);
-        margin-top: auto;
+        // margin-top: auto;
     }
 
     &__btn {
@@ -539,6 +541,10 @@
             .icon {
                 font-size: rem(24);
             }
+        }
+
+        &__title {
+            min-height: rem(36);
         }
 
         &_suggest {

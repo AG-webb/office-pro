@@ -257,12 +257,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const productMainSliderElement = document.querySelector(".product-images");
     if (productThumbsSliderElement && productMainSliderElement) {
         const thumbsSplideWrapper = productThumbsSliderElement.querySelector(".splide");
+        let type = "slide";
+        if(productMainSliderElement.querySelectorAll(".product-images__slide").length > 5) {
+            type = "loop";
+        }
+
         let thumbsSlider = new Splide(thumbsSplideWrapper, {
             direction: 'ttb',
             perPage: 5,
             perMove: 1,
             arrows: false,
-            type: 'loop',
+            type,
             height: '24.6875rem',
             arrowPath: 'M12.5858 7.58579C13.3668 6.80474 14.6332 6.80474 15.4142 7.58579L26.9142 19.0858C27.6953 19.8668 27.6953 21.1332 26.9142 21.9142L15.4142 33.4142C14.6332 34.1953 13.3668 34.1953 12.5858 33.4142C11.8047 32.6332 11.8047 31.3668 12.5858 30.5858L22.6716 20.5L12.5858 10.4142C11.8047 9.63317 11.8047 8.36684 12.5858 7.58579Z',
             // breakpoints: {

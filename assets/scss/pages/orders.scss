@@ -563,15 +563,15 @@
             box-shadow: 3px 3px 20px rgba(54, 64, 99, 0.15);
         }
 
-        &:not(.active) {
-            .orders-list__col {
-                .btn {
-                    pointer-events: none;
-                    background-color: var(--themeMainColor03);
-                    border-color: transparent;
-                }
-            }
-        }
+        // &:not(.active) {
+        //     .orders-list__col {
+        //         .btn {
+        //             pointer-events: none;
+        //             background-color: var(--themeMainColor03);
+        //             border-color: transparent;
+        //         }
+        //     }
+        // }
     }
 
     &__content {

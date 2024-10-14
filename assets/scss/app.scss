@@ -272,8 +272,10 @@
     overflow: hidden;
     
     &_grid {
+        overflow: initial;
+        
         .product {
-            margin-bottom: rem(30);
+            margin-bottom: rem(20);
         }
 
         .products-grid {

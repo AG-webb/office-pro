@@ -3,11 +3,11 @@
 
 .product-inner {
     margin-bottom: rem(64);
-    padding-top: rem(36);
+    padding-top: rem(13);
     color: var(--themeMainColor);
 
     &__breadcrumb {
-        margin-bottom: rem(24);
+        margin-bottom: rem(30);
     }
 
     &__wrap {
@@ -28,7 +28,7 @@
         margin-top: rem(-5);
         font-size: rem(20);
         font-weight: bold;
-        line-height: rem(24);
+        line-height: rem(29);
         margin-bottom: rem(30);
     }
 
@@ -58,9 +58,7 @@
     }
 
     .splide__arrow {
-        background: var(--themeSecondaryColor);
-        box-shadow: map-get($shadows, 'xs');
-        color: var(--themeMainColor05);
+        color: map-get($color-scheme, 'main-05');
         border-radius: 50%;
         width: rem(50);
         height: rem(50);
@@ -70,7 +68,7 @@
 
         svg {
             path {
-                fill: var(--themeMainColor05);
+                fill: map-get($color-scheme, 'main-05');
                 @include transition(fill,0.3s,ease);
             }
         }
@@ -78,7 +76,7 @@
         &:hover {
             svg {
                 path {
-                    fill: var(--themeMainColor);
+                    fill: $color-main;
                 }
             } 
         }
@@ -167,18 +165,11 @@
 
     &__btns {
         position: relative;
-        padding-bottom: rem(12);
 
         .share-panel {
             @include center-absolute(horizontal);
             @extend %hidden;
             top: 100%;
-        }
-
-        &.active {
-            .share-panel {
-                @extend %show;
-            }
         }
     }
 
@@ -197,7 +188,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: rem(15);
-            color: var(--themeMainColor05);
+            color: map-get($color-scheme, 'main-05');
 
             .icon {
                 @include center-absolute(both);
@@ -230,10 +221,18 @@
         }
 
         &_share {
-            color: var(--themeMainColor05);
+            color: map-get($color-scheme, 'main-05');
+            padding-bottom: rem(12);
 
             &:hover {
-                color: var(--themeMainColor);
+                & > .icon {
+                    color: $color-main;
+                }
+
+                .share-panel {
+                    @extend %show;
+                    color: var(--themeMainColor);
+                }
             }
         }
     }
@@ -572,19 +571,15 @@
             right: rem(7);
         }
 
-        &__btns {
-            padding-bottom: rem(12);
-        }
-
-        &__btns {
-            padding-bottom: rem(5);
-        }
-
         &__btn {
             &_fav {
                 width: rem(28);
                 height: rem(28);
                 margin-bottom: rem(12);
+            }
+
+            &_share {
+                padding-bottom: rem(5);
             }
 
             .icon {
@@ -687,8 +682,6 @@
         }
 
         &__btns {
-            padding-bottom: rem(16);
-
             .share-panel {
                 left: initial;
                 transform: none;
@@ -701,6 +694,10 @@
                 width: rem(24);
                 height: rem(24);
                 margin-bottom: rem(8);
+            }
+
+            &_share {
+                padding-bottom: rem(16);
             }
 
             .icon {
