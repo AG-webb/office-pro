@@ -429,9 +429,16 @@
 }
 
 .user-dropdown {
+    &__icon {
+        @include center-absolute(horizontal);
+        top: 0;
+        z-index: 1;
+        font-size: rem(20);
+    }
+
     &__wrap {
         position: relative;
-        padding: rem(24) rem(24) rem(20);
+        padding: rem(28) rem(24) rem(20);
         background: var(--themeSecondaryColor);
         box-shadow: map-get($shadows, 'md');
         border-radius: rem(10);
@@ -467,14 +474,10 @@
 
     &__link {
         opacity: 0.5;
-        
-        a {
-            @extend %flex;
-            @extend %align-middle;
+        text-align: center;
 
-            &#sign-out {
-                margin-left: rem(19);
-            }
+        a {
+            display: inline-block;
         }
 
         .icon {

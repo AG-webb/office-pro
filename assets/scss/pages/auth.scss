@@ -17,7 +17,21 @@
         font-size: rem(30);
         line-height: rem(37);
         font-weight: bold;
-        margin-bottom: rem(50);
+
+        &+.auth__body {
+            margin-top: rem(50);
+        }
+        &+.auth__message {
+            margin-top: rem(10);
+        }
+    }
+
+    &__message {
+        margin-bottom: rem(22);
+        text-align: center;
+        margin-left: rem(-14);
+        margin-right: rem(-14);
+        line-height: rem(18);
     }
 
     &__body {
@@ -136,7 +150,19 @@
         &__title {
             font-size: rem(20);
             line-height: rem(24);
-            margin-bottom: rem(25);
+            
+            &+.auth__body {
+                margin-top: rem(25);
+            }
+            &+.auth__message {
+                margin-top: rem(15);
+            }
+        }
+
+        &__message {
+            margin-bottom: rem(15);
+            margin-left: 0;
+            margin-right: 0;
         }
 
         &__body {

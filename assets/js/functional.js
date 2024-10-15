@@ -293,6 +293,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (productElement) {
             productImgElement = productElement.querySelector(".product__img img");
+        } else if(target.closest(".counter-block") && window.innerWidth > 768) {
+            productImgElement = document.querySelector(".product-images__slide.is-active.is-visible img");
         }
 
         if(productImgElement) {

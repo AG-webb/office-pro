@@ -367,6 +367,52 @@ document.addEventListener("DOMContentLoaded", function () {
             productSlider.mount();
         });
     }
+    
+    const catalogStickyMenuElement = document.querySelector(".catalog-sticky-menu");
+    if (catalogStickyMenuElement) {
+        const splideWrapper = catalogStickyMenuElement.querySelector(".splide");
+        const catalogItems = splideWrapper.querySelectorAll(".splide__slide");
+
+        if (
+            catalogItems.length >= 10 || (catalogItems.length >= 7 && window.innerWidth < 1024) || ((catalogItems.length >= 6 && window.innerWidth < 768)) ||
+            ((catalogItems.length >= 5 && window.innerWidth < 620)) || window.innerWidth < 500
+        ) {
+            let splide = new Splide(splideWrapper, {
+                perPage: 1,
+                perMove: 1,
+                autoWidth: true,
+                arrowPath: 'M12.5858 7.58579C13.3668 6.80474 14.6332 6.80474 15.4142 7.58579L26.9142 19.0858C27.6953 19.8668 27.6953 21.1332 26.9142 21.9142L15.4142 33.4142C14.6332 34.1953 13.3668 34.1953 12.5858 33.4142C11.8047 32.6332 11.8047 31.3668 12.5858 30.5858L22.6716 20.5L12.5858 10.4142C11.8047 9.63317 11.8047 8.36684 12.5858 7.58579Z',
+                type: 'loop',
+                arrows: true,
+                pagination: false,
+                breakpoints: {
+                    1150: {
+                        perPage: 8,
+                        autoWidth: false,
+                        gap: "0.8125rem",
+                    },
+                    1024: {
+                        perPage: 6,
+                    },
+                    740: {
+                        perPage: 5,
+                    },
+                    650: {
+                        perPage: 4,
+                    },
+                    520: {
+                        perPage: 3,
+                    },
+                    400: {
+                        perPage: 2,
+                    },
+                }
+            });
+            splide.mount();
+        } else {
+            splideWrapper.classList.add("visible");
+        }
+    }
 
     const paymentTypeInputs = document.querySelectorAll(".payment-type-input");
     const organizationFields = document.querySelectorAll(".organization-field");
@@ -431,7 +477,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const catalogPageListElement = document.querySelector(".catalog-page__list");
+const catalogStickyMenuElement = document.querySelector(".catalog-sticky-menu");
 // Scroll
 document.addEventListener("scroll", function () {
     headerFixed();
+    
+    if(catalogPageListElement) {
+        const catalogListTop = catalogPageListElement.offsetTop;
+        const catalogListHeight = catalogPageListElement.offsetHeight;
+        const afterCatalogList = catalogListTop + catalogListHeight;
+
+        if(window.scrollY > afterCatalogList) {
+            catalogStickyMenuElement.classList.add("active");
+        } else {
+            catalogStickyMenuElement.classList.remove("active");
+        }
+    }
 });
