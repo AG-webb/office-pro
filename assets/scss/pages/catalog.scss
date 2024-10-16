@@ -23,7 +23,7 @@
         max-width: rem(700);
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: rem(50);
+        margin-bottom: rem(24);
     }
 
     &__item {
@@ -41,6 +41,7 @@
     z-index: z(catalog-sticky-menu);
     color: var(--themeMainColor);
     background-color: var(--themeSecondaryColor);
+    box-shadow: 9px 11px 30px var(--themeBlackColor015);
     width: 100%;
     position: fixed;
     top: rem(70);

@@ -492,13 +492,14 @@
 }
 
 .user-badge {
-    width: rem(27);
-    height: rem(27);
-    line-height: rem(27);
+    width: rem(30);
+    height: rem(30);
+    line-height: rem(30);
     text-align: center;
     color: #fff;
-    background-color: $color-main;
-    font-size: rem(12);
+    background-color: #fff;
+    color: $color-main;
+    font-size: rem(13);
     border-radius: 50%;
     letter-spacing: 13%;
     font-weight: 600;

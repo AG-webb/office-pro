@@ -38,6 +38,10 @@
             background-color: #fff;
         }
     }
+
+    .pswp__bg {
+        background: #fff;
+    }
 }
 .pswp__bullets-indicator {
     @extend %flex;
@@ -80,9 +84,4 @@
             }
         }
     }
-}
-
-
-@media (max-width: $media-sm) {
-    
 }
